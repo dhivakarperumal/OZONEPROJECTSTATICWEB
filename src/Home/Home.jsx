@@ -1,18 +1,20 @@
 import React from 'react'
-import Hero from './Hero.jsx'
-import HomeAbout from './HomeAbout.jsx'
-import HomeProducts from './HomeProducts.jsx'
-import OfferBanner from './OfferBanner.jsx'
-import HomeReviews from './HomeReviews.jsx'
+import Hero from './Hero'
+import HomeAbout from './HomeAbout'
+import HomeProducts from './HomeProducts'
+// import OfferBanner from './OfferBanner'
+import HomeReviews from './HomeReviews'
+import HomeGallery from './HomeGallery'
 
 const Home = () => {
   return (
     <div>
       <Hero />
       <HomeAbout />
-      <OfferBanner />
+      {/* <OfferBanner /> */}
       <HomeProducts />
       <HomeReviews />
+      <HomeGallery />
     </div>
   )
 }
