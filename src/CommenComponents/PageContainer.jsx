@@ -1,7 +1,7 @@
 const PageContainer = ({ children, className = "" }) => {
   return (
     <div
-      className={`w-full max-w-[1700px] mx-auto px-[6%] sm:px-[5%] lg:px-[3%] ${className}`}
+      className={`w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 ${className}`}
     >
       {children}
     </div>
