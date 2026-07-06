@@ -108,7 +108,7 @@ export default function AboutUs() {
     <div className="min-h-screen bg-background">
       <PageHeader
         title="About Us"
-        subtitle="Crafting premium architectural solutions with innovation, precision, and a commitment to exceptional quality."
+        // subtitle="Crafting premium architectural solutions with innovation, precision, and a commitment to exceptional quality."
       />
 
       <PageContainer className="py-16 sm:py-20 lg:py-24">
