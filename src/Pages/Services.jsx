@@ -4,6 +4,9 @@ import PageContainer from "../CommenComponents/PageContainer";
 import PageHeader from "../CommenComponents/PageHeader";
 import { services } from "../Home/HomeServices";
 import * as LucideIcons from "lucide-react";
+import ServicesFAQ from "./ServicesFAQ";
+import ServicesWhyChoose from "./ServicesWhyChoose";
+import ServicesInstallation from "./ServicesInstallation";
 
 export default function Services() {
   useEffect(() => {
@@ -75,6 +78,9 @@ export default function Services() {
             })}
           </div>
         </div>
+        <ServicesInstallation />
+        <ServicesWhyChoose />
+        <ServicesFAQ />
       </PageContainer>
     </div>
   );
