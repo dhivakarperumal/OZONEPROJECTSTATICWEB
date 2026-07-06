@@ -8,6 +8,7 @@ import "./index.css";
 import ScrollToTop from "./CommenComponents/ScrollToTop";
 import ScrollNavigator from "./CommenComponents/ScrollNavigator";
 import Loader from "./CommenComponents/Loader";
+import FloatingActions from "./CommenComponents/FloatingActions";
 
 function App() {
    const [loading, setLoading] = useState(false);
@@ -25,6 +26,7 @@ function App() {
         <Outlet />
       </main>
       <Footer />
+      <FloatingActions />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CheckCircle2, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
@@ -39,7 +39,7 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
   );
 };
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onQuickView }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -73,12 +73,12 @@ const ProductCard = ({ product }) => {
 
         {/* Quick view button on hover */}
         <div className={`absolute bottom-3 left-0 right-0 flex justify-center transition-all duration-400 ${hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-          <Link
-            to="/products"
+          <button
+            onClick={() => onQuickView(product)}
             className="flex items-center gap-1.5 bg-white text-[#0c5940] text-xs font-bold px-5 py-2 rounded-full shadow-lg hover:bg-[#0c5940] hover:text-white transition"
           >
-            View Details <ArrowUpRight size={13} />
-          </Link>
+            Quick View <ArrowUpRight size={13} />
+          </button>
         </div>
       </div>
 
@@ -107,6 +107,7 @@ const ProductCard = ({ product }) => {
 
 const HomeProducts = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
@@ -223,7 +224,7 @@ const HomeProducts = () => {
             >
               {filtered.map((product) => (
                 <SwiperSlide key={product.id} className="h-auto">
-                  <ProductCard product={product} />
+                  <ProductCard product={product} onQuickView={setSelectedProduct} />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -246,6 +247,74 @@ const HomeProducts = () => {
         </FadeIn>
 
       </div>
+
+        {/* Product Modal */}
+        {selectedProduct && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300">
+            <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] animate-in fade-in zoom-in duration-300">
+              
+              <button
+                onClick={() => setSelectedProduct(null)}
+                className="absolute top-4 right-4 z-10 p-2 bg-white/80 hover:bg-gray-100 backdrop-blur-md rounded-full text-gray-800 transition-colors"
+              >
+                <X size={24} />
+              </button>
+
+              {/* Image Section */}
+              <div className="md:w-1/2 bg-gray-50 flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-gray-100">
+                <img
+                  src={selectedProduct.image}
+                  alt={selectedProduct.name}
+                  className="max-w-full max-h-[40vh] md:max-h-[70vh] object-contain rounded-xl shadow-sm hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.target.src = "https://placehold.co/400x300/e6f4ed/0c5940?text=Ozone+Product";
+                  }}
+                />
+              </div>
+
+              {/* Content Section */}
+              <div className="md:w-1/2 p-8 overflow-y-auto">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className={`px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white rounded-full shadow-sm ${selectedProduct.badgeColor}`}>
+                    {selectedProduct.badge}
+                  </span>
+                  <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#0c5940] bg-[#e6f4ed] rounded-full shadow-sm">
+                    {selectedProduct.category}
+                  </span>
+                </div>
+                
+                <h3 className="text-3xl font-black text-[var(--primary)] mb-4 leading-tight">
+                  {selectedProduct.name}
+                </h3>
+                
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {selectedProduct.description}
+                </p>
+
+                <div className="mb-8">
+                  <h4 className="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Key Features</h4>
+                  <ul className="space-y-3">
+                    {selectedProduct.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-[#0c5940] mt-0.5 shrink-0" />
+                        <span className="text-gray-700 text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="flex gap-4 mt-auto">
+                  <Link
+                    to="/products"
+                    className="flex-1 flex justify-center items-center gap-2 py-3.5 bg-[#0c5940] hover:bg-[#094230] text-white rounded-xl font-bold transition-all duration-300 shadow-lg shadow-[#0c5940]/20 hover:shadow-[#0c5940]/40 hover:-translate-y-0.5"
+                  >
+                    View All <ArrowRight size={18} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
     </section>
   );
 };

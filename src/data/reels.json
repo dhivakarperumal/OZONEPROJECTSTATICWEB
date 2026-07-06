@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "thumbnail": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=700&fit=crop",
+    "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "caption": "Glass Railing Install 🏗️",
+    "likes": "12.4K",
+    "comments": "238",
+    "tag": "#GlassRailing",
+    "duration": "0:32",
+    "instagramUrl": "https://www.instagram.com"
+  },
+  {
+    "id": 2,
+    "thumbnail": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=700&fit=crop",
+    "videoUrl": "https://www.w3schools.com/html/movie.mp4",
+    "caption": "Sliding Window Fitment ✨",
+    "likes": "9.1K",
+    "comments": "174",
+    "tag": "#SlidingWindow",
+    "duration": "0:27",
+    "instagramUrl": "https://www.instagram.com"
+  },
+  {
+    "id": 3,
+    "thumbnail": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&h=700&fit=crop",
+    "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "caption": "Balcony Screen Perfection 🌿",
+    "likes": "15.7K",
+    "comments": "302",
+    "tag": "#BalconyScreen",
+    "duration": "0:45",
+    "instagramUrl": "https://www.instagram.com"
+  },
+  {
+    "id": 4,
+    "thumbnail": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=400&h=700&fit=crop",
+    "videoUrl": "https://www.w3schools.com/html/movie.mp4",
+    "caption": "Folding Door System 🚪",
+    "likes": "8.3K",
+    "comments": "156",
+    "tag": "#FoldingDoor",
+    "duration": "0:38",
+    "instagramUrl": "https://www.instagram.com"
+  },
+  {
+    "id": 5,
+    "thumbnail": "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400&h=700&fit=crop",
+    "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "caption": "Louvre Shutters Install 🏠",
+    "likes": "11.2K",
+    "comments": "219",
+    "tag": "#Louvre",
+    "duration": "0:29",
+    "instagramUrl": "https://www.instagram.com"
+  },
+  {
+    "id": 6,
+    "thumbnail": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=700&fit=crop",
+    "videoUrl": "https://www.w3schools.com/html/movie.mp4",
+    "caption": "Premium Hardware Systems 🔩",
+    "likes": "7.8K",
+    "comments": "143",
+    "tag": "#OzoneHardware",
+    "duration": "0:41",
+    "instagramUrl": "https://www.instagram.com"
+  }
+]

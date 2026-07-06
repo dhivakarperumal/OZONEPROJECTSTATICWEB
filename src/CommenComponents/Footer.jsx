@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   MapPin,
@@ -14,8 +14,11 @@ import {
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import logo from "../../public/logo.png";
 import PageContainer from "./PageContainer";
+import CatalogueDownload from "./CatalogueDownload";
 
 const Footer = () => {
+  const [catalogueOpen, setCatalogueOpen] = useState(false);
+
   return (
     <footer className="bg-[#021333] text-white pt-16 pb-12 mt-20">
       <PageContainer>
@@ -80,7 +83,7 @@ const Footer = () => {
         <div className="border-t border-[#132852] mb-12"></div>
 
         {/* Bottom Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           
           {/* Logo & Social */}
           <div className="lg:col-span-1 flex flex-col items-start">
@@ -103,31 +106,66 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="hidden lg:block"></div>
 
           {/* Quick Links */}
           <div className="lg:col-span-1">
             <h4 className="text-[13px] font-bold mb-4 tracking-wider uppercase">QUICK LINKS</h4>
             <ul className="space-y-2.5 text-[13px] text-gray-400">
+              <li><Link to="/" className="hover:text-white transition">Home</Link></li>
               <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
-              <li><Link to="/why-ozone" className="hover:text-white transition">Why Ozone</Link></li>
               <li><Link to="/products" className="hover:text-white transition">Products</Link></li>
-              <li><Link to="/fitment-systems" className="hover:text-white transition">Fitment Systems</Link></li>
-              <li><Link to="/balcony-screens" className="hover:text-white transition">Balcony Screens</Link></li>
-            </ul>
-          </div>
-
-          {/* Customer Service */}
-          <div className="lg:col-span-1">
-            <h4 className="text-[13px] font-bold mb-4 tracking-wider uppercase">CUSTOMER SERVICE</h4>
-            <ul className="space-y-2.5 text-[13px] text-gray-400">
-              <li><Link to="/warranty" className="hover:text-white transition">Warranty</Link></li>
-              <li><Link to="/care-maintenance" className="hover:text-white transition">Care & Maintenance</Link></li>
-              <li><Link to="/faq" className="hover:text-white transition">FAQ</Link></li>
-              <li><Link to="/downloads" className="hover:text-white transition">Downloads</Link></li>
+              <li><Link to="/services" className="hover:text-white transition">Services</Link></li>
+              <li><Link to="/gallery" className="hover:text-white transition">Gallery</Link></li>
               <li><Link to="/contact" className="hover:text-white transition">Contact Us</Link></li>
             </ul>
           </div>
+
+
+          
+        {/* Service Areas */}
+<div className="lg:col-span-1">
+  <h4 className="text-[13px] font-bold mb-4 tracking-wider uppercase">
+    SERVICE AREAS
+  </h4>
+
+  <ul className="space-y-2.5 text-[13px] text-gray-400">
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Ambur
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Tirupathur
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Vellore
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Ranipet
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Gudiyatham
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Katpadi
+      </Link>
+    </li>
+  </ul>
+</div>
 
           {/* Contact Us */}
           <div className="lg:col-span-1">
@@ -149,24 +187,111 @@ const Footer = () => {
           </div>
 
           {/* Download Catalogue */}
-          <div className="lg:col-span-1 flex flex-col lg:items-end">
-            <div className="text-left w-full">
-              <h4 className="text-[13px] font-bold mb-4 tracking-wider uppercase">DOWNLOAD CATALOGUE</h4>
-              <div className="flex items-center gap-3">
-                {/* Simulated catalog image */}
-                <div className="w-14 h-18 bg-gray-200 rounded border border-gray-400 overflow-hidden flex-shrink-0 relative">
-                    <img src="./logo.png" alt="Catalogue" className="w-full h-full object-cover opacity-20" />
+          <div className="lg:col-span-1">
+            <h4 className="text-[13px] font-bold mb-4 tracking-wider uppercase">DOWNLOAD CATALOGUE</h4>
+            <div
+              style={{
+                background: "linear-gradient(135deg, rgba(12,89,64,0.25) 0%, rgba(26,122,80,0.15) 100%)",
+                border: "1px solid rgba(12,89,64,0.5)",
+                borderRadius: "14px",
+                padding: "18px 16px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "12px",
+              }}
+            >
+              {/* Top: icon + title */}
+              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <div
+                  style={{
+                    width: "44px",
+                    height: "56px",
+                    background: "linear-gradient(160deg,#1a7a50,#0c5940)",
+                    borderRadius: "8px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                    boxShadow: "0 4px 14px rgba(12,89,64,0.45)",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src="/logo.png"
+                    alt="Catalogue"
+                    style={{ width: "100%", height: "100%", objectFit: "contain", opacity: 0.35, filter: "brightness(3)" }}
+                  />
+                  {/* PDF badge */}
+                  <span
+                    style={{
+                      position: "absolute",
+                      bottom: "4px",
+                      right: "3px",
+                      background: "#f59e0b",
+                      color: "#000",
+                      fontSize: "7px",
+                      fontWeight: 800,
+                      borderRadius: "3px",
+                      padding: "1px 3px",
+                      letterSpacing: "0.3px",
+                    }}
+                  >PDF</span>
                 </div>
-                <button className="flex items-center gap-2 bg-white text-[#021333] hover:bg-gray-100 px-3 py-2 rounded font-semibold text-[11px] transition shadow">
-                  Download PDF <ArrowRight size={12} />
-                </button>
+                <div>
+                  <p style={{ fontSize: "12px", fontWeight: 700, color: "#fff", margin: 0 }}>
+                    Product Catalogue 2025
+                  </p>
+                  <p style={{ fontSize: "11px", color: "#94a3b8", margin: "3px 0 0" }}>
+                    Full specs · Finishes · Dimensions
+                  </p>
+                </div>
               </div>
+
+              {/* Divider */}
+              <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }} />
+
+              {/* Download Button */}
+              <button
+                onClick={() => setCatalogueOpen(true)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "8px",
+                  background: "linear-gradient(135deg, #f59e0b, #fbbf24)",
+                  color: "#111",
+                  border: "none",
+                  borderRadius: "9px",
+                  padding: "10px 14px",
+                  fontWeight: 700,
+                  fontSize: "12px",
+                  cursor: "pointer",
+                  width: "100%",
+                  boxShadow: "0 4px 16px rgba(245,158,11,0.35)",
+                  transition: "opacity 0.2s, transform 0.15s",
+                  letterSpacing: "0.2px",
+                }}
+                onMouseEnter={e => { e.currentTarget.style.opacity = "0.88"; e.currentTarget.style.transform = "translateY(-1px)"; }}
+                onMouseLeave={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "translateY(0)"; }}
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download Free PDF
+              </button>
+
+              <p style={{ fontSize: "10px", color: "#64748b", textAlign: "center", margin: 0 }}>
+                🔒 Enter your email to unlock
+              </p>
             </div>
           </div>
 
         </div>
 
       </PageContainer>
+
+      <CatalogueDownload isOpen={catalogueOpen} onClose={() => setCatalogueOpen(false)} />
     </footer>
   );
 };

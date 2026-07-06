@@ -1,143 +1,210 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
-import logo from "../../public/logo.png";// Replace with actual logo if needed
+import { ChevronDown, X, Phone, Mail, ArrowUpRight } from "lucide-react";
+import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
+import logo from "../../public/logo.png";
 import PageContainer from "./PageContainer";
+
+// ── Custom 3-stripe swoosh hamburger icon ───────────────────────────────────
+const SwooshMenuIcon = () => (
+  <svg width="34" height="30" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 4 Q14 1 28 6 Q36 9 38 7 Q34 12 22 10 Q8 8 4 12 Q2 8 4 4Z" fill="#38B6FF" />
+    <path d="M2 15 Q12 12 27 17 Q35 20 38 18 Q34 23 21 21 Q7 19 2 23 Q0 19 2 15Z" fill="#0c5940" />
+    <path d="M4 26 Q14 23 29 28 Q37 31 38 29 Q35 34 22 32 Q8 30 4 34 Q2 30 4 26Z" fill="#081A59" />
+  </svg>
+);
+
+const navLinks = [
+  { to: "/", label: "Home",            color: "#38B6FF" },
+  { to: "/about", label: "About Us",   color: "#0c5940" },
+  { to: "/products", label: "Products", color: "#38B6FF" },
+  { to: "/services", label: "Services", color: "#0c5940" },
+  { to: "/gallery", label: "Gallery",  color: "#081A59" },
+  { to: "/contact", label: "Contact Us", color: "#38B6FF" },
+];
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
-  
-  const [productsMenu, setProductsMenu] = useState(false);
-  const [fitmentMenu, setFitmentMenu] = useState(false);
-
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [fitmentOpen, setFitmentOpen] = useState(false);
   const productsRef = useRef();
   const fitmentRef = useRef();
 
+  // lock body scroll when menu open
+  useEffect(() => {
+    document.body.style.overflow = mobileMenu ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenu]);
+
   useEffect(() => {
     const handler = (e) => {
-      if (productsRef.current && !productsRef.current.contains(e.target)) {
-        setProductsMenu(false);
-      }
-      if (fitmentRef.current && !fitmentRef.current.contains(e.target)) {
-        setFitmentMenu(false);
-      }
+      if (productsRef.current && !productsRef.current.contains(e.target)) setProductsOpen(false);
+      if (fitmentRef.current && !fitmentRef.current.contains(e.target)) setFitmentOpen(false);
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
+  const closeMobile = () => {
+    setMobileMenu(false);
+    setProductsOpen(false);
+    setFitmentOpen(false);
+  };
+
   const navClass = ({ isActive }) =>
-    `px-3 py-2 text-sm font-semibold tracking-wide transition flex flex-col justify-center relative ${
+    `px-3 py-2 text-sm font-semibold tracking-wide transition flex flex-col justify-center relative group ${
       isActive
-        ? "text-[#0c5940] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#0c5940]"
-        : "text-gray-800 hover:text-[#0c5940]"
+        ? "text-[#0c5940] after:content-[''] after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2.5px] after:bg-[#0c5940]"
+        : "text-gray-800 hover:text-[#0c5940] after:content-[''] after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2.5px] after:bg-[#0c5940] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
     }`;
 
-  const dropdownBtnClass = "flex items-center gap-1 px-3 py-2 text-sm font-semibold tracking-wide text-gray-800 hover:text-[#0c5940] transition cursor-pointer";
-
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-sm py-2 md:py-3">
-      <PageContainer>
-        <div className="flex items-center justify-between">
-          
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            {/* The image in the screenshot has a specific logo, adjust src as needed */}
-            <img src={logo} alt="Ozone Enterprises" className="h-10 md:h-12 object-contain" />
+    <>
+      <nav className="sticky top-0 z-50 bg-white shadow-sm py-2 md:py-3">
+        <PageContainer>
+          <div className="flex items-center justify-between relative">
+
+            {/* Logo */}
+            <div className="flex-1 lg:flex-none z-10">
+              <Link to="/" className="flex items-center" onClick={closeMobile}>
+                <img src={logo} alt="Ozone Enterprises" className="h-10 md:h-12 object-contain" />
+              </Link>
+            </div>
+
+            {/* Desktop Links */}
+            <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center gap-1 lg:gap-2 xl:gap-4 w-max z-0">
+              <NavLink to="/" className={navClass}>Home</NavLink>
+              <NavLink to="/about" className={navClass}>About Us</NavLink>
+              <NavLink to="/products" className={navClass}>Products</NavLink>
+              <NavLink to="/services" className={navClass}>Services</NavLink>
+              <NavLink to="/gallery" className={navClass}>Gallery</NavLink>
+              <NavLink to="/contact" className={navClass}>Contact Us</NavLink>
+            </div>
+
+            {/* Desktop CTA */}
+            <div className="hidden lg:block shrink-0 z-10">
+              <Link to="/contact" className="flex items-center gap-2 bg-[#0c5940] hover:bg-[#094230] text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition shadow-md">
+                Get a Quote
+              </Link>
+            </div>
+
+            {/* Mobile Toggle */}
+            <div className="flex items-center lg:hidden z-10">
+              <button
+                onClick={() => setMobileMenu(!mobileMenu)}
+                className="flex items-center justify-center w-11 h-11 rounded-xl hover:bg-gray-50 transition"
+                aria-label="Toggle menu"
+              >
+                {mobileMenu ? <X size={26} className="text-white" strokeWidth={2.5} /> : <SwooshMenuIcon />}
+              </button>
+            </div>
+          </div>
+        </PageContainer>
+      </nav>
+
+      {/* ── Full-screen mobile overlay ── */}
+      {/* Backdrop */}
+      <div
+        className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-400 lg:hidden ${
+          mobileMenu ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={closeMobile}
+      />
+
+      {/* Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-full w-full z-50 lg:hidden flex flex-col
+          bg-gradient-to-b from-[#081A59] via-[#0c2e50] to-[#0c5940]
+          transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
+          ${mobileMenu ? "translate-x-0" : "translate-x-full"}`}
+      >
+        {/* Decorative blobs */}
+        <div className="absolute top-0 right-0 w-48 h-48 bg-[#38B6FF]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-20 left-0 w-40 h-40 bg-[#0c5940]/30 rounded-full blur-3xl pointer-events-none" />
+
+        {/* Header inside drawer */}
+        <div className="relative flex items-center justify-between px-6 pt-6 pb-5 border-b border-white/10">
+          <Link to="/" onClick={closeMobile}>
+            <img src={logo} alt="Ozone" className="h-9 object-contain brightness-0 invert" />
+          </Link>
+          <button
+            onClick={closeMobile}
+            className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition"
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        {/* Nav items */}
+        <div className="relative flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-1">
+
+          {navLinks.map((link, i) => (
+            <NavLink
+              key={i}
+              to={link.to}
+              onClick={closeMobile}
+              style={{ transitionDelay: mobileMenu ? `${i * 50}ms` : "0ms" }}
+              className={({ isActive }) =>
+                `group flex items-center justify-between px-4 py-4 rounded-2xl font-bold text-base transition-all duration-300
+                ${isActive
+                  ? "bg-white/15 text-white"
+                  : "text-white/80 hover:bg-white/10 hover:text-white"
+                }`
+              }
+            >
+              <span className="flex items-center gap-4">
+                <span
+                  className="w-2 h-8 rounded-full flex-shrink-0"
+                  style={{ backgroundColor: link.color }}
+                />
+                {link.label}
+              </span>
+              <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity text-white/60" />
+            </NavLink>
+          ))}
+
+
+
+         
+        </div>
+
+        {/* Footer: CTA + contact + socials */}
+        <div className="relative px-6 pb-8 pt-4 border-t border-white/10 flex flex-col gap-4">
+          <Link
+            to="/contact"
+            onClick={closeMobile}
+            className="flex justify-center items-center gap-2 bg-white text-[#0c5940] px-5 py-3.5 rounded-2xl font-black text-sm transition-all shadow-xl hover:bg-gray-100 hover:scale-[1.02]"
+          >
+            Get a Free Quote →
           </Link>
 
-          {/* Desktop Links */}
-          <div className="hidden lg:flex items-center justify-center flex-1 gap-4 xl:gap-8">
-            <NavLink to="/" className={navClass}>Home</NavLink>
-            <NavLink to="/about" className={navClass}>About Us</NavLink>
-            
-            {/* Products Dropdown */}
-            <div className="relative" ref={productsRef}>
-              <button 
-                onClick={() => { setProductsMenu(!productsMenu); setFitmentMenu(false); }}
-                className={dropdownBtnClass}
-              >
-                Products <ChevronDown size={16} />
-              </button>
-              {productsMenu && (
-                <div className="absolute top-full left-0 w-48 bg-white shadow-lg rounded-md overflow-hidden mt-2 border border-gray-100 z-50">
-                  <Link to="/products" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">All Products</Link>
-                </div>
-              )}
-            </div>
-
-            {/* Fitment Systems Dropdown */}
-            {/* <div className="relative" ref={fitmentRef}>
-              <button 
-                onClick={() => { setFitmentMenu(!fitmentMenu); setProductsMenu(false); }}
-                className={dropdownBtnClass}
-              >
-                Fitment Systems <ChevronDown size={16} />
-              </button>
-              {fitmentMenu && (
-                <div className="absolute top-full left-0 w-48 bg-white shadow-lg rounded-md overflow-hidden mt-2 border border-gray-100 z-50">
-                  <Link to="/fitment-systems" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">All Systems</Link>
-                </div>
-              )}
-            </div> */}
-
-            <NavLink to="/balcony-screens" className={navClass}>Balcony Screens</NavLink>
-            <NavLink to="/gallery" className={navClass}>Gallery</NavLink>
-            {/* <NavLink to="/downloads" className={navClass}>Downloads</NavLink> */}
-            <NavLink to="/contact" className={navClass}>Contact Us</NavLink>
+          <div className="flex flex-col gap-2">
+            <a href="tel:+918950678907" className="flex items-center gap-2 text-white/60 text-xs hover:text-white transition">
+              <Phone size={13} /> +91 89506 78907
+            </a>
+            <a href="mailto:support@ozone.com" className="flex items-center gap-2 text-white/60 text-xs hover:text-white transition">
+              <Mail size={13} /> support@ozone.com
+            </a>
           </div>
 
-          <div className="hidden lg:block shrink-0">
-            <Link to="/quote" className="flex items-center gap-2 bg-[#0c5940] hover:bg-[#094230] text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition shadow-md">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 16 16 12 12 8"></polyline>
-                <line x1="8" y1="12" x2="16" y2="12"></line>
-              </svg>
-              Get a Quote
-            </Link>
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <button onClick={() => setMobileMenu(!mobileMenu)} className="lg:hidden text-gray-800">
-            {mobileMenu ? <X size={26} /> : <Menu size={26} />}
-          </button>
-        </div>
-      </PageContainer>
-      
-      {/* Mobile Menu */}
-      {mobileMenu && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 flex flex-col p-4 max-h-[80vh] overflow-y-auto">
-          <NavLink to="/" onClick={() => setMobileMenu(false)} className="px-4 py-3 border-b text-gray-800 font-bold">Home</NavLink>
-          <NavLink to="/about" onClick={() => setMobileMenu(false)} className="px-4 py-3 border-b text-gray-800 font-bold">About Us</NavLink>
-          <button onClick={() => setProductsMenu(!productsMenu)} className="flex items-center justify-between px-4 py-3 border-b text-gray-800 font-bold">
-            Products <ChevronDown size={16} className={`transition-transform ${productsMenu ? 'rotate-180' : ''}`} />
-          </button>
-          {productsMenu && (
-            <div className="bg-gray-50 flex flex-col pl-8">
-              <Link to="/products" onClick={() => setMobileMenu(false)} className="py-3 border-b border-gray-200 text-sm">All Products</Link>
-            </div>
-          )}
-          <button onClick={() => setFitmentMenu(!fitmentMenu)} className="flex items-center justify-between px-4 py-3 border-b text-gray-800 font-bold">
-            Fitment Systems <ChevronDown size={16} className={`transition-transform ${fitmentMenu ? 'rotate-180' : ''}`} />
-          </button>
-          {fitmentMenu && (
-            <div className="bg-gray-50 flex flex-col pl-8">
-              <Link to="/fitment-systems" onClick={() => setMobileMenu(false)} className="py-3 border-b border-gray-200 text-sm">All Systems</Link>
-            </div>
-          )}
-          <NavLink to="/balcony-screens" onClick={() => setMobileMenu(false)} className="px-4 py-3 border-b text-gray-800 font-bold">Balcony Screens</NavLink>
-          <NavLink to="/gallery" onClick={() => setMobileMenu(false)} className="px-4 py-3 border-b text-gray-800 font-bold">Gallery</NavLink>
-          <NavLink to="/downloads" onClick={() => setMobileMenu(false)} className="px-4 py-3 border-b text-gray-800 font-bold">Downloads</NavLink>
-          <NavLink to="/contact" onClick={() => setMobileMenu(false)} className="px-4 py-3 border-b text-gray-800 font-bold">Contact Us</NavLink>
-          <div className="mt-4 px-4">
-             <Link to="/quote" onClick={() => setMobileMenu(false)} className="flex justify-center items-center gap-2 bg-[#0c5940] hover:bg-[#094230] text-white px-5 py-3 rounded-lg font-semibold text-sm transition">
-              Get a Quote
-            </Link>
+          <div className="flex gap-3">
+            {[
+              { icon: FaInstagram, href: "#", color: "hover:bg-pink-500" },
+              { icon: FaFacebookF, href: "#", color: "hover:bg-blue-600" },
+              { icon: FaYoutube,   href: "#", color: "hover:bg-red-600"  },
+            ].map((s, i) => (
+              <a
+                key={i}
+                href={s.href}
+                className={`w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white transition-all ${s.color}`}
+              >
+                <s.icon size={14} />
+              </a>
+            ))}
           </div>
         </div>
-      )}
-    </nav>
+      </div>
+    </>
   );
 };
 
