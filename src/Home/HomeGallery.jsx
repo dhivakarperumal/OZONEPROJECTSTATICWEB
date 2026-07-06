@@ -2,15 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, X, ZoomIn } from "lucide-react";
 
-const galleryItems = [
-  { id: 1, image: "/gallery/1.jpg", title: "Sliding Window System", category: "Windows", span: "col-span-2 row-span-2" },
-  { id: 2, image: "/gallery/2.jpg", title: "Glass Balcony Railing", category: "Railings", span: "" },
-  { id: 3, image: "/gallery/3.jpg", title: "Folding Door System", category: "Doors", span: "" },
-  { id: 4, image: "/gallery/4.jpg", title: "Louvre Shutters", category: "Shutters", span: "" },
-  { id: 5, image: "/gallery/5.jpg", title: "Balcony Enclosure", category: "Balcony", span: "" },
-  { id: 6, image: "/gallery/6.jpg", title: "Mosquito Mesh Screen", category: "Screens", span: "col-span-2" },
-  { id: 7, image: "/gallery/7.jpg", title: "Casement Fitment", category: "Windows", span: "" },
-];
+import { galleryItems } from "../data/gallery";
 
 const fallbackColors = [
   "from-[#0c5940] to-[#094230]",

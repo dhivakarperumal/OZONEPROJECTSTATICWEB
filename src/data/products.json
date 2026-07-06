@@ -5,7 +5,7 @@
     "category": "Windows",
     "description": "Precision-engineered sliding window fitment systems with smooth glide tracks, heavy-duty rollers, and weather-proof sealing for modern homes.",
     "features": ["Weather Proof", "Smooth Glide", "Heavy Duty"],
-    "image": "/products/1.png",
+    "image": "../Products/mosquitonet1.jpg",
     "badge": "Best Seller",
     "badgeColor": "bg-[#0c5940]"
   },
@@ -15,7 +15,7 @@
     "category": "Railings",
     "description": "Elegant tempered glass balcony railing systems with stainless steel clamps, offering panoramic views and unmatched structural strength.",
     "features": ["Tempered Glass", "SS Clamps", "Panoramic View"],
-    "image": "/products/2.png",
+    "image": "../Products/mosquitonet2.jpg",
     "badge": "Premium",
     "badgeColor": "bg-[var(--primary)]"
   },
@@ -25,7 +25,7 @@
     "category": "Doors",
     "description": "Space-saving bi-fold and multi-fold door systems with concealed hinges and smooth pivot action for seamless indoor-outdoor transitions.",
     "features": ["Bi-Fold", "Concealed Hinges", "Space Saving"],
-    "image": "/products/3.png",
+    "image": "../Products/mosquitonet3.jpeg",
     "badge": "New",
     "badgeColor": "bg-[var(--secondary)]"
   },
@@ -35,7 +35,7 @@
     "category": "Shutters",
     "description": "Adjustable aluminium louvre shutters that provide ventilation, privacy and shade control — perfect for balconies and facades.",
     "features": ["Adjustable", "Aluminium", "UV Resistant"],
-    "image": "/products/4.png",
+    "image": "../Products/mosquitonet4.jpeg",
     "badge": "Popular",
     "badgeColor": "bg-amber-500"
   },
@@ -45,7 +45,7 @@
     "category": "Windows",
     "description": "Heavy-duty casement window hardware with multi-point locking, concealed friction stays, and anti-corrosion finish for lasting performance.",
     "features": ["Multi-Point Lock", "Anti-Corrosion", "Friction Stay"],
-    "image": "/products/5.png",
+    "image": "../Products/mosquitonet5.jpeg",
     "badge": "Top Rated",
     "badgeColor": "bg-[#0c5940]"
   },
