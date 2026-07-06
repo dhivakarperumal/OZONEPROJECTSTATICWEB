@@ -62,16 +62,16 @@ export default function Gallery() {
           </div>
         </div>
 
-        <div className={filter === "All" ? "grid grid-cols-12 gap-4" : "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 auto-rows-[200px]"}>
+        <div className={filter === "All" ? "grid grid-cols-1 lg:grid-cols-12 gap-4" : "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 auto-rows-[200px]"}>
 
           {filter === "All" ? (
             <>
               {/* Left */}
-              <div className="col-span-12 lg:col-span-6 flex flex-col gap-4">
+              <div className="col-span-1 lg:col-span-6 flex flex-col gap-4">
 
                 {/* Featured 1 */}
                 <div
-                  className="h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer"
+                  className="h-[300px] sm:h-[380px] lg:h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer"
                   onClick={() => handleImageClick(items[0])}
                 >
                   <img
@@ -87,7 +87,7 @@ export default function Gallery() {
 
                 {/* Featured 2 */}
                 <div
-                  className="h-[220px] rounded-3xl overflow-hidden relative group cursor-pointer"
+                  className="h-[200px] sm:h-[250px] lg:h-[220px] rounded-3xl overflow-hidden relative group cursor-pointer"
                   onClick={() => handleImageClick(items[5])}
                 >
                   <img
@@ -104,12 +104,12 @@ export default function Gallery() {
               </div>
 
               {/* Right */}
-              <div className="col-span-12 lg:col-span-6 grid grid-cols-2 gap-4">
+              <div className="col-span-1 lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                 {items.slice(1, 5).map((it) => (
                   <div
                     key={it.id}
-                    className="h-[340px] rounded-3xl overflow-hidden relative group cursor-pointer"
+                    className="h-[220px] sm:h-[280px] lg:h-[340px] rounded-3xl overflow-hidden relative group cursor-pointer"
                     onClick={() => handleImageClick(it)}
                   >
                     <img
