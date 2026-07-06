@@ -37,7 +37,7 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen bg-background">
-      <PageHeader title="Gallery" subtitle="Browse projects with interactive tiles and details." />
+      <PageHeader title="Gallery" />
 
       <PageContainer className="py-12">
 
