@@ -95,7 +95,7 @@ const HomeGallery = () => {
 
         {/* Masonry Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
-          {galleryItems.map((item, i) => (
+          {galleryItems.filter(item => item.featured).map((item, i) => (
             <GalleryCard key={item.id} item={item} index={i} onClick={setLightbox} />
           ))}
         </div>
