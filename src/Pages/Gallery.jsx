@@ -152,7 +152,7 @@ export default function Gallery() {
         </div>
 
          {/* Intro Section */}
-        <div className="mb-16">
+        <div className="mb-16 mt-16">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-4xl font-black text-heading mb-4">
