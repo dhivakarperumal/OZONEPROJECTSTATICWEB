@@ -1,0 +1,32 @@
+import {  useState } from "react";
+import { Outlet } from "react-router-dom";
+import Navbar from "./CommenComponents/Navbar";
+import Header from "./CommenComponents/Header";
+import Footer from "./CommenComponents/Footer";
+import "./index.css";
+
+import ScrollToTop from "./CommenComponents/ScrollToTop";
+import ScrollNavigator from "./CommenComponents/ScrollNavigator";
+import Loader from "./CommenComponents/Loader";
+
+function App() {
+   const [loading, setLoading] = useState(false);
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <ScrollToTop/>
+      <ScrollNavigator/>
+      <main className="flex-grow relative">
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;

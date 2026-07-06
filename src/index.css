@@ -1,0 +1,518 @@
+@import "tailwindcss";
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: "Poppins", sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+/* =====================================================
+   THEME COLORS
+===================================================== */
+
+@theme{
+
+  /* ========= PRIMARY (Navy) ========= */
+
+  --color-primary:#08124E;
+  --color-primary-light:#14206F;
+  --color-primary-dark:#040A2D;
+
+  /* ========= SKY BLUE ========= */
+
+  --color-secondary:#3FA9F5;
+  --color-secondary-light:#67BEFA;
+  --color-secondary-dark:#1B8FE5;
+
+  /* ========= GREEN ========= */
+
+  --color-success:#08C26A;
+  --color-success-light:#31D884;
+  --color-success-dark:#069B54;
+
+  /* ========= EXTRA COLORS ========= */
+
+  --color-accent:#3FA9F5;
+
+  --color-warning:#FACC15;
+
+  --color-danger:#EF4444;
+
+  /* ========= BACKGROUND ========= */
+
+  --color-background:#F8FAFC;
+
+  --color-surface:#FFFFFF;
+
+  --color-border:#E5E7EB;
+
+  --color-muted:#64748B;
+
+  --color-heading:#08124E;
+
+  --color-text:#334155;
+}
+
+
+/* =====================================================
+    COMMON STYLES
+===================================================== */
+
+::selection{
+    background:#08C26A;
+    color:white;
+}
+
+img{
+    user-select:none;
+}
+
+a{
+    transition:.3s;
+    text-decoration:none;
+}
+
+button{
+    cursor:pointer;
+    transition:.35s;
+}
+
+
+/* =====================================================
+    SCROLLBAR
+===================================================== */
+
+*{
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+}
+
+*::-webkit-scrollbar{
+    display:none;
+}
+
+
+/* =====================================================
+      ANIMATION
+===================================================== */
+
+@layer utilities{
+
+.animate-in{
+animation-duration:.5s;
+animation-fill-mode:both;
+}
+
+.fade-in{
+animation-name:fadeIn;
+}
+
+.slide-up{
+animation-name:slideUp;
+}
+
+.zoom-in{
+animation-name:zoomIn;
+}
+
+.float{
+animation:float 4s ease infinite;
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+@keyframes slideUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes zoomIn{
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+
+/* =====================================================
+    GRADIENT
+===================================================== */
+
+.gradient-primary{
+
+background:linear-gradient(
+135deg,
+#08124E,
+#14206F,
+#3FA9F5,
+#08C26A
+);
+
+background-size:300% 300%;
+
+animation:gradientMove 10s ease infinite;
+
+}
+
+@keyframes gradientMove{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+
+/* =====================================================
+      BUTTONS
+===================================================== */
+
+.btn-primary{
+
+background:#08124E;
+
+color:white;
+
+padding:14px 28px;
+
+border-radius:12px;
+
+font-weight:600;
+
+box-shadow:0 15px 35px rgba(8,18,78,.15);
+
+}
+
+.btn-primary:hover{
+
+background:#14206F;
+
+transform:translateY(-3px);
+
+}
+
+
+.btn-secondary{
+
+background:#08C26A;
+
+color:white;
+
+padding:14px 28px;
+
+border-radius:12px;
+
+font-weight:600;
+
+box-shadow:0 15px 35px rgba(8,194,106,.15);
+
+}
+
+.btn-secondary:hover{
+
+background:#069B54;
+
+transform:translateY(-3px);
+
+}
+
+
+/* =====================================================
+       CARD
+===================================================== */
+
+.card{
+
+background:white;
+
+border:1px solid #E5E7EB;
+
+border-radius:22px;
+
+padding:25px;
+
+transition:.35s;
+
+box-shadow:
+
+0 12px 35px rgba(8,18,78,.08);
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+
+0 20px 45px rgba(8,18,78,.12);
+
+}
+
+
+/* =====================================================
+      INPUT
+===================================================== */
+
+.input{
+
+width:100%;
+
+padding:14px;
+
+border-radius:12px;
+
+border:1px solid #E5E7EB;
+
+outline:none;
+
+transition:.3s;
+
+background:white;
+
+}
+
+.input:focus{
+
+border-color:#3FA9F5;
+
+box-shadow:
+
+0 0 0 5px rgba(63,169,245,.15);
+
+}
+
+
+/* =====================================================
+      LOADER
+===================================================== */
+
+.loader{
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+border:5px solid rgba(63,169,245,.2);
+
+border-top-color:#3FA9F5;
+
+border-right-color:#08C26A;
+
+animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+/* =====================================================
+       GLASS
+===================================================== */
+
+.glass{
+
+background:rgba(255,255,255,.7);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.5);
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+/* =====================================================
+      SECTION TITLE
+===================================================== */
+
+.section-title{
+
+font-size:42px;
+
+font-weight:700;
+
+color:#08124E;
+
+line-height:1.2;
+
+}
+
+.section-subtitle{
+
+font-size:18px;
+
+color:#64748B;
+
+line-height:1.8;
+
+}
+
+
+/* =====================================================
+      HERO
+===================================================== */
+
+.hero-bg{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#08124E,
+
+#14206F,
+
+#3FA9F5,
+
+#08C26A
+
+);
+
+background-size:400% 400%;
+
+animation:gradientMove 15s infinite;
+
+}
+
+
+/* =====================================================
+      PRINT
+===================================================== */
+
+@media print{
+
+nav,
+header,
+footer,
+button,
+.no-print,
+aside{
+
+display:none !important;
+
+}
+
+body{
+
+background:white;
+
+color:black;
+
+margin:0;
+
+padding:0;
+
+}
+
+*{
+
+-webkit-print-color-adjust:exact;
+
+print-color-adjust:exact;
+
+}
+
+.print-container{
+
+width:100%;
+
+padding:0;
+
+margin:0;
+
+}
+
+}
