@@ -108,6 +108,9 @@ export default function Gallery() {
             <p className="text-sm text-slate-500 mt-1">Complete Solutions</p>
           </div>
         </div>
+
+        {/* Gallery Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <div>
             <h2 className="text-2xl font-black text-heading">
               {filter === "All" ? "Projects Gallery" : `${filter} Gallery`}
@@ -129,6 +132,8 @@ export default function Gallery() {
             ))}
           </div>
         </div>
+
+        {/* Gallery Grid */}
 
         <div className={filter === "All" ? "grid grid-cols-1 lg:grid-cols-12 gap-4" : "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 auto-rows-[200px]"}>
 
