@@ -4,8 +4,10 @@ import HomeAbout from './HomeAbout'
 import HomeProducts from './HomeProducts'
 // import OfferBanner from './OfferBanner'
 import HomeFeatures from './HomeFeatures'
+import HomeServices from './HomeServices'
 import HomeReviews from './HomeReviews'
 import HomeGallery from './HomeGallery'
+import CompanyLogos from './CompanyLogos'
 
 const Home = () => {
   return (
@@ -15,8 +17,10 @@ const Home = () => {
       {/* <OfferBanner /> */}
       <HomeProducts />
       <HomeFeatures />
+      <HomeServices />
       <HomeGallery />
       <HomeReviews />
+      <CompanyLogos />
     </div>
   )
 }
