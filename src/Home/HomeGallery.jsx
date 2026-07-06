@@ -93,11 +93,68 @@ const HomeGallery = () => {
           </Link>
         </div>
 
-        {/* Masonry Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[250px]">
-          {galleryItems.filter(item => item.featured).map((item, i) => (
-            <GalleryCard key={item.id} item={item} index={i} onClick={setLightbox} />
-          ))}
+        {/* Masonry Grid - Same as Gallery Component */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          {/* Left */}
+          <div className="col-span-1 lg:col-span-6 flex flex-col gap-4">
+            
+            {/* Featured 1 - Windows */}
+            <div
+              className="h-[300px] sm:h-[380px] lg:h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer"
+              onClick={() => setLightbox(galleryItems.filter(item => item.featured)[0])}
+            >
+              <img
+                src={galleryItems.filter(item => item.featured)[0]?.image}
+                alt="Featured"
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                onError={(e) => { e.target.style.display = "none"; }}
+              />
+              <div className="absolute top-4 left-4 z-10 bg-white text-sm px-3 py-1.5 rounded-full text-slate-800 font-semibold tracking-wider shadow-lg">
+                {galleryItems.filter(item => item.featured)[0]?.category}
+              </div>
+            </div>
+
+            {/* Featured 2 - Screens */}
+            <div
+              className="h-[200px] sm:h-[250px] lg:h-[220px] rounded-3xl overflow-hidden relative group cursor-pointer"
+              onClick={() => setLightbox(galleryItems.filter(item => item.featured)[5])}
+            >
+              <img
+                src={galleryItems.filter(item => item.featured)[5]?.image}
+                alt="Featured"
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                onError={(e) => { e.target.style.display = "none"; }}
+              />
+              <div className="absolute top-4 left-4 z-10 bg-white text-sm px-3 py-1.5 rounded-full text-slate-800 font-semibold tracking-wider shadow-lg">
+                {galleryItems.filter(item => item.featured)[5]?.category}
+              </div>
+            </div>
+
+          </div>
+
+          {/* Right */}
+          <div className="col-span-1 lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            {galleryItems.filter(item => item.featured).slice(1, 5).map((item) => (
+              <div
+                key={item.id}
+                className="h-[220px] sm:h-[280px] lg:h-[340px] rounded-3xl overflow-hidden relative group cursor-pointer"
+                onClick={() => setLightbox(item)}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                  onError={(e) => { e.target.style.display = "none"; }}
+                />
+                <div className="absolute top-4 left-4 z-10 bg-white text-sm px-3 py-1.5 rounded-full text-slate-800 font-semibold tracking-wider shadow-lg">
+                  {item.category}
+                </div>
+              </div>
+            ))}
+
+          </div>
+
         </div>
 
       </div>
