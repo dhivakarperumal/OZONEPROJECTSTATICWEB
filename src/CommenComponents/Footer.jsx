@@ -119,11 +119,12 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <h4 className="text-[13px] font-bold mb-4 tracking-wider uppercase">QUICK LINKS</h4>
             <ul className="space-y-2.5 text-[13px] text-gray-400">
+              <li><Link to="/" className="hover:text-white transition">Home</Link></li>
               <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
-              <li><Link to="/why-ozone" className="hover:text-white transition">Why Ozone</Link></li>
               <li><Link to="/products" className="hover:text-white transition">Products</Link></li>
-              <li><Link to="/fitment-systems" className="hover:text-white transition">Fitment Systems</Link></li>
-              <li><Link to="/balcony-screens" className="hover:text-white transition">Balcony Screens</Link></li>
+              <li><Link to="/services" className="hover:text-white transition">Services</Link></li>
+              <li><Link to="/gallery" className="hover:text-white transition">Gallery</Link></li>
+              <li><Link to="/contact" className="hover:text-white transition">Contact Us</Link></li>
             </ul>
           </div>
 
