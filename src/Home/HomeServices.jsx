@@ -225,32 +225,43 @@ const HomeServices = () => {
               
               return (
                 <SwiperSlide key={service.id} className="h-auto">
-                  <div className="bg-white rounded-2xl p-6 sm:p-8 h-full border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
-                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#0c5940]/10 to-teal-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 text-[#0c5940]">
-                      <IconComponent size={32} strokeWidth={1.5} />
+                  <div className="relative bg-white rounded-3xl p-8 h-full border border-gray-100/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(12,89,64,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col group overflow-hidden z-10">
+                    
+                    {/* Top Accent Line */}
+                    <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0c5940] to-[#38B6FF] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Background glow on hover */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#0c5940]/5 rounded-bl-full -z-10 group-hover:bg-[#0c5940]/10 transition-colors duration-500"></div>
+
+                    {/* Header: Icon & Title */}
+                    <div className="flex items-start gap-4 mb-5">
+                      <div className="w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-br from-[#0c5940] to-teal-700 flex items-center justify-center text-white shadow-lg shadow-[#0c5940]/30 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                        <IconComponent size={26} strokeWidth={1.5} />
+                      </div>
+                      <h3 className="text-[17px] font-black text-gray-900 leading-tight group-hover:text-[#0c5940] transition-colors pt-1">
+                        {service.title}
+                      </h3>
                     </div>
                     
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#0c5940] transition-colors">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-gray-500 text-sm mb-6 flex-grow">
+                    {/* Description */}
+                    <p className="text-gray-500 text-[13px] leading-relaxed mb-6 flex-grow">
                       {service.description}
                     </p>
                     
-                    <ul className="space-y-2 border-t border-gray-100 pt-5">
-                      {service.items.slice(0, 4).map((item, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-gray-600">
-                          <LucideIcons.Check size={16} className="text-teal-500 mr-2 shrink-0" />
-                          <span className="truncate">{item}</span>
-                        </li>
+                    {/* Feature Pills instead of a vertical list */}
+                    <div className="flex flex-wrap gap-2 mt-auto border-t border-gray-50 pt-5">
+                      {service.items.slice(0, 3).map((item, idx) => (
+                        <span key={idx} className="inline-flex items-center px-2.5 py-1 rounded-full bg-[#f4faf7] border border-[#0c5940]/10 text-[#0c5940] text-[10px] font-bold uppercase tracking-wider">
+                          {item}
+                        </span>
                       ))}
-                      {service.items.length > 4 && (
-                        <li className="text-xs font-semibold text-[#0c5940] pt-2">
-                          + {service.items.length - 4} more options
-                        </li>
+                      {service.items.length > 3 && (
+                        <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-gray-50 text-gray-500 text-[10px] font-bold uppercase tracking-wider">
+                          +{service.items.length - 3} More
+                        </span>
                       )}
-                    </ul>
+                    </div>
+
                   </div>
                 </SwiperSlide>
               );
