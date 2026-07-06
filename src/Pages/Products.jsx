@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import PageContainer from "../CommenComponents/PageContainer";
 import PageHeader from "../CommenComponents/PageHeader";
 import { Search, Filter, ChevronRight, SlidersHorizontal, Check, ChevronLeft, X, CheckCircle2 } from "lucide-react";
@@ -366,10 +367,13 @@ export default function Products() {
 
                 {/* Action Buttons */}
                 <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-4">
-                  <button className="flex-1 bg-gradient-to-r from-[#0c5940] to-[#0a4632] hover:from-[#09422f] hover:to-[#073526] text-white py-4 px-8 rounded-xl font-bold text-lg transition-all duration-300 shadow-[0_8px_20px_rgba(12,89,64,0.25)] hover:shadow-[0_12px_25px_rgba(12,89,64,0.35)] hover:-translate-y-1 flex items-center justify-center gap-2 group">
+                  <Link 
+                    to="/contact"
+                    className="flex-1 bg-gradient-to-r from-[#0c5940] to-[#0a4632] hover:from-[#09422f] hover:to-[#073526] text-white py-4 px-8 rounded-xl font-bold text-lg transition-all duration-300 shadow-[0_8px_20px_rgba(12,89,64,0.25)] hover:shadow-[0_12px_25px_rgba(12,89,64,0.35)] hover:-translate-y-1 flex items-center justify-center gap-2 group"
+                  >
                     Request a Quote
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
                   <button 
                     onClick={() => setSelectedProduct(null)}
                     className="sm:flex-none px-8 py-4 rounded-xl font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors duration-300"
