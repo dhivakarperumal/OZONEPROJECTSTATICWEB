@@ -52,10 +52,10 @@ const Navbar = () => {
   };
 
   const navClass = ({ isActive }) =>
-    `px-3 py-2 text-sm font-semibold tracking-wide transition flex flex-col justify-center relative ${
+    `px-3 py-2 text-sm font-semibold tracking-wide transition flex flex-col justify-center relative group ${
       isActive
-        ? "text-[#0c5940] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#0c5940]"
-        : "text-gray-800 hover:text-[#0c5940]"
+        ? "text-[#0c5940] after:content-[''] after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2.5px] after:bg-[#0c5940]"
+        : "text-gray-800 hover:text-[#0c5940] after:content-[''] after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[2.5px] after:bg-[#0c5940] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
     }`;
 
   return (
