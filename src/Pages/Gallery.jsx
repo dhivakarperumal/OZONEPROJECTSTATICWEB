@@ -62,64 +62,64 @@ export default function Gallery() {
           </div>
         </div>
 
-      <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-12 gap-4">
 
-  {/* Left */}
-  <div className="col-span-12 lg:col-span-6 flex flex-col gap-4">
+          {/* Left */}
+          <div className="col-span-12 lg:col-span-6 flex flex-col gap-4">
 
-    {/* Windows */}
-    <div
-      className="h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer"
-      onClick={() => handleImageClick(items[0])}
-    >
-      <img
-        src={items[0]?.image}
-        className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-      />
-    </div>
+            {/* Windows */}
+            <div
+              className="h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer"
+              onClick={() => handleImageClick(items[0])}
+            >
+              <img
+                src={items[0]?.image}
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              />
+            </div>
 
-    {/* Screens */}
-    <div
-      className="h-[220px] rounded-3xl overflow-hidden relative group cursor-pointer"
-      onClick={() => handleImageClick(items[5])}
-    >
-      <img
-        src={items[5]?.image}
-        className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-      />
-    </div>
+            {/* Screens */}
+            <div
+              className="h-[220px] rounded-3xl overflow-hidden relative group cursor-pointer"
+              onClick={() => handleImageClick(items[5])}
+            >
+              <img
+                src={items[5]?.image}
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              />
+            </div>
 
-  </div>
+          </div>
 
-  {/* Right */}
-  <div className="col-span-12 lg:col-span-6 grid grid-cols-2 gap-4">
+          {/* Right */}
+          <div className="col-span-12 lg:col-span-6 grid grid-cols-2 gap-4">
 
-    {items.slice(1, 5).map((it) => (
-      <div
-        key={it.id}
-        className="h-[340px] rounded-3xl overflow-hidden relative group cursor-pointer"
-        onClick={() => handleImageClick(it)}
-      >
-        <img
-          src={it.image}
-          className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-        />
-      </div>
-    ))}
+            {items.slice(1, 5).map((it) => (
+              <div
+                key={it.id}
+                className="h-[340px] rounded-3xl overflow-hidden relative group cursor-pointer"
+                onClick={() => handleImageClick(it)}
+              >
+                <img
+                  src={it.image}
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                />
+              </div>
+            ))}
 
-  </div>
+          </div>
 
-</div>
+        </div>
 
         {/* Modal / Detail */}
         {modal && (
           <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4" onClick={() => setModal(null)}>
-            <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl" onClick={(e)=>e.stopPropagation()}>
+            <div className="relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
               <button onClick={() => setModal(null)} className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center z-20">
                 <X size={18} />
               </button>
 
-              <img src={modal.image} alt={modal.title} className="w-full h-72 object-cover bg-gray-100" onError={(e)=>e.target.style.display='none'} />
+              <img src={modal.image} alt={modal.title} className="w-full h-72 object-cover bg-gray-100" onError={(e) => e.target.style.display = 'none'} />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-heading">{modal.title}</h3>
                 <p className="text-xs text-slate-500 uppercase mt-1">{modal.category}</p>
