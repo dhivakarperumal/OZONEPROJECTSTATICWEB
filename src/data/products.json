@@ -55,7 +55,7 @@
     "category": "Screens",
     "description": "Retractable and fixed mosquito mesh screen systems for windows and doors, maintaining airflow while keeping insects out.",
     "features": ["Retractable", "Fine Mesh", "Easy Install"],
-    "image": "/products/6.png",
+    "image": "../Products/mosquitonet6.jpeg",
     "badge": "Trending",
     "badgeColor": "bg-rose-500"
   },
@@ -65,7 +65,7 @@
     "category": "Doors",
     "description": "Industrial-grade sliding door track and roller systems for heavy glass and wooden doors — whisper-quiet operation guaranteed.",
     "features": ["Silent Glide", "Heavy Load", "Durable"],
-    "image": "/products/7.png",
+    "image": "../Products/mosquitonet7.jpeg",
     "badge": "Heavy Duty",
     "badgeColor": "bg-[var(--primary)]"
   },
@@ -75,7 +75,7 @@
     "category": "Balcony",
     "description": "Complete balcony enclosure solutions combining glass panels, aluminium frames and retractable screens — your balcony, reinvented.",
     "features": ["Full Enclosure", "Glass Panels", "Retractable"],
-    "image": "/products/8.png",
+    "image": "../Products/mosquitonet8.jpeg",
     "badge": "Complete Kit",
     "badgeColor": "bg-[#0c5940]"
   }

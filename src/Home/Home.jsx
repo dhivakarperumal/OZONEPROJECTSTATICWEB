@@ -3,7 +3,7 @@ import Hero from './Hero'
 import HomeAbout from './HomeAbout'
 import HomeProducts from './HomeProducts'
 // import OfferBanner from './OfferBanner'
-import HomeServices from './HomeServices'
+import HomeFeatures from './HomeFeatures'
 import HomeReviews from './HomeReviews'
 import HomeGallery from './HomeGallery'
 
@@ -14,7 +14,7 @@ const Home = () => {
       <HomeAbout />
       {/* <OfferBanner /> */}
       <HomeProducts />
-      <HomeServices />
+      <HomeFeatures />
       <HomeGallery />
       <HomeReviews />
     </div>
