@@ -56,7 +56,6 @@ export default function Gallery() {
             <div
               key={it.id}
               className={`relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm group cursor-pointer ${it.span}`}
-              onClick={() => filter !== "All" && setModal(it)}
             >
               <img src={it.image} alt={it.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={(e)=>e.target.style.display='none'} />
 
