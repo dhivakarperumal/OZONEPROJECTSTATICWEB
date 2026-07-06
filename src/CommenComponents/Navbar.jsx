@@ -231,8 +231,8 @@ const Navbar = () => {
           </Link>
 
           <div className="flex flex-col gap-2">
-            <a href="tel:+919876543210" className="flex items-center gap-2 text-white/60 text-xs hover:text-white transition">
-              <Phone size={13} /> +91 98765 43210
+            <a href="tel:+918950678907" className="flex items-center gap-2 text-white/60 text-xs hover:text-white transition">
+              <Phone size={13} /> +91 89506 78907
             </a>
             <a href="mailto:support@ozone.com" className="flex items-center gap-2 text-white/60 text-xs hover:text-white transition">
               <Mail size={13} /> support@ozone.com

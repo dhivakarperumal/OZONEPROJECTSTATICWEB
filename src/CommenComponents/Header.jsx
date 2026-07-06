@@ -18,9 +18,9 @@ const Header = () => {
         <div className="flex items-center justify-between py-1">
 
           {/* Left - Contact */}
-          <div className="flex items-center gap-3 font-medium">
-            <Phone size={18} />
-            <span>+91 98765 43210</span>
+          <div className="flex items-center gap-1.5 md:gap-2">
+            <Phone size={14} className="md:w-[15px] md:h-[15px]" />
+            <span>+91 89506 78907</span>
           </div>
 
           {/* Center - Marquee Offers */}

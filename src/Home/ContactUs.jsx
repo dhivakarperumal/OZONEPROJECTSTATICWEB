@@ -64,7 +64,7 @@ const ContactUs = () => {
     {
       icon: Phone,
       title: "Phone Number",
-      lines: ["+91 89404 50960", "+91 91598 50960"],
+      lines: ["+91 89506 78907", "+91 91598 50960"],
     },
     {
       icon: Mail,
@@ -154,7 +154,7 @@ const ContactUs = () => {
                       <p className="text-[#081A59] text-xl font-black leading-tight">One Call Away!</p>
                     </div>
                     <a
-                      href="tel:+918940450960"
+                      href="tel:+918950678907"
                       className="ml-auto bg-[#081A59] text-white text-xs font-bold px-4 py-2 rounded-xl hover:bg-[#0c2e50] transition"
                     >
                       Call Now

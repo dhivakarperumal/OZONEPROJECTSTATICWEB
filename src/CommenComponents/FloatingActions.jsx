@@ -3,8 +3,8 @@ import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 
 const FloatingActions = () => {
   // Update these numbers as needed
-  const whatsappNumber = "919876543210"; 
-  const phoneNumber = "+919876543210";
+  const whatsappNumber = "918950678907"; 
+  const phoneNumber = "+918950678907";
   const whatsappMessage = "Hi, I'm interested in Ozone Mosquito Screens. Can you help me?";
 
   return (
