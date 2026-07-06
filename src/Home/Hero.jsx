@@ -1,72 +1,111 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, PlayCircle, ShieldCheck } from 'lucide-react';
-import heroImg from '../assets/hero.png';
+import { ArrowRight, PlayCircle } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+
+const slidesData = [
+  {
+    id: 1,
+    tag: "Premium Fitment Systems",
+    title: "Transform Your Space with",
+    highlight: "Ozone",
+    desc: "Discover our world-class architectural hardware and tailor-made solutions designed for unmatched durability, premium aesthetics, and perfect fitment.",
+    bgImage: "/Hero/1.png"
+  },
+  {
+    id: 2,
+    tag: "Innovative Engineering",
+    title: "Unmatched Durability &",
+    highlight: "Strength",
+    desc: "Engineered to perfection. Our products undergo rigorous testing to ensure they stand the test of time while elevating your architectural spaces.",
+    bgImage: "/Hero/2.png"
+  },
+  {
+    id: 3,
+    tag: "Tailored For You",
+    title: "Aesthetically Crafted",
+    highlight: "Solutions",
+    desc: "From balcony screens to custom fitments, we provide bespoke hardware solutions that seamlessly blend with your modern design vision.",
+    bgImage: "/Hero/3.png"
+  },
+  {
+    id: 4,
+    tag: "Global Standard",
+    title: "State of the Art",
+    highlight: "Hardware",
+    desc: "Experience flawless integration and premium finishes with our architecturally superior hardware collections designed for every space.",
+    bgImage: "/Hero/4.png"
+  }
+];
 
 const Hero = () => {
   return (
-    <section className="hero relative overflow-hidden py-16 lg:py-24">
-      <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          
-          {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
-              <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
-              <span className="text-sm font-bold tracking-wide text-white uppercase">Premium Fitment Systems</span>
-            </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 tracking-tight leading-[1.1]">
-              Transform Your Space with <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-[var(--secondary)]">Ozone</span>
-            </h1>
-            
-            <p className="text-base sm:text-lg lg:text-xl mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed text-[#dfe7ff]">
-              Discover our world-class architectural hardware and tailor-made solutions designed for unmatched durability, premium aesthetics, and perfect fitment.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <Link to="/products" className="w-full sm:w-auto px-8 py-4 bg-[#0c5940] hover:bg-[#094230] text-white rounded-full font-semibold transition flex items-center justify-center gap-2 shadow-lg shadow-[#0c5940]/40">
-                Explore Products <ArrowRight size={20} />
-              </Link>
-              <Link to="/contact" className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-full font-semibold transition backdrop-blur-md flex items-center justify-center gap-2">
-                <PlayCircle size={20} /> Get a Quote
-              </Link>
-            </div>
-          </div>
-          
-          {/* Image Content */}
-          <div className="flex-1 relative w-full mt-10 lg:mt-0">
-            {/* Soft glowing background behind image */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[var(--secondary)] to-teal-400 opacity-20 rounded-full blur-3xl transform scale-110"></div>
-            
-            <div className="relative z-10 w-full max-w-md lg:max-w-full mx-auto">
-              <img 
-                src={heroImg} 
-                alt="Ozone Fitment Systems" 
-                className="w-full h-auto object-cover rounded-2xl shadow-2xl border border-white/20"
-              />
+    <section className="relative overflow-hidden bg-gray-900 h-[600px] lg:h-[700px]">
+      <Swiper
+        modules={[Autoplay, Pagination, EffectFade]}
+        effect="fade"
+        spaceBetween={0}
+        slidesPerView={1}
+        loop={true}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        pagination={{ clickable: true, dynamicBullets: true }}
+        className="w-full h-full"
+      >
+        {slidesData.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <div className="relative w-full h-full flex items-center">
+              {/* Full Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[10000ms] scale-105"
+                style={{ backgroundImage: `url('${slide.bgImage}')` }}
+              ></div>
               
-              {/* Floating Quality Badge */}
-              <div className="absolute -bottom-6 -left-6 lg:bottom-10 lg:-left-12 bg-white text-gray-800 p-4 rounded-xl shadow-xl animate-[bounce_4s_infinite]">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-[#e6f4ed] rounded-full flex items-center justify-center text-[#0c5940]">
-                    <ShieldCheck size={24} />
+              {/* Dark Overlay for better text readability */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+              
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-16">
+                <div className="max-w-3xl">
+                  
+                  {/* Text Content */}
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+                    <span className="text-sm font-bold tracking-wide text-white uppercase">{slide.tag}</span>
                   </div>
-                  <div className="text-left">
-                    <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Certified</p>
-                    <p className="text-sm font-bold text-gray-900">Premium Quality</p>
+                  
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 tracking-tight leading-[1.1] text-white">
+                    {slide.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-[var(--secondary)]">{slide.highlight}</span>
+                  </h1>
+                  
+                  <p className="text-base sm:text-lg lg:text-xl mb-10 leading-relaxed text-gray-200">
+                    {slide.desc}
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
+                    <Link to="/products" className="w-full sm:w-auto px-8 py-4 bg-[#0c5940] hover:bg-[#094230] text-white rounded-full font-semibold transition flex items-center justify-center gap-2 shadow-lg shadow-[#0c5940]/40">
+                      Explore Products <ArrowRight size={20} />
+                    </Link>
+                    <Link to="/contact" className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-full font-semibold transition backdrop-blur-md flex items-center justify-center gap-2">
+                      <PlayCircle size={20} /> Get a Quote
+                    </Link>
                   </div>
+                  
                 </div>
               </div>
             </div>
-          </div>
-          
-        </div>
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
       
-      {/* Background decorations */}
-      <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 rounded-full bg-[var(--secondary)] blur-3xl opacity-20 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-96 h-96 rounded-full bg-teal-400 blur-3xl opacity-20 pointer-events-none"></div>
+      <style dangerouslySetInnerHTML={{__html: `
+        .swiper-pagination-bullet { background: white; opacity: 0.5; }
+        .swiper-pagination-bullet-active { background: var(--accent); opacity: 1; }
+        /* Optional gentle zoom effect on active slide */
+        .swiper-slide-active .bg-cover { transform: scale(1); }
+      `}} />
     </section>
   );
 };
