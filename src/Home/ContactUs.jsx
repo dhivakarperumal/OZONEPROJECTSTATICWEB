@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import {
   MapPin,
   Phone,
@@ -7,6 +8,7 @@ import {
   Send,
   ChevronDown,
   CheckCircle,
+  XCircle,
   Headset,
   ShieldCheck,
   Users,
@@ -15,7 +17,20 @@ import {
 } from "lucide-react";
 import PageHeader from "../CommenComponents/PageHeader";
 
+// ─── EmailJS Credentials ──────────────────────────────────────────────────────
+// 1. Sign up at https://www.emailjs.com (free plan: 200 emails/month)
+// 2. Create a Service  → paste the Service ID  below
+// 3. Create a Template → paste the Template ID below
+//    Template variables to use: {{name}}, {{email}}, {{phone}}, {{subject}}, {{message}}, {{time}}
+// 4. Go to Account → API Keys → paste your Public Key below
+const EMAILJS_SERVICE_ID  = "service_3le3tob";
+const EMAILJS_TEMPLATE_ID = "template_8251c9a";
+const EMAILJS_PUBLIC_KEY  = "sfdUmNQPJVB-Z5nPp";
+// ─────────────────────────────────────────────────────────────────────────────
+
 const ContactUs = () => {
+  const formRef = useRef(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,21 +38,39 @@ const ContactUs = () => {
     subject: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
-  const [sending, setSending] = useState(false);
+  const [submitted, setSubmitted]   = useState(false);
+  const [sending,   setSending]     = useState(false);
+  const [sendError, setSendError]   = useState("");
 
   const handleChange = (e) =>
     setFormData((p) => ({ ...p, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => {
-      setSending(false);
+    setSendError("");
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          ...formData,
+          from_name: formData.name,
+          from_email: formData.email,
+          time: new Date().toLocaleString(),
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
       setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 5000);
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-    }, 1500);
+      setTimeout(() => setSubmitted(false), 6000);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setSendError("Failed to send message. Please try again or contact us directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const subjectOptions = [
@@ -91,7 +124,7 @@ const ContactUs = () => {
 
       {/* ─── MAIN SECTION ─── */}
       <section className="py-14 px-5 md:py-20">
-        <div className="container mx-auto px-12 sm:px-10 lg:px-8 max-w-8xl">
+        <div className="container mx-auto px-0 sm:px-10 lg:px-8 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
 
             {/* ── LEFT SIDE ── */}
@@ -144,18 +177,18 @@ const ContactUs = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#081A59]/80 via-[#081A59]/20 to-transparent" />
 
                 {/* CTA pill */}
-                <div className="absolute bottom-5 left-5 right-5">
-                  <div className="inline-flex items-center gap-4 bg-white/95 backdrop-blur-md rounded-2xl px-5 py-4 shadow-2xl">
-                    <div className="w-12 h-12 rounded-full bg-[#081A59] flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <PhoneCall className="w-5 h-5 text-white" />
+                <div className="absolute bottom-4 sm:bottom-5 left-1/2 -translate-x-1/2 w-[92%] sm:w-auto sm:left-5 sm:translate-x-0 sm:right-5">
+                  <div className="flex items-center gap-3 sm:gap-4 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:px-5 sm:py-4 shadow-2xl">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#081A59] flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <PhoneCall className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                     </div>
                     <div>
-                      <p className="text-[#081A59] text-[11px] font-semibold opacity-70">We are just</p>
-                      <p className="text-[#081A59] text-xl font-black leading-tight">One Call Away!</p>
+                      <p className="text-[#081A59] text-[10px] sm:text-[11px] font-semibold opacity-70">We are just</p>
+                      <p className="text-[#081A59] text-base sm:text-xl font-black leading-tight">One Call Away!</p>
                     </div>
                     <a
                       href="tel:+918950678907"
-                      className="ml-auto bg-[#081A59] text-white text-xs font-bold px-4 py-2 rounded-xl hover:bg-[#0c2e50] transition"
+                      className="ml-auto bg-[#081A59] text-white text-[10px] sm:text-xs font-bold px-3 py-2 sm:px-4 sm:py-2 rounded-xl hover:bg-[#0c2e50] transition whitespace-nowrap"
                     >
                       Call Now
                     </a>
@@ -191,7 +224,7 @@ const ContactUs = () => {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
                   {/* Name + Email */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="relative">
@@ -273,6 +306,14 @@ const ContactUs = () => {
                     </span>
                   </div>
 
+                  {/* Error Banner */}
+                  {sendError && (
+                    <div className="flex items-start gap-3 bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm">
+                      <XCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                      <span>{sendError}</span>
+                    </div>
+                  )}
+
                   {/* Submit */}
                   <button
                     type="submit"
@@ -300,8 +341,8 @@ const ContactUs = () => {
 
       {/* ─── STATS BAR ─── */}
       <section className="bg-[#081A59] px-5 py-10">
-        <div className="container mx-auto px-12 sm:px-6 lg:px-8 max-w-8xl">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="container mx-auto px-0 sm:px-6 lg:px-8 max-w-8xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((s, i) => (
               <div key={i} className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0">
@@ -319,7 +360,7 @@ const ContactUs = () => {
 
       {/* ─── MAP SECTION ─── */}
       <section className="py-14 px-5 bg-white">
-        <div className="container mx-auto px-12 sm:px-6 lg:px-8 max-w-8xl">
+        <div className="container mx-auto px-0 sm:px-6 lg:px-8 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
 
             {/* Map */}

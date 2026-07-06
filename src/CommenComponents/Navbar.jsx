@@ -17,9 +17,9 @@ const SwooshMenuIcon = () => (
 const navLinks = [
   { to: "/", label: "Home",            color: "#38B6FF" },
   { to: "/about", label: "About Us",   color: "#0c5940" },
-  { to: "/services", label: "Services", color: "#38B6FF" },
+  { to: "/products", label: "Products", color: "#38B6FF" },
+  { to: "/services", label: "Services", color: "#0c5940" },
   { to: "/gallery", label: "Gallery",  color: "#081A59" },
-  { to: "/downloads", label: "Downloads", color: "#0c5940" },
   { to: "/contact", label: "Contact Us", color: "#38B6FF" },
 ];
 
@@ -163,61 +163,9 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          {/* Products accordion */}
-          <div className="rounded-2xl overflow-hidden">
-            <button
-              onClick={() => setProductsOpen(!productsOpen)}
-              className="w-full flex items-center justify-between px-4 py-4 font-bold text-base text-white/80 hover:bg-white/10 hover:text-white transition-all rounded-2xl"
-            >
-              <span className="flex items-center gap-4">
-                <span className="w-2 h-8 rounded-full flex-shrink-0 bg-[#0c5940]" />
-                Products
-              </span>
-              <ChevronDown
-                size={18}
-                className={`text-white/60 transition-transform duration-300 ${productsOpen ? "rotate-180 text-white" : ""}`}
-              />
-            </button>
-            <div className={`overflow-hidden transition-all duration-300 ${productsOpen ? "max-h-32" : "max-h-0"}`}>
-              <div className="pl-12 pr-4 py-2 flex flex-col gap-1">
-                <Link
-                  to="/products"
-                  onClick={closeMobile}
-                  className="py-2.5 px-3 text-sm text-white/70 hover:text-white font-semibold rounded-xl hover:bg-white/10 transition"
-                >
-                  → All Products
-                </Link>
-              </div>
-            </div>
-          </div>
 
-          {/* Fitment Systems accordion */}
-          <div className="rounded-2xl overflow-hidden">
-            <button
-              onClick={() => setFitmentOpen(!fitmentOpen)}
-              className="w-full flex items-center justify-between px-4 py-4 font-bold text-base text-white/80 hover:bg-white/10 hover:text-white transition-all rounded-2xl"
-            >
-              <span className="flex items-center gap-4">
-                <span className="w-2 h-8 rounded-full flex-shrink-0 bg-[#38B6FF]" />
-                Fitment Systems
-              </span>
-              <ChevronDown
-                size={18}
-                className={`text-white/60 transition-transform duration-300 ${fitmentOpen ? "rotate-180 text-white" : ""}`}
-              />
-            </button>
-            <div className={`overflow-hidden transition-all duration-300 ${fitmentOpen ? "max-h-32" : "max-h-0"}`}>
-              <div className="pl-12 pr-4 py-2 flex flex-col gap-1">
-                <Link
-                  to="/fitment-systems"
-                  onClick={closeMobile}
-                  className="py-2.5 px-3 text-sm text-white/70 hover:text-white font-semibold rounded-xl hover:bg-white/10 transition"
-                >
-                  → All Systems
-                </Link>
-              </div>
-            </div>
-          </div>
+
+         
         </div>
 
         {/* Footer: CTA + contact + socials */}
