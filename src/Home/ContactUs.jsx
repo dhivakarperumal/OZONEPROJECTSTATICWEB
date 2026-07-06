@@ -89,47 +89,47 @@ const departments = [
   {
     icon: Headset,
     title: "Customer Support",
-    desc: "For order updates, tracking, and general queries.",
-    email: "support@sareeshop.com",
+    desc: "For product updates, tracking, and general queries.",
+    email: "support@ozone.com",
     phone: "+91 98765 43210",
   },
   {
     icon: Briefcase,
-    title: "Wholesale & Bulk",
-    desc: "For B2B inquiries and bulk order discounts.",
-    email: "b2b@sareeshop.com",
+    title: "B2B & Projects",
+    desc: "For project inquiries and bulk order discounts.",
+    email: "b2b@ozone.com",
     phone: "+91 98765 54321",
   },
   {
     icon: Scissors,
-    title: "Custom Stitching",
-    desc: "Discuss your measurements and custom blouse requirements.",
-    email: "tailor@sareeshop.com",
+    title: "Installation & Service",
+    desc: "Discuss fitment, installation, and maintenance requirements.",
+    email: "service@ozone.com",
     phone: "+91 98765 12345",
   },
   {
     icon: Camera,
-    title: "Press & Media",
-    desc: "For PR, collaborations, and media inquiries.",
-    email: "pr@sareeshop.com",
+    title: "Dealership & Franchise",
+    desc: "For dealership, collaborations, and business inquiries.",
+    email: "partners@ozone.com",
     phone: "+91 98765 67890",
   },
 ];
 
 const team = [
   {
-    name: "Ananya Sharma",
-    role: "Senior Stylist",
+    name: "Rajeev Kumar",
+    role: "Technical Consultant",
     img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
   },
   {
-    name: "Rahul Verma",
+    name: "Vikram Singh",
     role: "Support Lead",
     img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
   },
   {
-    name: "Priya Patel",
-    role: "Bridal Consultant",
+    name: "Anita Sharma",
+    role: "Project Manager",
     img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
   },
 ];
@@ -154,28 +154,28 @@ const processSteps = [
 
 const faqs = [
   {
-    q: "What types of sarees do you offer?",
-    a: "We offer a wide range including Kanchipuram Silk, Banarasi, Chiffon, Georgette, Cotton, Linen, and designer sarees. Each piece is handpicked for quality and authenticity.",
+    q: "What types of architectural hardware do you offer?",
+    a: "We offer a wide range including glass fittings, balcony screens, automatic doors, and railing systems. Each piece is crafted for quality and durability.",
   },
   {
-    q: "Do you provide international shipping?",
-    a: "Yes! We ship worldwide. International delivery typically takes 7-14 business days. Shipping charges vary by location and are calculated at checkout.",
+    q: "Do you provide pan-India shipping?",
+    a: "Yes! We ship across India. Delivery typically takes 5-10 business days depending on the location. Shipping charges vary and are calculated at checkout.",
   },
   {
-    q: "What is your return & exchange policy?",
-    a: "We offer a 7-day easy return and exchange policy. Items must be unworn, unwashed, and in original packaging with tags intact. Custom orders are non-returnable.",
+    q: "What is your warranty policy?",
+    a: "We offer standard warranties across all our products. Custom fitments and installations are covered under our specific project warranties.",
   },
   {
-    q: "Can I get custom blouse stitching?",
-    a: "Absolutely! We provide custom blouse stitching services. Share your measurements and preferred design, and our expert tailors will craft the perfect blouse for you.",
+    q: "Do you provide custom installation?",
+    a: "Absolutely! We provide custom fitment and installation services through our certified technical experts. Share your requirements and we'll handle the rest.",
   },
   {
-    q: "Do you offer bulk or wholesale pricing?",
-    a: "Yes, we offer special pricing for bulk orders and wholesale buyers. Please use the Wholesale department contact above to discuss your requirements.",
+    q: "Do you offer B2B pricing for large projects?",
+    a: "Yes, we offer special pricing for bulk orders and commercial projects. Please use the B2B & Projects department contact above to discuss your requirements.",
   },
   {
-    q: "How can I track my order?",
-    a: "Once your order is shipped, you'll receive a tracking link via email and SMS. You can also track your order from your account dashboard.",
+    q: "How can I track my order/project status?",
+    a: "Once your order is confirmed, you'll receive a tracking link via email and SMS. You can also contact your assigned project manager for updates.",
   },
 ];
 
@@ -183,10 +183,10 @@ const subjectOptions = [
   "General Inquiry",
   "Order Related",
   "Product Information",
-  "Bulk / Wholesale Order",
-  "Returns & Exchange",
-  "Custom Stitching",
-  "Feedback & Suggestions",
+  "Project / Bulk Order",
+  "Warranty & Maintenance",
+  "Installation Request",
+  "Dealership Inquiry",
   "Other",
 ];
 
@@ -404,35 +404,50 @@ const ContactUs = () => {
         <div className="relative z-20 py-15">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {departments.map((dept, i) => (
-              <FadeIn key={i} delay={i * 100}>
-                <div className="bg-white rounded-3xl p-6 border border-primary/5 shadow-xl shadow-primary/5 card-hover group relative overflow-hidden h-full flex flex-col">
-                  {/* Decorative corner blur */}
-                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
-
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center mb-5 border border-gray-200 group-hover:border-primary/20 group-hover:shadow-lg transition-all">
-                    <dept.icon className="w-6 h-6 text-primary" />
+              <FadeIn key={i} delay={i * 100} className="h-full">
+                <div className="group relative h-full flex flex-col bg-white rounded-[2rem] p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(153,27,27,0.15)] border border-gray-100 hover:border-primary/30 overflow-hidden z-10">
+                  
+                  {/* Background Glow */}
+                  <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-primary/5 to-transparent rounded-full blur-3xl -z-10 group-hover:from-primary/10 transition-colors duration-500" />
+                  
+                  {/* Icon Container */}
+                  <div className="relative w-16 h-16 mb-8">
+                    <div className="absolute inset-0 bg-primary/10 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-white rounded-2xl border border-gray-100 shadow-sm flex items-center justify-center group-hover:-translate-y-1 transition-transform duration-500">
+                      <dept.icon className="w-7 h-7 text-primary" />
+                    </div>
                   </div>
-                  <h3 className="font-bold text-xl text-gray-800 mb-2">
+
+                  <h3 className="font-bold text-2xl text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
                     {dept.title}
                   </h3>
-                  <p className="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                  
+                  <p className="text-gray-500 text-base leading-relaxed flex-grow mb-8">
                     {dept.desc}
                   </p>
 
-                  <div className="space-y-3 pt-4 border-t border-gray-100 mt-auto">
+                  <div className="space-y-4 pt-6  mt-auto">
                     <a
                       href={`mailto:${dept.email}`}
-                      className="flex items-center gap-2 text-sm text-gray-700 hover:text-primary transition-colors font-medium"
+                      className="flex items-center gap-3 text-gray-600 hover:text-primary transition-colors group/link"
                     >
-                      <Mail className="w-4 h-4 text-primary/60" /> {dept.email}
+                      <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center group-hover/link:bg-primary/10 transition-colors">
+                        <Mail className="w-4 h-4" />
+                      </div>
+                      <span className="font-medium text-sm">{dept.email}</span>
                     </a>
                     <a
                       href={`tel:${dept.phone}`}
-                      className="flex items-center gap-2 text-sm text-gray-700 hover:text-primary transition-colors font-medium"
+                      className="flex items-center gap-3 text-gray-600 hover:text-primary transition-colors group/link"
                     >
-                      <Phone className="w-4 h-4 text-primary/60" /> {dept.phone}
+                      <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center group-hover/link:bg-primary/10 transition-colors">
+                        <Phone className="w-4 h-4" />
+                      </div>
+                      <span className="font-medium text-sm">{dept.phone}</span>
                     </a>
                   </div>
+                  
+                 
                 </div>
               </FadeIn>
             ))}
@@ -685,7 +700,7 @@ const ContactUs = () => {
                     Experts
                   </h3>
                   <p className="text-gray-500 text-sm mb-6">
-                    Real people, passionate about sarees, ready to assist you.
+                    Real people, passionate about architectural solutions, ready to assist you.
                   </p>
 
                   <div className="flex flex-wrap gap-4">
@@ -815,8 +830,8 @@ const ContactUs = () => {
                 </h2>
               </div>
               <p className="text-gray-500 max-w-md text-sm md:text-base border-l-2 border-primary pl-4 py-1">
-                Experience the rich textures, vibrant colors, and unparalleled
-                craftsmanship of our sarees in person.
+                Experience the premium quality, innovative designs, and unparalleled
+                craftsmanship of our hardware in person.
               </p>
             </div>
           </FadeIn>
@@ -843,11 +858,11 @@ const ContactUs = () => {
                 {/* Floating Store Card */}
                 <div className="absolute bottom-6 left-6 z-20 bg-white/95 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-2xl max-w-sm transform group-hover:-translate-y-2 transition-transform duration-500">
                   <h4 className="font-bold text-gray-900 text-lg mb-2 flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-primary" /> Saree Boutique
+                    <MapPin className="w-5 h-5 text-primary" /> Ozone Flagship Store
                     Chennai
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4 font-medium">
-                    123, Silk Weaver Street, Usman Road,
+                    45, Industrial Estate, Usman Road,
                     <br />
                     T. Nagar, Chennai, Tamil Nadu 600017
                   </p>
