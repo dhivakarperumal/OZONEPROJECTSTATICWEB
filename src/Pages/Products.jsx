@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PageContainer from "../CommenComponents/PageContainer";
 import PageHeader from "../CommenComponents/PageHeader";
-import { Search, Filter, ChevronRight, SlidersHorizontal, Check, ChevronLeft } from "lucide-react";
+import { Search, Filter, ChevronRight, SlidersHorizontal, Check, ChevronLeft, X, CheckCircle2 } from "lucide-react";
 import productsData from "../data/products.json";
 
 export default function Products() {
@@ -9,6 +9,7 @@ export default function Products() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [showFilters, setShowFilters] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const itemsPerPage = 6;
 
   const categories = ["All", ...new Set(productsData.map((p) => p.category))];
@@ -26,6 +27,18 @@ export default function Products() {
   useEffect(() => {
     setCurrentPage(1);
   }, [searchTerm, activeCategory]);
+
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (selectedProduct) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedProduct]);
 
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -186,7 +199,10 @@ export default function Products() {
                           </div>
                           
                           <div className="pt-4 border-t border-gray-100 mt-auto">
-                            <button className="w-full py-2.5 px-4 bg-gray-50 hover:bg-[#0c5940] text-gray-700 hover:text-white rounded-xl text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2 group/btn">
+                            <button 
+                              onClick={() => setSelectedProduct(product)}
+                              className="w-full py-2.5 px-4 bg-gray-50 hover:bg-[#0c5940] text-gray-700 hover:text-white rounded-xl text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+                            >
                               View Details
                               <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                             </button>
@@ -261,6 +277,112 @@ export default function Products() {
           </div>
         </div>
       </PageContainer>
+      {/* Premium Product Details Modal */}
+      {selectedProduct && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-900/40 backdrop-blur-md transition-all duration-500 ease-out">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 cursor-pointer"
+            onClick={() => setSelectedProduct(null)}
+          ></div>
+          
+          <div 
+            className="relative bg-white rounded-[2rem] shadow-2xl shadow-slate-900/20 w-full max-w-5xl max-h-[90vh] min-h-[60vh] overflow-hidden flex flex-col lg:flex-row animate-in fade-in zoom-in-[0.98] slide-in-from-bottom-4 duration-500 ease-out ring-1 ring-black/5"
+            onClick={(e) => e.stopPropagation()}
+          >
+            
+            {/* Close Button */}
+            <button 
+              onClick={() => setSelectedProduct(null)}
+              className="absolute top-6 right-6 z-20 p-3 bg-white/90 hover:bg-[#0c5940] hover:text-white text-gray-500 rounded-full shadow-lg backdrop-blur-md transition-all duration-300 group"
+            >
+              <X className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
+            </button>
+
+            {/* Left Image Side */}
+            <div className="w-full lg:w-1/2 h-72 lg:h-auto relative overflow-hidden bg-gray-50 group">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent z-10"></div>
+              <img 
+                src={selectedProduct.image} 
+                alt={selectedProduct.name} 
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
+              
+              {/* Badges on Image */}
+              <div className="absolute top-6 left-6 z-20 flex flex-col gap-2">
+                <span className={`${selectedProduct.badgeColor} text-white text-xs font-black px-4 py-2 rounded-full shadow-lg backdrop-blur-md uppercase tracking-widest border border-white/20`}>
+                  {selectedProduct.badge}
+                </span>
+              </div>
+              
+              {/* Overlay Category */}
+              <div className="absolute bottom-6 left-8 z-20">
+                <span className="text-white/90 text-sm font-semibold uppercase tracking-widest mb-1 block drop-shadow-md">
+                  Category
+                </span>
+                <span className="text-white text-2xl font-bold drop-shadow-lg">
+                  {selectedProduct.category}
+                </span>
+              </div>
+            </div>
+
+            {/* Right Content Side */}
+            <div className="w-full lg:w-1/2 flex flex-col bg-white relative overflow-y-auto custom-scrollbar">
+              {/* Subtle background decoration */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#0c5940]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+              
+              <div className="p-8 lg:p-12 flex flex-col flex-grow z-10 relative">
+                
+                {/* Header */}
+                <div className="mb-8">
+                  <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">
+                    {selectedProduct.name}
+                  </h2>
+                  <div className="w-16 h-1.5 bg-gradient-to-r from-[#0c5940] to-emerald-400 rounded-full"></div>
+                </div>
+                
+                {/* Description */}
+                <div className="mb-10">
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    {selectedProduct.description}
+                  </p>
+                </div>
+
+                {/* Features */}
+                <div className="mb-10 bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                  <h3 className="text-sm font-bold text-gray-900 mb-5 uppercase tracking-widest flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-[#0c5940]" />
+                    Product Specifications
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
+                    {selectedProduct.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center text-gray-700">
+                        <div className="w-2 h-2 rounded-full bg-[#0c5940] mr-3 shadow-[0_0_8px_rgba(12,89,64,0.5)]" />
+                        <span className="font-medium text-sm">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="mt-auto pt-4 flex flex-col sm:flex-row gap-4">
+                  <button className="flex-1 bg-gradient-to-r from-[#0c5940] to-[#0a4632] hover:from-[#09422f] hover:to-[#073526] text-white py-4 px-8 rounded-xl font-bold text-lg transition-all duration-300 shadow-[0_8px_20px_rgba(12,89,64,0.25)] hover:shadow-[0_12px_25px_rgba(12,89,64,0.35)] hover:-translate-y-1 flex items-center justify-center gap-2 group">
+                    Request a Quote
+                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <button 
+                    onClick={() => setSelectedProduct(null)}
+                    className="sm:flex-none px-8 py-4 rounded-xl font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors duration-300"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      )}
     </div>
   );
 }
