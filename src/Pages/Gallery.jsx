@@ -40,74 +40,6 @@ export default function Gallery() {
       <PageHeader title="Gallery" subtitle="Browse projects with interactive tiles and details." />
 
       <PageContainer className="py-12">
-        {/* Intro Section */}
-        <div className="mb-16">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-4xl font-black text-heading mb-4">
-                Premium Quality Products & Installation
-              </h2>
-              <p className="text-lg text-slate-600 mb-4">
-                Welcome to Ozone's comprehensive gallery showcasing our diverse range of high-quality windows, railings, doors, shutters, balcony solutions, and protective screens. Each project demonstrates our commitment to excellence and customer satisfaction.
-              </p>
-              <p className="text-slate-600 mb-6">
-                Explore our portfolio to see how we transform spaces with innovative designs and superior craftsmanship. Whether you're looking for modern aesthetics or traditional elegance, our products combine durability, functionality, and style.
-              </p>
-              <div className="flex gap-4">
-                <Link to="/quote" className="px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition">
-                  Get Free Quote
-                </Link>
-                <Link to="/contact" className="px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition">
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white p-6 rounded-2xl shadow-sm">
-                  <h3 className="font-bold text-heading text-2xl">100%</h3>
-                  <p className="text-sm text-slate-600">Quality Assured</p>
-                </div>
-                <div className="bg-white p-6 rounded-2xl shadow-sm">
-                  <h3 className="font-bold text-heading text-2xl">Expert</h3>
-                  <p className="text-sm text-slate-600">Installation</p>
-                </div>
-                <div className="bg-white p-6 rounded-2xl shadow-sm">
-                  <h3 className="font-bold text-heading text-2xl">Custom</h3>
-                  <p className="text-sm text-slate-600">Solutions</p>
-                </div>
-                <div className="bg-white p-6 rounded-2xl shadow-sm">
-                  <h3 className="font-bold text-heading text-2xl">24/7</h3>
-                  <p className="text-sm text-slate-600">Support</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Stats Section */}
-        <div className="grid md:grid-cols-4 gap-6 mb-16 py-12 border-y border-gray-200">
-          <div className="text-center">
-            <div className="text-5xl font-black text-primary mb-2">2000+</div>
-            <p className="text-slate-600 font-semibold">Installations</p>
-            <p className="text-sm text-slate-500 mt-1">Completed Projects</p>
-          </div>
-          <div className="text-center">
-            <div className="text-5xl font-black text-primary mb-2">15+</div>
-            <p className="text-slate-600 font-semibold">Years Experience</p>
-            <p className="text-sm text-slate-500 mt-1">Industry Leadership</p>
-          </div>
-          <div className="text-center">
-            <div className="text-5xl font-black text-primary mb-2">5000+</div>
-            <p className="text-slate-600 font-semibold">Happy Customers</p>
-            <p className="text-sm text-slate-500 mt-1">Satisfied Clients</p>
-          </div>
-          <div className="text-center">
-            <div className="text-5xl font-black text-primary mb-2">6</div>
-            <p className="text-slate-600 font-semibold">Product Categories</p>
-            <p className="text-sm text-slate-500 mt-1">Complete Solutions</p>
-          </div>
-        </div>
 
         {/* Gallery Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
@@ -217,6 +149,76 @@ export default function Gallery() {
               </div>
             ))
           )}
+        </div>
+
+         {/* Intro Section */}
+        <div className="mb-16">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-4xl font-black text-heading mb-4">
+                Premium Quality Products & Installation
+              </h2>
+              <p className="text-lg text-slate-600 mb-4">
+                Welcome to Ozone's comprehensive gallery showcasing our diverse range of high-quality windows, railings, doors, shutters, balcony solutions, and protective screens. Each project demonstrates our commitment to excellence and customer satisfaction.
+              </p>
+              <p className="text-slate-600 mb-6">
+                Explore our portfolio to see how we transform spaces with innovative designs and superior craftsmanship. Whether you're looking for modern aesthetics or traditional elegance, our products combine durability, functionality, and style.
+              </p>
+              <div className="flex gap-4">
+                <Link to="/quote" className="px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition">
+                  Get Free Quote
+                </Link>
+                <Link to="/contact" className="px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition">
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white p-6 rounded-2xl shadow-sm">
+                  <h3 className="font-bold text-heading text-2xl">100%</h3>
+                  <p className="text-sm text-slate-600">Quality Assured</p>
+                </div>
+                <div className="bg-white p-6 rounded-2xl shadow-sm">
+                  <h3 className="font-bold text-heading text-2xl">Expert</h3>
+                  <p className="text-sm text-slate-600">Installation</p>
+                </div>
+                <div className="bg-white p-6 rounded-2xl shadow-sm">
+                  <h3 className="font-bold text-heading text-2xl">Custom</h3>
+                  <p className="text-sm text-slate-600">Solutions</p>
+                </div>
+                <div className="bg-white p-6 rounded-2xl shadow-sm">
+                  <h3 className="font-bold text-heading text-2xl">24/7</h3>
+                  <p className="text-sm text-slate-600">Support</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        {/* Stats Section */}
+        <div className="grid md:grid-cols-4 gap-6 mb-16 py-12 border-y border-gray-200">
+          <div className="text-center">
+            <div className="text-5xl font-black text-primary mb-2">2000+</div>
+            <p className="text-slate-600 font-semibold">Installations</p>
+            <p className="text-sm text-slate-500 mt-1">Completed Projects</p>
+          </div>
+          <div className="text-center">
+            <div className="text-5xl font-black text-primary mb-2">15+</div>
+            <p className="text-slate-600 font-semibold">Years Experience</p>
+            <p className="text-sm text-slate-500 mt-1">Industry Leadership</p>
+          </div>
+          <div className="text-center">
+            <div className="text-5xl font-black text-primary mb-2">5000+</div>
+            <p className="text-slate-600 font-semibold">Happy Customers</p>
+            <p className="text-sm text-slate-500 mt-1">Satisfied Clients</p>
+          </div>
+          <div className="text-center">
+            <div className="text-5xl font-black text-primary mb-2">6</div>
+            <p className="text-slate-600 font-semibold">Product Categories</p>
+            <p className="text-sm text-slate-500 mt-1">Complete Solutions</p>
+          </div>
         </div>
 
         {/* Category Descriptions Section */}
