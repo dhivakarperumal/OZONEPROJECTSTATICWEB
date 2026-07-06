@@ -83,7 +83,7 @@ const Navbar = () => {
 
             {/* Desktop CTA */}
             <div className="hidden lg:block shrink-0 z-10">
-              <Link to="/quote" className="flex items-center gap-2 bg-[#0c5940] hover:bg-[#094230] text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition shadow-md">
+              <Link to="/contact" className="flex items-center gap-2 bg-[#0c5940] hover:bg-[#094230] text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition shadow-md">
                 Get a Quote
               </Link>
             </div>
@@ -223,7 +223,7 @@ const Navbar = () => {
         {/* Footer: CTA + contact + socials */}
         <div className="relative px-6 pb-8 pt-4 border-t border-white/10 flex flex-col gap-4">
           <Link
-            to="/quote"
+            to="/contact"
             onClick={closeMobile}
             className="flex justify-center items-center gap-2 bg-white text-[#0c5940] px-5 py-3.5 rounded-2xl font-black text-sm transition-all shadow-xl hover:bg-gray-100 hover:scale-[1.02]"
           >
