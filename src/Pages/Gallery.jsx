@@ -12,7 +12,13 @@ export default function Gallery() {
   const categories = ["All", ...Array.from(new Set(galleryItems.map((g) => g.category)))];
 
   useEffect(() => {
-    setItems(filter === "All" ? galleryItems : galleryItems.filter((g) => g.category === filter));
+    if (filter === "All") {
+      // Show only featured images when "All" is selected
+      setItems(galleryItems.filter((g) => g.featured));
+    } else {
+      // Show all images from selected category
+      setItems(galleryItems.filter((g) => g.category === filter));
+    }
   }, [filter]);
 
   useEffect(() => {
