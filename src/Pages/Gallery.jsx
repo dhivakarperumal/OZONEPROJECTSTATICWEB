@@ -62,30 +62,54 @@ export default function Gallery() {
           </div>
         </div>
 
-        <div className={`grid gap-4 ${filter === "All" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[200px]" : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 auto-rows-[160px]"}`}>
-          {items.map((it) => (
-            <div
-              key={it.id}
-              className={`relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm group ${filter === "All" && it.featured ? "cursor-pointer" : ""} ${it.span}`}
-              onClick={() => handleImageClick(it)}
-            >
-              <img src={it.image} alt={it.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={(e)=>e.target.style.display='none'} />
+      <div className="grid grid-cols-12 gap-4">
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <div className="p-4 w-full text-white">
-                  <p className="text-sm font-bold">{it.title}</p>
-                  <p className="text-[11px] uppercase tracking-wider text-white/70">{it.category}</p>
-                </div>
-              </div>
+  {/* Left */}
+  <div className="col-span-12 lg:col-span-6 flex flex-col gap-4">
 
-              {filter === "All" && it.featured && (
-                <div className="absolute top-3 left-3 z-10 bg-white text-sm px-3 py-1.5 rounded-full text-slate-800 font-semibold tracking-wider shadow-lg">
-                  {it.category}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+    {/* Windows */}
+    <div
+      className="h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer"
+      onClick={() => handleImageClick(items[0])}
+    >
+      <img
+        src={items[0]?.image}
+        className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+      />
+    </div>
+
+    {/* Screens */}
+    <div
+      className="h-[220px] rounded-3xl overflow-hidden relative group cursor-pointer"
+      onClick={() => handleImageClick(items[5])}
+    >
+      <img
+        src={items[5]?.image}
+        className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+      />
+    </div>
+
+  </div>
+
+  {/* Right */}
+  <div className="col-span-12 lg:col-span-6 grid grid-cols-2 gap-4">
+
+    {items.slice(1, 5).map((it) => (
+      <div
+        key={it.id}
+        className="h-[340px] rounded-3xl overflow-hidden relative group cursor-pointer"
+        onClick={() => handleImageClick(it)}
+      >
+        <img
+          src={it.image}
+          className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+        />
+      </div>
+    ))}
+
+  </div>
+
+</div>
 
         {/* Modal / Detail */}
         {modal && (
