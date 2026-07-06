@@ -9,6 +9,7 @@ import ScrollToTop from "./CommenComponents/ScrollToTop";
 import ScrollNavigator from "./CommenComponents/ScrollNavigator";
 import Loader from "./CommenComponents/Loader";
 import FloatingActions from "./CommenComponents/FloatingActions";
+import TopHeader from "./CommenComponents/TopHeader";
 
 function App() {
    const [loading, setLoading] = useState(false);
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <TopHeader />
       <Navbar />
       <ScrollToTop/>
       <ScrollNavigator/>
