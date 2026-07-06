@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import PageContainer from "../CommenComponents/PageContainer";
 import PageHeader from "../CommenComponents/PageHeader";
 import { services } from "../Home/HomeServices";
@@ -58,6 +59,16 @@ export default function Services() {
                         <span className="text-sm font-semibold text-gray-700">{item}</span>
                       </div>
                     ))}
+                  </div>
+
+                  {/* Learn More Link */}
+                  <div className="mt-6 pt-4 border-t border-gray-50">
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center gap-2 text-sm font-bold text-[#0c5940] hover:text-[#38B6FF] transition-colors group/link"
+                    >
+                      Learn More <LucideIcons.ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
                 </div>
               );
