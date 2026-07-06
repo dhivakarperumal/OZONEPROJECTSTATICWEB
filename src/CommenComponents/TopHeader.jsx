@@ -1,82 +1,79 @@
 import React from "react";
 import { Phone, Mail } from "lucide-react";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaYoutube,
-} from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import PageContainer from "./PageContainer";
 
 const TopHeader = () => {
   return (
-    <div className="bg-[linear-gradient(135deg,#08164F_0%,#112B87_55%,#234CC4_100%)] text-white rounded-b-3xl">
-      <div className="max-w-7xl mx-auto px-6 h-12 flex items-center">
+    <div className="bg-[linear-gradient(135deg,#08164F_0%,#112B87_55%,#234CC4_100%)] text-white text-sm">
+      <PageContainer>
+        <div className="h-11 flex items-center justify-between">
 
-        {/* Left */}
-        <div className="hidden lg:flex items-center gap-6 text-sm font-medium min-w-fit">
-          <a
-            href="tel:+919876543210"
-            className="flex items-center gap-2 hover:text-gray-200 transition"
-          >
-            <Phone size={16} />
-            +91 98765 43210
-          </a>
+          {/* Left */}
+          <div className="hidden lg:flex items-center gap-6 shrink-0">
+            <a
+              href="tel:+918950678907"
+              className="flex items-center gap-2 hover:text-gray-200 transition"
+            >
+              <Phone size={15} />
+              <span>+91 89506 78907</span>
+            </a>
 
-          <a
-            href="mailto:info@ozone.com"
-            className="flex items-center gap-2 hover:text-gray-200 transition"
-          >
-            <Mail size={16} />
-            info@ozone.com
-          </a>
+            <a
+              href="mailto:support@ozone.com"
+              className="flex items-center gap-2 hover:text-gray-200 transition"
+            >
+              <Mail size={15} />
+              <span>support@ozone.com</span>
+            </a>
+          </div>
+
+          {/* Center */}
+          <div className="flex-1 mx-8 overflow-hidden">
+            <marquee
+              scrollamount="5"
+              behavior="scroll"
+              direction="left"
+              className="font-medium tracking-wide"
+            >
+              Welcome to OZONE ENTERPRISES • Premium Mosquito Mesh Solutions •
+              Windows • Doors • Balcony Safety Nets • Invisible Grills • Free
+              Site Visit • Contact Us Today •
+            </marquee>
+          </div>
+
+          {/* Right */}
+          <div className="hidden lg:flex items-center gap-2 shrink-0">
+            {[
+              {
+                icon: FaFacebookF,
+                href: "#",
+                hover: "hover:bg-blue-600",
+              },
+              {
+                icon: FaInstagram,
+                href: "#",
+                hover:
+                  "hover:bg-gradient-to-br hover:from-pink-500 hover:to-orange-500",
+              },
+              {
+                icon: FaYoutube,
+                href: "#",
+                hover: "hover:bg-red-600",
+              },
+            ].map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className={`w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 ${item.hover}`}
+              >
+                <item.icon size={14} />
+              </a>
+            ))}
+          </div>
+
         </div>
-
-        {/* Center */}
-        <div className="flex-1 overflow-hidden px-6">
-          <marquee
-            behavior="scroll"
-            direction="left"
-            scrollamount="5"
-            className="text-sm font-medium"
-          >
-            Welcome to OZONE • Premium Mosquito Mesh Solutions • Quality Products • Free Site Visit • Contact us for the Best Price •
-          </marquee>
-        </div>
-
-        {/* Right */}
-       <div className="hidden lg:flex items-center gap-3 min-w-fit">
-
-  <a
-    href="#"
-    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition"
-  >
-    <FaFacebookF className="text-sm" />
-  </a>
-
-  <a
-    href="#"
-    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition"
-  >
-    <FaInstagram className="text-sm" />
-  </a>
-
-  <a
-    href="#"
-    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition"
-  >
-    <FaLinkedinIn className="text-sm" />
-  </a>
-
-  <a
-    href="#"
-    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition"
-  >
-    <FaYoutube className="text-sm" />
-  </a>
-
-</div>
-
-      </div>
+      </PageContainer>
     </div>
   );
 };
