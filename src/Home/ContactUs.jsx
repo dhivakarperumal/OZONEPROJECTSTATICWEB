@@ -90,8 +90,8 @@ const ContactUs = () => {
       <PageHeader title="Contact Us" />
 
       {/* ─── MAIN SECTION ─── */}
-      <section className="py-14 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <section className="py-14 px-5 md:py-20">
+        <div className="container mx-auto px-12 sm:px-10 lg:px-8 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
 
             {/* ── LEFT SIDE ── */}
@@ -299,8 +299,8 @@ const ContactUs = () => {
       </section>
 
       {/* ─── STATS BAR ─── */}
-      <section className="bg-[#081A59] py-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <section className="bg-[#081A59] px-5 py-10">
+        <div className="container mx-auto px-12 sm:px-6 lg:px-8 max-w-8xl">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((s, i) => (
               <div key={i} className="flex items-start gap-4">
@@ -318,8 +318,8 @@ const ContactUs = () => {
       </section>
 
       {/* ─── MAP SECTION ─── */}
-      <section className="py-14 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <section className="py-14 px-5 bg-white">
+        <div className="container mx-auto px-12 sm:px-6 lg:px-8 max-w-8xl">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
 
             {/* Map */}
