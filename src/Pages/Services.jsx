@@ -7,6 +7,7 @@ import * as LucideIcons from "lucide-react";
 import ServicesFAQ from "./ServicesFAQ";
 import ServicesWhyChoose from "./ServicesWhyChoose";
 import ServicesInstallation from "./ServicesInstallation";
+import { PhoneCall, CalendarCheck, CheckCircle } from "lucide-react";
 
 export default function Services() {
   useEffect(() => {
@@ -81,6 +82,58 @@ export default function Services() {
         <ServicesInstallation />
         <ServicesWhyChoose />
         <ServicesFAQ />
+
+        {/* CTA Banner */}
+        <section className="py-16">
+          <div className="relative rounded-[32px] overflow-hidden bg-[#081A59] shadow-2xl">
+            {/* Decorative glows */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-[#06C167] rounded-full blur-[100px] opacity-20 translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500 rounded-full blur-[100px] opacity-15 -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+            {/* Dot pattern */}
+            <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '28px 28px' }}></div>
+
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10 px-8 sm:px-12 py-14">
+              {/* Left: Text */}
+              <div className="text-center lg:text-left">
+                <h2 className="text-3xl sm:text-4xl font-black text-white mb-6 leading-tight">
+                  Need Professional Mosquito<br />Screen Installation?
+                </h2>
+                <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+                  {["Free Measurement", "Best Price", "Expert Installation"].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-6 h-6 rounded-full bg-[#06C167] flex items-center justify-center shrink-0">
+                        <CheckCircle size={14} className="text-white" />
+                      </div>
+                      <span className="text-white/90 font-semibold text-lg">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right: Buttons */}
+              <div className="flex flex-col sm:flex-row lg:flex-col gap-4 w-full sm:w-auto">
+                <Link
+                  to="/contact"
+                  className="px-8 py-4 rounded-2xl bg-[#06C167] hover:bg-[#05a356] text-white font-bold text-lg transition-all shadow-[0_8px_30px_rgba(6,193,103,0.3)] hover:-translate-y-1 flex items-center justify-center gap-3"
+                >
+                  <CalendarCheck size={22} /> Get Free Quote
+                </Link>
+                <Link
+                  to="/contact"
+                  className="px-8 py-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold text-lg transition-all flex items-center justify-center gap-3"
+                >
+                  <CalendarCheck size={22} /> Book Site Visit
+                </Link>
+                <a
+                  href="tel:+918950678907"
+                  className="px-8 py-4 rounded-2xl bg-white text-[#081A59] hover:bg-gray-100 font-bold text-lg transition-all flex items-center justify-center gap-3 shadow-lg"
+                >
+                  <PhoneCall size={22} /> Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </PageContainer>
     </div>
   );
