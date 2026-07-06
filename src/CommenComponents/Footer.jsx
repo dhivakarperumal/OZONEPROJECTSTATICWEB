@@ -80,7 +80,7 @@ const Footer = () => {
         <div className="border-t border-[#132852] mb-12"></div>
 
         {/* Bottom Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           
           {/* Logo & Social */}
           <div className="lg:col-span-1 flex flex-col items-start">
@@ -103,7 +103,17 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="hidden lg:block"></div>
+          {/* Services */}
+          <div className="lg:col-span-1">
+            <h4 className="text-[13px] font-bold mb-4 tracking-wider uppercase">OUR SERVICES</h4>
+            <ul className="space-y-2.5 text-[13px] text-gray-400">
+              <li><Link to="/services" className="hover:text-white transition">Main Door Screens</Link></li>
+              <li><Link to="/services" className="hover:text-white transition">Balcony Screens</Link></li>
+              <li><Link to="/services" className="hover:text-white transition">Window Screens</Link></li>
+              <li><Link to="/services" className="hover:text-white transition">Pleated Mosquito Nets</Link></li>
+              <li><Link to="/services" className="hover:text-white transition">Velcro Mosquito Nets</Link></li>
+            </ul>
+          </div>
 
           {/* Quick Links */}
           <div className="lg:col-span-1">
@@ -114,18 +124,6 @@ const Footer = () => {
               <li><Link to="/products" className="hover:text-white transition">Products</Link></li>
               <li><Link to="/fitment-systems" className="hover:text-white transition">Fitment Systems</Link></li>
               <li><Link to="/balcony-screens" className="hover:text-white transition">Balcony Screens</Link></li>
-            </ul>
-          </div>
-
-          {/* Customer Service */}
-          <div className="lg:col-span-1">
-            <h4 className="text-[13px] font-bold mb-4 tracking-wider uppercase">CUSTOMER SERVICE</h4>
-            <ul className="space-y-2.5 text-[13px] text-gray-400">
-              <li><Link to="/warranty" className="hover:text-white transition">Warranty</Link></li>
-              <li><Link to="/care-maintenance" className="hover:text-white transition">Care & Maintenance</Link></li>
-              <li><Link to="/faq" className="hover:text-white transition">FAQ</Link></li>
-              <li><Link to="/downloads" className="hover:text-white transition">Downloads</Link></li>
-              <li><Link to="/contact" className="hover:text-white transition">Contact Us</Link></li>
             </ul>
           </div>
 
