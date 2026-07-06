@@ -41,23 +41,28 @@ export default function Gallery() {
       <PageContainer className="py-12">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <div>
-            <h2 className="text-2xl font-black text-heading">Projects Gallery</h2>
+            <h2 className="text-2xl font-black text-heading">
+              {filter === "All" ? "Projects Gallery" : `${filter} Gallery`}
+            </h2>
             <p className="text-sm text-slate-600 mt-1">
-              {filter === "All" ? "Click any category to view all images" : `Viewing ${filter} - Click category button to change`}
+              {filter === "All" ? "Click any category to view all images" : `Viewing all ${filter} images`}
             </p>
           </div>
 
-          {filter !== "All" && (
-            <button
-              onClick={() => setFilter("All")}
-              className="px-4 py-2 rounded-full text-sm font-semibold bg-primary text-white transition hover:bg-primary/90"
-            >
-              ← Back to All Categories
-            </button>
-          )}
+          <div className="flex flex-wrap gap-2">
+            {categories.map((c) => (
+              <button
+                key={c}
+                onClick={() => setFilter(c)}
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition ${filter === c ? 'bg-primary text-white' : 'bg-white border border-gray-200 text-slate-700 hover:border-primary'}`}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className={`grid gap-4 ${filter === "All" ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 auto-rows-[250px]" : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 auto-rows-[160px]"}`}>
+        <div className={`grid gap-4 ${filter === "All" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[200px]" : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 auto-rows-[160px]"}`}>
           {items.map((it) => (
             <div
               key={it.id}
@@ -72,6 +77,12 @@ export default function Gallery() {
                   <p className="text-[11px] uppercase tracking-wider text-white/70">{it.category}</p>
                 </div>
               </div>
+
+              {filter === "All" && it.featured && (
+                <div className="absolute top-3 left-3 z-10 bg-white text-sm px-3 py-1.5 rounded-full text-slate-800 font-semibold tracking-wider shadow-lg">
+                  {it.category}
+                </div>
+              )}
             </div>
           ))}
         </div>
