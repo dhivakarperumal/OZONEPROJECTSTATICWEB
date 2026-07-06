@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PageContainer from "../CommenComponents/PageContainer";
 import PageHeader from "../CommenComponents/PageHeader";
-import { Search, Filter, ChevronRight, SlidersHorizontal, Check } from "lucide-react";
+import { Search, Filter, ChevronRight, SlidersHorizontal, Check, ChevronLeft } from "lucide-react";
 import productsData from "../data/products.json";
 
 export default function Products() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const [showFilters, setShowFilters] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   const categories = ["All", ...new Set(productsData.map((p) => p.category))];
 
@@ -19,6 +21,20 @@ export default function Products() {
       .includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  // Reset to first page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, activeCategory]);
+
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentProducts = filteredProducts.slice(startIndex, startIndex + itemsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({ top: 300, behavior: 'smooth' }); // scroll back to top of grid
+  };
 
   return (
     <div className="min-h-screen bg-gray-50/50">
@@ -112,7 +128,10 @@ export default function Products() {
             {/* Right Side - Products Grid */}
             <main className={`flex-grow transition-all duration-300 ${showFilters ? "lg:w-3/4" : "lg:w-full"}`}>
               <div className="mb-6 flex justify-between items-center text-sm text-gray-500">
-                <span>Showing {filteredProducts.length} results</span>
+                <span>
+                  Showing {filteredProducts.length === 0 ? 0 : startIndex + 1}-
+                  {Math.min(startIndex + itemsPerPage, filteredProducts.length)} of {filteredProducts.length} results
+                </span>
                 {activeCategory !== "All" && (
                   <span className="bg-gray-100 px-3 py-1 rounded-full text-gray-700">
                     Category: {activeCategory}
@@ -121,60 +140,105 @@ export default function Products() {
               </div>
 
               {filteredProducts.length > 0 ? (
-                <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${showFilters ? 'xl:grid-cols-3' : 'lg:grid-cols-3 xl:grid-cols-4'}`}>
-                  {filteredProducts.map((product) => (
-                    <div
-                      key={product.id}
-                      className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col"
-                    >
-                      <div className="relative h-56 overflow-hidden bg-gray-100">
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                        <div className="absolute top-4 left-4">
-                          <span
-                            className={`${product.badgeColor} text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm backdrop-blur-md uppercase tracking-wider`}
-                          >
-                            {product.badge}
-                          </span>
+                <>
+                  <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${showFilters ? 'xl:grid-cols-3' : 'lg:grid-cols-3 xl:grid-cols-4'}`}>
+                    {currentProducts.map((product) => (
+                      <div
+                        key={product.id}
+                        className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col"
+                      >
+                        <div className="relative h-56 overflow-hidden bg-gray-100">
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                          <div className="absolute top-4 left-4">
+                            <span
+                              className={`${product.badgeColor} text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm backdrop-blur-md uppercase tracking-wider`}
+                            >
+                              {product.badge}
+                            </span>
+                          </div>
+                        </div>
+                        
+                        <div className="p-5 flex flex-col flex-grow">
+                          <div className="mb-3">
+                            <span className="text-[#0c5940] text-[10px] font-semibold uppercase tracking-wider mb-1 block">
+                              {product.category}
+                            </span>
+                            <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#0c5940] transition-colors line-clamp-1">
+                              {product.name}
+                            </h3>
+                          </div>
+                          
+                          <p className="text-gray-600 text-sm line-clamp-2 mb-4 flex-grow leading-relaxed">
+                            {product.description}
+                          </p>
+                          
+                          <div className="space-y-2 mb-5">
+                            {product.features.slice(0, 3).map((feature, idx) => (
+                              <div key={idx} className="flex items-center text-xs text-gray-600 font-medium">
+                                <div className="w-1.5 h-1.5 rounded-full bg-[#0c5940]/50 mr-2" />
+                                {feature}
+                              </div>
+                            ))}
+                          </div>
+                          
+                          <div className="pt-4 border-t border-gray-100 mt-auto">
+                            <button className="w-full py-2.5 px-4 bg-gray-50 hover:bg-[#0c5940] text-gray-700 hover:text-white rounded-xl text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2 group/btn">
+                              View Details
+                              <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                            </button>
+                          </div>
                         </div>
                       </div>
+                    ))}
+                  </div>
+                  
+                  {/* Pagination Controls */}
+                  {totalPages > 1 && (
+                    <div className="mt-12 flex justify-center items-center gap-2">
+                      <button
+                        onClick={() => handlePageChange(currentPage - 1)}
+                        disabled={currentPage === 1}
+                        className={`p-2 rounded-lg border flex items-center justify-center transition-all ${
+                          currentPage === 1 
+                            ? "border-gray-200 text-gray-300 cursor-not-allowed" 
+                            : "border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-gray-300"
+                        }`}
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                      </button>
                       
-                      <div className="p-5 flex flex-col flex-grow">
-                        <div className="mb-3">
-                          <span className="text-[#0c5940] text-[10px] font-semibold uppercase tracking-wider mb-1 block">
-                            {product.category}
-                          </span>
-                          <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#0c5940] transition-colors line-clamp-1">
-                            {product.name}
-                          </h3>
-                        </div>
-                        
-                        <p className="text-gray-600 text-sm line-clamp-2 mb-4 flex-grow leading-relaxed">
-                          {product.description}
-                        </p>
-                        
-                        <div className="space-y-2 mb-5">
-                          {product.features.slice(0, 3).map((feature, idx) => (
-                            <div key={idx} className="flex items-center text-xs text-gray-600 font-medium">
-                              <div className="w-1.5 h-1.5 rounded-full bg-[#0c5940]/50 mr-2" />
-                              {feature}
-                            </div>
-                          ))}
-                        </div>
-                        
-                        <div className="pt-4 border-t border-gray-100 mt-auto">
-                          <button className="w-full py-2.5 px-4 bg-gray-50 hover:bg-[#0c5940] text-gray-700 hover:text-white rounded-xl text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2 group/btn">
-                            View Details
-                            <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                          </button>
-                        </div>
-                      </div>
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                        <button
+                          key={page}
+                          onClick={() => handlePageChange(page)}
+                          className={`w-10 h-10 rounded-lg text-sm font-medium transition-all flex items-center justify-center ${
+                            currentPage === page
+                              ? "bg-[#0c5940] text-white shadow-md shadow-[#0c5940]/20"
+                              : "border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-gray-300"
+                          }`}
+                        >
+                          {page}
+                        </button>
+                      ))}
+                      
+                      <button
+                        onClick={() => handlePageChange(currentPage + 1)}
+                        disabled={currentPage === totalPages}
+                        className={`p-2 rounded-lg border flex items-center justify-center transition-all ${
+                          currentPage === totalPages 
+                            ? "border-gray-200 text-gray-300 cursor-not-allowed" 
+                            : "border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-gray-300"
+                        }`}
+                      >
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
                     </div>
-                  ))}
-                </div>
+                  )}
+                </>
               ) : (
                 <div className="text-center py-24 bg-white rounded-2xl border border-gray-100 shadow-sm">
                   <Filter className="w-12 h-12 text-gray-300 mx-auto mb-4" />
