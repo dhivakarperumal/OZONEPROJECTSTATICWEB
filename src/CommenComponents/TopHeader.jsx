@@ -5,7 +5,7 @@ import PageContainer from "./PageContainer";
 
 const TopHeader = () => {
   return (
-    <div className="bg-[linear-gradient(135deg,#08164F_0%,#112B87_55%,#234CC4_100%)] text-white text-sm rounded-b-[35px] overflow-hidden shadow-lg">
+    <div className="bg-[linear-gradient(135deg,#08164F_0%,#112B87_55%,#234CC4_100%)] text-white text-sm">
       <PageContainer>
         <div className="h-11 flex items-center justify-between">
 
