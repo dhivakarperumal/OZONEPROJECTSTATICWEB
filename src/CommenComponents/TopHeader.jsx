@@ -6,7 +6,7 @@ import PageContainer from "./PageContainer";
 const TopHeader = () => {
     return (
         <div
-            className="text-white text-sm rounded-b-[35px] overflow-hidden shadow-lg"
+            className="hidden lg:block text-white text-sm rounded-b-[35px] overflow-hidden shadow-lg"
             style={{
                 background: "linear-gradient(90deg, #234CC4 0%, #112B87 50%, #08164F 100%)",
             }}
@@ -15,7 +15,7 @@ const TopHeader = () => {
                 <div className="h-11 flex items-center justify-between">
 
                     {/* Left */}
-                    <div className="items-center gap-6 shrink-0">
+                    <div className="hidden lg:flex items-center gap-6 shrink-0">
                         <a
                             href="tel:+918950678907"
                             className="flex items-center gap-2 hover:text-gray-200 transition"
