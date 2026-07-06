@@ -103,17 +103,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
-          <div className="lg:col-span-1">
-            <h4 className="text-[13px] font-bold mb-4 tracking-wider uppercase">OUR SERVICES</h4>
-            <ul className="space-y-2.5 text-[13px] text-gray-400">
-              <li><Link to="/services" className="hover:text-white transition">Main Door Screens</Link></li>
-              <li><Link to="/services" className="hover:text-white transition">Balcony Screens</Link></li>
-              <li><Link to="/services" className="hover:text-white transition">Window Screens</Link></li>
-              <li><Link to="/services" className="hover:text-white transition">Pleated Mosquito Nets</Link></li>
-              <li><Link to="/services" className="hover:text-white transition">Velcro Mosquito Nets</Link></li>
-            </ul>
-          </div>
 
           {/* Quick Links */}
           <div className="lg:col-span-1">
@@ -127,6 +116,53 @@ const Footer = () => {
               <li><Link to="/contact" className="hover:text-white transition">Contact Us</Link></li>
             </ul>
           </div>
+
+
+          
+        {/* Service Areas */}
+<div className="lg:col-span-1">
+  <h4 className="text-[13px] font-bold mb-4 tracking-wider uppercase">
+    SERVICE AREAS
+  </h4>
+
+  <ul className="space-y-2.5 text-[13px] text-gray-400">
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Ambur
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Tirupathur
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Vellore
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Ranipet
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Gudiyatham
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Katpadi
+      </Link>
+    </li>
+  </ul>
+</div>
 
           {/* Contact Us */}
           <div className="lg:col-span-1">
