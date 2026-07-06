@@ -120,15 +120,15 @@ export default function AboutUs() {
                 Who We Are
               </div>
 
-              <h2 className="mt-6 text-3xl font-black leading-tight text-heading sm:text-4xl lg:text-5xl">
+              <h2 className="mt-6 text-2xl font-black leading-tight text-heading sm:text-4xl lg:text-5xl">
                 Elevating spaces with intelligent design and lasting performance.
               </h2>
 
-              <p className="mt-5 text-base leading-8 text-text sm:text-lg">
+              <p className="mt-5 text-sm leading-7 text-text sm:text-base">
                 Ozone Enterprises is a trusted name in premium fitment systems and architectural solutions. With years of industry experience, we combine modern design thinking with dependable craftsmanship to create products that are both elegant and functional.
               </p>
 
-              <p className="mt-4 text-base leading-8 text-text sm:text-lg">
+              <p className="mt-4 text-sm leading-7 text-text sm:text-base">
                 From concept to completion, our focus remains the same: deliver refined solutions that support comfort, efficiency, and visual appeal across residential, commercial, and industrial projects.
               </p>
 
@@ -136,10 +136,12 @@ export default function AboutUs() {
                 {stats.map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+                    className="relative bg-white rounded-3xl p-6 h-full border border-gray-100/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(12,89,64,0.12)] transition-all duration-500"
                   >
-                    <p className="text-2xl font-black text-primary">{item.value}</p>
-                    <p className="mt-1 text-sm font-semibold text-slate-500">{item.label}</p>
+                    <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0c5940] to-[#38B6FF] opacity-20"></div>
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-[#0c5940]/6 rounded-bl-full -z-10"></div>
+                    <p className="text-xl sm:text-2xl font-black text-primary">{item.value}</p>
+                    <p className="mt-1 text-xs sm:text-sm font-semibold text-slate-500">{item.label}</p>
                   </div>
                 ))}
               </div>
@@ -171,7 +173,7 @@ export default function AboutUs() {
               </div>
 
               <div className="absolute -top-6 -right-6 rounded-2xl bg-primary px-5 py-4 text-white shadow-xl">
-                <p className="text-3xl font-black leading-none">100%</p>
+                <p className="text-2xl sm:text-3xl font-black leading-none">100%</p>
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
                   Quality Focused
                 </p>
@@ -187,17 +189,19 @@ export default function AboutUs() {
                 <Sparkles size={16} />
                 Our Story
               </div>
-              <h3 className="mt-5 text-2xl font-black text-heading sm:text-3xl">
+              <h3 className="mt-5 text-xl font-black text-heading sm:text-3xl">
                 A journey shaped by trust, innovation, and craftsmanship.
               </h3>
-              <p className="mt-4 text-base leading-8 text-text">
+              <p className="mt-4 text-sm sm:text-base leading-7 text-text">
                 What began as a commitment to quality has grown into a trusted brand known for creating durable, elegant, and highly functional solutions for modern spaces.
               </p>
               <div className="mt-6 space-y-4">
                 {journeyPoints.map((item) => (
-                  <div key={item} className="flex items-start gap-3 rounded-2xl bg-slate-50 px-4 py-3">
-                    <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-success" />
-                    <p className="text-sm leading-7 text-slate-600">{item}</p>
+                  <div key={item} className="relative flex items-start gap-3 rounded-2xl bg-white px-4 py-3 border border-gray-100 shadow-sm">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0c5940] to-teal-700 text-white">
+                      <CheckCircle2 size={16} />
+                    </div>
+                    <p className="text-xs sm:text-sm leading-6 text-slate-600">{item}</p>
                   </div>
                 ))}
               </div>
@@ -206,22 +210,26 @@ export default function AboutUs() {
 
           <FadeIn delay={180} className="w-full">
             <div className="grid gap-6">
-              <div className="rounded-[2rem] bg-primary p-8 text-white shadow-xl">
+              <div className="rounded-3xl bg-primary p-8 text-white shadow-xl group relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0c5940] to-[#38B6FF] opacity-15"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/6 rounded-bl-full -z-10"></div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-white">
                   <Target size={20} />
                 </div>
-                <h3 className="mt-6 text-2xl font-black">Our Mission</h3>
-                <p className="mt-3 text-base leading-8 text-slate-100">
+                <h3 className="mt-6 text-xl sm:text-2xl font-black">Our Mission</h3>
+                <p className="mt-3 text-sm sm:text-base leading-7 text-slate-100">
                   To deliver premium fitment and architectural solutions that enhance the quality, comfort, and visual appeal of every space we touch.
                 </p>
               </div>
 
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-success/12 text-success-dark">
+              <div className="relative rounded-3xl bg-white p-8 h-full border border-gray-100/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(12,89,64,0.12)] transition-all duration-500 group overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0c5940] to-[#38B6FF] opacity-20"></div>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[#0c5940]/6 rounded-bl-full -z-10"></div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0c5940] to-teal-700 text-white shadow-lg">
                   <Eye size={20} />
                 </div>
-                <h3 className="mt-6 text-2xl font-black text-heading">Our Vision</h3>
-                <p className="mt-3 text-base leading-8 text-text">
+                <h3 className="mt-6 text-xl sm:text-2xl font-black text-heading">Our Vision</h3>
+                <p className="mt-3 text-sm sm:text-base leading-7 text-text">
                   To be a forward-looking industry leader recognized for innovation, reliability, and enduring design excellence.
                 </p>
               </div>
@@ -237,10 +245,10 @@ export default function AboutUs() {
                   <Sparkles size={16} />
                   Our Commitment
                 </div>
-                <h3 className="mt-6 text-3xl font-black leading-tight text-white sm:text-4xl">
+                <h3 className="mt-6 text-2xl font-black leading-tight text-white sm:text-4xl">
                   Built around quality, reliability, and timeless design.
                 </h3>
-                <p className="mt-4 text-base leading-8 text-slate-100">
+                <p className="mt-4 text-sm sm:text-base leading-7 text-slate-100">
                   Our mission is simple: create premium products and dependable support that shape better living and working environments.
                 </p>
                 <Link
@@ -259,8 +267,8 @@ export default function AboutUs() {
                     <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/15 text-white">
                       {item.icon}
                     </div>
-                    <h4 className="mt-4 text-lg font-bold text-white">{item.title}</h4>
-                    <p className="mt-2 text-sm leading-7 text-slate-100">{item.text}</p>
+                    <h4 className="mt-4 text-sm sm:text-lg font-bold text-white">{item.title}</h4>
+                    <p className="mt-2 text-xs sm:text-sm leading-6 text-slate-100">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -276,11 +284,11 @@ export default function AboutUs() {
                   <ShieldCheck size={16} />
                   Our Strengths
                 </div>
-                <h3 className="mt-4 text-3xl font-black text-heading sm:text-4xl">
+                <h3 className="mt-4 text-2xl font-black text-heading sm:text-4xl">
                   Why clients trust Ozone Enterprises
                 </h3>
               </div>
-              <p className="max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+              <p className="max-w-2xl text-xs sm:text-sm leading-6 text-slate-600">
                 We blend refined craftsmanship with practical innovation to create solutions that feel as strong as they look.
               </p>
             </div>
@@ -289,12 +297,18 @@ export default function AboutUs() {
           <div className="mt-8 grid gap-6 lg:grid-cols-3">
             {values.map((item) => (
               <FadeIn key={item.title} delay={140} className="w-full">
-                <div className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-success/12 text-success-dark">
-                    {item.icon}
+                <div className="relative bg-white rounded-3xl p-8 h-full border border-gray-100/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(12,89,64,0.12)] hover:-translate-y-2 transition-all duration-500 group overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0c5940] to-[#38B6FF] opacity-20"></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#0c5940]/6 rounded-bl-full -z-10"></div>
+
+                  <div className="flex items-start gap-4 mb-3">
+                    <div className="w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-br from-[#0c5940] to-teal-700 flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform duration-300">
+                      {item.icon}
+                    </div>
+                    <h4 className="text-lg sm:text-xl font-black text-heading leading-tight pt-1">{item.title}</h4>
                   </div>
-                  <h4 className="mt-5 text-xl font-bold text-heading">{item.title}</h4>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
+
+                  <p className="text-xs sm:text-sm leading-6 text-slate-600 mb-4">{item.text}</p>
                 </div>
               </FadeIn>
             ))}
