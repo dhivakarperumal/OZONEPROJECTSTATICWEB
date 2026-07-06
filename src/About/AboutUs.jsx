@@ -120,7 +120,7 @@ export default function AboutUs() {
                 Who We Are
               </div>
 
-              <h2 className="mt-6 text-2xl font-black leading-tight text-heading sm:text-3xl lg:text-4xl">
+              <h2 className="mt-6 text-2xl font-black leading-tight text-heading sm:text-4xl lg:text-5xl">
                 Elevating spaces with intelligent design and lasting performance.
               </h2>
 
@@ -173,7 +173,7 @@ export default function AboutUs() {
               </div>
 
               <div className="absolute -top-6 -right-6 rounded-2xl bg-primary px-5 py-4 text-white shadow-xl">
-                <p className="text-3xl font-black leading-none">100%</p>
+                <p className="text-2xl sm:text-3xl font-black leading-none">100%</p>
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
                   Quality Focused
                 </p>
@@ -189,7 +189,7 @@ export default function AboutUs() {
                 <Sparkles size={16} />
                 Our Story
               </div>
-              <h3 className="mt-5 text-xl font-black text-heading sm:text-2xl">
+              <h3 className="mt-5 text-xl font-black text-heading sm:text-3xl">
                 A journey shaped by trust, innovation, and craftsmanship.
               </h3>
               <p className="mt-4 text-sm sm:text-base leading-7 text-text">
@@ -245,7 +245,7 @@ export default function AboutUs() {
                   <Sparkles size={16} />
                   Our Commitment
                 </div>
-                <h3 className="mt-6 text-2xl font-black leading-tight text-white sm:text-3xl">
+                <h3 className="mt-6 text-2xl font-black leading-tight text-white sm:text-4xl">
                   Built around quality, reliability, and timeless design.
                 </h3>
                 <p className="mt-4 text-sm sm:text-base leading-7 text-slate-100">
@@ -284,7 +284,7 @@ export default function AboutUs() {
                   <ShieldCheck size={16} />
                   Our Strengths
                 </div>
-                <h3 className="mt-4 text-2xl font-black text-heading sm:text-3xl">
+                <h3 className="mt-4 text-2xl font-black text-heading sm:text-4xl">
                   Why clients trust Ozone Enterprises
                 </h3>
               </div>
