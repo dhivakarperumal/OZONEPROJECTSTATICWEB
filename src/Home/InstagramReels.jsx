@@ -381,7 +381,7 @@ const InstagramReels = () => {
                 Instagram Reels
               </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-black text-gray-200 leading-tight">
               Follow Our{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-yellow-300">
                 Journey

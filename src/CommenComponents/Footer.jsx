@@ -149,12 +149,6 @@ const Footer = () => {
 
     <li>
       <Link to="/contact" className="hover:text-white transition">
-        Ranipet
-      </Link>
-    </li>
-
-    <li>
-      <Link to="/contact" className="hover:text-white transition">
         Gudiyatham
       </Link>
     </li>
@@ -162,6 +156,18 @@ const Footer = () => {
     <li>
       <Link to="/contact" className="hover:text-white transition">
         Katpadi
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Salem
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/contact" className="hover:text-white transition">
+        Dharmapoori
       </Link>
     </li>
   </ul>
