@@ -11,6 +11,7 @@ import About from "./Home/About.jsx";
 import ContactUs from "./Home/ContactUs.jsx";
 import Products from "./Pages/Products.jsx";
 import FitmentSystems from "./Pages/FitmentSystems.jsx";
+import Services from "./Pages/Services.jsx";
 import BalconyScreens from "./Pages/BalconyScreens.jsx";
 import Gallery from "./Pages/Gallery.jsx";
 import Downloads from "./Pages/Downloads.jsx";
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       { path: "contact", element: <ContactUs /> },
       { path: "products", element: <Products /> },
       { path: "fitment-systems", element: <FitmentSystems /> },
+      { path: "services", element: <Services /> },
       { path: "balcony-screens", element: <BalconyScreens /> },
       { path: "gallery", element: <Gallery /> },
       { path: "downloads", element: <Downloads /> },

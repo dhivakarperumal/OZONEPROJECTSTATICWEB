@@ -17,7 +17,7 @@ const SwooshMenuIcon = () => (
 const navLinks = [
   { to: "/", label: "Home",            color: "#38B6FF" },
   { to: "/about", label: "About Us",   color: "#0c5940" },
-  { to: "/balcony-screens", label: "Balcony Screens", color: "#38B6FF" },
+  { to: "/services", label: "Services", color: "#38B6FF" },
   { to: "/gallery", label: "Gallery",  color: "#081A59" },
   { to: "/downloads", label: "Downloads", color: "#0c5940" },
   { to: "/contact", label: "Contact Us", color: "#38B6FF" },
@@ -74,7 +74,7 @@ const Navbar = () => {
               <NavLink to="/" className={navClass}>Home</NavLink>
               <NavLink to="/about" className={navClass}>About Us</NavLink>
               <NavLink to="/products" className={navClass}>Products</NavLink>
-              <NavLink to="/balcony-screens" className={navClass}>Balcony Screens</NavLink>
+              <NavLink to="/services" className={navClass}>Services</NavLink>
               <NavLink to="/gallery" className={navClass}>Gallery</NavLink>
               <NavLink to="/contact" className={navClass}>Contact Us</NavLink>
             </div>
