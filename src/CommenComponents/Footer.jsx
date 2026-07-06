@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   MapPin,
@@ -14,8 +14,11 @@ import {
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import logo from "../../public/logo.png";
 import PageContainer from "./PageContainer";
+import CatalogueDownload from "./CatalogueDownload";
 
 const Footer = () => {
+  const [catalogueOpen, setCatalogueOpen] = useState(false);
+
   return (
     <footer className="bg-[#021333] text-white pt-16 pb-12 mt-20">
       <PageContainer>
@@ -192,7 +195,10 @@ const Footer = () => {
                 <div className="w-14 h-18 bg-gray-200 rounded border border-gray-400 overflow-hidden flex-shrink-0 relative">
                     <img src="./logo.png" alt="Catalogue" className="w-full h-full object-cover opacity-20" />
                 </div>
-                <button className="flex items-center gap-2 bg-white text-[#021333] hover:bg-gray-100 px-3 py-2 rounded font-semibold text-[11px] transition shadow">
+                <button
+                  onClick={() => setCatalogueOpen(true)}
+                  className="flex items-center gap-2 bg-white text-[#021333] hover:bg-amber-400 hover:text-gray-900 px-3 py-2 rounded font-semibold text-[11px] transition shadow"
+                >
                   Download PDF <ArrowRight size={12} />
                 </button>
               </div>
@@ -202,6 +208,8 @@ const Footer = () => {
         </div>
 
       </PageContainer>
+
+      <CatalogueDownload isOpen={catalogueOpen} onClose={() => setCatalogueOpen(false)} />
     </footer>
   );
 };

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, PlayCircle } from 'lucide-react';
+import { ArrowRight, PlayCircle, BookOpen } from 'lucide-react';
+import CatalogueDownload from '../CommenComponents/CatalogueDownload';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -43,6 +44,8 @@ const slidesData = [
 ];
 
 const Hero = () => {
+  const [catalogueOpen, setCatalogueOpen] = useState(false);
+
   return (
     <section className="relative overflow-hidden bg-gray-900 h-[600px] lg:h-[700px]">
       <Swiper
@@ -91,6 +94,12 @@ const Hero = () => {
                     <Link to="/contact" className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-full font-semibold transition backdrop-blur-md flex items-center justify-center gap-2">
                       <PlayCircle size={20} /> Get a Quote
                     </Link>
+                    <button
+                      onClick={() => setCatalogueOpen(true)}
+                      className="w-full sm:w-auto px-8 py-4 bg-amber-400 hover:bg-amber-300 text-gray-900 rounded-full font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-amber-500/30"
+                    >
+                      <BookOpen size={20} /> Download Catalogue
+                    </button>
                   </div>
                   
                 </div>
@@ -99,6 +108,8 @@ const Hero = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <CatalogueDownload isOpen={catalogueOpen} onClose={() => setCatalogueOpen(false)} />
       
       <style dangerouslySetInnerHTML={{__html: `
         .swiper-pagination-bullet { background: white; opacity: 0.5; }

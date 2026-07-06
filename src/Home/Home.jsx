@@ -9,7 +9,7 @@ import HomeServices from './HomeServices'
 import HomeReviews from './HomeReviews'
 import HomeGallery from './HomeGallery'
 import HomeFAQ from './HomeFAQ'
-// import CompanyLogos from './CompanyLogos'
+import CompanyLogos from './CompanyLogos'
 import InstagramReels from './InstagramReels'
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
       <InstagramReels />
       <HomeFAQ />
       <HomeReviews />
-      {/* <CompanyLogos /> */}
+      <CompanyLogos />
     </div>
   )
 }
