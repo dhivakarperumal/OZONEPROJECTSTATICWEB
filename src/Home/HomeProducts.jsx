@@ -1,6 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay, Pagination, EffectCoverflow } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
 import productsData from "../data/products.json";
 
 const categories = ["All", ...new Set(productsData.map((p) => p.category))];
@@ -33,84 +39,102 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
   );
 };
 
-const ProductCard = ({ product, delay }) => {
+const ProductCard = ({ product }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <FadeIn delay={delay}>
-      <div
-        className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        {/* Image */}
-        <div className="relative overflow-hidden h-56 bg-gray-100">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            onError={(e) => {
-              e.target.src = "https://placehold.co/400x300/e6f4ed/0c5940?text=Ozone+Product";
-            }}
-          />
-          {/* Gradient overlay on hover */}
-          <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-400 ${hovered ? "opacity-100" : "opacity-0"}`}></div>
+    <div
+      className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {/* Image */}
+      <div className="relative overflow-hidden h-56 bg-gray-100">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          onError={(e) => {
+            e.target.src = "https://placehold.co/400x300/e6f4ed/0c5940?text=Ozone+Product";
+          }}
+        />
+        {/* Gradient overlay on hover */}
+        <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-400 ${hovered ? "opacity-100" : "opacity-0"}`}></div>
 
-          {/* Badge */}
-          <div className={`absolute top-3 left-3 ${product.badgeColor} text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md`}>
-            {product.badge}
-          </div>
-
-          {/* Category tag */}
-          <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-gray-700 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
-            {product.category}
-          </div>
-
-          {/* Quick view button on hover */}
-          <div className={`absolute bottom-3 left-0 right-0 flex justify-center transition-all duration-400 ${hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-            <Link
-              to="/products"
-              className="flex items-center gap-1.5 bg-white text-[#0c5940] text-xs font-bold px-5 py-2 rounded-full shadow-lg hover:bg-[#0c5940] hover:text-white transition"
-            >
-              View Details <ArrowUpRight size={13} />
-            </Link>
-          </div>
+        {/* Badge */}
+        <div className={`absolute top-3 left-3 ${product.badgeColor} text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md`}>
+          {product.badge}
         </div>
 
-        {/* Content */}
-        <div className="p-5 flex flex-col flex-1">
-          <h3 className="text-lg font-bold text-[var(--primary)] mb-2 group-hover:text-[#0c5940] transition-colors">
-            {product.name}
-          </h3>
-          <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">
-            {product.description}
-          </p>
+        {/* Category tag */}
+        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-gray-700 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
+          {product.category}
+        </div>
 
-          {/* Features */}
-          <div className="flex flex-wrap gap-2 mt-auto">
-            {product.features.map((f, i) => (
-              <div key={i} className="flex items-center gap-1 text-[11px] font-semibold text-[#0c5940] bg-[#e6f4ed] px-2.5 py-1 rounded-full">
-                <CheckCircle2 size={11} />
-                {f}
-              </div>
-            ))}
-          </div>
+        {/* Quick view button on hover */}
+        <div className={`absolute bottom-3 left-0 right-0 flex justify-center transition-all duration-400 ${hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+          <Link
+            to="/products"
+            className="flex items-center gap-1.5 bg-white text-[#0c5940] text-xs font-bold px-5 py-2 rounded-full shadow-lg hover:bg-[#0c5940] hover:text-white transition"
+          >
+            View Details <ArrowUpRight size={13} />
+          </Link>
         </div>
       </div>
-    </FadeIn>
+
+      {/* Content */}
+      <div className="p-5 flex flex-col flex-1">
+        <h3 className="text-lg font-bold text-[var(--primary)] mb-2 group-hover:text-[#0c5940] transition-colors">
+          {product.name}
+        </h3>
+        <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">
+          {product.description}
+        </p>
+
+        {/* Features */}
+        <div className="flex flex-wrap gap-2 mt-auto">
+          {product.features.map((f, i) => (
+            <div key={i} className="flex items-center gap-1 text-[11px] font-semibold text-[#0c5940] bg-[#e6f4ed] px-2.5 py-1 rounded-full">
+              <CheckCircle2 size={11} />
+              {f}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 
 const HomeProducts = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   const filtered =
     activeCategory === "All"
-      ? productsData.slice(0, 8)
+      ? productsData
       : productsData.filter((p) => p.category === activeCategory);
 
   return (
     <section className="py-20 bg-[var(--background)] overflow-hidden">
+      <style>{`
+        .products-swiper .swiper-pagination-bullet {
+          width: 8px;
+          height: 8px;
+          background: #d1d5db;
+          opacity: 1;
+          transition: all 0.3s ease;
+        }
+        .products-swiper .swiper-pagination-bullet-active {
+          width: 28px;
+          border-radius: 4px;
+          background: #0c5940;
+        }
+        .products-swiper .swiper-slide {
+          height: auto;
+        }
+      `}</style>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
@@ -148,16 +172,67 @@ const HomeProducts = () => {
           </div>
         </FadeIn>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-          {filtered.map((product, i) => (
-            <ProductCard key={product.id} product={product} delay={i * 80} />
-          ))}
-        </div>
+        {/* Swiper Carousel */}
+        <FadeIn delay={150}>
+          <div className="relative">
+            {/* Custom Navigation Buttons */}
+            <button
+              ref={prevRef}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-gray-100 flex items-center justify-center text-[#0c5940] hover:bg-[#0c5940] hover:text-white transition-all duration-300 hover:scale-110 hidden sm:flex"
+            >
+              <ChevronLeft size={22} />
+            </button>
+            <button
+              ref={nextRef}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-gray-100 flex items-center justify-center text-[#0c5940] hover:bg-[#0c5940] hover:text-white transition-all duration-300 hover:scale-110 hidden sm:flex"
+            >
+              <ChevronRight size={22} />
+            </button>
+
+            <Swiper
+              key={activeCategory}
+              className="products-swiper !pb-12"
+              modules={[Navigation, Autoplay, Pagination]}
+              spaceBetween={24}
+              slidesPerView={1}
+              loop={filtered.length > 3}
+              autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+              pagination={{ clickable: true }}
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
+              }}
+              onSwiper={(swiper) => {
+                // Re-init navigation after mount so refs are attached
+                setTimeout(() => {
+                  if (swiper.params?.navigation) {
+                    swiper.params.navigation.prevEl = prevRef.current;
+                    swiper.params.navigation.nextEl = nextRef.current;
+                    swiper.navigation.destroy();
+                    swiper.navigation.init();
+                    swiper.navigation.update();
+                  }
+                }, 0);
+              }}
+              breakpoints={{
+                480: { slidesPerView: 1.3, centeredSlides: true },
+                640: { slidesPerView: 2, centeredSlides: false },
+                1024: { slidesPerView: 3, centeredSlides: false },
+                1280: { slidesPerView: 4, centeredSlides: false },
+              }}
+            >
+              {filtered.map((product) => (
+                <SwiperSlide key={product.id} className="h-auto">
+                  <ProductCard product={product} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </FadeIn>
 
         {/* CTA */}
         <FadeIn delay={200}>
-          <div className="text-center">
+          <div className="text-center mt-4">
             <Link
               to="/products"
               className="group inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-[#0c5940] to-[#13328D] hover:from-[#094230] hover:to-[#081A59] text-white rounded-full font-bold text-sm tracking-wide transition-all duration-300 shadow-xl shadow-[#0c5940]/30 hover:shadow-[#0c5940]/50 hover:scale-105"
