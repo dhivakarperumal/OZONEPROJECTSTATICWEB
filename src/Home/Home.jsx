@@ -8,6 +8,7 @@ import HomeServices from './HomeServices'
 import HomeReviews from './HomeReviews'
 import HomeGallery from './HomeGallery'
 import CompanyLogos from './CompanyLogos'
+import InstagramReels from './InstagramReels'
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <HomeFeatures />
       <HomeServices />
       <HomeGallery />
+      <InstagramReels />
       <HomeReviews />
       <CompanyLogos />
     </div>

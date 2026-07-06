@@ -50,9 +50,11 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center justify-center flex-1 gap-4 xl:gap-8">
             <NavLink to="/" className={navClass}>Home</NavLink>
             <NavLink to="/about" className={navClass}>About Us</NavLink>
+
+            <NavLink to="/products" className={navClass}>Products</NavLink>
             
             {/* Products Dropdown */}
-            <div className="relative" ref={productsRef}>
+            {/* <div className="relative" ref={productsRef}>
               <button 
                 onClick={() => { setProductsMenu(!productsMenu); setFitmentMenu(false); }}
                 className={dropdownBtnClass}
@@ -64,7 +66,7 @@ const Navbar = () => {
                   <Link to="/products" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">All Products</Link>
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Fitment Systems Dropdown */}
             {/* <div className="relative" ref={fitmentRef}>
