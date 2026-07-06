@@ -4,6 +4,7 @@ import HomeAbout from './HomeAbout'
 import HomeProducts from './HomeProducts'
 // import OfferBanner from './OfferBanner'
 import HomeFeatures from './HomeFeatures'
+import HomeStats from './HomeStats'
 import HomeServices from './HomeServices'
 import HomeReviews from './HomeReviews'
 import HomeGallery from './HomeGallery'
@@ -18,6 +19,7 @@ const Home = () => {
       {/* <OfferBanner /> */}
       <HomeProducts />
       <HomeFeatures />
+      <HomeStats />
       <HomeServices />
       <HomeGallery />
       <InstagramReels />
