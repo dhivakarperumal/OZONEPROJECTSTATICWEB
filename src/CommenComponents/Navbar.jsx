@@ -62,15 +62,17 @@ const Navbar = () => {
     <>
       <nav className="sticky top-0 z-50 bg-white shadow-sm py-2 md:py-3">
         <PageContainer>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between relative">
 
             {/* Logo */}
-            <Link to="/" className="flex items-center" onClick={closeMobile}>
-              <img src={logo} alt="Ozone Enterprises" className="h-10 md:h-12 object-contain" />
-            </Link>
+            <div className="flex-1 lg:flex-none z-10">
+              <Link to="/" className="flex items-center" onClick={closeMobile}>
+                <img src={logo} alt="Ozone Enterprises" className="h-10 md:h-12 object-contain" />
+              </Link>
+            </div>
 
             {/* Desktop Links */}
-            <div className="hidden lg:flex items-center justify-center flex-1 gap-4 xl:gap-8">
+            <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center gap-1 lg:gap-2 xl:gap-4 w-max z-0">
               <NavLink to="/" className={navClass}>Home</NavLink>
               <NavLink to="/about" className={navClass}>About Us</NavLink>
               <NavLink to="/products" className={navClass}>Products</NavLink>
@@ -80,20 +82,22 @@ const Navbar = () => {
             </div>
 
             {/* Desktop CTA */}
-            <div className="hidden lg:block shrink-0">
+            <div className="hidden lg:block shrink-0 z-10">
               <Link to="/quote" className="flex items-center gap-2 bg-[#0c5940] hover:bg-[#094230] text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition shadow-md">
                 Get a Quote
               </Link>
             </div>
 
             {/* Mobile Toggle */}
-            <button
-              onClick={() => setMobileMenu(!mobileMenu)}
-              className="lg:hidden flex items-center justify-center w-11 h-11 rounded-xl hover:bg-gray-50 transition"
-              aria-label="Toggle menu"
-            >
-              {mobileMenu ? <X size={26} className="text-white" strokeWidth={2.5} /> : <SwooshMenuIcon />}
-            </button>
+            <div className="flex items-center lg:hidden z-10">
+              <button
+                onClick={() => setMobileMenu(!mobileMenu)}
+                className="flex items-center justify-center w-11 h-11 rounded-xl hover:bg-gray-50 transition"
+                aria-label="Toggle menu"
+              >
+                {mobileMenu ? <X size={26} className="text-white" strokeWidth={2.5} /> : <SwooshMenuIcon />}
+              </button>
+            </div>
           </div>
         </PageContainer>
       </nav>
