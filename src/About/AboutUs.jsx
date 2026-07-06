@@ -229,39 +229,6 @@ export default function AboutUs() {
           </FadeIn>
         </section>
 
-        <section className="mt-20">
-          <FadeIn delay={100} className="w-full">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-success/10 px-3 py-1.5 text-sm font-semibold text-success-dark">
-                  <ShieldCheck size={16} />
-                  Our Strengths
-                </div>
-                <h3 className="mt-4 text-3xl font-black text-heading sm:text-4xl">
-                  Why clients trust Ozone Enterprises
-                </h3>
-              </div>
-              <p className="max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
-                We blend refined craftsmanship with practical innovation to create solutions that feel as strong as they look.
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="mt-8 grid gap-6 lg:grid-cols-3">
-            {values.map((item) => (
-              <FadeIn key={item.title} delay={140} className="w-full">
-                <div className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-success/12 text-success-dark">
-                    {item.icon}
-                  </div>
-                  <h4 className="mt-5 text-xl font-bold text-heading">{item.title}</h4>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </section>
-
         <section className="mt-20 overflow-hidden rounded-[2rem] bg-linear-to-r from-primary via-primary-light to-secondary p-8 shadow-2xl sm:p-10 lg:p-12">
           <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
             <FadeIn delay={100} className="w-full">
@@ -300,6 +267,41 @@ export default function AboutUs() {
             </FadeIn>
           </div>
         </section>
+
+        <section className="mt-20">
+          <FadeIn delay={100} className="w-full">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full bg-success/10 px-3 py-1.5 text-sm font-semibold text-success-dark">
+                  <ShieldCheck size={16} />
+                  Our Strengths
+                </div>
+                <h3 className="mt-4 text-3xl font-black text-heading sm:text-4xl">
+                  Why clients trust Ozone Enterprises
+                </h3>
+              </div>
+              <p className="max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+                We blend refined craftsmanship with practical innovation to create solutions that feel as strong as they look.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            {values.map((item) => (
+              <FadeIn key={item.title} delay={140} className="w-full">
+                <div className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-success/12 text-success-dark">
+                    {item.icon}
+                  </div>
+                  <h4 className="mt-5 text-xl font-bold text-heading">{item.title}</h4>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </section>
+
+
       </PageContainer>
     </div>
   );
