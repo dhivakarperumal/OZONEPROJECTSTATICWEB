@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import {
   MapPin,
@@ -23,9 +23,8 @@ import PageHeader from "../CommenComponents/PageHeader";
 // 3. Create a Template → paste the Template ID below
 //    Template variables to use: {{name}}, {{email}}, {{phone}}, {{subject}}, {{message}}, {{time}}
 // 4. Go to Account → API Keys → paste your Public Key below
-const EMAILJS_SERVICE_ID  = "service_3le3tob";
-const EMAILJS_TEMPLATE_ID = "template_8251c9a";
-const EMAILJS_PUBLIC_KEY  = "sfdUmNQPJVB-Z5nPp";
+const EMAILJS_SERVICE_ID  = "service_v0zovjm";
+const EMAILJS_TEMPLATE_ID = "template_u8r3kha";
 // ─────────────────────────────────────────────────────────────────────────────
 
 const ContactUs = () => {
@@ -59,15 +58,18 @@ const ContactUs = () => {
           from_name: formData.name,
           from_email: formData.email,
           time: new Date().toLocaleString(),
-        },
-        { publicKey: EMAILJS_PUBLIC_KEY }
+        }
       );
       setSubmitted(true);
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
       setTimeout(() => setSubmitted(false), 6000);
     } catch (err) {
       console.error("EmailJS error:", err);
-      setSendError("Failed to send message. Please try again or contact us directly.");
+      setSendError(
+        err?.text
+          ? `Failed to send message: ${err.text}`
+          : "Failed to send message. Please try again or contact us directly."
+      );
     } finally {
       setSending(false);
     }

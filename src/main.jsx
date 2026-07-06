@@ -2,9 +2,13 @@ import React, { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import emailjs from "@emailjs/browser";
 
 import "./index.css";
 import App from "./App.jsx";
+
+const EMAILJS_PUBLIC_KEY = "4hcGirIm9Zp7LTKFV";
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 import Loader from "./CommenComponents/Loader.jsx";
 import Home from "./Home/Home.jsx";
 import About from "./Home/About.jsx";
