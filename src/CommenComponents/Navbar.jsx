@@ -36,7 +36,7 @@ const Navbar = () => {
   const dropdownBtnClass = "flex items-center gap-1 px-3 py-2 text-sm font-semibold tracking-wide text-gray-800 hover:text-[#0c5940] transition cursor-pointer";
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-sm  py-5 md:py-6">
+    <nav className="sticky top-0 z-50 bg-white shadow-sm py-2 md:py-3">
       <PageContainer>
         <div className="flex items-center justify-between">
           

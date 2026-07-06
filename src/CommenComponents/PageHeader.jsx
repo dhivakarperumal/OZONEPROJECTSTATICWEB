@@ -1,48 +1,63 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import defaultBg from "../../public/logo.png";
+import { ChevronRight, Home } from "lucide-react";
 
-const PageHeader = ({ title, background }) => {
-
-  const bgImage = background || defaultBg;
+const PageHeader = ({ title, subtitle, background }) => {
+  const bgImage = background || "/PageHeaderIMG/3.png";
 
   return (
     <div
-      className="relative w-full h-[180px] sm:h-[200px] md:h-[210px] lg:h-[220px] flex items-center justify-center text-white"
+      className="relative w-full h-[260px] sm:h-[300px] md:h-[340px] flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        // backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0"></div>
+      {/* Dark gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+
+      {/* Decorative left accent bar */}
+      <div className="absolute left-0 top-0 h-full w-1 bg-[#0c5940]"></div>
+
+      {/* Decorative bottom shimmer line */}
+      <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#0c5940] via-[var(--secondary)] to-transparent"></div>
 
       {/* Content */}
-      <div className="relative text-center px-4">
+      <div className="relative z-10 text-center px-4 flex flex-col items-center gap-3">
 
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3">
+        {/* Eyebrow badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-1">
+          <span className="w-2 h-2 rounded-full bg-[#0c5940] animate-pulse"></span>
+          <span className="text-xs font-bold tracking-widest text-white/80 uppercase">Ozone Enterprises</span>
+        </div>
+
+        {/* Title */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight drop-shadow-lg">
           {title}
         </h1>
 
-        {/* Breadcrumb */}
-        <div className="text-xs sm:text-sm md:text-base flex justify-center items-center gap-2">
+        {/* Subtitle */}
+        {subtitle && (
+          <p className="text-sm sm:text-base text-gray-300 max-w-xl">{subtitle}</p>
+        )}
 
-          <Link
-            to="/"
-            className=" hover:text-white/80 transition"
-          >
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm text-gray-300 mt-1">
+          <Link to="/" className="flex items-center gap-1 hover:text-white transition font-medium">
+            <Home size={14} />
             Home
           </Link>
-
-          <span>/</span>
-
-          <span className="text-gray-200">{title}</span>
-
+          <ChevronRight size={14} className="text-gray-500" />
+          <span className="text-[#06C167] font-semibold">{title}</span>
         </div>
 
       </div>
+
+      {/* Decorative circle blurs */}
+      <div className="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-[var(--secondary)] opacity-10 blur-3xl pointer-events-none"></div>
+      <div className="absolute -bottom-10 -left-10 w-48 h-48 rounded-full bg-[#0c5940] opacity-10 blur-3xl pointer-events-none"></div>
     </div>
   );
 };
