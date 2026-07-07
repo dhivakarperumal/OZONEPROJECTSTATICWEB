@@ -252,23 +252,35 @@ export default function Gallery() {
 
             </div>
           ) : (
-            // Category view - square images
-            items.map((it) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {items.map((it) => (
               <div
                 key={it.id}
-                className="relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm group"
+                className="relative h-[320px] overflow-hidden rounded-3xl bg-white shadow-sm group cursor-pointer"
+                onClick={() => setModal(it)}
               >
-                <img src={it.image} alt={it.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={(e) => e.target.style.display = 'none'} />
+                <img
+                  src={it.image}
+                  alt={it.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  onError={(e) => (e.target.style.display = "none")}
+                />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                  <div className="p-4 w-full text-white">
-                    <p className="text-sm font-bold">{it.title}</p>
-                    <p className="text-[11px] uppercase tracking-wider text-white/70">{it.category}</p>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                <div className="absolute bottom-5 left-5 right-5">
+                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs uppercase tracking-wider mb-3">
+                    {it.category}
+                  </span>
+
+                  <h3 className="text-white text-xl font-bold">
+                    {it.title}
+                  </h3>
                 </div>
               </div>
-            ))
-          )}
+            ))}
+          </div>
+)}
 
         </FadeIn>
 
