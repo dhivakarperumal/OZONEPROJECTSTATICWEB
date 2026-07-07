@@ -65,7 +65,7 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="sticky top-0 z-50 bg-white shadow-sm py-2 md:py-3"
+        className="sticky top-0 z-[60] w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 shadow-sm py-2 md:py-3 border-b border-gray-100"
       >
         <PageContainer>
           <div className="flex items-center justify-between relative">
