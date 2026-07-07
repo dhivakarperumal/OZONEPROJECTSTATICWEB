@@ -372,23 +372,25 @@ const ReelModal = ({ reel, onClose }) => {
           </div>
         </div>
 
-        {/* Center play/pause */}
-        <button
-          onClick={togglePlay}
-          className="absolute inset-0 flex items-center justify-center z-10 pointer-events-auto"
-        >
-          <div
-            className={`w-18 h-18 rounded-full bg-white/20 border-2 border-white/60 backdrop-blur-sm flex items-center justify-center shadow-2xl transition-opacity duration-300 ${playing ? "opacity-0 hover:opacity-100" : "opacity-100"
-              }`}
-            style={{ width: 72, height: 72 }}
+        {/* Center play/pause (only for native videos) */}
+        {!embedUrl && (
+          <button
+            onClick={togglePlay}
+            className="absolute inset-0 flex items-center justify-center z-10 pointer-events-auto"
           >
-            {playing ? (
-              <FaPause className="text-white text-2xl" />
-            ) : (
-              <FaPlay className="text-white text-2xl ml-1" />
-            )}
-          </div>
-        </button>
+            <div
+              className={`w-18 h-18 rounded-full bg-white/20 border-2 border-white/60 backdrop-blur-sm flex items-center justify-center shadow-2xl transition-opacity duration-300 ${playing ? "opacity-0 hover:opacity-100" : "opacity-100"
+                }`}
+              style={{ width: 72, height: 72 }}
+            >
+              {playing ? (
+                <FaPause className="text-white text-2xl" />
+              ) : (
+                <FaPlay className="text-white text-2xl ml-1" />
+              )}
+            </div>
+          </button>
+        )}
 
         {/* Right actions */}
         <div className="absolute right-4 bottom-28 flex flex-col items-center gap-5 z-10">
