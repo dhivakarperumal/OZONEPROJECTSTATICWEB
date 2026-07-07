@@ -83,17 +83,20 @@ const CategorySection = () => {
 
                                 {/* Content */}
                                 <div className="relative z-10 mt-8 text-center">
-                                    <h3 className="text-xl font-bold text-slate-900">
+                                    <h3 className="text-xl font-bold bg-gradient-to-r from-[#0c5940] via-[#0a7d5a] to-[#08124E] bg-clip-text text-transparent">
                                         {category.name}
                                     </h3>
 
                                     {/* <p className="mt-3 text-sm text-slate-500">
                                         Premium fitment collection with elegant finishes.
                                     </p> */}
-
-                                    <div className="mt-6 inline-flex items-center gap-2 text-[#0c5940] font-semibold group-hover:gap-4 transition-all">
-                                        Explore
-                                        <span className="text-xl">→</span>
+                                    <div className="mt-6 inline-flex items-center gap-2 font-semibold group-hover:gap-4 transition-all duration-300">
+                                        <span className="bg-gradient-to-r from-[#08124E] to-[#0c5940] bg-clip-text text-transparent">
+                                            Explore
+                                        </span>
+                                        <span className="text-xl text-[#08124E] group-hover:translate-x-1 transition-transform">
+                                            →
+                                        </span>
                                     </div>
                                 </div>
                             </div>
