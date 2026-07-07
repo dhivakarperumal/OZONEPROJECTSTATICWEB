@@ -111,12 +111,12 @@ const Home = () => {
         )}
       </AnimatePresence>
 
-      <Hero />
+      {/* <Hero />
       <RevealSection id="about-section" direction="left">
         <HomeAbout />
-      </RevealSection>
+      </RevealSection> */}
       {/* <OfferBanner /> */}
-      <RevealSection direction="bottom">
+      {/* <RevealSection direction="bottom">
         <HomeProducts />
       </RevealSection>
       <RevealSection direction="right">
@@ -130,7 +130,7 @@ const Home = () => {
       </RevealSection>
       <RevealSection direction="bottom">
         <HomeGallery />
-      </RevealSection>
+      </RevealSection> */}
       <RevealSection direction="bottom">
         <InstagramReels />
       </RevealSection>
