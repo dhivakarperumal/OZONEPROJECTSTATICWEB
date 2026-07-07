@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, PlayCircle, BookOpen } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, PlayCircle, BookOpen, ChevronDown } from 'lucide-react';
 import CatalogueDownload from '../CommenComponents/CatalogueDownload';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
@@ -61,33 +62,51 @@ const Hero = () => {
         {slidesData.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div className="relative w-full h-full flex items-center">
-              {/* Full Background Image */}
-              <div 
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[10000ms] scale-105"
+              <motion.div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url('${slide.bgImage}')` }}
-              ></div>
+                animate={{ scale: [1.04, 1.12, 1.04], opacity: [0.95, 1, 0.95] }}
+                transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+              />
               
-              {/* Dark Overlay for better text readability */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
               
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-16">
                 <div className="max-w-3xl">
-                  
-                  {/* Text Content */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6"
+                  >
                     <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
                     <span className="text-sm font-bold tracking-wide text-white uppercase">{slide.tag}</span>
-                  </div>
+                  </motion.div>
                   
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 tracking-tight leading-[1.1] text-white">
+                  <motion.h1
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.25 }}
+                    className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 tracking-tight leading-[1.1] text-white"
+                  >
                     {slide.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-[var(--secondary)]">{slide.highlight}</span>
-                  </h1>
+                  </motion.h1>
                   
-                  <p className="text-base sm:text-lg lg:text-xl mb-10 leading-relaxed text-gray-200">
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.4 }}
+                    className="text-base sm:text-lg lg:text-xl mb-10 leading-relaxed text-gray-200"
+                  >
                     {slide.desc}
-                  </p>
+                  </motion.p>
                   
-                  <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.55 }}
+                    className="flex flex-col sm:flex-row items-center justify-start gap-4"
+                  >
                     <Link to="/products" className="w-full sm:w-auto px-8 py-4 bg-[#0c5940] hover:bg-[#094230] text-white rounded-full font-semibold transition flex items-center justify-center gap-2 shadow-lg shadow-[#0c5940]/40">
                       Explore Products <ArrowRight size={20} />
                     </Link>
@@ -100,14 +119,27 @@ const Hero = () => {
                     >
                       <BookOpen size={20} /> Download Catalogue
                     </button>
-                  </div>
-                  
+                  </motion.div>
                 </div>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <a
+        href="#about-section"
+        className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 flex flex-col items-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-white/90"
+      >
+        <span>Scroll Down</span>
+        <motion.span
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md"
+        >
+          <ChevronDown size={18} />
+        </motion.span>
+      </a>
 
       <CatalogueDownload isOpen={catalogueOpen} onClose={() => setCatalogueOpen(false)} />
       

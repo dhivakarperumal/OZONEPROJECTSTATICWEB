@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import PageContainer from "../CommenComponents/PageContainer";
 import PageHeader from "../CommenComponents/PageHeader";
+import { motion, AnimatePresence } from "framer-motion";
 
 const stats = [
   { value: "15+", label: "Years of Experience" },
@@ -104,12 +105,59 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 };
 
 export default function AboutUs() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 900);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background">
+    <motion.div
+      className="min-h-screen bg-background"
+      initial={{
+        opacity: 0,
+        scale: 0.8,
+      }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+      }}
+      transition={{
+        duration: 0.7,
+        ease: "easeOut",
+      }}
+    >
       <PageHeader
         title="About Us"
-        // subtitle="Crafting premium architectural solutions with innovation, precision, and a commitment to exceptional quality."
       />
+
+      <AnimatePresence>
+        {loading && (
+          <>
+            {/* Left Curtain */}
+            <motion.div
+              initial={{ x: 0 }}
+              animate={{ x: "-100%" }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.8 }}
+              className="fixed top-0 left-0 w-1/2 h-screen z-9999 bg-[#0c5940]/30"
+            />
+
+            {/* Right Curtain */}
+            <motion.div
+              initial={{ x: 0 }}
+              animate={{ x: "100%" }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.8 }}
+              className="fixed top-0 right-0 w-1/2 h-screen z-9999 bg-[#08124E]/30"
+            />
+          </>
+        )}
+      </AnimatePresence>
 
       <PageContainer className="py-16 sm:py-20 lg:py-24">
         <section className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
@@ -317,6 +365,6 @@ export default function AboutUs() {
 
 
       </PageContainer>
-    </div>
+    </motion.div>
   );
 }
