@@ -22,10 +22,10 @@ const Footer = () => {
   return (
     <footer className="bg-[#021333] text-white pt-16 pb-12 ">
       <PageContainer>
-        
+
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-12">
-          
+
           {/* Left: Tailor-Made Solutions */}
           <div className="lg:w-[30%]">
             <h3 className="text-[17px] font-bold mb-3 tracking-wide">TAILOR-MADE SOLUTIONS</h3>
@@ -39,40 +39,40 @@ const Footer = () => {
 
           {/* Right: Features */}
           <div className="lg:w-[70%] grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
-            
+
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <Layout className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
-              <p className="text-[12px] text-gray-300 leading-tight">Custom fit for every<br/>window & door</p>
+              <p className="text-[12px] text-gray-300 leading-tight">Custom fit for every<br />window & door</p>
             </div>
 
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <ShieldCheck className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
-              <p className="text-[12px] text-gray-300 leading-tight">High durability<br/>& longevity</p>
+              <p className="text-[12px] text-gray-300 leading-tight">High durability<br />& longevity</p>
             </div>
 
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <ThumbsUp className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
-              <p className="text-[12px] text-gray-300 leading-tight">Aesthetically<br/>finished fitments</p>
+              <p className="text-[12px] text-gray-300 leading-tight">Aesthetically<br />finished fitments</p>
             </div>
 
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <Settings className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
-              <p className="text-[12px] text-gray-300 leading-tight">Multiple fitment<br/>options</p>
+              <p className="text-[12px] text-gray-300 leading-tight">Multiple fitment<br />options</p>
             </div>
 
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <HeadphonesIcon className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
-              <p className="text-[12px] text-gray-300 leading-tight">Excellent after-sales<br/>support</p>
+              <p className="text-[12px] text-gray-300 leading-tight">Excellent after-sales<br />support</p>
             </div>
 
           </div>
@@ -84,7 +84,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          
+
           {/* Logo & Social */}
           <div className="lg:col-span-1 flex flex-col items-start">
             <Link to="/" className="inline-block mb-6">
@@ -121,57 +121,46 @@ const Footer = () => {
           </div>
 
 
-          
-        {/* Service Areas */}
-<div className="lg:col-span-1">
-  <h4 className="text-[13px] font-bold mb-4 tracking-wider uppercase">
-    SERVICE AREAS
-  </h4>
 
-  <ul className="space-y-2.5 text-[13px] text-gray-400">
-    <li>
-      <Link to="/contact" className="hover:text-white transition">
-        Ambur
-      </Link>
-    </li>
+          {/* Service Areas */}
+          <div className="lg:col-span-1">
+            <h4 className="text-[13px] font-bold mb-4 tracking-wider uppercase">
+              SERVICE AREAS
+            </h4>
 
-    <li>
-      <Link to="/contact" className="hover:text-white transition">
-        Tirupathur
-      </Link>
-    </li>
+            <ul className="space-y-2.5 text-[13px] text-gray-400">
+              <li>
+                <Link to="/contact" className="hover:text-white transition">
+                  Tirupathur District
+                </Link>
+              </li>
 
-    <li>
-      <Link to="/contact" className="hover:text-white transition">
-        Vellore
-      </Link>
-    </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition">
+                  Krishnagiri District 
+                </Link> 
+              </li>
 
-    <li>
-      <Link to="/contact" className="hover:text-white transition">
-        Gudiyatham
-      </Link>
-    </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition">
+                  Vellore District
+                </Link>
+              </li>
 
-    <li>
-      <Link to="/contact" className="hover:text-white transition">
-        Katpadi
-      </Link>
-    </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition">
+                  Dharmapuri District
+                </Link>
+              </li>
 
-    <li>
-      <Link to="/contact" className="hover:text-white transition">
-        Salem
-      </Link>
-    </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition">
+                  Tiruvannamalai District
+                </Link>
+              </li>
 
-    <li>
-      <Link to="/contact" className="hover:text-white transition">
-        Dharmapoori
-      </Link>
-    </li>
-  </ul>
-</div>
+            </ul>
+          </div>
 
           {/* Contact Us */}
           <div className="lg:col-span-1">
@@ -179,7 +168,7 @@ const Footer = () => {
             <ul className="space-y-3 text-[13px] text-gray-400">
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 shrink-0" />
-                <span>Ozone Enterprises<br/>Tuscaloosa, Alabama,<br/>USA</span>
+                <span>Ozone Enterprises<br />Tuscaloosa, Alabama,<br />USA</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="shrink-0" />
@@ -282,7 +271,7 @@ const Footer = () => {
                 onMouseLeave={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "translateY(0)"; }}
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
                 </svg>
                 Download Free PDF
               </button>
