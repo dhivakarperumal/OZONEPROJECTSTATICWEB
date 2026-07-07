@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import { NavLink, Link } from "react-router-dom";
 import { ChevronDown, X, Phone, Mail, ArrowUpRight } from "lucide-react";
 import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
@@ -60,7 +61,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-white shadow-sm py-2 md:py-3">
+      <motion.nav
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="sticky top-0 z-50 bg-white shadow-sm py-2 md:py-3"
+      >
         <PageContainer>
           <div className="flex items-center justify-between relative">
 

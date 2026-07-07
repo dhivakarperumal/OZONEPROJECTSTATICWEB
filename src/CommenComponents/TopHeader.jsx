@@ -1,11 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Phone, Mail } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import PageContainer from "./PageContainer";
 
 const TopHeader = () => {
     return (
-        <div
+        <motion.div
+            initial={{ opacity: 0, y: -24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease: "easeOut" }}
             className="hidden lg:block text-white text-sm rounded-b-[35px] overflow-hidden shadow-lg"
             style={{
                 background: "linear-gradient(90deg, #234CC4 0%, #112B87 50%, #08164F 100%)",

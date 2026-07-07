@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   MapPin,
@@ -20,7 +21,12 @@ const Footer = () => {
   const [catalogueOpen, setCatalogueOpen] = useState(false);
 
   return (
-    <footer className="bg-[#021333] text-white pt-16 pb-12 ">
+    <motion.footer
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+      className="bg-[#021333] text-white pt-16 pb-12 "
+    >
       <PageContainer>
 
         {/* Top Section */}
