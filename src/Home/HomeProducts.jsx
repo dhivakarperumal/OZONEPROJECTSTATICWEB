@@ -93,11 +93,14 @@ const ProductCard = ({ product, onQuickView }) => {
         </p> */}
 
         {/* Features */}
-        <div className="flex flex-wrap gap-2 mt-auto">
-          {product.features.map((f, i) => (
-            <div key={i} className="flex items-center gap-1 text-[11px] font-semibold text-[#0c5940] bg-[#e6f4ed] px-2.5 py-1 rounded-full">
+        <div className="flex flex-col gap-2 mt-auto">
+          {product.features.slice(0, 5).map((f, i) => (
+            <div
+              key={i}
+              className="flex items-center gap-2 text-[11px] font-semibold text-[#0c5940] bg-[#e6f4ed] px-2.5 py-1.5 rounded-full w-fit"
+            >
               <CheckCircle2 size={11} />
-              {f}
+              <span>{f}</span>
             </div>
           ))}
         </div>
@@ -175,8 +178,8 @@ const HomeProducts = () => {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-300 ${activeCategory === cat
-                    ? "bg-[#0c5940] text-white border-[#0c5940] shadow-lg shadow-[#0c5940]/20"
-                    : "bg-white text-gray-600 border-gray-200 hover:border-[#0c5940] hover:text-[#0c5940]"
+                  ? "bg-[#0c5940] text-white border-[#0c5940] shadow-lg shadow-[#0c5940]/20"
+                  : "bg-white text-gray-600 border-gray-200 hover:border-[#0c5940] hover:text-[#0c5940]"
                   }`}
               >
                 {cat}
@@ -205,12 +208,11 @@ const HomeProducts = () => {
             <Swiper
               key={activeCategory}
               className="products-swiper !pb-12"
-              modules={[Navigation, Autoplay, Pagination]}
+              modules={[Navigation, Autoplay]}
               spaceBetween={24}
               slidesPerView={1}
               loop={filtered.length > 3}
               autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
-              pagination={{ clickable: true }}
               navigation={{
                 prevEl: prevRef.current,
                 nextEl: nextRef.current,
