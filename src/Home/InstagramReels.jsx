@@ -26,6 +26,17 @@ const getInstagramEmbedUrl = (url) => {
   return `https://www.instagram.com/${type}/${match[1]}/embed/captioned/`;
 };
 
+const sortReels = (items) => {
+  return [...items].sort((a, b) => {
+    const aIsInstagram = /instagram\.com\/(?:reel|p|tv)\//i.test(a.instagramUrl || a.videoUrl);
+    const bIsInstagram = /instagram\.com\/(?:reel|p|tv)\//i.test(b.instagramUrl || b.videoUrl);
+
+    if (aIsInstagram && !bIsInstagram) return -1;
+    if (!aIsInstagram && bIsInstagram) return 1;
+    return 0;
+  });
+};
+
 // ─── Individual Reel Card ───────────────────────────────────────────────────
 const ReelCard = ({ reel, onExpand }) => {
   const videoRef = useRef(null);
@@ -33,7 +44,7 @@ const ReelCard = ({ reel, onExpand }) => {
   const [muted, setMuted] = useState(true);
   const [liked, setLiked] = useState(false);
   const [progress, setProgress] = useState(0);
-  const embedUrl = getInstagramEmbedUrl(reel.videoUrl || reel.instagramUrl);
+  const embedUrl = getInstagramEmbedUrl(reel.instagramUrl || reel.videoUrl);
 
   // Sync progress bar
   useEffect(() => {
@@ -219,7 +230,7 @@ const ReelModal = ({ reel, onClose }) => {
   const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(false);
   const [progress, setProgress] = useState(0);
-  const embedUrl = getInstagramEmbedUrl(reel.videoUrl || reel.instagramUrl);
+  const embedUrl = getInstagramEmbedUrl(reel.instagramUrl || reel.videoUrl);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -388,6 +399,7 @@ const InstagramReels = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [expandedReel, setExpandedReel] = useState(null);
+  const prioritizedReels = sortReels(reels);
 
   return (
     <section className="py-20 bg-[var(--primary)] relative overflow-hidden">
@@ -508,7 +520,7 @@ const InstagramReels = () => {
             1280: { slidesPerView: 4, spaceBetween: 24, centeredSlides: false },
           }}
         >
-          {reels.map((reel) => (
+          {prioritizedReels.map((reel) => (
             <SwiperSlide key={reel.id}>
               <ReelCard reel={reel} onExpand={setExpandedReel} />
             </SwiperSlide>
