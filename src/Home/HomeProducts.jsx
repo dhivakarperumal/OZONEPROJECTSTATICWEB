@@ -147,7 +147,19 @@ const HomeProducts = () => {
               <span className="text-xs font-bold tracking-widest text-[#0c5940] uppercase">Our Products</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-black text-[var(--primary)] mb-4 leading-tight">
-              Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0c5940] to-[var(--secondary)]">Fitment Systems</span>
+              Premium <span
+                className="text-transparent bg-clip-text font-bold"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, #0c5940 0%, #0ea5e9 45%, #22c55e 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  WebkitTextStroke: "0.8px rgba(0,0,0,0.15)",
+                  textShadow: "0 3px 10px rgba(0,0,0,0.35)",
+                }}
+              >
+                Fitment Systems
+              </span>
             </h2>
             <p className="text-gray-500 text-base max-w-2xl">
               Explore our complete range of architecturally designed fitment systems and hardware solutions — crafted for precision, durability and beauty.
@@ -162,11 +174,10 @@ const HomeProducts = () => {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-300 ${
-                  activeCategory === cat
+                className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-300 ${activeCategory === cat
                     ? "bg-[#0c5940] text-white border-[#0c5940] shadow-lg shadow-[#0c5940]/20"
                     : "bg-white text-gray-600 border-gray-200 hover:border-[#0c5940] hover:text-[#0c5940]"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -249,73 +260,73 @@ const HomeProducts = () => {
 
       </div>
 
-        {/* Product Modal */}
-        {selectedProduct && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300">
-            <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] animate-in fade-in zoom-in duration-300">
-              
-              <button
-                onClick={() => setSelectedProduct(null)}
-                className="absolute top-4 right-4 z-10 p-2 bg-white/80 hover:bg-gray-100 backdrop-blur-md rounded-full text-gray-800 transition-colors"
-              >
-                <X size={24} />
-              </button>
+      {/* Product Modal */}
+      {selectedProduct && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300">
+          <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] animate-in fade-in zoom-in duration-300">
 
-              {/* Image Section */}
-              <div className="md:w-1/2 bg-gray-50 flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-gray-100">
-                <img
-                  src={selectedProduct.image}
-                  alt={selectedProduct.name}
-                  className="max-w-full max-h-[40vh] md:max-h-[70vh] object-contain rounded-xl shadow-sm hover:scale-105 transition-transform duration-500"
-                  onError={(e) => {
-                    e.target.src = "https://placehold.co/400x300/e6f4ed/0c5940?text=Ozone+Product";
-                  }}
-                />
+            <button
+              onClick={() => setSelectedProduct(null)}
+              className="absolute top-4 right-4 z-10 p-2 bg-white/80 hover:bg-gray-100 backdrop-blur-md rounded-full text-gray-800 transition-colors"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Image Section */}
+            <div className="md:w-1/2 bg-gray-50 flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-gray-100">
+              <img
+                src={selectedProduct.image}
+                alt={selectedProduct.name}
+                className="max-w-full max-h-[40vh] md:max-h-[70vh] object-contain rounded-xl shadow-sm hover:scale-105 transition-transform duration-500"
+                onError={(e) => {
+                  e.target.src = "https://placehold.co/400x300/e6f4ed/0c5940?text=Ozone+Product";
+                }}
+              />
+            </div>
+
+            {/* Content Section */}
+            <div className="md:w-1/2 p-8 overflow-y-auto">
+              <div className="flex items-center gap-2 mb-3">
+                <span className={`px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white rounded-full shadow-sm ${selectedProduct.badgeColor}`}>
+                  {selectedProduct.badge}
+                </span>
+                <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#0c5940] bg-[#e6f4ed] rounded-full shadow-sm">
+                  {selectedProduct.category}
+                </span>
               </div>
 
-              {/* Content Section */}
-              <div className="md:w-1/2 p-8 overflow-y-auto">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className={`px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white rounded-full shadow-sm ${selectedProduct.badgeColor}`}>
-                    {selectedProduct.badge}
-                  </span>
-                  <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#0c5940] bg-[#e6f4ed] rounded-full shadow-sm">
-                    {selectedProduct.category}
-                  </span>
-                </div>
-                
-                <h3 className="text-3xl font-black text-[var(--primary)] mb-4 leading-tight">
-                  {selectedProduct.name}
-                </h3>
-                
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {selectedProduct.description}
-                </p>
+              <h3 className="text-3xl font-black text-[var(--primary)] mb-4 leading-tight">
+                {selectedProduct.name}
+              </h3>
 
-                <div className="mb-8">
-                  <h4 className="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Key Features</h4>
-                  <ul className="space-y-3">
-                    {selectedProduct.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <CheckCircle2 size={18} className="text-[#0c5940] mt-0.5 shrink-0" />
-                        <span className="text-gray-700 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div className="flex gap-4 mt-auto">
-                  <Link
-                    to="/products"
-                    className="flex-1 flex justify-center items-center gap-2 py-3.5 bg-[#0c5940] hover:bg-[#094230] text-white rounded-xl font-bold transition-all duration-300 shadow-lg shadow-[#0c5940]/20 hover:shadow-[#0c5940]/40 hover:-translate-y-0.5"
-                  >
-                    View All <ArrowRight size={18} />
-                  </Link>
-                </div>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {selectedProduct.description}
+              </p>
+
+              <div className="mb-8">
+                <h4 className="text-lg font-bold text-gray-800 mb-3 border-b pb-2">Key Features</h4>
+                <ul className="space-y-3">
+                  {selectedProduct.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <CheckCircle2 size={18} className="text-[#0c5940] mt-0.5 shrink-0" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex gap-4 mt-auto">
+                <Link
+                  to="/products"
+                  className="flex-1 flex justify-center items-center gap-2 py-3.5 bg-[#0c5940] hover:bg-[#094230] text-white rounded-xl font-bold transition-all duration-300 shadow-lg shadow-[#0c5940]/20 hover:shadow-[#0c5940]/40 hover:-translate-y-0.5"
+                >
+                  View All <ArrowRight size={18} />
+                </Link>
               </div>
             </div>
           </div>
-        )}
+        </div>
+      )}
     </section>
   );
 };

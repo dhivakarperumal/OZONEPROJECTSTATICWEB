@@ -81,7 +81,19 @@ const HomeGallery = () => {
             </div>
             <h2 className="text-4xl sm:text-5xl font-black text-[var(--primary)] leading-tight">
               Our Work Speaks <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0c5940] to-[var(--secondary)]">For Itself</span>
+              <span
+                className="text-transparent bg-clip-text font-bold"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg, #0c5940 0%, #0ea5e9 45%, #22c55e 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  WebkitTextStroke: "0.8px rgba(0,0,0,0.15)",
+                  textShadow: "0 3px 10px rgba(0,0,0,0.35)",
+                }}
+              >
+                For Itself
+              </span>
             </h2>
           </div>
           <Link
@@ -97,7 +109,7 @@ const HomeGallery = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
           {/* Left */}
           <div className="col-span-1 lg:col-span-6 flex flex-col gap-4">
-            
+
             {/* Featured 1 - Windows */}
             <div
               className="h-[300px] sm:h-[380px] lg:h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer"
@@ -134,7 +146,7 @@ const HomeGallery = () => {
 
           {/* Right */}
           <div className="col-span-1 lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
+
             {galleryItems.filter(item => item.featured).slice(1, 5).map((item) => (
               <div
                 key={item.id}

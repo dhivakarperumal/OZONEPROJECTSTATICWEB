@@ -173,7 +173,17 @@ const HomeAbout = () => {
             <FadeIn delay={150}>
               <h2 className="text-4xl sm:text-5xl font-black text-[var(--primary)] leading-tight mb-4">
                 Building Spaces <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0c5940] to-[var(--secondary)]">
+                <span
+                  className="text-transparent bg-clip-text font-bold"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(90deg, #0c5940 0%, #0ea5e9 45%, #22c55e 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    WebkitTextStroke: "0.8px rgba(0,0,0,0.15)",
+                    textShadow: "0 3px 10px rgba(0,0,0,0.35)",
+                  }}
+                >
                   That Inspire
                 </span>
               </h2>
