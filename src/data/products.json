@@ -49,13 +49,13 @@
     ],
     "sizes": "Custom Size",
     "warranty": "2 Years",
-    "coverImage": "/Products/mosquito/velcro/cover.jpg",
+    "coverImage": "/Products/velcromosquitonet1.avif",
     "gallery": [
-      "/Products/mosquito/velcro/1.jpg",
-      "/Products/mosquito/velcro/2.jpg",
-      "/Products/mosquito/velcro/3.jpg",
-      "/Products/mosquito/velcro/4.jpg",
-      "/Products/mosquito/velcro/5.jpg"
+      "/Products/velcromosquitonet.jpg",
+      "/Products/velcromosquitonet1.avif",
+      "/Products/velcromosquitonet2.webp",
+      "/Products/velcromosquitonet3.webp",
+      "/Products/velcromosquitonet4.jpg"
     ],
     "badge": "Best Seller",
     "badgeColor": "bg-green-700",
@@ -74,7 +74,7 @@
       3,
       5
     ],
-    "image": "/Products/mosquito/velcro/cover.jpg"
+    "image": "/Products/velcromosquitonet1.a"
   },
   {
     "id": 2,
