@@ -1,14 +1,24 @@
-import React, { useState, useEffect } from "react";
 import PageContainer from "../CommenComponents/PageContainer";
 import PageHeader from "../CommenComponents/PageHeader";
 import { galleryItems } from "../data/gallery";
 import { X, CheckCircle, Users, Award, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Gallery() {
   const [filter, setFilter] = useState("All");
   const [items, setItems] = useState(galleryItems);
   const [modal, setModal] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 900);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const categories = ["All", ...Array.from(new Set(galleryItems.map((g) => g.category)))];
 
@@ -36,8 +46,46 @@ export default function Gallery() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <motion.div
+      className="min-h-screen bg-background"
+      initial={{
+        opacity: 0,
+        scale: 0.8,
+      }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+      }}
+      transition={{
+        duration: 0.7,
+        ease: "easeOut",
+      }}
+    >
       <PageHeader title="Gallery" />
+
+      <AnimatePresence>
+        {loading && (
+          <>
+            {/* Left Curtain */}
+            <motion.div
+              initial={{ x: 0 }}
+              animate={{ x: "-100%" }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.8 }}
+              className="fixed top-0 left-0 w-1/2 h-screen bg-white/20 z-[9999]"
+            />
+
+            {/* Right Curtain */}
+            <motion.div
+              initial={{ x: 0 }}
+              animate={{ x: "100%" }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.8 }}
+              className="fixed top-0 right-0 w-1/2 h-screen bg-white/20 z-[9999]"
+            />
+          </>
+        )}
+      </AnimatePresence>
 
       <PageContainer className="py-12">
 
@@ -138,7 +186,7 @@ export default function Gallery() {
                 key={it.id}
                 className="relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm group"
               >
-                <img src={it.image} alt={it.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={(e)=>e.target.style.display='none'} />
+                <img src={it.image} alt={it.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={(e) => e.target.style.display = 'none'} />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-4 w-full text-white">
@@ -151,7 +199,7 @@ export default function Gallery() {
           )}
         </div>
 
-         {/* Intro Section */}
+        {/* Intro Section */}
         <div className="mb-16 mt-16">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -196,7 +244,7 @@ export default function Gallery() {
           </div>
         </div>
 
-        
+
         {/* Stats Section */}
         <div className="grid md:grid-cols-4 gap-6 mb-16 py-12 border-y border-gray-200">
           <div className="text-center">
@@ -328,6 +376,6 @@ export default function Gallery() {
         )}
 
       </PageContainer>
-    </div>
+    </motion.div>
   );
 }
