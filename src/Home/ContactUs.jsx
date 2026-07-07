@@ -452,10 +452,15 @@ const ContactUs = () => {
             <div className="grid lg:grid-cols-2 gap-10 items-center">
 
               {/* Map */}
-              <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100 h-72 sm:h-96">
+              <div className="w-full h-72 overflow-hidden rounded-3xl border border-gray-100 shadow-xl sm:h-96">
                 <iframe
-
-                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3895.0832650806783!2d78.56543597506867!3d12.510639887763997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDMwJzM4LjMiTiA3OMKwMzQnMDQuOCJF!5e0!3m2!1sen!2sin!4v1783402321437!5m2!1sen!2sin"></iframe>
+                  title="Ozone location map"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3895.0832650806783!2d78.56543597506867!3d12.510639887763997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDMwJzM4LjMiTiA3OMKwMzQnMDQuOCJF!5e0!3m2!1sen!2sin!4v1783402321437!5m2!1sen!2sin"
+                  className="h-full w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen=""
+                ></iframe>
               </div>
 
               {/* Text */}
