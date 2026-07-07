@@ -44,7 +44,7 @@ export default function Products() {
   const [showFilters, setShowFilters] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const itemsPerPage = 6;
+  const itemsPerPage = showFilters ? 9 : 8;
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -54,6 +54,10 @@ export default function Products() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, activeCategory, showFilters]);
 
   const categories = ["All", ...new Set(productsData.map((p) => p.category))];
 
