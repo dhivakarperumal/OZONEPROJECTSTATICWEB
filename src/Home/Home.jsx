@@ -12,6 +12,7 @@ import HomeGallery from './HomeGallery'
 import HomeFAQ from './HomeFAQ'
 import CompanyLogos from './CompanyLogos'
 import InstagramReels from './InstagramReels'
+import CategorySection from "./CategorySection";
 
 const RevealSection = ({ children, direction = "up", delay = 0, className = "", id }) => {
   const directionStyles = {
@@ -112,6 +113,7 @@ const Home = () => {
       </AnimatePresence>
 
       <Hero />
+      <CategorySection/>  
       <RevealSection id="about-section" direction="left">
         <HomeAbout />
       </RevealSection>

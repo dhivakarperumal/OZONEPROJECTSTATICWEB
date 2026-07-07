@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
 import PageContainer from "../CommenComponents/PageContainer";
 import PageHeader from "../CommenComponents/PageHeader";
 import { Search, Filter, ChevronRight, SlidersHorizontal, Check, ChevronLeft, X, CheckCircle2 } from "lucide-react";
 import productsData from "../data/products.json";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Products() {
+  const location = useLocation();
   const FadeIn = ({ children, delay = 0, className = "" }) => {
     const ref = useRef(null);
     const [visible, setVisible] = useState(false);
@@ -40,7 +41,9 @@ export default function Products() {
     );
   };
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState(
+    location.state?.category || "All"
+  );
   const [showFilters, setShowFilters] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -54,6 +57,17 @@ export default function Products() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (location.state?.category) {
+      setActiveCategory(location.state.category);
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, [location.state]);
 
   useEffect(() => {
     setCurrentPage(1);
