@@ -144,7 +144,7 @@ export default function AboutUs() {
               animate={{ x: "-100%" }}
               exit={{ x: "-100%" }}
               transition={{ duration: 0.8 }}
-              className="fixed top-0 left-0 w-1/2 h-screen bg-[#0c5940] z-[9999]"
+              className="fixed top-0 left-0 w-1/2 h-screen bg-white/20 z-[9999]"
             />
 
             {/* Right Curtain */}
@@ -153,7 +153,7 @@ export default function AboutUs() {
               animate={{ x: "100%" }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.8 }}
-              className="fixed top-0 right-0 w-1/2 h-screen bg-[#0c5940] z-[9999]"
+              className="fixed top-0 right-0 w-1/2 h-screen bg-white/20 z-[9999]"
             />
           </>
         )}
