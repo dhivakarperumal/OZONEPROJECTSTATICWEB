@@ -92,7 +92,7 @@ export default function VideoSwiper() {
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="bg-slate-50 rounded-2xl overflow-hidden animate-pulse h-[420px]">
+              <div key={i} className="bg-slate-50 rounded-2xl overflow-hidden animate-pulse h-[340px]">
                 <div className="w-full h-full bg-slate-200"></div>
               </div>
             ))}
@@ -113,7 +113,7 @@ export default function VideoSwiper() {
             {Array.isArray(videos) && videos.map((video) => (
               <SwiperSlide key={video.id}>
                 <div
-                  className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer h-[420px] bg-slate-100"
+                  className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer h-[340px] bg-slate-100"
                   onClick={() => setSelectedVideo(video)}
                 >
                   <div className="w-full h-full relative">
