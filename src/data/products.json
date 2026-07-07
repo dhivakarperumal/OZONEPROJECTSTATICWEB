@@ -152,7 +152,7 @@
       3,
       4
     ],
-    "image": "/Products/mosquito/classic-openable-window/cover.jpg"
+    "image": "/Products/openablemosquitowindow.jpg"
   },
   {
     "id": 3,
@@ -230,7 +230,7 @@
       2,
       4
     ],
-    "image": "/Products/mosquito/classic-fixed-window/cover.jpg"
+    "image": "/Products/fixedmosquitowindow.jpg"
   },
   {
     "id": 4,
@@ -312,7 +312,7 @@
       3,
       5
     ],
-    "image": "/Products/mosquito/ace-openable-window/cover.jpg"
+    "image": "/Products/openablemosquitowindow1.jpg"
   },
   {
     "id": 5,
@@ -394,7 +394,7 @@
       2,
       4
     ],
-    "image": "/Products/mosquito/rollup-screen/cover.jpg"
+    "image": "/Products/rollup.jpg"
   },
   {
     "id": 6,
