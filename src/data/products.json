@@ -1,82 +1,2065 @@
 [
   {
     "id": 1,
-    "name": "Sliding Window System",
-    "category": "Windows",
-    "description": "Precision-engineered sliding window fitment systems with smooth glide tracks, heavy-duty rollers, and weather-proof sealing for modern homes.",
-    "features": ["Weather Proof", "Smooth Glide", "Heavy Duty"],
-    "image": "../Products/mosquitonet1.jpg",
+    "slug": "velcro-mosquito-net",
+    "name": "Velcro Mosquito Net",
+    "category": "Mosquito Nets",
+    "shortDescription": "Easy-to-install removable fiberglass mosquito mesh for windows.",
+    "description": "Velcro mosquito mesh is one of the most popular mosquito protection systems. It uses premium fiberglass mesh fixed with industrial Velcro tape, allowing quick installation and removal. The system keeps mosquitoes, insects and flies outside while allowing fresh air and natural light inside.",
+    "features": [
+      "Premium Fiberglass Mesh",
+      "Easy DIY Installation",
+      "Washable",
+      "UV Resistant",
+      "Weather Proof",
+      "Removable",
+      "Light Weight",
+      "Long Service Life"
+    ],
+    "specification": {
+      "ProductType": "Velcro Mesh",
+      "MeshMaterial": "Fiberglass",
+      "Frame": "Industrial Velcro Tape",
+      "MeshColor": "Black / Grey",
+      "OpeningType": "Fixed",
+      "Installation": "Velcro Adhesive",
+      "SuitableFor": "Windows",
+      "AirFlow": "Excellent",
+      "UVResistance": "Yes",
+      "Warranty": "2 Years"
+    },
+    "applications": [
+      "Residential Homes",
+      "Apartments",
+      "Schools",
+      "Hospitals",
+      "Offices"
+    ],
+    "advantages": [
+      "100% Mosquito Protection",
+      "Easy Cleaning",
+      "Quick Installation",
+      "Budget Friendly",
+      "Custom Sizes Available"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Brown"
+    ],
+    "sizes": "Custom Size",
+    "warranty": "2 Years",
+    "coverImage": "/Products/mosquito/velcro/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/velcro/1.jpg",
+      "/Products/mosquito/velcro/2.jpg",
+      "/Products/mosquito/velcro/3.jpg",
+      "/Products/mosquito/velcro/4.jpg",
+      "/Products/mosquito/velcro/5.jpg"
+    ],
     "badge": "Best Seller",
-    "badgeColor": "bg-[#0c5940]"
+    "badgeColor": "bg-green-700",
+    "seo": {
+      "title": "Velcro Mosquito Net | Premium Fiberglass Mesh",
+      "description": "Premium Velcro mosquito mesh for residential and commercial windows.",
+      "keywords": [
+        "Velcro Mosquito Net",
+        "Window Mesh",
+        "Fiberglass Mesh",
+        "Mosquito Protection"
+      ]
+    },
+    "relatedProducts": [
+      2,
+      3,
+      5
+    ],
+    "image": "/Products/mosquito/velcro/cover.jpg"
   },
   {
     "id": 2,
-    "name": "Balcony Glass Railing",
-    "category": "Railings",
-    "description": "Elegant tempered glass balcony railing systems with stainless steel clamps, offering panoramic views and unmatched structural strength.",
-    "features": ["Tempered Glass", "SS Clamps", "Panoramic View"],
-    "image": "../Products/mosquitonet2.jpg",
+    "slug": "classic-openable-window",
+    "name": "Classic Openable Mosquito Window",
+    "category": "Mosquito Nets",
+    "shortDescription": "Premium openable mosquito window with stainless steel mesh.",
+    "description": "Classic Openable Mosquito Window is manufactured using high-quality aluminium profiles with premium stainless steel mesh. It offers excellent ventilation while protecting your home from mosquitoes, insects and dust.",
+    "features": [
+      "SS Mesh",
+      "Premium Aluminium Frame",
+      "Smooth Hinges",
+      "Rust Resistant",
+      "Heavy Duty",
+      "Magnetic Lock",
+      "Easy Cleaning",
+      "Elegant Finish"
+    ],
+    "specification": {
+      "ProductType": "Classic Openable Window",
+      "MeshMaterial": "Stainless Steel",
+      "FrameMaterial": "Aluminium",
+      "Finish": "Powder Coated",
+      "OpeningType": "Openable",
+      "Locking": "Magnetic",
+      "SuitableFor": "Windows",
+      "CorrosionResistance": "Excellent",
+      "WeatherResistance": "High",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Villa",
+      "Apartment",
+      "Office",
+      "Hospital",
+      "School"
+    ],
+    "advantages": [
+      "Strong Aluminium Frame",
+      "Premium Finish",
+      "Long Life",
+      "Elegant Design",
+      "Easy Maintenance"
+    ],
+    "availableColors": [
+      "White",
+      "Brown",
+      "Black",
+      "Grey"
+    ],
+    "sizes": "Custom Size",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/classic-openable-window/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/classic-openable-window/1.jpg",
+      "/Products/mosquito/classic-openable-window/2.jpg",
+      "/Products/mosquito/classic-openable-window/3.jpg",
+      "/Products/mosquito/classic-openable-window/4.jpg",
+      "/Products/mosquito/classic-openable-window/5.jpg"
+    ],
     "badge": "Premium",
-    "badgeColor": "bg-[var(--primary)]"
+    "badgeColor": "bg-blue-700",
+    "seo": {
+      "title": "Classic Openable Mosquito Window",
+      "description": "Premium aluminium openable mosquito window with stainless steel mesh.",
+      "keywords": [
+        "Openable Mosquito Window",
+        "SS Mesh",
+        "Window Mesh",
+        "Mosquito Window"
+      ]
+    },
+    "relatedProducts": [
+      1,
+      3,
+      4
+    ],
+    "image": "/Products/mosquito/classic-openable-window/cover.jpg"
   },
   {
     "id": 3,
-    "name": "Folding Door System",
-    "category": "Doors",
-    "description": "Space-saving bi-fold and multi-fold door systems with concealed hinges and smooth pivot action for seamless indoor-outdoor transitions.",
-    "features": ["Bi-Fold", "Concealed Hinges", "Space Saving"],
-    "image": "../Products/mosquitonet3.jpeg",
-    "badge": "New",
-    "badgeColor": "bg-[var(--secondary)]"
+    "slug": "classic-fixed-window",
+    "name": "Classic Fixed Mosquito Window",
+    "category": "Mosquito Nets",
+    "shortDescription": "Fixed mosquito window system with premium stainless steel mesh.",
+    "description": "Classic Fixed Window provides permanent mosquito protection with minimal maintenance. The fixed aluminium frame and stainless steel mesh ensure durability, excellent airflow and a clean modern appearance.",
+    "features": [
+      "Permanent Installation",
+      "Premium SS Mesh",
+      "Heavy Aluminium Frame",
+      "Powder Coated",
+      "Rust Resistant",
+      "Weather Proof",
+      "Easy Maintenance",
+      "Custom Built"
+    ],
+    "specification": {
+      "ProductType": "Fixed Window",
+      "MeshMaterial": "Stainless Steel",
+      "FrameMaterial": "Aluminium",
+      "FrameFinish": "Powder Coated",
+      "Installation": "Fixed",
+      "SuitableFor": "Windows",
+      "AirFlow": "Excellent",
+      "UVResistance": "Yes",
+      "CorrosionResistance": "Excellent",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Homes",
+      "Commercial Buildings",
+      "Schools",
+      "Hospitals",
+      "Factories"
+    ],
+    "advantages": [
+      "Zero Maintenance",
+      "Permanent Solution",
+      "Premium Quality",
+      "Strong Frame",
+      "Excellent Ventilation"
+    ],
+    "availableColors": [
+      "White",
+      "Brown",
+      "Black",
+      "Grey"
+    ],
+    "sizes": "Custom Size",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/classic-fixed-window/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/classic-fixed-window/1.jpg",
+      "/Products/mosquito/classic-fixed-window/2.jpg",
+      "/Products/mosquito/classic-fixed-window/3.jpg",
+      "/Products/mosquito/classic-fixed-window/4.jpg",
+      "/Products/mosquito/classic-fixed-window/5.jpg"
+    ],
+    "badge": "Popular",
+    "badgeColor": "bg-amber-500",
+    "seo": {
+      "title": "Classic Fixed Mosquito Window",
+      "description": "Premium fixed aluminium mosquito window with stainless steel mesh.",
+      "keywords": [
+        "Fixed Mosquito Window",
+        "Aluminium Window",
+        "SS Mesh",
+        "Mosquito Screen"
+      ]
+    },
+    "relatedProducts": [
+      1,
+      2,
+      4
+    ],
+    "image": "/Products/mosquito/classic-fixed-window/cover.jpg"
   },
   {
     "id": 4,
-    "name": "Louvre Shutter System",
-    "category": "Shutters",
-    "description": "Adjustable aluminium louvre shutters that provide ventilation, privacy and shade control — perfect for balconies and facades.",
-    "features": ["Adjustable", "Aluminium", "UV Resistant"],
-    "image": "../Products/mosquitonet4.jpeg",
-    "badge": "Popular",
-    "badgeColor": "bg-amber-500"
+    "slug": "ace-openable-window",
+    "name": "ACE Openable Mosquito Window",
+    "category": "Mosquito Nets",
+    "shortDescription": "Premium ACE series openable mosquito window with elegant aluminium frame and stainless steel mesh.",
+    "description": "ACE Openable Mosquito Window is designed for premium residential and commercial applications. Built with high-grade aluminium profiles and corrosion-resistant stainless steel mesh, it offers superior insect protection, maximum airflow and smooth operation with concealed premium hinges.",
+    "features": [
+      "Premium Aluminium Frame",
+      "304 Stainless Steel Mesh",
+      "Smooth Openable Design",
+      "Heavy Duty Hinges",
+      "Magnetic Lock",
+      "Powder Coated Finish",
+      "Corrosion Resistant",
+      "Modern Appearance"
+    ],
+    "specification": {
+      "ProductType": "ACE Openable Window",
+      "FrameMaterial": "High Grade Aluminium",
+      "MeshMaterial": "304 Stainless Steel",
+      "Finish": "Powder Coated",
+      "OpeningType": "Side Openable",
+      "LockSystem": "Magnetic Lock",
+      "AirFlow": "Excellent",
+      "UVResistance": "Yes",
+      "WeatherResistance": "High",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Luxury Homes",
+      "Apartments",
+      "Office Buildings",
+      "Hotels",
+      "Hospitals",
+      "Educational Institutions"
+    ],
+    "advantages": [
+      "Premium Design",
+      "Long Service Life",
+      "Smooth Operation",
+      "Elegant Finish",
+      "Rust Free",
+      "Custom Manufacturing"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Brown",
+      "Dark Grey",
+      "Champagne"
+    ],
+    "sizes": "Custom Sizes Available",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/ace-openable-window/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/ace-openable-window/1.jpg",
+      "/Products/mosquito/ace-openable-window/2.jpg",
+      "/Products/mosquito/ace-openable-window/3.jpg",
+      "/Products/mosquito/ace-openable-window/4.jpg",
+      "/Products/mosquito/ace-openable-window/5.jpg"
+    ],
+    "badge": "Premium",
+    "badgeColor": "bg-purple-700",
+    "seo": {
+      "title": "ACE Openable Mosquito Window | Premium SS Mesh Window",
+      "description": "Premium aluminium ACE mosquito window with stainless steel mesh and elegant design.",
+      "keywords": [
+        "ACE Window",
+        "Mosquito Window",
+        "Aluminium Window",
+        "SS Mesh Window",
+        "Premium Window"
+      ]
+    },
+    "relatedProducts": [
+      2,
+      3,
+      5
+    ],
+    "image": "/Products/mosquito/ace-openable-window/cover.jpg"
   },
   {
     "id": 5,
-    "name": "Casement Window Fitment",
-    "category": "Windows",
-    "description": "Heavy-duty casement window hardware with multi-point locking, concealed friction stays, and anti-corrosion finish for lasting performance.",
-    "features": ["Multi-Point Lock", "Anti-Corrosion", "Friction Stay"],
-    "image": "../Products/mosquitonet5.jpeg",
-    "badge": "Top Rated",
-    "badgeColor": "bg-[#0c5940]"
+    "slug": "rollup-mosquito-screen",
+    "name": "Roll-Up Mosquito Screen",
+    "category": "Mosquito Nets",
+    "shortDescription": "Retractable roll-up mosquito screen with premium fiberglass mesh.",
+    "description": "Roll-Up Mosquito Screen is an advanced retractable insect protection system suitable for windows. The spring-loaded roller mechanism allows the mesh to retract smoothly into its housing when not in use, providing a clean appearance while ensuring maximum ventilation and protection.",
+    "features": [
+      "Retractable Roller System",
+      "Premium Fiberglass Mesh",
+      "Smooth Spring Mechanism",
+      "Compact Cassette",
+      "Silent Operation",
+      "Weather Resistant",
+      "Low Maintenance",
+      "Easy Cleaning"
+    ],
+    "specification": {
+      "ProductType": "Roll-Up Screen",
+      "MeshMaterial": "Fiberglass",
+      "FrameMaterial": "Aluminium",
+      "Cassette": "Powder Coated Aluminium",
+      "Operation": "Spring Loaded",
+      "OpeningType": "Vertical Roll-Up",
+      "UVResistance": "Yes",
+      "DustResistance": "High",
+      "SuitableFor": "Windows",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Residential Homes",
+      "Luxury Villas",
+      "Apartments",
+      "Hotels",
+      "Hospitals",
+      "Commercial Buildings"
+    ],
+    "advantages": [
+      "Invisible When Retracted",
+      "Excellent Air Circulation",
+      "Premium Appearance",
+      "Long Lasting Mechanism",
+      "Easy Operation",
+      "Modern Design"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Brown",
+      "Grey",
+      "Wood Finish"
+    ],
+    "sizes": "Custom Sizes Available",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/rollup-screen/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/rollup-screen/1.jpg",
+      "/Products/mosquito/rollup-screen/2.jpg",
+      "/Products/mosquito/rollup-screen/3.jpg",
+      "/Products/mosquito/rollup-screen/4.jpg",
+      "/Products/mosquito/rollup-screen/5.jpg"
+    ],
+    "badge": "Trending",
+    "badgeColor": "bg-emerald-700",
+    "seo": {
+      "title": "Roll-Up Mosquito Screen | Retractable Window Mesh",
+      "description": "Premium retractable roll-up mosquito screen with fiberglass mesh and aluminium cassette.",
+      "keywords": [
+        "Roll Up Mosquito Screen",
+        "Retractable Mosquito Net",
+        "Window Screen",
+        "Fiberglass Mesh",
+        "Mosquito Protection"
+      ]
+    },
+    "relatedProducts": [
+      1,
+      2,
+      4
+    ],
+    "image": "/Products/mosquito/rollup-screen/cover.jpg"
   },
   {
     "id": 6,
-    "name": "Mosquito Mesh Screen",
-    "category": "Screens",
-    "description": "Retractable and fixed mosquito mesh screen systems for windows and doors, maintaining airflow while keeping insects out.",
-    "features": ["Retractable", "Fine Mesh", "Easy Install"],
-    "image": "../Products/mosquitonet6.jpeg",
+    "slug": "shutter-mosquito-screen",
+    "name": "Shutter Mosquito Screen",
+    "category": "Mosquito Nets",
+    "shortDescription": "Retractable shutter-style mosquito screen with smooth rolling mechanism.",
+    "description": "Shutter Mosquito Screen is designed for modern homes and apartments. The screen rolls neatly into an aluminium cassette and provides complete protection against mosquitoes while maintaining excellent airflow and visibility.",
+    "features": [
+      "Retractable Shutter System",
+      "Premium Fiberglass Mesh",
+      "Smooth Rolling Mechanism",
+      "Space Saving",
+      "Silent Operation",
+      "Weather Resistant",
+      "Elegant Finish",
+      "Long Life"
+    ],
+    "specification": {
+      "ProductType": "Shutter Screen",
+      "MeshMaterial": "Fiberglass",
+      "FrameMaterial": "Powder Coated Aluminium",
+      "Operation": "Vertical Roll",
+      "UVResistance": "Yes",
+      "WeatherResistance": "Excellent",
+      "SuitableFor": "Windows",
+      "AirFlow": "Excellent",
+      "Maintenance": "Low",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Homes",
+      "Apartments",
+      "Hotels",
+      "Hospitals",
+      "Commercial Buildings"
+    ],
+    "advantages": [
+      "Compact Design",
+      "Easy Operation",
+      "Premium Finish",
+      "Long Lasting",
+      "Custom Sizes"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Grey",
+      "Brown"
+    ],
+    "sizes": "Custom Size Available",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/shutter-screen/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/shutter-screen/1.jpg",
+      "/Products/mosquito/shutter-screen/2.jpg",
+      "/Products/mosquito/shutter-screen/3.jpg",
+      "/Products/mosquito/shutter-screen/4.jpg",
+      "/Products/mosquito/shutter-screen/5.jpg"
+    ],
     "badge": "Trending",
-    "badgeColor": "bg-rose-500"
+    "badgeColor": "bg-orange-600",
+    "seo": {
+      "title": "Shutter Mosquito Screen",
+      "description": "Premium retractable shutter mosquito screen with aluminium frame.",
+      "keywords": [
+        "Shutter Screen",
+        "Retractable Mesh",
+        "Mosquito Screen",
+        "Window Screen"
+      ]
+    },
+    "relatedProducts": [
+      5,
+      7,
+      8
+    ],
+    "image": "/Products/mosquito/shutter-screen/cover.jpg"
   },
   {
     "id": 7,
-    "name": "Sliding Door Track System",
-    "category": "Doors",
-    "description": "Industrial-grade sliding door track and roller systems for heavy glass and wooden doors — whisper-quiet operation guaranteed.",
-    "features": ["Silent Glide", "Heavy Load", "Durable"],
-    "image": "../Products/mosquitonet7.jpeg",
-    "badge": "Heavy Duty",
-    "badgeColor": "bg-[var(--primary)]"
+    "slug": "classic-openable-door",
+    "name": "Classic Openable Mosquito Door",
+    "category": "Mosquito Doors",
+    "shortDescription": "Premium aluminium mosquito door with SS mesh or Pet Mesh.",
+    "description": "Classic Openable Mosquito Door is manufactured using heavy-duty aluminium profiles and premium stainless steel mesh or pet-resistant mesh. It is ideal for balconies, entrance doors and utility doors requiring maximum ventilation and insect protection.",
+    "features": [
+      "Heavy Duty Aluminium",
+      "304 SS Mesh",
+      "Pet Mesh Option",
+      "Magnetic Lock",
+      "Smooth Hinges",
+      "Powder Coated Finish",
+      "Rust Resistant",
+      "Elegant Design"
+    ],
+    "specification": {
+      "ProductType": "Openable Door",
+      "FrameMaterial": "Aluminium",
+      "MeshMaterial": "SS Mesh / Pet Mesh",
+      "OpeningType": "Side Openable",
+      "Lock": "Magnetic",
+      "Finish": "Powder Coated",
+      "WeatherResistance": "Excellent",
+      "SuitableFor": "Doors",
+      "CorrosionResistance": "High",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Main Doors",
+      "Balcony Doors",
+      "Kitchen Doors",
+      "Utility Rooms",
+      "Commercial Buildings"
+    ],
+    "advantages": [
+      "Strong Construction",
+      "Pet Friendly Option",
+      "Elegant Finish",
+      "Maximum Airflow",
+      "Easy Maintenance"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Brown",
+      "Grey",
+      "Wood Finish"
+    ],
+    "sizes": "Custom Size",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/classic-openable-door/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/classic-openable-door/1.jpg",
+      "/Products/mosquito/classic-openable-door/2.jpg",
+      "/Products/mosquito/classic-openable-door/3.jpg",
+      "/Products/mosquito/classic-openable-door/4.jpg",
+      "/Products/mosquito/classic-openable-door/5.jpg"
+    ],
+    "badge": "Best Seller",
+    "badgeColor": "bg-green-700",
+    "seo": {
+      "title": "Classic Openable Mosquito Door",
+      "description": "Premium aluminium mosquito door with stainless steel mesh.",
+      "keywords": [
+        "Mosquito Door",
+        "SS Mesh Door",
+        "Openable Door",
+        "Pet Mesh Door"
+      ]
+    },
+    "relatedProducts": [
+      2,
+      4,
+      8
+    ],
+    "image": "/Products/mosquito/classic-openable-door/cover.jpg"
   },
   {
     "id": 8,
-    "name": "Balcony Enclosure System",
-    "category": "Balcony",
-    "description": "Complete balcony enclosure solutions combining glass panels, aluminium frames and retractable screens — your balcony, reinvented.",
-    "features": ["Full Enclosure", "Glass Panels", "Retractable"],
-    "image": "../Products/mosquitonet8.jpeg",
-    "badge": "Complete Kit",
-    "badgeColor": "bg-[#0c5940]"
+    "slug": "ace-openable-door",
+    "name": "ACE Openable Mosquito Door",
+    "category": "Mosquito Doors",
+    "shortDescription": "Luxury ACE series mosquito door with premium aluminium profile and stainless steel mesh.",
+    "description": "ACE Openable Mosquito Door is designed for luxury residences and commercial spaces. It combines elegant aesthetics with durable aluminium construction, premium stainless steel mesh and smooth hardware for long-lasting performance.",
+    "features": [
+      "Luxury Aluminium Profile",
+      "304 Stainless Steel Mesh",
+      "Premium Hardware",
+      "Heavy Duty Hinges",
+      "Magnetic Lock",
+      "Smooth Closing",
+      "Corrosion Resistant",
+      "Premium Finish"
+    ],
+    "specification": {
+      "ProductType": "ACE Door",
+      "FrameMaterial": "Premium Aluminium",
+      "MeshMaterial": "304 Stainless Steel",
+      "Finish": "Powder Coated",
+      "OpeningType": "Side Openable",
+      "LockSystem": "Magnetic",
+      "AirFlow": "Excellent",
+      "SuitableFor": "Doors",
+      "WeatherResistance": "High",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Luxury Villas",
+      "Premium Apartments",
+      "Hotels",
+      "Resorts",
+      "Commercial Buildings"
+    ],
+    "advantages": [
+      "Premium Appearance",
+      "Luxury Finish",
+      "Heavy Duty",
+      "Excellent Durability",
+      "Custom Manufactured"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Grey",
+      "Brown",
+      "Champagne"
+    ],
+    "sizes": "Custom Size Available",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/ace-openable-door/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/ace-openable-door/1.jpg",
+      "/Products/mosquito/ace-openable-door/2.jpg",
+      "/Products/mosquito/ace-openable-door/3.jpg",
+      "/Products/mosquito/ace-openable-door/4.jpg",
+      "/Products/mosquito/ace-openable-door/5.jpg"
+    ],
+    "badge": "Luxury",
+    "badgeColor": "bg-purple-700",
+    "seo": {
+      "title": "ACE Openable Mosquito Door",
+      "description": "Luxury aluminium mosquito door with premium stainless steel mesh.",
+      "keywords": [
+        "ACE Door",
+        "Luxury Mosquito Door",
+        "Premium Door",
+        "SS Mesh Door"
+      ]
+    },
+    "relatedProducts": [
+      4,
+      7,
+      9
+    ],
+    "image": "/Products/mosquito/ace-openable-door/cover.jpg"
+  },
+  {
+    "id": 9,
+    "slug": "pleated-mesh-single",
+    "name": "Pleated Mosquito Mesh (Single)",
+    "category": "Mosquito Nets",
+    "shortDescription": "Elegant single-panel pleated mosquito mesh for doors and balconies.",
+    "description": "The Single Pleated Mosquito Mesh system is designed with premium polyester pleated fabric that slides smoothly on a low-profile track. It is ideal for balconies, French doors and large windows where space-saving and modern aesthetics are required.",
+    "features": [
+      "Single Sliding Panel",
+      "Premium Pleated Polyester Mesh",
+      "Smooth Sliding",
+      "Low Bottom Track",
+      "Weather Resistant",
+      "Dust Resistant",
+      "Easy Maintenance",
+      "Modern Design"
+    ],
+    "specification": {
+      "ProductType": "Pleated Mesh",
+      "Panel": "Single",
+      "MeshMaterial": "Polyester Pleated Mesh",
+      "FrameMaterial": "Powder Coated Aluminium",
+      "Operation": "Horizontal Sliding",
+      "Track": "Low Profile",
+      "SuitableFor": "Doors & Windows",
+      "UVResistance": "Yes",
+      "WeatherResistance": "Excellent",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Balcony Doors",
+      "French Doors",
+      "Sliding Windows",
+      "Apartments",
+      "Luxury Villas"
+    ],
+    "advantages": [
+      "Elegant Appearance",
+      "Space Saving",
+      "Smooth Sliding",
+      "Quiet Operation",
+      "Premium Finish"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Grey",
+      "Brown",
+      "Champagne"
+    ],
+    "sizes": "Custom Size Available",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/pleated-single/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/pleated-single/1.jpg",
+      "/Products/mosquito/pleated-single/2.jpg",
+      "/Products/mosquito/pleated-single/3.jpg",
+      "/Products/mosquito/pleated-single/4.jpg",
+      "/Products/mosquito/pleated-single/5.jpg"
+    ],
+    "badge": "Premium",
+    "badgeColor": "bg-blue-700",
+    "seo": {
+      "title": "Pleated Mosquito Mesh Single",
+      "description": "Premium single-panel pleated mosquito mesh for doors and windows.",
+      "keywords": [
+        "Pleated Mesh",
+        "Sliding Mesh",
+        "Mosquito Mesh",
+        "Single Pleated Mesh"
+      ]
+    },
+    "relatedProducts": [
+      10,
+      11,
+      14
+    ],
+    "image": "/Products/mosquito/pleated-single/cover.jpg"
+  },
+  {
+    "id": 10,
+    "slug": "pleated-mesh-double",
+    "name": "Pleated Mosquito Mesh (Double)",
+    "category": "Mosquito Nets",
+    "shortDescription": "Double-panel pleated mosquito mesh for extra-wide openings.",
+    "description": "The Double Pleated Mosquito Mesh system is specially designed for wide balconies, patio doors and commercial entrances. Two pleated panels slide from both sides and meet perfectly in the center, providing excellent insect protection with a premium appearance.",
+    "features": [
+      "Double Sliding Panels",
+      "Premium Polyester Mesh",
+      "Smooth Sliding",
+      "Silent Operation",
+      "Space Saving",
+      "Heavy Duty Rollers",
+      "Elegant Finish",
+      "Long Life"
+    ],
+    "specification": {
+      "ProductType": "Pleated Mesh",
+      "Panel": "Double",
+      "MeshMaterial": "Pleated Polyester",
+      "FrameMaterial": "Aluminium",
+      "Operation": "Double Sliding",
+      "BottomTrack": "Low Profile",
+      "SuitableFor": "Large Openings",
+      "UVResistance": "Yes",
+      "WeatherResistance": "Excellent",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Balconies",
+      "Patio Doors",
+      "Luxury Villas",
+      "Hotels",
+      "Commercial Buildings"
+    ],
+    "advantages": [
+      "Ideal for Large Openings",
+      "Smooth Sliding",
+      "Elegant Design",
+      "Premium Quality",
+      "Custom Manufacturing"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Grey",
+      "Brown",
+      "Champagne"
+    ],
+    "sizes": "Custom Size",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/pleated-double/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/pleated-double/1.jpg",
+      "/Products/mosquito/pleated-double/2.jpg",
+      "/Products/mosquito/pleated-double/3.jpg",
+      "/Products/mosquito/pleated-double/4.jpg",
+      "/Products/mosquito/pleated-double/5.jpg"
+    ],
+    "badge": "Top Rated",
+    "badgeColor": "bg-green-700",
+    "seo": {
+      "title": "Double Pleated Mosquito Mesh",
+      "description": "Premium double sliding pleated mosquito mesh system.",
+      "keywords": [
+        "Double Pleated Mesh",
+        "Balcony Mesh",
+        "Sliding Mosquito Mesh",
+        "Pleated Screen"
+      ]
+    },
+    "relatedProducts": [
+      9,
+      11,
+      14
+    ],
+    "image": "/Products/mosquito/pleated-double/cover.jpg"
+  },
+  {
+    "id": 11,
+    "slug": "barrier-free-pleated-mesh",
+    "name": "Barrier Free Pleated Mosquito Mesh",
+    "category": "Mosquito Nets",
+    "shortDescription": "Barrier-free pleated mosquito mesh with ultra-low floor track.",
+    "description": "Barrier Free Pleated Mosquito Mesh eliminates raised bottom tracks, making it perfect for elderly users, children and wheelchair access. It combines elegant aesthetics with effortless movement and premium insect protection.",
+    "features": [
+      "Barrier Free Track",
+      "Ultra Low Bottom Rail",
+      "Premium Pleated Mesh",
+      "Smooth Sliding",
+      "Wheelchair Friendly",
+      "Weather Resistant",
+      "Modern Design",
+      "Silent Operation"
+    ],
+    "specification": {
+      "ProductType": "Barrier Free Pleated Mesh",
+      "MeshMaterial": "Pleated Polyester",
+      "FrameMaterial": "Aluminium",
+      "TrackType": "Ultra Low",
+      "Operation": "Horizontal Sliding",
+      "SuitableFor": "Balcony & Doors",
+      "Accessibility": "Wheelchair Friendly",
+      "WeatherResistance": "Excellent",
+      "UVResistance": "Yes",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Luxury Homes",
+      "Hospitals",
+      "Hotels",
+      "Senior Living",
+      "Commercial Buildings"
+    ],
+    "advantages": [
+      "No Raised Track",
+      "Safe for Children",
+      "Easy Wheelchair Access",
+      "Elegant Appearance",
+      "Premium Performance"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Grey",
+      "Brown",
+      "Champagne"
+    ],
+    "sizes": "Custom Size",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/barrier-free/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/barrier-free/1.jpg",
+      "/Products/mosquito/barrier-free/2.jpg",
+      "/Products/mosquito/barrier-free/3.jpg",
+      "/Products/mosquito/barrier-free/4.jpg",
+      "/Products/mosquito/barrier-free/5.jpg"
+    ],
+    "badge": "Innovation",
+    "badgeColor": "bg-cyan-700",
+    "seo": {
+      "title": "Barrier Free Pleated Mosquito Mesh",
+      "description": "Barrier-free pleated mosquito mesh with ultra-low track for smooth access.",
+      "keywords": [
+        "Barrier Free Mesh",
+        "Pleated Mosquito Screen",
+        "Wheelchair Friendly Mesh",
+        "Sliding Mesh"
+      ]
+    },
+    "relatedProducts": [
+      9,
+      10,
+      12
+    ],
+    "image": "/Products/mosquito/barrier-free/cover.jpg"
+  },
+  {
+    "id": 12,
+    "slug": "honeycomb-pleated-mesh",
+    "name": "Honeycomb Pleated Mosquito Mesh",
+    "category": "Mosquito Nets",
+    "shortDescription": "Premium honeycomb pleated mosquito mesh with elegant appearance and smooth sliding operation.",
+    "description": "Honeycomb Pleated Mosquito Mesh combines premium polyester mesh with an innovative honeycomb folding design that provides excellent durability, smooth movement and modern aesthetics. Ideal for large windows, balconies and patio doors.",
+    "features": [
+      "Honeycomb Pleated Design",
+      "Premium Polyester Mesh",
+      "Smooth Sliding",
+      "Silent Operation",
+      "Heavy Duty Aluminium Frame",
+      "Weather Resistant",
+      "UV Resistant",
+      "Modern Appearance"
+    ],
+    "specification": {
+      "ProductType": "Honeycomb Pleated Mesh",
+      "MeshMaterial": "Premium Polyester",
+      "FrameMaterial": "Powder Coated Aluminium",
+      "OpeningType": "Horizontal Sliding",
+      "BottomTrack": "Low Profile",
+      "SuitableFor": "Windows & Doors",
+      "UVResistance": "Yes",
+      "DustResistance": "High",
+      "CorrosionResistance": "Excellent",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Luxury Villas",
+      "Apartments",
+      "Balcony Doors",
+      "French Doors",
+      "Commercial Buildings"
+    ],
+    "advantages": [
+      "Elegant Honeycomb Design",
+      "Premium Finish",
+      "Smooth Operation",
+      "Excellent Airflow",
+      "Long Service Life"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Grey",
+      "Brown",
+      "Champagne"
+    ],
+    "sizes": "Custom Size Available",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/honeycomb/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/honeycomb/1.jpg",
+      "/Products/mosquito/honeycomb/2.jpg",
+      "/Products/mosquito/honeycomb/3.jpg",
+      "/Products/mosquito/honeycomb/4.jpg",
+      "/Products/mosquito/honeycomb/5.jpg"
+    ],
+    "badge": "Premium",
+    "badgeColor": "bg-indigo-700",
+    "seo": {
+      "title": "Honeycomb Pleated Mosquito Mesh",
+      "description": "Premium honeycomb pleated mosquito mesh for modern homes.",
+      "keywords": [
+        "Honeycomb Mesh",
+        "Pleated Mesh",
+        "Mosquito Screen",
+        "Sliding Mesh"
+      ]
+    },
+    "relatedProducts": [
+      10,
+      11,
+      13
+    ],
+    "image": "/Products/mosquito/honeycomb/cover.jpg"
+  },
+  {
+    "id": 13,
+    "slug": "honeycomb-barrier-free-mesh",
+    "name": "Honeycomb Barrier Free Mosquito Mesh",
+    "category": "Mosquito Nets",
+    "shortDescription": "Barrier-free honeycomb mosquito mesh with ultra-low track and premium aluminium frame.",
+    "description": "Honeycomb Barrier Free Mosquito Mesh offers a completely obstacle-free passage with an ultra-low threshold. Designed for luxury homes, hospitals and commercial spaces, it combines safety, accessibility and elegant aesthetics.",
+    "features": [
+      "Barrier Free Design",
+      "Honeycomb Mesh",
+      "Ultra Low Track",
+      "Premium Aluminium Frame",
+      "Smooth Sliding",
+      "Weather Resistant",
+      "Heavy Duty Rollers",
+      "Long Lasting"
+    ],
+    "specification": {
+      "ProductType": "Honeycomb Barrier Free",
+      "MeshMaterial": "Polyester Honeycomb",
+      "FrameMaterial": "Aluminium",
+      "TrackType": "Barrier Free",
+      "Operation": "Sliding",
+      "SuitableFor": "Large Openings",
+      "Accessibility": "Wheelchair Friendly",
+      "UVResistance": "Yes",
+      "Finish": "Powder Coated",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Luxury Homes",
+      "Hospitals",
+      "Hotels",
+      "Resorts",
+      "Commercial Buildings"
+    ],
+    "advantages": [
+      "Wheelchair Friendly",
+      "Modern Design",
+      "Premium Finish",
+      "Easy Sliding",
+      "Safe for Children"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Grey",
+      "Brown",
+      "Champagne"
+    ],
+    "sizes": "Custom Size",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/honeycomb-barrier/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/honeycomb-barrier/1.jpg",
+      "/Products/mosquito/honeycomb-barrier/2.jpg",
+      "/Products/mosquito/honeycomb-barrier/3.jpg",
+      "/Products/mosquito/honeycomb-barrier/4.jpg",
+      "/Products/mosquito/honeycomb-barrier/5.jpg"
+    ],
+    "badge": "Luxury",
+    "badgeColor": "bg-purple-700",
+    "seo": {
+      "title": "Honeycomb Barrier Free Mosquito Mesh",
+      "description": "Barrier free honeycomb pleated mosquito mesh with ultra-low track.",
+      "keywords": [
+        "Barrier Free Mesh",
+        "Honeycomb Screen",
+        "Sliding Mosquito Mesh",
+        "Luxury Mesh"
+      ]
+    },
+    "relatedProducts": [
+      11,
+      12,
+      14
+    ],
+    "image": "/Products/mosquito/honeycomb-barrier/cover.jpg"
+  },
+  {
+    "id": 14,
+    "slug": "honeycomb-two-in-one-mesh",
+    "name": "Honeycomb Two-in-One Mosquito Mesh",
+    "category": "Mosquito Nets",
+    "shortDescription": "Two-in-one honeycomb system combining blackout blind and mosquito mesh in one product.",
+    "description": "Honeycomb Two-in-One System integrates a mosquito mesh and blackout honeycomb blind into a single frame. It provides insect protection during the day and complete privacy with light control whenever required.",
+    "features": [
+      "2-in-1 System",
+      "Mosquito Mesh",
+      "Honeycomb Blackout Blind",
+      "Smooth Sliding",
+      "Premium Aluminium Frame",
+      "Elegant Finish",
+      "Space Saving",
+      "Modern Design"
+    ],
+    "specification": {
+      "ProductType": "Honeycomb Two in One",
+      "MeshMaterial": "Polyester",
+      "BlindMaterial": "Honeycomb Fabric",
+      "FrameMaterial": "Powder Coated Aluminium",
+      "Operation": "Sliding",
+      "SuitableFor": "Windows & Doors",
+      "LightControl": "Yes",
+      "InsectProtection": "100%",
+      "UVResistance": "Yes",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Luxury Villas",
+      "Bedrooms",
+      "Living Rooms",
+      "Apartments",
+      "Premium Offices"
+    ],
+    "advantages": [
+      "Mosquito Mesh + Blind",
+      "Excellent Privacy",
+      "Energy Efficient",
+      "Elegant Appearance",
+      "Premium Quality"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Grey",
+      "Brown",
+      "Champagne"
+    ],
+    "sizes": "Custom Manufacturing",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/honeycomb-two-in-one/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/honeycomb-two-in-one/1.jpg",
+      "/Products/mosquito/honeycomb-two-in-one/2.jpg",
+      "/Products/mosquito/honeycomb-two-in-one/3.jpg",
+      "/Products/mosquito/honeycomb-two-in-one/4.jpg",
+      "/Products/mosquito/honeycomb-two-in-one/5.jpg"
+    ],
+    "badge": "Latest",
+    "badgeColor": "bg-emerald-700",
+    "seo": {
+      "title": "Honeycomb Two-in-One Mosquito Mesh",
+      "description": "Premium two-in-one mosquito mesh and honeycomb blackout blind system.",
+      "keywords": [
+        "Two in One Mesh",
+        "Honeycomb Blind",
+        "Mosquito Mesh",
+        "Window Blind"
+      ]
+    },
+    "relatedProducts": [
+      9,
+      10,
+      12,
+      13,
+      15
+    ],
+    "image": "/Products/mosquito/honeycomb-two-in-one/cover.jpg"
+  },
+  {
+    "id": 15,
+    "slug": "sliding-mosquito-screen",
+    "name": "Sliding Mosquito Screen",
+    "category": "Mosquito Nets",
+    "shortDescription": "Heavy-duty sliding mosquito screen with premium stainless steel mesh for windows and balconies.",
+    "description": "Sliding Mosquito Screen is designed for modern sliding windows and balcony openings. Built with premium aluminium profiles and stainless steel mesh, it offers smooth sliding performance, maximum ventilation and long-lasting insect protection.",
+    "features": [
+      "Smooth Sliding Rollers",
+      "304 Stainless Steel Mesh",
+      "Heavy Duty Aluminium Frame",
+      "Silent Operation",
+      "Corrosion Resistant",
+      "Weather Proof",
+      "Elegant Finish",
+      "Low Maintenance"
+    ],
+    "specification": {
+      "ProductType": "Sliding Mosquito Screen",
+      "MeshMaterial": "304 Stainless Steel",
+      "FrameMaterial": "Powder Coated Aluminium",
+      "Operation": "Horizontal Sliding",
+      "TrackType": "Double Track",
+      "SuitableFor": "Windows & Balconies",
+      "Finish": "Powder Coated",
+      "UVResistance": "Yes",
+      "WeatherResistance": "Excellent",
+      "Warranty": "5 Years"
+    },
+    "applications": [
+      "Sliding Windows",
+      "Balcony Openings",
+      "Apartments",
+      "Luxury Villas",
+      "Commercial Buildings"
+    ],
+    "advantages": [
+      "Smooth Sliding",
+      "Excellent Airflow",
+      "Long Lasting",
+      "Premium Appearance",
+      "Easy Cleaning"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Grey",
+      "Brown",
+      "Champagne"
+    ],
+    "sizes": "Custom Size Available",
+    "warranty": "5 Years",
+    "coverImage": "/Products/mosquito/sliding-screen/cover.jpg",
+    "gallery": [
+      "/Products/mosquito/sliding-screen/1.jpg",
+      "/Products/mosquito/sliding-screen/2.jpg",
+      "/Products/mosquito/sliding-screen/3.jpg",
+      "/Products/mosquito/sliding-screen/4.jpg",
+      "/Products/mosquito/sliding-screen/5.jpg"
+    ],
+    "badge": "Professional",
+    "badgeColor": "bg-slate-700",
+    "seo": {
+      "title": "Sliding Mosquito Screen",
+      "description": "Premium aluminium sliding mosquito screen with stainless steel mesh.",
+      "keywords": [
+        "Sliding Screen",
+        "Mosquito Screen",
+        "Balcony Screen",
+        "Window Mesh"
+      ]
+    },
+    "relatedProducts": [
+      7,
+      8,
+      12
+    ],
+    "image": "/Products/mosquito/sliding-screen/cover.jpg"
+  },
+  {
+    "id": 16,
+    "slug": "roller-blinds",
+    "name": "Roller Blinds",
+    "category": "Window Blinds",
+    "shortDescription": "Modern roller blinds offering privacy, UV protection and elegant interior styling.",
+    "description": "Roller Blinds are a stylish and practical window covering solution designed for homes, offices and commercial interiors. They provide effective sunlight control, enhanced privacy and a clean, minimalist appearance.",
+    "features": [
+      "Premium Fabric",
+      "UV Protection",
+      "Easy Chain Operation",
+      "Blackout Option",
+      "Moisture Resistant",
+      "Smooth Rolling",
+      "Elegant Design",
+      "Custom Sizes"
+    ],
+    "specification": {
+      "ProductType": "Roller Blind",
+      "Fabric": "Polyester",
+      "Operation": "Chain Operated",
+      "Mounting": "Wall/Ceiling",
+      "UVProtection": "Yes",
+      "BlackoutOption": "Available",
+      "MoistureResistance": "Yes",
+      "Cleaning": "Easy",
+      "FireRetardant": "Optional",
+      "Warranty": "3 Years"
+    },
+    "applications": [
+      "Living Rooms",
+      "Bedrooms",
+      "Offices",
+      "Conference Rooms",
+      "Hotels"
+    ],
+    "advantages": [
+      "Light Control",
+      "Elegant Look",
+      "Energy Efficient",
+      "Easy Maintenance",
+      "Affordable"
+    ],
+    "availableColors": [
+      "White",
+      "Grey",
+      "Cream",
+      "Brown",
+      "Black"
+    ],
+    "sizes": "Custom Manufacturing",
+    "warranty": "3 Years",
+    "coverImage": "/Products/blinds/roller/cover.jpg",
+    "gallery": [
+      "/Products/blinds/roller/1.jpg",
+      "/Products/blinds/roller/2.jpg",
+      "/Products/blinds/roller/3.jpg",
+      "/Products/blinds/roller/4.jpg",
+      "/Products/blinds/roller/5.jpg"
+    ],
+    "badge": "Interior Choice",
+    "badgeColor": "bg-blue-700",
+    "seo": {
+      "title": "Roller Blinds",
+      "description": "Premium roller blinds for modern homes and offices.",
+      "keywords": [
+        "Roller Blind",
+        "Window Blinds",
+        "Blackout Blind",
+        "Interior Blind"
+      ]
+    },
+    "relatedProducts": [
+      17,
+      18,
+      19
+    ],
+    "image": "/Products/blinds/roller/cover.jpg"
+  },
+  {
+    "id": 17,
+    "slug": "zebra-blinds",
+    "name": "Zebra Blinds",
+    "category": "Window Blinds",
+    "shortDescription": "Dual-layer zebra blinds providing stylish light and privacy control.",
+    "description": "Zebra Blinds combine alternating sheer and opaque fabric stripes, allowing effortless control over natural light and privacy. Their elegant design makes them a popular choice for premium residential and commercial interiors.",
+    "features": [
+      "Day & Night Control",
+      "Dual Layer Fabric",
+      "Premium Finish",
+      "Easy Chain Operation",
+      "Modern Appearance",
+      "UV Protection",
+      "Custom Sizes",
+      "Low Maintenance"
+    ],
+    "specification": {
+      "ProductType": "Zebra Blind",
+      "Fabric": "Dual Layer Polyester",
+      "Operation": "Chain Operated",
+      "Mounting": "Wall/Ceiling",
+      "UVProtection": "Yes",
+      "LightControl": "Day & Night",
+      "MoistureResistance": "Yes",
+      "SuitableFor": "Homes & Offices",
+      "Finish": "Premium",
+      "Warranty": "3 Years"
+    },
+    "applications": [
+      "Living Room",
+      "Bedroom",
+      "Office",
+      "Showroom",
+      "Hotel"
+    ],
+    "advantages": [
+      "Modern Design",
+      "Excellent Privacy",
+      "Premium Fabric",
+      "Easy Cleaning",
+      "Stylish Appearance"
+    ],
+    "availableColors": [
+      "White",
+      "Grey",
+      "Coffee",
+      "Brown",
+      "Black"
+    ],
+    "sizes": "Custom Manufacturing",
+    "warranty": "3 Years",
+    "coverImage": "/Products/blinds/zebra/cover.jpg",
+    "gallery": [
+      "/Products/blinds/zebra/1.jpg",
+      "/Products/blinds/zebra/2.jpg",
+      "/Products/blinds/zebra/3.jpg",
+      "/Products/blinds/zebra/4.jpg",
+      "/Products/blinds/zebra/5.jpg"
+    ],
+    "badge": "Most Popular",
+    "badgeColor": "bg-violet-700",
+    "seo": {
+      "title": "Zebra Blinds",
+      "description": "Premium zebra blinds with day and night light control.",
+      "keywords": [
+        "Zebra Blind",
+        "Day Night Blind",
+        "Window Blind",
+        "Dual Layer Blind"
+      ]
+    },
+    "relatedProducts": [
+      16,
+      18,
+      19
+    ],
+    "image": "/Products/blinds/zebra/cover.jpg"
+  },
+  {
+    "id": 18,
+    "slug": "pvc-blinds",
+    "name": "PVC Blinds",
+    "category": "Window Blinds",
+    "shortDescription": "Durable PVC blinds designed for moisture-prone areas with easy maintenance.",
+    "description": "PVC Blinds are manufactured using premium waterproof PVC material, making them ideal for kitchens, bathrooms, hospitals and commercial spaces. They provide privacy, light control and long-lasting performance even in humid environments.",
+    "features": [
+      "100% Waterproof",
+      "Easy Cleaning",
+      "Moisture Resistant",
+      "UV Resistant",
+      "Fade Resistant",
+      "Smooth Operation",
+      "Long Life",
+      "Modern Design"
+    ],
+    "specification": {
+      "ProductType": "PVC Blind",
+      "Material": "Premium PVC",
+      "Operation": "Chain Operated",
+      "Mounting": "Wall / Ceiling",
+      "Waterproof": "Yes",
+      "UVResistance": "Yes",
+      "MoistureResistance": "Excellent",
+      "FireRetardant": "Optional",
+      "SuitableFor": "Indoor",
+      "Warranty": "3 Years"
+    },
+    "applications": [
+      "Kitchen",
+      "Bathroom",
+      "Hospital",
+      "Office",
+      "Commercial Spaces"
+    ],
+    "advantages": [
+      "Waterproof",
+      "Easy Maintenance",
+      "Affordable",
+      "Long Lasting",
+      "Elegant Appearance"
+    ],
+    "availableColors": [
+      "White",
+      "Grey",
+      "Cream",
+      "Brown",
+      "Wood Finish"
+    ],
+    "sizes": "Custom Size Available",
+    "warranty": "3 Years",
+    "coverImage": "/Products/blinds/pvc/cover.jpg",
+    "gallery": [
+      "/Products/blinds/pvc/1.jpg",
+      "/Products/blinds/pvc/2.jpg",
+      "/Products/blinds/pvc/3.jpg",
+      "/Products/blinds/pvc/4.jpg",
+      "/Products/blinds/pvc/5.jpg"
+    ],
+    "badge": "Waterproof",
+    "badgeColor": "bg-cyan-700",
+    "seo": {
+      "title": "PVC Window Blinds",
+      "description": "Premium waterproof PVC blinds for residential and commercial interiors.",
+      "keywords": [
+        "PVC Blinds",
+        "Waterproof Blinds",
+        "Kitchen Blinds",
+        "Window Blinds"
+      ]
+    },
+    "relatedProducts": [
+      16,
+      17,
+      19
+    ],
+    "image": "/Products/blinds/pvc/cover.jpg"
+  },
+  {
+    "id": 19,
+    "slug": "vertical-blinds",
+    "name": "Vertical Blinds",
+    "category": "Window Blinds",
+    "shortDescription": "Elegant vertical blinds for large windows, offices and commercial interiors.",
+    "description": "Vertical Blinds are ideal for large glass windows and office partitions. The rotating fabric vanes allow precise light control while providing a professional and modern appearance.",
+    "features": [
+      "180° Rotation",
+      "Premium Fabric",
+      "Smooth Sliding",
+      "UV Protection",
+      "Easy Cleaning",
+      "Elegant Design",
+      "Commercial Grade",
+      "Custom Sizes"
+    ],
+    "specification": {
+      "ProductType": "Vertical Blind",
+      "Material": "Fabric / PVC",
+      "Operation": "Cord & Chain",
+      "Rotation": "180 Degree",
+      "Mounting": "Wall / Ceiling",
+      "UVProtection": "Yes",
+      "LightControl": "Excellent",
+      "SuitableFor": "Large Windows",
+      "Finish": "Premium",
+      "Warranty": "3 Years"
+    },
+    "applications": [
+      "Office",
+      "Conference Hall",
+      "Hospital",
+      "Showroom",
+      "Commercial Buildings"
+    ],
+    "advantages": [
+      "Ideal for Large Windows",
+      "Excellent Light Control",
+      "Professional Look",
+      "Easy Maintenance",
+      "Long Lasting"
+    ],
+    "availableColors": [
+      "White",
+      "Grey",
+      "Cream",
+      "Coffee",
+      "Black"
+    ],
+    "sizes": "Custom Manufacturing",
+    "warranty": "3 Years",
+    "coverImage": "/Products/blinds/vertical/cover.jpg",
+    "gallery": [
+      "/Products/blinds/vertical/1.jpg",
+      "/Products/blinds/vertical/2.jpg",
+      "/Products/blinds/vertical/3.jpg",
+      "/Products/blinds/vertical/4.jpg",
+      "/Products/blinds/vertical/5.jpg"
+    ],
+    "badge": "Office Choice",
+    "badgeColor": "bg-slate-700",
+    "seo": {
+      "title": "Vertical Window Blinds",
+      "description": "Premium vertical blinds for offices and modern interiors.",
+      "keywords": [
+        "Vertical Blinds",
+        "Office Blinds",
+        "Window Blinds",
+        "Fabric Blinds"
+      ]
+    },
+    "relatedProducts": [
+      16,
+      17,
+      20
+    ],
+    "image": "/Products/blinds/vertical/cover.jpg"
+  },
+  {
+    "id": 20,
+    "slug": "bamboo-blinds",
+    "name": "Bamboo Blinds",
+    "category": "Window Blinds",
+    "shortDescription": "Eco-friendly bamboo blinds offering natural beauty and excellent sun protection.",
+    "description": "Bamboo Blinds are handcrafted from high-quality natural bamboo, creating a warm and elegant atmosphere. They are perfect for homes, resorts, restaurants and eco-friendly interiors.",
+    "features": [
+      "Natural Bamboo",
+      "Eco Friendly",
+      "Elegant Appearance",
+      "Light Filtering",
+      "Durable Construction",
+      "Hand Crafted",
+      "Premium Finish",
+      "Low Maintenance"
+    ],
+    "specification": {
+      "ProductType": "Bamboo Blind",
+      "Material": "Natural Bamboo",
+      "Operation": "Roll Up",
+      "Finish": "Natural Polish",
+      "UVProtection": "Moderate",
+      "LightControl": "Natural Filtering",
+      "SuitableFor": "Indoor",
+      "EcoFriendly": "Yes",
+      "Handmade": "Yes",
+      "Warranty": "2 Years"
+    },
+    "applications": [
+      "Living Room",
+      "Restaurant",
+      "Resort",
+      "Balcony",
+      "Eco Homes"
+    ],
+    "advantages": [
+      "Natural Look",
+      "Eco Friendly",
+      "Premium Appearance",
+      "Long Lasting",
+      "Affordable Luxury"
+    ],
+    "availableColors": [
+      "Natural Bamboo",
+      "Dark Walnut",
+      "Teak",
+      "Coffee"
+    ],
+    "sizes": "Custom Size",
+    "warranty": "2 Years",
+    "coverImage": "/Products/blinds/bamboo/cover.jpg",
+    "gallery": [
+      "/Products/blinds/bamboo/1.jpg",
+      "/Products/blinds/bamboo/2.jpg",
+      "/Products/blinds/bamboo/3.jpg",
+      "/Products/blinds/bamboo/4.jpg",
+      "/Products/blinds/bamboo/5.jpg"
+    ],
+    "badge": "Eco Friendly",
+    "badgeColor": "bg-green-700",
+    "seo": {
+      "title": "Natural Bamboo Blinds",
+      "description": "Premium eco-friendly bamboo blinds for homes and resorts.",
+      "keywords": [
+        "Bamboo Blinds",
+        "Natural Blinds",
+        "Eco Friendly Blinds",
+        "Wooden Blinds"
+      ]
+    },
+    "relatedProducts": [
+      16,
+      17,
+      19,
+      21
+    ],
+    "image": "/Products/blinds/bamboo/cover.jpg"
+  },
+  {
+    "id": 21,
+    "slug": "premium-window-curtains",
+    "name": "Premium Window Curtains",
+    "category": "Window Blinds",
+    "shortDescription": "Elegant premium curtains designed to enhance interior beauty while providing privacy and light control.",
+    "description": "Premium Window Curtains are available in a wide range of fabrics, colors and textures. Suitable for homes, hotels, offices and luxury interiors, these curtains combine functionality with sophisticated design to create comfortable living spaces.",
+    "features": [
+      "Premium Fabric",
+      "Elegant Stitching",
+      "Light Control",
+      "Privacy Protection",
+      "Machine Washable",
+      "Modern Designs",
+      "Custom Sizes",
+      "Premium Finish"
+    ],
+    "specification": {
+      "ProductType": "Curtains",
+      "Material": "Polyester / Cotton / Linen",
+      "Mounting": "Curtain Rod / Track",
+      "Operation": "Manual",
+      "LightFiltering": "Yes",
+      "BlackoutOption": "Available",
+      "Washable": "Yes",
+      "SuitableFor": "Windows & Doors",
+      "Finish": "Premium",
+      "Warranty": "2 Years"
+    },
+    "applications": [
+      "Living Room",
+      "Bedroom",
+      "Hotel",
+      "Office",
+      "Luxury Villas"
+    ],
+    "advantages": [
+      "Elegant Interior",
+      "Excellent Privacy",
+      "Premium Fabric",
+      "Easy Maintenance",
+      "Custom Designs"
+    ],
+    "availableColors": [
+      "White",
+      "Cream",
+      "Grey",
+      "Blue",
+      "Brown",
+      "Maroon"
+    ],
+    "sizes": "Custom Size Available",
+    "warranty": "2 Years",
+    "coverImage": "/Products/blinds/curtains/cover.jpg",
+    "gallery": [
+      "/Products/blinds/curtains/1.jpg",
+      "/Products/blinds/curtains/2.jpg",
+      "/Products/blinds/curtains/3.jpg",
+      "/Products/blinds/curtains/4.jpg",
+      "/Products/blinds/curtains/5.jpg"
+    ],
+    "badge": "Luxury",
+    "badgeColor": "bg-pink-700",
+    "seo": {
+      "title": "Premium Window Curtains",
+      "description": "Luxury curtains for modern homes and commercial interiors.",
+      "keywords": [
+        "Curtains",
+        "Window Curtains",
+        "Luxury Curtains",
+        "Bedroom Curtains"
+      ]
+    },
+    "relatedProducts": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "image": "/Products/blinds/curtains/cover.jpg"
+  },
+  {
+    "id": 22,
+    "slug": "upvc-sliding-window",
+    "name": "UPVC Sliding Window",
+    "category": "UPVC Systems",
+    "shortDescription": "Premium UPVC sliding window with excellent thermal insulation and weather resistance.",
+    "description": "UPVC Sliding Windows are designed for modern architecture, providing superior insulation, smooth sliding operation and long-lasting durability. Manufactured using high-quality UPVC profiles with multi-point locking systems for enhanced security.",
+    "features": [
+      "Smooth Sliding",
+      "Energy Efficient",
+      "Weather Resistant",
+      "Noise Reduction",
+      "Multi Point Lock",
+      "Rust Free",
+      "Low Maintenance",
+      "Premium Finish"
+    ],
+    "specification": {
+      "ProductType": "UPVC Sliding Window",
+      "Profile": "Premium UPVC",
+      "Glass": "5mm / Toughened / Double Glazed",
+      "Locking": "Multi Point",
+      "FrameColor": "Custom",
+      "WindResistance": "High",
+      "WaterResistance": "Excellent",
+      "SoundInsulation": "Excellent",
+      "UVResistance": "Yes",
+      "Warranty": "10 Years"
+    },
+    "applications": [
+      "Homes",
+      "Apartments",
+      "Villas",
+      "Commercial Buildings",
+      "Hotels"
+    ],
+    "advantages": [
+      "Energy Saving",
+      "Noise Reduction",
+      "No Painting Required",
+      "Termite Proof",
+      "Weather Resistant"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Grey",
+      "Walnut",
+      "Golden Oak"
+    ],
+    "sizes": "Custom Manufacturing",
+    "warranty": "10 Years",
+    "coverImage": "/Products/upvc/sliding-window/cover.jpg",
+    "gallery": [
+      "/Products/upvc/sliding-window/1.jpg",
+      "/Products/upvc/sliding-window/2.jpg",
+      "/Products/upvc/sliding-window/3.jpg",
+      "/Products/upvc/sliding-window/4.jpg",
+      "/Products/upvc/sliding-window/5.jpg"
+    ],
+    "badge": "Best Seller",
+    "badgeColor": "bg-green-700",
+    "seo": {
+      "title": "UPVC Sliding Window",
+      "description": "Premium UPVC sliding windows with thermal insulation and modern design.",
+      "keywords": [
+        "UPVC Window",
+        "Sliding Window",
+        "UPVC Sliding",
+        "Energy Efficient Window"
+      ]
+    },
+    "relatedProducts": [
+      23,
+      24,
+      25,
+      26
+    ],
+    "image": "/Products/upvc/sliding-window/cover.jpg"
+  },
+  {
+    "id": 23,
+    "slug": "upvc-openable-window",
+    "name": "UPVC Openable Window",
+    "category": "UPVC Systems",
+    "shortDescription": "Heavy-duty UPVC casement window with multi-point locking and superior ventilation.",
+    "description": "UPVC Openable Windows provide excellent ventilation, security and thermal insulation. Built with premium UPVC profiles and high-quality hardware, they are ideal for residential and commercial projects requiring durability and modern aesthetics.",
+    "features": [
+      "Casement Design",
+      "Multi Point Lock",
+      "Weather Proof",
+      "Excellent Ventilation",
+      "Noise Reduction",
+      "Energy Efficient",
+      "Rust Free",
+      "Elegant Appearance"
+    ],
+    "specification": {
+      "ProductType": "UPVC Openable Window",
+      "OpeningType": "Casement",
+      "Profile": "Premium UPVC",
+      "Glass": "Toughened / Double Glazed",
+      "Locking": "Multi Point",
+      "WindResistance": "High",
+      "WaterResistance": "Excellent",
+      "UVResistance": "Yes",
+      "ThermalInsulation": "Excellent",
+      "Warranty": "10 Years"
+    },
+    "applications": [
+      "Luxury Villas",
+      "Homes",
+      "Apartments",
+      "Schools",
+      "Commercial Buildings"
+    ],
+    "advantages": [
+      "Maximum Ventilation",
+      "Premium Security",
+      "Excellent Insulation",
+      "Elegant Design",
+      "Long Service Life"
+    ],
+    "availableColors": [
+      "White",
+      "Grey",
+      "Black",
+      "Golden Oak",
+      "Walnut"
+    ],
+    "sizes": "Custom Size",
+    "warranty": "10 Years",
+    "coverImage": "/Products/upvc/openable-window/cover.jpg",
+    "gallery": [
+      "/Products/upvc/openable-window/1.jpg",
+      "/Products/upvc/openable-window/2.jpg",
+      "/Products/upvc/openable-window/3.jpg",
+      "/Products/upvc/openable-window/4.jpg",
+      "/Products/upvc/openable-window/5.jpg"
+    ],
+    "badge": "Premium",
+    "badgeColor": "bg-indigo-700",
+    "seo": {
+      "title": "UPVC Openable Window",
+      "description": "Premium casement UPVC windows with multi-point locking and thermal insulation.",
+      "keywords": [
+        "UPVC Casement Window",
+        "Openable Window",
+        "UPVC Window",
+        "Energy Efficient Window"
+      ]
+    },
+    "relatedProducts": [
+      22,
+      24,
+      25,
+      26
+    ],
+    "image": "/Products/upvc/openable-window/cover.jpg"
+  },
+  {
+    "id": 24,
+    "slug": "upvc-fixed-window",
+    "name": "UPVC Fixed Window",
+    "category": "UPVC Systems",
+    "shortDescription": "Premium fixed UPVC window providing maximum natural light and thermal insulation.",
+    "description": "UPVC Fixed Windows are designed to maximize daylight while offering excellent thermal insulation and weather resistance. These windows require minimal maintenance and are ideal for modern homes, offices and commercial buildings.",
+    "features": [
+      "Premium UPVC Profile",
+      "Maximum Natural Light",
+      "Weather Resistant",
+      "Noise Reduction",
+      "Thermal Insulation",
+      "Rust Free",
+      "Maintenance Free",
+      "Modern Design"
+    ],
+    "specification": {
+      "ProductType": "UPVC Fixed Window",
+      "Profile": "Premium UPVC",
+      "Glass": "5mm / Toughened / Double Glazed",
+      "OpeningType": "Fixed",
+      "WindResistance": "Excellent",
+      "WaterResistance": "High",
+      "ThermalInsulation": "Excellent",
+      "UVResistance": "Yes",
+      "Finish": "Smooth",
+      "Warranty": "10 Years"
+    },
+    "applications": [
+      "Luxury Villas",
+      "Homes",
+      "Apartments",
+      "Office Buildings",
+      "Commercial Projects"
+    ],
+    "advantages": [
+      "Maximum Daylight",
+      "Excellent Insulation",
+      "Elegant Appearance",
+      "Zero Maintenance",
+      "Long Life"
+    ],
+    "availableColors": [
+      "White",
+      "Black",
+      "Grey",
+      "Golden Oak",
+      "Walnut"
+    ],
+    "sizes": "Custom Size",
+    "warranty": "10 Years",
+    "coverImage": "/Products/upvc/fixed-window/cover.jpg",
+    "gallery": [
+      "/Products/upvc/fixed-window/1.jpg",
+      "/Products/upvc/fixed-window/2.jpg",
+      "/Products/upvc/fixed-window/3.jpg",
+      "/Products/upvc/fixed-window/4.jpg",
+      "/Products/upvc/fixed-window/5.jpg"
+    ],
+    "badge": "Energy Efficient",
+    "badgeColor": "bg-sky-700",
+    "seo": {
+      "title": "UPVC Fixed Window",
+      "description": "Premium fixed UPVC window with excellent thermal insulation.",
+      "keywords": [
+        "UPVC Fixed Window",
+        "Fixed Window",
+        "UPVC",
+        "Modern Window"
+      ]
+    },
+    "relatedProducts": [
+      22,
+      23,
+      25
+    ],
+    "image": "/Products/upvc/fixed-window/cover.jpg"
+  },
+  {
+    "id": 25,
+    "slug": "upvc-sliding-window-with-mesh",
+    "name": "UPVC Sliding Window with Mosquito Mesh",
+    "category": "UPVC Systems",
+    "shortDescription": "UPVC sliding window integrated with a mosquito mesh track.",
+    "description": "Premium UPVC sliding window featuring an integrated mosquito mesh system. Enjoy fresh air without insects while maintaining excellent insulation and smooth sliding operation.",
+    "features": [
+      "Integrated Mosquito Mesh",
+      "Smooth Sliding",
+      "Weather Resistant",
+      "Noise Reduction",
+      "Energy Efficient",
+      "Multi Point Lock",
+      "Premium Finish",
+      "Low Maintenance"
+    ],
+    "specification": {
+      "ProductType": "UPVC Sliding Mesh Window",
+      "Profile": "Premium UPVC",
+      "Glass": "Toughened Glass",
+      "Mesh": "Fiberglass / SS",
+      "Locking": "Multi Point",
+      "WeatherResistance": "Excellent",
+      "ThermalInsulation": "Excellent",
+      "SoundInsulation": "High",
+      "UVResistance": "Yes",
+      "Warranty": "10 Years"
+    },
+    "applications": [
+      "Homes",
+      "Luxury Apartments",
+      "Hotels",
+      "Office Buildings",
+      "Villas"
+    ],
+    "advantages": [
+      "Window + Mesh",
+      "Maximum Ventilation",
+      "Mosquito Protection",
+      "Premium Design",
+      "Easy Maintenance"
+    ],
+    "availableColors": [
+      "White",
+      "Grey",
+      "Black",
+      "Golden Oak",
+      "Walnut"
+    ],
+    "sizes": "Custom Manufacturing",
+    "warranty": "10 Years",
+    "coverImage": "/Products/upvc/sliding-with-mesh/cover.jpg",
+    "gallery": [
+      "/Products/upvc/sliding-with-mesh/1.jpg",
+      "/Products/upvc/sliding-with-mesh/2.jpg",
+      "/Products/upvc/sliding-with-mesh/3.jpg",
+      "/Products/upvc/sliding-with-mesh/4.jpg",
+      "/Products/upvc/sliding-with-mesh/5.jpg"
+    ],
+    "badge": "Smart Choice",
+    "badgeColor": "bg-green-700",
+    "seo": {
+      "title": "UPVC Sliding Window with Mosquito Mesh",
+      "description": "Premium UPVC sliding window integrated with mosquito mesh.",
+      "keywords": [
+        "UPVC Mesh Window",
+        "Sliding Window",
+        "Mosquito Mesh",
+        "UPVC Window"
+      ]
+    },
+    "relatedProducts": [
+      22,
+      23,
+      26
+    ],
+    "image": "/Products/upvc/sliding-with-mesh/cover.jpg"
+  },
+  {
+    "id": 26,
+    "slug": "upvc-three-track-sliding-window",
+    "name": "UPVC 3 Track Sliding Window",
+    "category": "UPVC Systems",
+    "shortDescription": "Premium three-track UPVC sliding window with dedicated mosquito mesh track.",
+    "description": "The UPVC 3 Track Sliding Window features separate tracks for glass panels and an integrated mosquito mesh, delivering superior ventilation, excellent insulation and effortless operation.",
+    "features": [
+      "Three Track Design",
+      "Integrated Mesh Track",
+      "Smooth Rollers",
+      "Heavy Duty Frame",
+      "Excellent Ventilation",
+      "Premium Hardware",
+      "Energy Efficient",
+      "Long Lasting"
+    ],
+    "specification": {
+      "ProductType": "UPVC 3 Track Window",
+      "Profile": "Premium UPVC",
+      "Glass": "Double Glazed / Toughened",
+      "MeshTrack": "Integrated",
+      "Locking": "Multi Point",
+      "WeatherResistance": "Excellent",
+      "NoiseReduction": "Excellent",
+      "ThermalInsulation": "High",
+      "Finish": "Premium",
+      "Warranty": "10 Years"
+    },
+    "applications": [
+      "Luxury Villas",
+      "High Rise Apartments",
+      "Commercial Buildings",
+      "Hotels",
+      "Premium Residences"
+    ],
+    "advantages": [
+      "Glass + Mesh",
+      "Excellent Airflow",
+      "Premium Design",
+      "Modern Appearance",
+      "Energy Saving"
+    ],
+    "availableColors": [
+      "White",
+      "Grey",
+      "Black",
+      "Golden Oak",
+      "Walnut"
+    ],
+    "sizes": "Custom Manufacturing",
+    "warranty": "10 Years",
+    "coverImage": "/Products/upvc/three-track-window/cover.jpg",
+    "gallery": [
+      "/Products/upvc/three-track-window/1.jpg",
+      "/Products/upvc/three-track-window/2.jpg",
+      "/Products/upvc/three-track-window/3.jpg",
+      "/Products/upvc/three-track-window/4.jpg",
+      "/Products/upvc/three-track-window/5.jpg"
+    ],
+    "badge": "Premium",
+    "badgeColor": "bg-indigo-700",
+    "seo": {
+      "title": "UPVC 3 Track Sliding Window",
+      "description": "Premium three-track UPVC sliding window with integrated mosquito mesh.",
+      "keywords": [
+        "3 Track Window",
+        "UPVC Sliding Window",
+        "Mosquito Mesh Window",
+        "UPVC"
+      ]
+    },
+    "relatedProducts": [
+      22,
+      23,
+      24,
+      25
+    ],
+    "image": "/Products/upvc/three-track-window/cover.jpg"
   }
 ]
