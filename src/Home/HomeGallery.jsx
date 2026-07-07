@@ -61,6 +61,22 @@ const GalleryCard = ({ item, index, onClick }) => {
 const HomeGallery = () => {
   const [lightbox, setLightbox] = useState(null);
 
+  const mosquitoNets = galleryItems.find(
+    (item) => item.category === "Mosquito Nets"
+  );
+
+  const mosquitoDoors = galleryItems.find(
+    (item) => item.category === "Mosquito Doors"
+  );
+
+  const windowBlinds = galleryItems.find(
+    (item) => item.category === "Window Blinds"
+  );
+
+  const upvcSystems = galleryItems.find(
+    (item) => item.category === "UPVC Systems"
+  );
+
   // Close on Escape key
   useEffect(() => {
     const handleKey = (e) => { if (e.key === "Escape") setLightbox(null); };
@@ -106,65 +122,94 @@ const HomeGallery = () => {
         </div>
 
         {/* Masonry Grid - Same as Gallery Component */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-          {/* Left */}
-          <div className="col-span-1 lg:col-span-6 flex flex-col gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 h-auto lg:h-[90vh]">
 
-            {/* Featured 1 - Windows */}
-            <div
-              className="h-[300px] sm:h-[380px] lg:h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer"
-              onClick={() => setLightbox(galleryItems.filter(item => item.featured)[0])}
-            >
-              <img
-                src={galleryItems.filter(item => item.featured)[0]?.image}
-                alt="Featured"
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                onError={(e) => { e.target.style.display = "none"; }}
-              />
-              <div className="absolute top-4 left-4 z-10 bg-white text-sm px-3 py-1.5 rounded-full text-slate-800 font-semibold tracking-wider shadow-lg">
-                {galleryItems.filter(item => item.featured)[0]?.category}
-              </div>
+          {/* Left Tall - Mosquito Doors */}
+          <div
+            onClick={() => setLightbox(mosquitoDoors)}
+            className="relative lg:row-span-2 h-[300px] lg:h-full rounded-3xl overflow-hidden cursor-pointer group"
+          >
+            <img
+              src={mosquitoDoors?.image}
+              alt={mosquitoDoors?.title}
+              className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+            <div className="absolute bottom-6 left-6">
+              <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs uppercase tracking-widest mb-3">
+                Category
+              </span>
+
+              <h3 className="text-3xl font-black text-white">
+                {mosquitoDoors?.category}
+              </h3>
             </div>
-
-            {/* Featured 2 - Screens */}
-            <div
-              className="h-[200px] sm:h-[250px] lg:h-[220px] rounded-3xl overflow-hidden relative group cursor-pointer"
-              onClick={() => setLightbox(galleryItems.filter(item => item.featured)[5])}
-            >
-              <img
-                src={galleryItems.filter(item => item.featured)[5]?.image}
-                alt="Featured"
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                onError={(e) => { e.target.style.display = "none"; }}
-              />
-              <div className="absolute top-4 left-4 z-10 bg-white text-sm px-3 py-1.5 rounded-full text-slate-800 font-semibold tracking-wider shadow-lg">
-                {galleryItems.filter(item => item.featured)[5]?.category}
-              </div>
-            </div>
-
           </div>
 
-          {/* Right */}
-          <div className="col-span-1 lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Top Right - Mosquito Nets */}
+          <div
+            onClick={() => setLightbox(mosquitoNets)}
+            className="relative lg:col-span-2 h-[300px] lg:h-[calc(45vh-10px)] rounded-3xl overflow-hidden cursor-pointer group"
+          >
+            <img
+              src={mosquitoNets?.image}
+              alt={mosquitoNets?.title}
+              className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+            />
 
-            {galleryItems.filter(item => item.featured).slice(1, 5).map((item) => (
-              <div
-                key={item.id}
-                className="h-[220px] sm:h-[280px] lg:h-[340px] rounded-3xl overflow-hidden relative group cursor-pointer"
-                onClick={() => setLightbox(item)}
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                  onError={(e) => { e.target.style.display = "none"; }}
-                />
-                <div className="absolute top-4 left-4 z-10 bg-white text-sm px-3 py-1.5 rounded-full text-slate-800 font-semibold tracking-wider shadow-lg">
-                  {item.category}
-                </div>
-              </div>
-            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
+            <div className="absolute bottom-6 left-6">
+              <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs uppercase tracking-widest mb-3">
+                Category
+              </span>
+
+              <h2 className="text-4xl font-black text-white">
+                {mosquitoNets?.category}
+              </h2>
+            </div>
+          </div>
+
+          {/* Bottom Left - Window Blinds */}
+          <div
+            onClick={() => setLightbox(windowBlinds)}
+            className="relative h-[250px] lg:h-[calc(45vh-10px)] rounded-3xl overflow-hidden cursor-pointer group"
+          >
+            <img
+              src={windowBlinds?.image}
+              alt={windowBlinds?.title}
+              className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+            <div className="absolute bottom-5 left-5">
+              <h3 className="text-2xl font-black text-white">
+                {windowBlinds?.category}
+              </h3>
+            </div>
+          </div>
+
+          {/* Bottom Right - UPVC Systems */}
+          <div
+            onClick={() => setLightbox(upvcSystems)}
+            className="relative h-[250px] lg:h-[calc(45vh-10px)] rounded-3xl overflow-hidden cursor-pointer group"
+          >
+            <img
+              src={upvcSystems?.image}
+              alt={upvcSystems?.title}
+              className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+            <div className="absolute bottom-5 left-5">
+              <h3 className="text-2xl font-black text-white">
+                {upvcSystems?.category}
+              </h3>
+            </div>
           </div>
 
         </div>

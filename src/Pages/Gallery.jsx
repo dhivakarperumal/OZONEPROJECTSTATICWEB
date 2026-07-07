@@ -47,6 +47,22 @@ export default function Gallery() {
   const [modal, setModal] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const mosquitoNets = galleryItems.find(
+    (item) => item.category === "Mosquito Nets"
+  );
+
+  const mosquitoDoors = galleryItems.find(
+    (item) => item.category === "Mosquito Doors"
+  );
+
+  const windowBlinds = galleryItems.find(
+    (item) => item.category === "Window Blinds"
+  );
+
+  const upvcSystems = galleryItems.find(
+    (item) => item.category === "UPVC Systems"
+  );
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
@@ -152,89 +168,108 @@ export default function Gallery() {
 
         {/* Gallery Grid */}
         <FadeIn delay={200}>
-          <div className={filter === "All" ? "grid grid-cols-1 lg:grid-cols-12 gap-4" : "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 auto-rows-[200px]"}>
 
-            {filter === "All" ? (
-              <>
-                {/* Left */}
-                <div className="col-span-1 lg:col-span-6 flex flex-col gap-4">
+          {filter === "All" ? (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 h-auto lg:h-[90vh]">
 
-                  {/* Featured 1 */}
-                  <div
-                    className="h-[300px] sm:h-[380px] lg:h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer"
-                    onClick={() => handleImageClick(items[0])}
-                  >
-                    <img
-                      src={items[0]?.image}
-                      className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                    />
-                    {items[0]?.featured && (
-                      <div className="absolute top-4 left-4 z-10 bg-white text-sm px-3 py-1.5 rounded-full text-slate-800 font-semibold tracking-wider shadow-lg">
-                        {items[0]?.category}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Featured 2 */}
-                  <div
-                    className="h-[200px] sm:h-[250px] lg:h-[220px] rounded-3xl overflow-hidden relative group cursor-pointer"
-                    onClick={() => handleImageClick(items[5])}
-                  >
-                    <img
-                      src={items[5]?.image}
-                      className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                    />
-                    {items[5]?.featured && (
-                      <div className="absolute top-4 left-4 z-10 bg-white text-sm px-3 py-1.5 rounded-full text-slate-800 font-semibold tracking-wider shadow-lg">
-                        {items[5]?.category}
-                      </div>
-                    )}
-                  </div>
-
+              {/* Mosquito Doors */}
+              <div
+                onClick={() => setFilter("Mosquito Doors")}
+                className="relative lg:row-span-2 h-[300px] lg:h-full rounded-3xl overflow-hidden cursor-pointer group"
+              >
+                <img
+                  src={mosquitoDoors?.image}
+                  alt={mosquitoDoors?.title}
+                  className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-6 left-6">
+                  <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs uppercase">
+                    Category
+                  </span>
+                  <h2 className="text-white text-3xl font-black mt-3">
+                    Mosquito Doors
+                  </h2>
                 </div>
+              </div>
 
-                {/* Right */}
-                <div className="col-span-1 lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-                  {items.slice(1, 5).map((it) => (
-                    <div
-                      key={it.id}
-                      className="h-[220px] sm:h-[280px] lg:h-[340px] rounded-3xl overflow-hidden relative group cursor-pointer"
-                      onClick={() => handleImageClick(it)}
-                    >
-                      <img
-                        src={it.image}
-                        className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                      />
-                      {it.featured && (
-                        <div className="absolute top-4 left-4 z-10 bg-white text-sm px-3 py-1.5 rounded-full text-slate-800 font-semibold tracking-wider shadow-lg">
-                          {it.category}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-
+              {/* Mosquito Nets */}
+              <div
+                onClick={() => setFilter("Mosquito Nets")}
+                className="relative lg:col-span-2 h-[300px] lg:h-[calc(45vh-10px)] rounded-3xl overflow-hidden cursor-pointer group"
+              >
+                <img
+                  src={mosquitoNets?.image}
+                  alt={mosquitoNets?.title}
+                  className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-6 left-6">
+                  <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs uppercase">
+                    Category
+                  </span>
+                  <h2 className="text-white text-4xl font-black mt-3">
+                    Mosquito Nets
+                  </h2>
                 </div>
-              </>
-            ) : (
-              // Category view - square images
-              items.map((it) => (
-                <div
-                  key={it.id}
-                  className="relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm group"
-                >
-                  <img src={it.image} alt={it.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={(e) => e.target.style.display = 'none'} />
+              </div>
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-4 w-full text-white">
-                      <p className="text-sm font-bold">{it.title}</p>
-                      <p className="text-[11px] uppercase tracking-wider text-white/70">{it.category}</p>
-                    </div>
+              {/* Window Blinds */}
+              <div
+                onClick={() => setFilter("Window Blinds")}
+                className="relative h-[250px] lg:h-[calc(45vh-10px)] rounded-3xl overflow-hidden cursor-pointer group"
+              >
+                <img
+                  src={windowBlinds?.image}
+                  alt={windowBlinds?.title}
+                  className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-5 left-5">
+                  <h2 className="text-white text-2xl font-black">
+                    Window Blinds
+                  </h2>
+                </div>
+              </div>
+
+              {/* UPVC Systems */}
+              <div
+                onClick={() => setFilter("UPVC Systems")}
+                className="relative h-[250px] lg:h-[calc(45vh-10px)] rounded-3xl overflow-hidden cursor-pointer group"
+              >
+                <img
+                  src={upvcSystems?.image}
+                  alt={upvcSystems?.title}
+                  className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-5 left-5">
+                  <h2 className="text-white text-2xl font-black">
+                    UPVC Systems
+                  </h2>
+                </div>
+              </div>
+
+            </div>
+          ) : (
+            // Category view - square images
+            items.map((it) => (
+              <div
+                key={it.id}
+                className="relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm group"
+              >
+                <img src={it.image} alt={it.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={(e) => e.target.style.display = 'none'} />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 w-full text-white">
+                    <p className="text-sm font-bold">{it.title}</p>
+                    <p className="text-[11px] uppercase tracking-wider text-white/70">{it.category}</p>
                   </div>
                 </div>
-              ))
-            )}
-          </div>
+              </div>
+            ))
+          )}
+
         </FadeIn>
 
         {/* Intro Section */}
