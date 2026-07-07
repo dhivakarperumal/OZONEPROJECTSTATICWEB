@@ -6,7 +6,7 @@ const faqs = [
   { q: "Do you provide installation?", a: "Yes, we provide professional installation services by our trained experts to ensure a perfect fit." },
   { q: "Warranty?", a: "We offer up to a 5-year warranty on premium mesh materials and a 1-year warranty on installation." },
   { q: "Custom sizes available?", a: "Absolutely! Every screen is custom-manufactured to match your exact window or door dimensions." },
-  { q: "Service areas?", a: "We proudly serve Ambur, Tirupathur, Vellore, Ranipet, Gudiyatham, Katpadi, Arcot, Chennai, Salem, and Dharmapoori." },
+  { q: "Service areas?", a: "We proudly serve for districts Tirupattur, Krishnagiri, Vellore, Dharmapuri, Tiruvannamalai." },
   { q: "Maintenance?", a: "Our screens require minimal maintenance. Simply dust them lightly or vacuum them occasionally." }
 ];
 
@@ -22,9 +22,9 @@ export default function ServicesFAQ() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Side: Image */}
           <div className="w-full h-full min-h-[400px] lg:min-h-full rounded-3xl overflow-hidden shadow-lg relative">
-            <img 
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" 
-              alt="Support & Installation" 
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+              alt="Support & Installation"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0c5940]/90 via-[#0c5940]/20 to-transparent flex flex-col justify-end p-8">
@@ -36,8 +36,8 @@ export default function ServicesFAQ() {
           {/* Right Side: Accordion */}
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden ${openIndex === index ? 'border-[#0c5940] shadow-md' : 'border-gray-200'}`}
               >
                 <button
