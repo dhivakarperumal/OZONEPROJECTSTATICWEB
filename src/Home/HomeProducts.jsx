@@ -51,7 +51,7 @@ const ProductCard = ({ product, onQuickView }) => {
       {/* Image */}
       <div className="relative h-62 overflow-hidden bg-gray-100">
         <img
-          src={product.image}
+          src={Array.isArray(product.image) ? product.image[0] : product.image}
           alt={product.name}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           onError={(e) => {

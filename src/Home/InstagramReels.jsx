@@ -502,7 +502,7 @@ const InstagramReels = () => {
               <ChevronRight size={20} />
             </button>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/ozone_enterprises_?utm_source=qr&igsh=MTNydnc0MWd1YnJiZA=="
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-pink-600 hover:to-yellow-600 text-white font-bold text-sm rounded-full shadow-xl hover:shadow-pink-500/40 transition-all duration-300 hover:scale-105"

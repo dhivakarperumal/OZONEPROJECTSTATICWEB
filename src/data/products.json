@@ -74,7 +74,7 @@
       3,
       5
     ],
-    "image": "/Products/velcro.jpg"
+    "image": ["/Images/Velcro type.jpg","/Images/Velcro type1.jpg"]
   },
   {
     "id": 2,
@@ -152,7 +152,7 @@
       3,
       4
     ],
-    "image": "/Products/openable.jpg"
+    "image": ["/Images/Classic Openable Mosquito Window.jpg","/Images/Classic Openable Mosquito Window1.jpg"]
   },
   {
     "id": 3,
@@ -230,7 +230,7 @@
       2,
       4
     ],
-    "image": "/Products/fixed.jpg"
+    "image": ["/Images/Classic Openable Mosquito Window.jpg","/Images/Classic Openable Mosquito Window1.jpg"]
   },
   {
     "id": 4,
@@ -312,7 +312,7 @@
       3,
       5
     ],
-    "image": "/Products/ACE Openable Mosquito Window.jpg"
+    "image": ["/Images/ACE Openable Mosquito Window1.jpg","/Images/ACE Openable Mosquito Window_1.jpg"]
   },
   {
     "id": 5,
@@ -394,7 +394,7 @@
       2,
       4
     ],
-    "image": "/Products/roll.jpg"
+    "image": ["/Images/Roll-Up Mosquito Screen1.jpg","/Images/Roll-Up Mosquito Screen2.jpg"]
   },
   { 
     "id": 6,
@@ -472,7 +472,7 @@
       7,
       8
     ],
-    "image": "/Products/shutter.jpg"
+    "image": ["/Images/Shutter Mosquito Screen.jpg","/Images/Shutter Mosquito Screen2.jpg"]
   },
   {
     "id": 7,
@@ -551,7 +551,7 @@
       4,
       8
     ],
-    "image": "/Products/openabledoor.jpg"
+    "image": ["/Images/Classic Openable Mosquito Door.jpg","/Images/Classic Openable Mosquito Door1.jpg"]
   },
   {
     "id": 8,
@@ -630,7 +630,7 @@
       7,
       9
     ],
-    "image": "/Products/aceopenabledoor.jpg"
+     "image": ["/Images/ACE Openable Mosquito Door.jpg","/Images/ACE Openable Mosquito Door1.jpg"]
   },
   {
     "id": 9,
@@ -709,7 +709,7 @@
       11,
       14
     ],
-    "image": "/Products/pleatedmosquitomess1.jpg"
+     "image": ["/Images/Pleated Mosquito Mesh (Single)1.jpg","/Images/Pleated Mosquito Mesh (Single).jpg"]
   },
   {
     "id": 10,
@@ -788,7 +788,7 @@
       11,
       14
     ],
-    "image": "/Products/pleatedmosquitomess2.jpg"
+    "image": ["/Images/Pleated Mosquito Mesh (Double).jpg","/Images/Pleated Mosquito Mesh (Double)1.jpg"]
   },
   {
     "id": 11,
@@ -867,7 +867,7 @@
       10,
       12
     ],
-    "image": "/Products/barrierfree.jpg"
+    "image": ["/Images/Barrier Free Pleated Mosquito Mesh1.jpg","/Images/Barrier Free Pleated Mosquito Mesh.jpg"]
   },
   {
     "id": 12,
@@ -946,7 +946,7 @@
       11,
       13
     ],
-    "image": "/Products/honeycomb.jpg"
+    "image": ["/Images/Honeycomb Pleated Mosquito Mesh.png","/Images/Honeycomb Barrier Free Mosquito Mesh1.jpg"]
   },
   {
     "id": 13,
@@ -1025,7 +1025,7 @@
       12,
       14
     ],
-    "image": "/Products/honeycomebarrierfree.jpg"
+    "image": ["/Images/Honeycomb Barrier Free Mosquito Mesh.jpg","/Images/Honeycomb Barrier Free Mosquito Mesh1.jpg"]
   },
   {
     "id": 14,
@@ -1033,7 +1033,7 @@
     "name": "Honeycomb Two-in-One Mosquito Mesh",
     "category": "Mosquito Nets",
     "shortDescription": "Two-in-one honeycomb system combining blackout blind and mosquito mesh in one product.",
-    "description": "Honeycomb Two-in-One System integrates a mosquito mesh and blackout honeycomb blind into a single frame. It provides insect protection during the day and complete privacy with light control whenever required.",
+    "description": "Honeycomb Two-in-One System integrates a mosquito mesh and blackout honeycomb blind into a Double frame. It provides insect protection during the day and complete privacy with light control whenever required.",
     "features": [
       "2-in-1 System",
       "Mosquito Mesh",
@@ -1106,7 +1106,7 @@
       13,
       15
     ],
-    "image": "/Products/honeycomebarrierfree.jpg"
+    "image": ["/Images/Honeycomb Two-in-One Mosquito Mesh.jpg","/Images/Honeycomb Two-in-One Free Mosquito Mesh1.jpg"]
   },
   {
     "id": 15,
@@ -1185,7 +1185,7 @@
       8,
       12
     ],
-    "image": "/Products/slidingmosquitoscreen.jpg"
+    "image": ["/Images/Sliding Mosquito Screen2.jpg", "/Images/Sliding Mosquito Screen3.jpg"]
   },
   {
     "id": 16,
@@ -1264,7 +1264,7 @@
       18,
       19
     ],
-    "image": "/Products/Roller Blinds 1.jpg"
+    "image": ["/Images/Roller Blinds 1.jpg", "/Images/Roller Blinds 2.jpg"]
   },
   {
     "id": 17,
@@ -1343,7 +1343,7 @@
       18,
       19
     ],
-    "image": "/Products/Zebra Blinds.jpg"
+    "image": ["/Images/Zebra Blinds2.jpg", "/Images/Zebra Blinds1.jpg"]
   },
   {
     "id": 18,
@@ -1422,7 +1422,7 @@
       17,
       19
     ],
-    "image": "/Products/Pvc Blinds1.jpg"
+    "image": ["/Images/Zebra Blinds2.jpg", "/Images/Zebra Blinds1.jpg"]
   },
   {
     "id": 19,
@@ -1501,7 +1501,7 @@
       17,
       20
     ],
-    "image": "/Products/Vertical Blinds1.jpg"
+    "image": ["/Images/Vertical Blinds2.jpg", "/Images/Vertical Blinds1.jpg"]
   },
   {
     "id": 20,
@@ -1580,7 +1580,7 @@
       19,
       21
     ],
-    "image": "/Products/Bamboo Blinds1.jpg"
+    "image": ["/Images/Bamboo Blinds2.jpg", "/Images/Bamboo Blinds1.jpg"]
   },
   {
     "id": 21,
@@ -1662,7 +1662,7 @@
       19,
       20
     ],
-    "image": "/Products/curtains.jpg"
+    "image": ["/Images/curtains.jpg", "/Images/Zebra Blinds1.jpg"]
   },
   {
     "id": 22,
@@ -1742,7 +1742,7 @@
       25,
       26
     ],
-    "image": "/Products/UPVC Sliding Window.jpg"
+    "image": ["/Images/UPVC Sliding Window.jpg", "/Images/UPVC Sliding Window11.png"]
   },
   {
     "id": 23,
@@ -1822,7 +1822,7 @@
       25,
       26
     ],
-    "image": "/Products/UPVC Openable Window2.jpg"
+    "image": ["/Images/UPVC Openable Window2.jpg", "/Images/UPVC Openable Window.jpg"]
   },
   {
     "id": 24,
@@ -1901,7 +1901,7 @@
       23,
       25
     ],
-    "image": "/Products/UPVC Fixed Window2.jpg"
+    "image": ["/Images/UPVC Fixed Window.jpg", "/Images/UPVC Fixed Window2.jpg"]
   },
   {
     "id": 25,
@@ -1980,7 +1980,7 @@
       23,
       26
     ],
-    "image": "/Products/UPVC Sliding Window with Mosquito Mesh.jpg"
+    "image": ["/Images/UPVC Sliding Window with Mosquito Mesh.jpg", "/Images/UPVC Sliding Window with Mosquito Mesh1.jpg"]
   },
   {
     "id": 26,
@@ -2060,6 +2060,6 @@
       24,
       25
     ],
-    "image": "/Products/UPVC 3 Track Sliding Window.jpg"
+    "image": ["/Images/UPVC 3 Track Sliding Window.jpg", "/Images/UPVC 3 Track Sliding Window2.jpg"]
   }
 ]
