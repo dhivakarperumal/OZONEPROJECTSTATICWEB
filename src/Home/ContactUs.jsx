@@ -154,7 +154,7 @@ const ContactUs = () => {
     {
       icon: Clock,
       title: "Working Hours",
-      lines: ["Monday – Saturday: 9:00 AM – 9:00 PM", "Sunday: Closed"],
+      lines: ["Monday – Saturday: 9:00 AM – 9:00 PM", "Sunday: 9:00 AM - 5:00 PM"],
     },
   ];
 

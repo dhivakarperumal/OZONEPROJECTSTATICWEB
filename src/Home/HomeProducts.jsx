@@ -49,7 +49,7 @@ const ProductCard = ({ product, onQuickView }) => {
       onMouseLeave={() => setHovered(false)}
     >
       {/* Image */}
-      <div className="relative h-56 overflow-hidden bg-gray-100">
+      <div className="relative h-62 overflow-hidden bg-gray-100">
         <img
           src={product.image}
           alt={product.name}
@@ -88,9 +88,9 @@ const ProductCard = ({ product, onQuickView }) => {
         <h3 className="text-lg font-bold text-[var(--primary)] mb-2 group-hover:text-[#0c5940] transition-colors">
           {product.name}
         </h3>
-        <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">
+        {/* <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">
           {product.description}
-        </p>
+        </p> */}
 
         {/* Features */}
         <div className="flex flex-wrap gap-2 mt-auto">
