@@ -68,9 +68,9 @@ const Hero = () => {
                 animate={{ scale: [1.04, 1.12, 1.04], opacity: [0.95, 1, 0.95] }}
                 transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
               />
-              
+
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
-              
+
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-16">
                 <div className="max-w-3xl">
                   <motion.div
@@ -82,16 +82,18 @@ const Hero = () => {
                     <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
                     <span className="text-sm font-bold tracking-wide text-white uppercase">{slide.tag}</span>
                   </motion.div>
-                  
+
                   <motion.h1
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.25 }}
                     className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 tracking-tight leading-[1.1] text-white"
                   >
-                    {slide.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-[var(--secondary)]">{slide.highlight}</span>
+                    {slide.title}  <span className="text-cyan-300 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+                      {slide.highlight}
+                    </span>
                   </motion.h1>
-                  
+
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -100,7 +102,7 @@ const Hero = () => {
                   >
                     {slide.desc}
                   </motion.p>
-                  
+
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -142,8 +144,9 @@ const Hero = () => {
       </a>
 
       <CatalogueDownload isOpen={catalogueOpen} onClose={() => setCatalogueOpen(false)} />
-      
-      <style dangerouslySetInnerHTML={{__html: `
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .swiper-pagination-bullet { background: white; opacity: 0.5; }
         .swiper-pagination-bullet-active { background: var(--accent); opacity: 1; }
         /* Optional gentle zoom effect on active slide */
