@@ -53,7 +53,66 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
   );
 };
 
+const CountUp = ({ value, duration = 2000, start }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!start) return;
+
+    const numericValue = parseInt(value.replace(/\D/g, ""));
+    const suffix = value.replace(/[0-9]/g, "");
+
+    let startTime;
+
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+
+      setCount(Math.floor(progress * numericValue));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [start, value, duration]);
+
+  const suffix = value.replace(/[0-9]/g, "");
+
+  return (
+    <>
+      {count}
+      {suffix}
+    </>
+  );
+};
+
 const HomeAbout = () => {
+  const statsRef = useRef(null);
+  const [startCount, setStartCount] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartCount(true);
+          observer.disconnect(); // Run only once
+        }
+      },
+      {
+        threshold: 0.4,
+      }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,7 +134,7 @@ const HomeAbout = () => {
               {/* Floating Experience Badge */}
               <div className="absolute -bottom-6 -right-6 bg-[#0c5940] text-white p-5 rounded-2xl shadow-xl flex flex-col items-center gap-1">
                 <span className="text-4xl font-black leading-none">15+</span>
-                <span className="text-xs font-semibold tracking-wider uppercase text-white/80">Years of<br/>Excellence</span>
+                <span className="text-xs font-semibold tracking-wider uppercase text-white/80">Years of<br />Excellence</span>
               </div>
 
               {/* Floating certified tag */}
@@ -146,10 +205,15 @@ const HomeAbout = () => {
 
             {/* Stats row */}
             <FadeIn delay={300}>
-              <div className="grid grid-cols-4 gap-4 mb-8 p-5 bg-gradient-to-r from-[#081A59] to-[#13328D] rounded-2xl text-white">
+              <div
+                ref={statsRef}
+                className="grid grid-cols-4 gap-4 mb-8 p-5 bg-gradient-to-r from-[#081A59] to-[#13328D] rounded-2xl text-white"
+              >
                 {stats.map((s, i) => (
                   <div key={i} className="text-center">
-                    <div className="text-2xl sm:text-3xl font-black text-white">{s.value}</div>
+                    <div className="text-2xl sm:text-3xl font-black text-white">
+                      <CountUp value={s.value} start={startCount} />
+                    </div>
                     <div className="text-[10px] sm:text-xs font-semibold text-white/60 uppercase tracking-wider mt-1">{s.label}</div>
                   </div>
                 ))}
