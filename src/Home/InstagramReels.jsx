@@ -26,6 +26,22 @@ const getInstagramEmbedUrl = (url) => {
   return `https://www.instagram.com/${type}/${match[1]}/embed/captioned/`;
 };
 
+const loadInstagramEmbedScript = () => {
+  if (typeof window === "undefined") return;
+  if ((window.instgrm && window.instgrm.Embeds) || document.getElementById("instagram-embed-script")) return;
+  const s = document.createElement("script");
+  s.id = "instagram-embed-script";
+  s.src = "https://platform.instagram.com/en_US/embeds.js";
+  s.async = true;
+  s.defer = true;
+  s.onload = () => {
+    try {
+      window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process();
+    } catch (e) {}
+  };
+  document.body.appendChild(s);
+};
+
 const sortReels = (items) => {
   return [...items].sort((a, b) => {
     const aIsInstagram = /instagram\.com\/(?:reel|p|tv)\//i.test(a.instagramUrl || a.videoUrl);
@@ -59,6 +75,19 @@ const ReelCard = ({ reel, onExpand }) => {
     return () => video.removeEventListener("timeupdate", onTimeUpdate);
   }, []);
 
+  // If this reel is an Instagram embed, load the embed script so it becomes interactive
+  useEffect(() => {
+    if (!embedUrl) return;
+    loadInstagramEmbedScript();
+    // give the script a moment then process embeds
+    const t = setTimeout(() => {
+      try {
+        window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process();
+      } catch (e) {}
+    }, 500);
+    return () => clearTimeout(t);
+  }, [embedUrl]);
+
   const togglePlay = () => {
     if (embedUrl) {
       onExpand(reel);
@@ -89,14 +118,16 @@ const ReelCard = ({ reel, onExpand }) => {
       onClick={togglePlay}
     >
       {embedUrl ? (
-        <iframe
-          src={embedUrl}
-          title={`Instagram reel ${reel.id}`}
-          className="w-full h-full border-0"
-          loading="lazy"
-          allowFullScreen
-          referrerPolicy="strict-origin-when-cross-origin"
-        />
+        <blockquote
+          className="instagram-media"
+          data-instgrm-permalink={reel.instagramUrl || reel.videoUrl}
+          data-instgrm-version="14"
+          style={{ margin: 0 }}
+        >
+          <a href={reel.instagramUrl || reel.videoUrl} target="_blank" rel="noopener noreferrer">
+            View on Instagram
+          </a>
+        </blockquote>
       ) : (
         <video
           ref={videoRef}
@@ -253,6 +284,18 @@ const ReelModal = ({ reel, onClose }) => {
     return () => video.removeEventListener("timeupdate", onTimeUpdate);
   }, []);
 
+  // Load Instagram embed script when modal contains an Instagram reel
+  useEffect(() => {
+    if (!embedUrl) return;
+    loadInstagramEmbedScript();
+    const t = setTimeout(() => {
+      try {
+        window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process();
+      } catch (e) {}
+    }, 400);
+    return () => clearTimeout(t);
+  }, [embedUrl]);
+
   const togglePlay = () => {
     const video = videoRef.current;
     if (!video) return;
@@ -288,14 +331,16 @@ const ReelModal = ({ reel, onClose }) => {
       >
         {/* Media */}
         {embedUrl ? (
-          <iframe
-            src={embedUrl}
-            title={`Instagram reel modal ${reel.id}`}
-            className="w-full h-full border-0"
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="strict-origin-when-cross-origin"
-          />
+          <blockquote
+            className="instagram-media"
+            data-instgrm-permalink={reel.instagramUrl || reel.videoUrl}
+            data-instgrm-version="14"
+            style={{ margin: 0 }}
+          >
+            <a href={reel.instagramUrl || reel.videoUrl} target="_blank" rel="noopener noreferrer">
+              View on Instagram
+            </a>
+          </blockquote>
         ) : (
           <video
             ref={videoRef}
