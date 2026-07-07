@@ -41,10 +41,9 @@ function App() {
       <ScrollNavigator />
       <main className="flex-grow relative">
         <>
-          <AnimatePresence>
+          {/* <AnimatePresence>
             {transition && (
               <>
-                {/* Left Curtain */}
                 <motion.div
                   initial={{ x: 0 }}
                   animate={{ x: "-100%" }}
@@ -58,7 +57,6 @@ bg-gradient-to-r from-cyan-100/20 via-white/15 to-blue-200/20
 backdrop-blur-3xl border-r border-white/30"
                 />
 
-                {/* Right Curtain */}
                 <motion.div
                   initial={{ x: 0 }}
                   animate={{ x: "100%" }}
@@ -73,7 +71,7 @@ backdrop-blur-3xl border-l border-white/30"
                 />
               </>
             )}
-          </AnimatePresence>
+          </AnimatePresence> */}
 
           <Outlet key={location.pathname} />
         </>
