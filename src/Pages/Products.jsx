@@ -247,7 +247,11 @@ export default function Products() {
                         >
                           <div className="relative h-62 overflow-hidden bg-gray-100">
                             <img
-                              src={Array.isArray(product.image) ? product.image[0] : product.image}
+                              src={
+                                Array.isArray(product.image)
+                                  ? product.image?.[0]
+                                  : product.image
+                              }
                               alt={product.name}
                               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
@@ -386,7 +390,11 @@ export default function Products() {
             <div className="w-full lg:w-1/2 h-72 lg:h-auto relative overflow-hidden bg-gray-50 group">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent z-10"></div>
               <img
-                src={selectedProduct.image}
+                src={
+                  Array.isArray(selectedProduct.image)
+                    ? selectedProduct.image[0]
+                    : selectedProduct.image
+                }
                 alt={selectedProduct.name}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />

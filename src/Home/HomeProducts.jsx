@@ -275,7 +275,7 @@ const HomeProducts = () => {
             </button>
 
             {/* Image Section */}
-            <div className="md:w-1/2 bg-gray-50 flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-gray-100">
+            <div className="md:w-1/2 h-[350px] md:h-[85vh] bg-gray-50 flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-gray-100"> 
               <img
                 src={
                   Array.isArray(selectedProduct.image)
@@ -283,7 +283,7 @@ const HomeProducts = () => {
                     : selectedProduct.image
                 }
                 alt={selectedProduct.name}
-                className="max-w-full max-h-[40vh] md:max-h-[70vh] object-contain rounded-xl shadow-sm hover:scale-105 transition-transform duration-500"
+                className="w-full h-full max-h-[80vh] object-contain rounded-xl hover:scale-105 transition-transform duration-500"
                 onError={(e) => {
                   e.target.src = "https://placehold.co/400x300/e6f4ed/0c5940?text=Ozone+Product";
                 }}
