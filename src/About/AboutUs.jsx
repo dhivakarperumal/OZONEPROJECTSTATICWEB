@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import PageContainer from "../CommenComponents/PageContainer";
 import PageHeader from "../CommenComponents/PageHeader";
+import { motion, AnimatePresence } from "framer-motion";
 
 const stats = [
   { value: "15+", label: "Years of Experience" },
@@ -105,10 +106,24 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 
 export default function AboutUs() {
   return (
-    <div className="min-h-screen bg-background">
+    <motion.div
+      className="min-h-screen bg-background"
+      initial={{
+        opacity: 0,
+        scale: 0.8,
+      }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+      }}
+      transition={{
+        duration: 0.7,
+        ease: "easeOut",
+      }}
+    >
       <PageHeader
         title="About Us"
-        // subtitle="Crafting premium architectural solutions with innovation, precision, and a commitment to exceptional quality."
+      // subtitle="Crafting premium architectural solutions with innovation, precision, and a commitment to exceptional quality."
       />
 
       <PageContainer className="py-16 sm:py-20 lg:py-24">
@@ -317,6 +332,6 @@ export default function AboutUs() {
 
 
       </PageContainer>
-    </div>
+    </motion.div>
   );
 }
