@@ -48,33 +48,43 @@ const CategorySection = () => {
                 </div>
 
                 {/* Categories */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {categories.map((category) => (
-                        <div
+                        <Link
                             key={category.name}
-                            className="group relative rounded-2xl overflow-hidden shadow-lg"
+                            to="/products"
+                            state={{ category: category.filter }}
+                            className="group"
                         >
-                            <Link
-                                key={category.name}
-                                to="/products"
-                                state={{ category: category.filter }}
-                                className="group relative rounded-2xl overflow-hidden shadow-lg"
-                            >
-                                <img
-                                    src={category.image}
-                                    alt={category.name}
-                                    className="w-full h-72 object-cover group-hover:scale-110 transition duration-700"
-                                />
+                            <div className="relative bg-white rounded-[32px] p-8 shadow-lg border border-gray-100 hover:border-[#0c5940]/30 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl overflow-hidden">
 
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                                {/* Background Circle */}
+                                <div className="absolute -top-16 -right-16 w-44 h-44 rounded-full bg-gradient-to-br from-[#0c5940]/10 to-[#08124E]/10 group-hover:scale-125 transition duration-700"></div>
 
-                                <div className="absolute bottom-6 left-6">
-                                    <h3 className="text-white text-2xl font-bold">
+                                {/* Image */}
+                                <div className="relative z-10 flex justify-center">
+                                    <div className="w-45 h-45 lg:w-50 lg:h-50 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                                        <img
+                                            src={category.image}
+                                            alt={category.name}
+                                            className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Content */}
+                                <div className="relative z-10 mt-8 text-center">
+                                    <h3 className="text-xl font-bold text-gray-900">
                                         {category.name}
                                     </h3>
+
+                                    <div className="mt-6 inline-flex items-center gap-2 text-[#0c5940] font-semibold group-hover:gap-4 transition-all">
+                                        Explore
+                                        <span>→</span>
+                                    </div>
                                 </div>
-                            </Link>
-                        </div>
+                            </div>
+                        </Link>
                     ))}
                 </div>
 
