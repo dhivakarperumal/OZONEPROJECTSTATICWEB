@@ -149,7 +149,7 @@ const ContactUs = () => {
     {
       icon: Mail,
       title: "Email Address",
-      lines: [ "Ozoneenterprises0625@gmail.com"],
+      lines: ["Ozoneenterprises0625@gmail.com"],
     },
     {
       icon: Clock,
@@ -473,25 +473,35 @@ const ContactUs = () => {
                   <div className="flex-1 h-px bg-[#081A59]/30 max-w-[60px]" />
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-black text-[#081A59] mb-4 leading-tight">
-                  We Provide Service<br />
-                  <span className="text-[#0c5940]">All Over India</span>
+                  We Provide Services Across
+                  <br />
+                  <span className="text-[#0c5940]">Tamil Nadu</span>
                 </h2>
+
                 <div className="w-10 h-1 bg-[#081A59] rounded-full mb-5" />
+
                 <p className="text-gray-500 text-base leading-relaxed mb-6">
-                  No matter where you are, our team is ready to serve you with the best solutions for your needs. With a network across major cities in India, we ensure timely delivery and installation.
+                  We provide professional aluminium, glass, and UPVC installation services
+                  across major cities in Tamil Nadu with timely delivery and expert support.
                 </p>
+
+
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    { label: "Chennai", sub: "Head Office" },
-                    { label: "Bangalore", sub: "Branch Office" },
-                    { label: "Hyderabad", sub: "Service Center" },
-                    { label: "Mumbai", sub: "Dealership Partner" },
-                  ].map((city, i) => (
-                    <div key={i} className="flex items-center gap-3 bg-[#EEF4FB] rounded-2xl px-4 py-3">
+                    { label: "Tirupattur District", sub: "Sales & Installation" },
+                    { label: "Krishnagiri District", sub: "Sales & Installation" },
+                    { label: "Vellore District", sub: "Sales & Installation" },
+                    { label: "Dharmapuri District", sub: "Sales & Installation" },
+                    { label: "Tiruvannamalai District", sub: "Sales & Installation" },
+                  ].map((place, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center gap-3 bg-[#EEF4FB] rounded-2xl px-4 py-3"
+                    >
                       <MapPin className="w-4 h-4 text-[#081A59] flex-shrink-0" />
                       <div>
-                        <p className="font-bold text-gray-900 text-sm">{city.label}</p>
-                        <p className="text-gray-500 text-xs">{city.sub}</p>
+                        <p className="font-bold text-gray-900 text-sm">{place.label}</p>
+                        <p className="text-gray-500 text-xs">{place.sub}</p>
                       </div>
                     </div>
                   ))}
