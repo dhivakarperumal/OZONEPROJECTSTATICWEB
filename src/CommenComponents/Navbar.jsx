@@ -124,7 +124,7 @@ const Navbar = () => {
             </motion.div>
           </div>
         </PageContainer>
-      </nav>
+      </motion.nav>
 
       {/* ── Full-screen mobile overlay ── */}
       {/* Backdrop */}
@@ -141,7 +141,7 @@ const Navbar = () => {
       {/* Drawer */}
       <div
         className={`fixed top-0 right-0 h-full w-full z-50 lg:hidden flex flex-col
-          bg-gradient-to-b from-[#081A59] via-[#0c2e50] to-[#0c5940]
+          bg-linear-to-b from-[#081A59] via-[#0c2e50] to-[#0c5940]
           transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]
           ${mobileMenu ? "translate-x-0" : "translate-x-full"}`}
       >

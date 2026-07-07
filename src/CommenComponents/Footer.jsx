@@ -44,7 +44,7 @@ const Footer = () => {
             <p className="text-[13px] text-gray-300 leading-relaxed mb-5">
               Perfectly designed for all types of windows, doors & patios with reliable after-sales support you can count on.
             </p>
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-[var(--accent)] hover:bg-[var(--accent-dark)] text-white px-5 py-2 rounded-full font-semibold text-sm transition">
+            <Link to="/contact" className="inline-flex items-center gap-2 bg-(--accent) hover:bg-(--accent-dark) text-white px-5 py-2 rounded-full font-semibold text-sm transition">
               Get in Touch <ArrowRight size={16} />
             </Link>
           </div>
@@ -52,35 +52,35 @@ const Footer = () => {
           {/* Right: Features */}
           <div className="lg:w-[70%] grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
 
-            <div className="flex flex-col items-center">
+            <motion.div whileHover={{ y: -4, scale: 1.03 }} className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <Layout className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
               <p className="text-[12px] text-gray-300 leading-tight">Custom fit for every<br />window & door</p>
             </motion.div>
 
-            <div className="flex flex-col items-center">
+            <motion.div whileHover={{ y: -4, scale: 1.03 }} className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <ShieldCheck className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
               <p className="text-[12px] text-gray-300 leading-tight">High durability<br />& longevity</p>
             </motion.div>
 
-            <div className="flex flex-col items-center">
+            <motion.div whileHover={{ y: -4, scale: 1.03 }} className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <ThumbsUp className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
               <p className="text-[12px] text-gray-300 leading-tight">Aesthetically<br />finished fitments</p>
             </motion.div>
 
-            <div className="flex flex-col items-center">
+            <motion.div whileHover={{ y: -4, scale: 1.03 }} className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <Settings className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
               <p className="text-[12px] text-gray-300 leading-tight">Multiple fitment<br />options</p>
             </motion.div>
 
-            <div className="flex flex-col items-center">
+            <motion.div whileHover={{ y: -4, scale: 1.03 }} className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <HeadphonesIcon className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
@@ -307,7 +307,7 @@ const Footer = () => {
       </PageContainer>
 
       <CatalogueDownload isOpen={catalogueOpen} onClose={() => setCatalogueOpen(false)} />
-    </footer>
+    </motion.footer>
   );
 };
 

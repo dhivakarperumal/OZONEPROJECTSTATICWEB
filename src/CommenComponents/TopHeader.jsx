@@ -102,7 +102,7 @@ const TopHeader = () => {
 
                 </div>
             </PageContainer>
-        </div>
+        </motion.div>
     );
 };
 
