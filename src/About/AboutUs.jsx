@@ -105,6 +105,16 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 };
 
 export default function AboutUs() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 900);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <motion.div
       className="min-h-screen bg-background"
@@ -123,8 +133,31 @@ export default function AboutUs() {
     >
       <PageHeader
         title="About Us"
-      // subtitle="Crafting premium architectural solutions with innovation, precision, and a commitment to exceptional quality."
       />
+
+      <AnimatePresence>
+        {loading && (
+          <>
+            {/* Left Curtain */}
+            <motion.div
+              initial={{ x: 0 }}
+              animate={{ x: "-100%" }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.8 }}
+              className="fixed top-0 left-0 w-1/2 h-screen bg-[#0c5940] z-[9999]"
+            />
+
+            {/* Right Curtain */}
+            <motion.div
+              initial={{ x: 0 }}
+              animate={{ x: "100%" }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.8 }}
+              className="fixed top-0 right-0 w-1/2 h-screen bg-[#0c5940] z-[9999]"
+            />
+          </>
+        )}
+      </AnimatePresence>
 
       <PageContainer className="py-16 sm:py-20 lg:py-24">
         <section className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
