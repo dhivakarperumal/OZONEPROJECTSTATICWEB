@@ -53,7 +53,9 @@ function App() {
                     duration: 0.8,
                     ease: "easeInOut",
                   }}
-                  className="fixed top-0 left-0 w-1/2 h-screen bg-[#0c5940] z-[9999]"
+                  className="fixed top-0 left-0 w-1/2 h-screen z-[9999]
+bg-gradient-to-r from-cyan-100/20 via-white/15 to-blue-200/20
+backdrop-blur-3xl border-r border-white/30"
                 />
 
                 {/* Right Curtain */}
@@ -65,7 +67,9 @@ function App() {
                     duration: 0.8,
                     ease: "easeInOut",
                   }}
-                  className="fixed top-0 right-0 w-1/2 h-screen bg-[#0c5940] z-[9999]"
+                  className="fixed top-0 right-0 w-1/2 h-screen z-[9999]
+bg-gradient-to-l from-cyan-100/20 via-white/15 to-blue-200/20
+backdrop-blur-3xl border-l border-white/30"
                 />
               </>
             )}
