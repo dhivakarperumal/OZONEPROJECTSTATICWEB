@@ -78,41 +78,62 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Links */}
-            <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center gap-1 lg:gap-2 xl:gap-4 w-max z-0">
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+              className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center gap-1 lg:gap-2 xl:gap-4 w-max z-0"
+            >
               <NavLink to="/" className={navClass}>Home</NavLink>
               <NavLink to="/about" className={navClass}>About Us</NavLink>
               <NavLink to="/products" className={navClass}>Products</NavLink>
               <NavLink to="/services" className={navClass}>Services</NavLink>
               <NavLink to="/gallery" className={navClass}>Gallery</NavLink>
               <NavLink to="/contact" className={navClass}>Contact Us</NavLink>
-            </div>
+            </motion.div>
 
             {/* Desktop CTA */}
-            <div className="hidden lg:block shrink-0 z-10">
-              <Link to="/contact" className="flex items-center gap-2 bg-[#0c5940] hover:bg-[#094230] text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition shadow-md">
-                Get a Quote
-              </Link>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+              className="hidden lg:block shrink-0 z-10"
+            >
+              <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
+                <Link to="/contact" className="flex items-center gap-2 bg-[#0c5940] hover:bg-[#094230] text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition shadow-md">
+                  Get a Quote
+                </Link>
+              </motion.div>
+            </motion.div>
 
             {/* Mobile Toggle */}
-            <div className="flex items-center lg:hidden z-10">
-              <button
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.35, delay: 0.1 }}
+              className="flex items-center lg:hidden z-10"
+            >
+              <motion.button
+                whileTap={{ scale: 0.9 }}
                 onClick={() => setMobileMenu(!mobileMenu)}
                 className="flex items-center justify-center w-11 h-11 rounded-xl hover:bg-gray-50 transition"
                 aria-label="Toggle menu"
               >
                 {mobileMenu ? <X size={26} className="text-white" strokeWidth={2.5} /> : <SwooshMenuIcon />}
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           </div>
         </PageContainer>
       </nav>
 
       {/* ── Full-screen mobile overlay ── */}
       {/* Backdrop */}
-      <div
+      <motion.div
+        initial={false}
+        animate={{ opacity: mobileMenu ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
         className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-400 lg:hidden ${
-          mobileMenu ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          mobileMenu ? "pointer-events-auto" : "pointer-events-none"
         }`}
         onClick={closeMobile}
       />
@@ -145,28 +166,33 @@ const Navbar = () => {
         <div className="relative flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-1">
 
           {navLinks.map((link, i) => (
-            <NavLink
+            <motion.div
               key={i}
-              to={link.to}
-              onClick={closeMobile}
-              style={{ transitionDelay: mobileMenu ? `${i * 50}ms` : "0ms" }}
-              className={({ isActive }) =>
-                `group flex items-center justify-between px-4 py-4 rounded-2xl font-bold text-base transition-all duration-300
-                ${isActive
-                  ? "bg-white/15 text-white"
-                  : "text-white/80 hover:bg-white/10 hover:text-white"
-                }`
-              }
+              initial={{ opacity: 0, x: 24 }}
+              animate={{ opacity: mobileMenu ? 1 : 0, x: mobileMenu ? 0 : 24 }}
+              transition={{ duration: 0.28, delay: mobileMenu ? i * 0.05 : 0 }}
             >
-              <span className="flex items-center gap-4">
-                <span
-                  className="w-2 h-8 rounded-full flex-shrink-0"
-                  style={{ backgroundColor: link.color }}
-                />
-                {link.label}
-              </span>
-              <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity text-white/60" />
-            </NavLink>
+              <NavLink
+                to={link.to}
+                onClick={closeMobile}
+                className={({ isActive }) =>
+                  `group flex items-center justify-between px-4 py-4 rounded-2xl font-bold text-base transition-all duration-300
+                  ${isActive
+                    ? "bg-white/15 text-white"
+                    : "text-white/80 hover:bg-white/10 hover:text-white"
+                  }`
+                }
+              >
+                <span className="flex items-center gap-4">
+                  <span
+                    className="w-2 h-8 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: link.color }}
+                  />
+                  {link.label}
+                </span>
+                <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity text-white/60" />
+              </NavLink>
+            </motion.div>
           ))}
 
 

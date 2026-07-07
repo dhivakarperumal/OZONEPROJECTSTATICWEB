@@ -30,7 +30,13 @@ const Footer = () => {
       <PageContainer>
 
         {/* Top Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-12"
+        >
 
           {/* Left: Tailor-Made Solutions */}
           <div className="lg:w-[30%]">
@@ -51,45 +57,51 @@ const Footer = () => {
                 <Layout className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
               <p className="text-[12px] text-gray-300 leading-tight">Custom fit for every<br />window & door</p>
-            </div>
+            </motion.div>
 
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <ShieldCheck className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
               <p className="text-[12px] text-gray-300 leading-tight">High durability<br />& longevity</p>
-            </div>
+            </motion.div>
 
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <ThumbsUp className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
               <p className="text-[12px] text-gray-300 leading-tight">Aesthetically<br />finished fitments</p>
-            </div>
+            </motion.div>
 
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <Settings className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
               <p className="text-[12px] text-gray-300 leading-tight">Multiple fitment<br />options</p>
-            </div>
+            </motion.div>
 
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center mb-3">
                 <HeadphonesIcon className="text-gray-300" strokeWidth={1.5} size={28} />
               </div>
               <p className="text-[12px] text-gray-300 leading-tight">Excellent after-sales<br />support</p>
-            </div>
+            </motion.div>
 
           </div>
 
-        </div>
+        </motion.div>
 
         {/* Divider */}
         <div className="border-t border-[#132852] mb-12"></div>
 
         {/* Bottom Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.65, ease: "easeOut", delay: 0.05 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"
+        >
 
           {/* Logo & Social */}
           <div className="lg:col-span-1 flex flex-col items-start">
@@ -97,18 +109,18 @@ const Footer = () => {
               <img src={logo} alt="Ozone Enterprises" className="h-10 object-contain bg-white rounded p-1" />
             </Link>
             <div className="flex gap-3">
-              <a href="#" className="w-7 h-7 rounded-full bg-white text-[#021333] flex items-center justify-center hover:bg-gray-200 transition">
+              <motion.a whileHover={{ y: -3, scale: 1.08 }} href="#" className="w-7 h-7 rounded-full bg-white text-[#021333] flex items-center justify-center hover:bg-gray-200 transition">
                 <FaFacebookF size={12} />
-              </a>
-              <a href="https://www.instagram.com/ozone_enterprises_?igsh=MTNydnc0MWd1YnJiZA==" className="w-7 h-7 rounded-full bg-white text-[#021333] flex items-center justify-center hover:bg-gray-200 transition">
+              </motion.a>
+              <motion.a whileHover={{ y: -3, scale: 1.08 }} href="https://www.instagram.com/ozone_enterprises_?igsh=MTNydnc0MWd1YnJiZA==" className="w-7 h-7 rounded-full bg-white text-[#021333] flex items-center justify-center hover:bg-gray-200 transition">
                 <FaInstagram size={12} />
-              </a>
-              <a href="#" className="w-7 h-7 rounded-full bg-white text-[#021333] flex items-center justify-center hover:bg-gray-200 transition">
+              </motion.a>
+              <motion.a whileHover={{ y: -3, scale: 1.08 }} href="#" className="w-7 h-7 rounded-full bg-white text-[#021333] flex items-center justify-center hover:bg-gray-200 transition">
                 <FaLinkedinIn size={12} />
-              </a>
-              <a href="#" className="w-7 h-7 rounded-full bg-white text-[#021333] flex items-center justify-center hover:bg-gray-200 transition">
+              </motion.a>
+              <motion.a whileHover={{ y: -3, scale: 1.08 }} href="#" className="w-7 h-7 rounded-full bg-white text-[#021333] flex items-center justify-center hover:bg-gray-200 transition">
                 <FaYoutube size={12} />
-              </a>
+              </motion.a>
             </div>
           </div>
 
@@ -253,7 +265,9 @@ const Footer = () => {
               <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }} />
 
               {/* Download Button */}
-              <button
+              <motion.button
+                whileHover={{ y: -2, scale: 1.01 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={() => setCatalogueOpen(true)}
                 style={{
                   display: "flex",
@@ -280,7 +294,7 @@ const Footer = () => {
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
                 </svg>
                 Download Free PDF
-              </button>
+              </motion.button>
 
               <p style={{ fontSize: "10px", color: "#64748b", textAlign: "center", margin: 0 }}>
                 🔒 Enter your email to unlock
@@ -288,7 +302,7 @@ const Footer = () => {
             </div>
           </div>
 
-        </div>
+        </motion.div>
 
       </PageContainer>
 
