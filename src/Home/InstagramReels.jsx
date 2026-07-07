@@ -77,11 +77,10 @@ const ReelCard = ({ reel, onExpand }) => {
 
       {/* Dark overlay — lighter when playing */}
       <div
-        className={`absolute inset-0 transition-all duration-500 ${
-          playing
-            ? "bg-gradient-to-t from-black/70 via-transparent to-black/30"
-            : "bg-gradient-to-t from-black/80 via-black/20 to-black/40"
-        }`}
+        className={`absolute inset-0 transition-all duration-500 ${playing
+          ? "bg-gradient-to-t from-black/70 via-transparent to-black/30"
+          : "bg-gradient-to-t from-black/80 via-black/20 to-black/40"
+          }`}
       />
 
       {/* ── Top bar ── */}
@@ -114,9 +113,8 @@ const ReelCard = ({ reel, onExpand }) => {
 
       {/* ── Center play/pause indicator ── */}
       <div
-        className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-300 ${
-          playing ? "opacity-0 group-hover:opacity-100" : "opacity-100"
-        }`}
+        className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-300 ${playing ? "opacity-0 group-hover:opacity-100" : "opacity-100"
+          }`}
       >
         <div className="w-16 h-16 rounded-full bg-white/20 border-2 border-white/60 backdrop-blur-sm flex items-center justify-center shadow-2xl">
           {playing ? (
@@ -137,11 +135,10 @@ const ReelCard = ({ reel, onExpand }) => {
           className="flex flex-col items-center gap-1"
         >
           <div
-            className={`w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300 ${
-              liked
-                ? "bg-red-500 scale-110"
-                : "bg-white/20 border border-white/30 hover:bg-white/30"
-            }`}
+            className={`w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300 ${liked
+              ? "bg-red-500 scale-110"
+              : "bg-white/20 border border-white/30 hover:bg-white/30"
+              }`}
           >
             <FaHeart className="text-white text-sm" />
           </div>
@@ -201,7 +198,7 @@ const ReelModal = ({ reel, onClose }) => {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      video.play().catch(() => {});
+      video.play().catch(() => { });
     }
     const handleKey = (e) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", handleKey);
@@ -288,9 +285,8 @@ const ReelModal = ({ reel, onClose }) => {
           className="absolute inset-0 flex items-center justify-center z-10 pointer-events-auto"
         >
           <div
-            className={`w-18 h-18 rounded-full bg-white/20 border-2 border-white/60 backdrop-blur-sm flex items-center justify-center shadow-2xl transition-opacity duration-300 ${
-              playing ? "opacity-0 hover:opacity-100" : "opacity-100"
-            }`}
+            className={`w-18 h-18 rounded-full bg-white/20 border-2 border-white/60 backdrop-blur-sm flex items-center justify-center shadow-2xl transition-opacity duration-300 ${playing ? "opacity-0 hover:opacity-100" : "opacity-100"
+              }`}
             style={{ width: 72, height: 72 }}
           >
             {playing ? (
@@ -421,11 +417,22 @@ const InstagramReels = () => {
 
         {/* Swiper */}
         <style>{`
-          .reels-swiper .swiper-slide { height: 500px; }
-          @media (min-width: 640px) {
-            .reels-swiper .swiper-slide { height: 560px; }
-          }
-        `}</style>
+  .reels-swiper .swiper-slide {
+    height: 400px;
+  }
+
+  @media (min-width: 640px) {
+    .reels-swiper .swiper-slide {
+      height: 300px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .reels-swiper .swiper-slide {
+      height: 430px;
+    }
+  }
+`}</style>
 
         <Swiper
           className="reels-swiper"
@@ -455,10 +462,10 @@ const InstagramReels = () => {
             }, 0);
           }}
           breakpoints={{
-            480:  { slidesPerView: 1.8, spaceBetween: 16 },
-            640:  { slidesPerView: 2.2, spaceBetween: 20, centeredSlides: true },
+            480: { slidesPerView: 1.8, spaceBetween: 16 },
+            640: { slidesPerView: 2.2, spaceBetween: 20, centeredSlides: true },
             1024: { slidesPerView: 3.2, spaceBetween: 24, centeredSlides: false },
-            1280: { slidesPerView: 4,   spaceBetween: 24, centeredSlides: false },
+            1280: { slidesPerView: 4, spaceBetween: 24, centeredSlides: false },
           }}
         >
           {reels.map((reel) => (

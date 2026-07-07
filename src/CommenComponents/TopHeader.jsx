@@ -31,7 +31,7 @@ const TopHeader = () => {
                             className="flex items-center gap-2 hover:text-gray-200 transition"
                         >
                             <Phone size={15} />
-                            <span>+91 89506 78907</span>
+                            <span>+91 95006 30922</span>
                         </motion.a>
 
                         <motion.a

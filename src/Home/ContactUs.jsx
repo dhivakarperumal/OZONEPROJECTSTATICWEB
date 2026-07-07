@@ -144,12 +144,12 @@ const ContactUs = () => {
     {
       icon: Phone,
       title: "Phone Number",
-      lines: ["+91 89506 78907", "+91 91598 50960"],
+      lines: ["+91 95006 30922"],
     },
     {
       icon: Mail,
       title: "Email Address",
-      lines: ["info@ozoneenterprises.com", "support@ozoneenterprises.com"],
+      lines: [ "Ozoneenterprises0625@gmail.com"],
     },
     {
       icon: Clock,

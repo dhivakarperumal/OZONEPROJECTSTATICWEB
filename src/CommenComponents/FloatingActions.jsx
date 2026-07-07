@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 
 const FloatingActions = () => {
-  const whatsappNumber = "918950678907";
-  const phoneNumber = "+918950678907";
+  const whatsappNumber = "919500630922";
+  const phoneNumber = "+919500630922";
   const whatsappMessage = "Hi, I'm interested in Ozone Mosquito Screens. Can you help me?";
 
   const [visible, setVisible] = useState(false);
