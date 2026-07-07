@@ -17,6 +17,15 @@ import {
 import { ChevronLeft, ChevronRight, ArrowRight, X } from "lucide-react";
 import reels from "../data/reels.json";
 
+const getInstagramEmbedUrl = (url) => {
+  if (!url) return null;
+  const match = url.match(/instagram\.com\/(?:reel|p|tv)\/([A-Za-z0-9_-]+)/i);
+  if (!match) return null;
+
+  const type = url.includes("/reel/") ? "reel" : url.includes("/p/") ? "p" : "tv";
+  return `https://www.instagram.com/${type}/${match[1]}/embed/captioned/`;
+};
+
 // ─── Individual Reel Card ───────────────────────────────────────────────────
 const ReelCard = ({ reel, onExpand }) => {
   const videoRef = useRef(null);
@@ -24,6 +33,7 @@ const ReelCard = ({ reel, onExpand }) => {
   const [muted, setMuted] = useState(true);
   const [liked, setLiked] = useState(false);
   const [progress, setProgress] = useState(0);
+  const embedUrl = getInstagramEmbedUrl(reel.videoUrl || reel.instagramUrl);
 
   // Sync progress bar
   useEffect(() => {
@@ -39,6 +49,11 @@ const ReelCard = ({ reel, onExpand }) => {
   }, []);
 
   const togglePlay = () => {
+    if (embedUrl) {
+      onExpand(reel);
+      return;
+    }
+
     const video = videoRef.current;
     if (!video) return;
     if (playing) {
@@ -62,18 +77,28 @@ const ReelCard = ({ reel, onExpand }) => {
       className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl cursor-pointer group select-none bg-black"
       onClick={togglePlay}
     >
-      {/* Video element */}
-      <video
-        ref={videoRef}
-        src={reel.videoUrl}
-        poster={reel.thumbnail}
-        loop
-        muted={muted}
-        playsInline
-        preload="metadata"
-        className="w-full h-full object-cover"
-        onEnded={() => setPlaying(false)}
-      />
+      {embedUrl ? (
+        <iframe
+          src={embedUrl}
+          title={`Instagram reel ${reel.id}`}
+          className="w-full h-full border-0"
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="strict-origin-when-cross-origin"
+        />
+      ) : (
+        <video
+          ref={videoRef}
+          src={reel.videoUrl}
+          poster={reel.thumbnail}
+          loop
+          muted={muted}
+          playsInline
+          preload="metadata"
+          className="w-full h-full object-cover"
+          onEnded={() => setPlaying(false)}
+        />
+      )}
 
       {/* Dark overlay — lighter when playing */}
       <div
@@ -155,7 +180,7 @@ const ReelCard = ({ reel, onExpand }) => {
         </button>
 
         <a
-          href={reel.instagramUrl}
+          href={reel.instagramUrl || reel.videoUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-1"
@@ -194,6 +219,7 @@ const ReelModal = ({ reel, onClose }) => {
   const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(false);
   const [progress, setProgress] = useState(0);
+  const embedUrl = getInstagramEmbedUrl(reel.videoUrl || reel.instagramUrl);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -249,16 +275,27 @@ const ReelModal = ({ reel, onClose }) => {
         style={{ height: "85vh", maxHeight: "700px" }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Video */}
-        <video
-          ref={videoRef}
-          src={reel.videoUrl}
-          poster={reel.thumbnail}
-          loop
-          muted={muted}
-          playsInline
-          className="w-full h-full object-cover"
-        />
+        {/* Media */}
+        {embedUrl ? (
+          <iframe
+            src={embedUrl}
+            title={`Instagram reel modal ${reel.id}`}
+            className="w-full h-full border-0"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+        ) : (
+          <video
+            ref={videoRef}
+            src={reel.videoUrl}
+            poster={reel.thumbnail}
+            loop
+            muted={muted}
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        )}
 
         {/* Gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
@@ -312,7 +349,7 @@ const ReelModal = ({ reel, onClose }) => {
             <span className="text-white text-xs font-bold">{reel.comments}</span>
           </div>
           <a
-            href={reel.instagramUrl}
+            href={reel.instagramUrl || reel.videoUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center gap-1"
@@ -377,15 +414,15 @@ const InstagramReels = () => {
                 Instagram Reels
               </span>
             </div> */}
-         <h2 className="text-4xl sm:text-5xl font-black leading-tight">
-  <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
-    Follow Our{" "}
-  </span>
+            <h2 className="text-4xl sm:text-5xl font-black leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+                Follow Our{" "}
+              </span>
 
-  <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
-    Journey
-  </span>
-</h2>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+                Journey
+              </span>
+            </h2>
             <p className="text-white/60 text-base mt-3 max-w-md">
               Watch our latest installations, products and behind-the-scenes moments.
               Click any reel to play instantly.
