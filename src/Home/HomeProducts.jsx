@@ -44,12 +44,12 @@ const ProductCard = ({ product, onQuickView }) => {
 
   return (
     <div
-      className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_45px_-12px_rgba(12,89,64,0.18)]"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {/* Image */}
-      <div className="relative overflow-hidden h-56 bg-gray-100">
+      <div className="relative h-56 overflow-hidden bg-gray-100">
         <img
           src={product.image}
           alt={product.name}
@@ -60,6 +60,7 @@ const ProductCard = ({ product, onQuickView }) => {
         />
         {/* Gradient overlay on hover */}
         <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-400 ${hovered ? "opacity-100" : "opacity-0"}`}></div>
+        <div className="absolute inset-0 rounded-2xl ring-1 ring-transparent transition-all duration-500 group-hover:ring-[#0c5940]/10" />
 
         {/* Badge */}
         <div className={`absolute top-3 left-3 ${product.badgeColor} text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md`}>

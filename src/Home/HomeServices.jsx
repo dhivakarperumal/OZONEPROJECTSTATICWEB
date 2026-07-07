@@ -225,13 +225,14 @@ const HomeServices = () => {
               
               return (
                 <SwiperSlide key={service.id} className="h-auto">
-                  <div className="relative bg-white rounded-3xl p-8 h-full border border-gray-100/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(12,89,64,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col group overflow-hidden z-10">
+                  <div className="relative bg-white rounded-3xl p-8 h-full border border-gray-100/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_45px_-12px_rgba(12,89,64,0.16)] hover:-translate-y-2 transition-all duration-500 flex flex-col group overflow-hidden z-10">
                     
                     {/* Top Accent Line */}
                     <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0c5940] to-[#38B6FF] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Background glow on hover */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-[#0c5940]/5 rounded-bl-full -z-10 group-hover:bg-[#0c5940]/10 transition-colors duration-500"></div>
+                    <div className="absolute inset-0 rounded-[1.5rem] ring-1 ring-transparent transition-all duration-500 group-hover:ring-[#0c5940]/10"></div>
 
                     {/* Header: Icon & Title */}
                     <div className="flex items-start gap-4 mb-5">
