@@ -104,8 +104,67 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
   );
 };
 
+const CountUp = ({ value, start, duration = 2000 }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!start) return;
+
+    const target = parseInt(value.replace(/\D/g, ""));
+    const suffix = value.replace(/[0-9]/g, "");
+
+    let startTime;
+
+    const animate = (time) => {
+      if (!startTime) startTime = time;
+
+      const progress = Math.min((time - startTime) / duration, 1);
+
+      setCount(Math.floor(progress * target));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [start, value, duration]);
+
+  const suffix = value.replace(/[0-9]/g, "");
+
+  return (
+    <>
+      {count}
+      {suffix}
+    </>
+  );
+};
+
+
 export default function AboutUs() {
   const [loading, setLoading] = useState(true);
+  const statsRef = useRef(null);
+  const [startCount, setStartCount] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartCount(true);
+          observer.disconnect(); // Run only once
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -180,7 +239,10 @@ export default function AboutUs() {
                 From concept to completion, our focus remains the same: deliver refined solutions that support comfort, efficiency, and visual appeal across residential, commercial, and industrial projects.
               </p>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div
+                ref={statsRef}
+                className="mt-8 grid gap-4 sm:grid-cols-2"
+              >
                 {stats.map((item) => (
                   <div
                     key={item.label}
@@ -188,7 +250,9 @@ export default function AboutUs() {
                   >
                     <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0c5940] to-[#38B6FF] opacity-20"></div>
                     <div className="absolute top-0 right-0 w-24 h-24 bg-[#0c5940]/6 rounded-bl-full -z-10"></div>
-                    <p className="text-xl sm:text-2xl font-black text-primary">{item.value}</p>
+                    <p className="text-xl sm:text-2xl font-black text-primary">
+                      <CountUp value={item.value} start={startCount} />
+                    </p>
                     <p className="mt-1 text-xs sm:text-sm font-semibold text-slate-500">{item.label}</p>
                   </div>
                 ))}
