@@ -25,11 +25,11 @@ const TopHeader = () => {
                         </a>
 
                         <a
-                            href="mailto:support@ozone.com"
+                            href="mailto:ozoneenterprises0625@gmail.com"
                             className="flex items-center gap-2 hover:text-gray-200 transition"
                         >
                             <Mail size={15} />
-                            <span>support@ozone.com</span>
+                            <span>Ozoneenterprises0625@gmail.com</span>
                         </a>
                     </div>
 
