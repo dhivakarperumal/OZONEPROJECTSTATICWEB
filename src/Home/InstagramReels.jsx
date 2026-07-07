@@ -371,18 +371,21 @@ const InstagramReels = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 shadow-lg mb-5">
+            {/* <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 shadow-lg mb-5">
               <FaInstagram className="text-white text-base" />
               <span className="text-white text-xs font-black tracking-widest uppercase">
                 Instagram Reels
               </span>
-            </div>
-            <h2 className="text-4xl sm:text-5xl font-black text-gray-200 leading-tight">
-              Follow Our{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-yellow-300">
-                Journey
-              </span>
-            </h2>
+            </div> */}
+         <h2 className="text-4xl sm:text-5xl font-black leading-tight">
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+    Follow Our{" "}
+  </span>
+
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+    Journey
+  </span>
+</h2>
             <p className="text-white/60 text-base mt-3 max-w-md">
               Watch our latest installations, products and behind-the-scenes moments.
               Click any reel to play instantly.
