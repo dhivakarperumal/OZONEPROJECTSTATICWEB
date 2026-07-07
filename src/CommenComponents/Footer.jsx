@@ -94,7 +94,7 @@ const Footer = () => {
               <a href="#" className="w-7 h-7 rounded-full bg-white text-[#021333] flex items-center justify-center hover:bg-gray-200 transition">
                 <FaFacebookF size={12} />
               </a>
-              <a href="#" className="w-7 h-7 rounded-full bg-white text-[#021333] flex items-center justify-center hover:bg-gray-200 transition">
+              <a href="https://www.instagram.com/ozone_enterprises_?igsh=MTNydnc0MWd1YnJiZA==" className="w-7 h-7 rounded-full bg-white text-[#021333] flex items-center justify-center hover:bg-gray-200 transition">
                 <FaInstagram size={12} />
               </a>
               <a href="#" className="w-7 h-7 rounded-full bg-white text-[#021333] flex items-center justify-center hover:bg-gray-200 transition">
@@ -176,7 +176,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="shrink-0" />
-                <span>info@ozone.com</span>
+                <span>Ozoneenterprises0625@gmail.com</span>
               </li>
             </ul>
           </div>

@@ -57,7 +57,7 @@ const TopHeader = () => {
                             },
                             {
                                 icon: FaInstagram,
-                                href: "#",
+                                href: "https://www.instagram.com/ozone_enterprises_?igsh=MTNydnc0MWd1YnJiZA==",
                                 hover:
                                     "hover:bg-gradient-to-br hover:from-pink-500 hover:to-orange-500",
                             },
