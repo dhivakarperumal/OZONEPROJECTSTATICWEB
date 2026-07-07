@@ -20,7 +20,7 @@ const Footer = () => {
   const [catalogueOpen, setCatalogueOpen] = useState(false);
 
   return (
-    <footer className="bg-[#021333] text-white pt-16 pb-12 mt-20">
+    <footer className="bg-[#021333] text-white pt-16 pb-12 ">
       <PageContainer>
         
         {/* Top Section */}

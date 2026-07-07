@@ -1,4 +1,5 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import {
   MapPin,
@@ -23,11 +24,45 @@ import PageHeader from "../CommenComponents/PageHeader";
 // 3. Create a Template → paste the Template ID below
 //    Template variables to use: {{name}}, {{email}}, {{phone}}, {{subject}}, {{message}}, {{time}}
 // 4. Go to Account → API Keys → paste your Public Key below
-const EMAILJS_SERVICE_ID  = "service_v0zovjm";
+const EMAILJS_SERVICE_ID = "service_v0zovjm";
 const EMAILJS_TEMPLATE_ID = "template_u8r3kha";
 // ─────────────────────────────────────────────────────────────────────────────
 
+const FadeIn = ({ children, delay = 0, className = "" }) => {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => entry.isIntersecting && setVisible(true),
+      { threshold: 0.15 }
+    );
+
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ${className}`}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(30px)",
+        transitionDelay: `${delay}ms`,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
 const ContactUs = () => {
+  const [loading, setLoading] = useState(true);
   const formRef = useRef(null);
 
   const [formData, setFormData] = useState({
@@ -37,9 +72,19 @@ const ContactUs = () => {
     subject: "",
     message: "",
   });
-  const [submitted, setSubmitted]   = useState(false);
-  const [sending,   setSending]     = useState(false);
-  const [sendError, setSendError]   = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 900);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleChange = (e) =>
     setFormData((p) => ({ ...p, [e.target.name]: e.target.value }));
@@ -114,15 +159,51 @@ const ContactUs = () => {
   ];
 
   const stats = [
-    { icon: Headset, title: "Quick Support",        desc: "We provide fast and reliable support." },
-    { icon: ShieldCheck, title: "Trusted Service",  desc: "Quality service you can trust and rely on." },
-    { icon: Users, title: "Expert Team",            desc: "Our expert team is always ready to help you." },
+    { icon: Headset, title: "Quick Support", desc: "We provide fast and reliable support." },
+    { icon: ShieldCheck, title: "Trusted Service", desc: "Quality service you can trust and rely on." },
+    { icon: Users, title: "Expert Team", desc: "Our expert team is always ready to help you." },
     { icon: ThumbsUp, title: "Customer Satisfaction", desc: "Your satisfaction is our top priority." },
   ];
 
   return (
-    <div className="bg-[#EEF4FB] min-h-screen">
+    <motion.div
+      className="bg-[#EEF4FB] min-h-screen"
+      initial={{
+        opacity: 0,
+        scale: 0.8,
+      }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+      }}
+      transition={{
+        duration: 0.7,
+        ease: "easeOut",
+      }}
+    >
       <PageHeader title="Contact Us" />
+
+      <AnimatePresence>
+        {loading && (
+          <>
+            <motion.div
+              initial={{ x: 0 }}
+              animate={{ x: "-100%" }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.8 }}
+              className="fixed top-0 left-0 w-1/2 h-screen bg-[#0c5940]/30 z-[9999]"
+            />
+
+            <motion.div
+              initial={{ x: 0 }}
+              animate={{ x: "100%" }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.8 }}
+              className="fixed top-0 right-0 w-1/2 h-screen bg-[#08124E]/30 z-[9999]"
+            />
+          </>
+        )}
+      </AnimatePresence>
 
       {/* ─── MAIN SECTION ─── */}
       <section className="py-14 px-5 md:py-20">
@@ -240,7 +321,7 @@ const ContactUs = () => {
                         className="w-full px-4 py-3.5 pr-10 bg-[#EEF4FB] border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 text-sm focus:outline-none focus:border-[#081A59] focus:ring-2 focus:ring-[#081A59]/10 transition"
                       />
                       <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" /></svg>
                       </span>
                     </div>
                     <div className="relative">
@@ -254,7 +335,7 @@ const ContactUs = () => {
                         className="w-full px-4 py-3.5 pr-10 bg-[#EEF4FB] border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 text-sm focus:outline-none focus:border-[#081A59] focus:ring-2 focus:ring-[#081A59]/10 transition"
                       />
                       <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m2 7 10 7 10-7" /></svg>
                       </span>
                     </div>
                   </div>
@@ -270,7 +351,7 @@ const ContactUs = () => {
                       className="w-full px-4 py-3.5 pr-10 bg-[#EEF4FB] border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 text-sm focus:outline-none focus:border-[#081A59] focus:ring-2 focus:ring-[#081A59]/10 transition"
                     />
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 13.5 19.79 19.79 0 0 1 2 4.82 2 2 0 0 1 3.98 2.63h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 13.5 19.79 19.79 0 0 1 2 4.82 2 2 0 0 1 3.98 2.63h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                     </span>
                   </div>
 
@@ -304,7 +385,7 @@ const ContactUs = () => {
                       className="w-full px-4 py-3.5 pr-10 bg-[#EEF4FB] border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 text-sm focus:outline-none focus:border-[#081A59] focus:ring-2 focus:ring-[#081A59]/10 transition resize-none"
                     />
                     <span className="absolute right-3 top-4 text-gray-400 pointer-events-none">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>
                     </span>
                   </div>
 
@@ -409,7 +490,7 @@ const ContactUs = () => {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

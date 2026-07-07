@@ -26,7 +26,7 @@ const Home = () => {
       <InstagramReels />
       <HomeFAQ />
       <HomeReviews />
-      <CompanyLogos />
+      {/* <CompanyLogos /> */}
     </div>
   )
 }
