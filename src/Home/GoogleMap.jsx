@@ -98,6 +98,32 @@ export default function GoogleMap() {
     };
   }, []);
 
+  // compute label offsets to avoid overlapping labels for close centers
+  useEffect(() => {
+    if (!areas || areas.length === 0) return;
+    const centers = areas.map((a) => {
+      if (!a.feature) return null;
+      const c = computeCentroid(a.feature) || getCenter(a.feature);
+      return c ? { lat: c.lat, lng: c.lng } : null;
+    });
+    const offsets = [];
+    for (let i = 0; i < centers.length; i++) {
+      const ci = centers[i];
+      if (!ci) { offsets.push([12, 0]); continue; }
+      let shiftCount = 0;
+      for (let j = 0; j < i; j++) {
+        const cj = centers[j];
+        if (!cj) continue;
+        const d = haversineKm(ci, cj);
+        if (d < 12) shiftCount++; // if closer than ~12km, consider overlapping
+      }
+      // alternate up/down for multiple overlaps
+      const yOffset = shiftCount === 0 ? 0 : ((shiftCount % 2 === 0) ? (10 * shiftCount) : (-10 * shiftCount));
+      offsets.push([12, yOffset]);
+    }
+    setLabelOffsets(offsets);
+  }, [areas]);
+
   const geoJsons = areas.map((a) => a.feature).filter(Boolean);
   const center = [12.5, 78.5]; // fallback center around Tamil Nadu inland
 
@@ -116,6 +142,7 @@ export default function GoogleMap() {
   };
 
   const [map, setMap] = useState(null);
+  const [labelOffsets, setLabelOffsets] = useState([]);
 
   return (
     <div className="w-full h-[520px] rounded-2xl overflow-hidden border border-gray-200 shadow-md relative">
@@ -144,14 +171,10 @@ export default function GoogleMap() {
 
           const geom = a.feature.geometry;
 
-          // compute a center point for the marker using the polygon bounds
-          let centerPoint = null;
-          try {
-            const tmp = L.geoJSON(geom);
-            centerPoint = tmp.getBounds().getCenter();
-          } catch (e) {
-            centerPoint = null;
-          }
+          // compute a center point for the marker using a centroid helper (better than bounds)
+          let centerPoint = computeCentroid(a.feature) || ((): any => {
+            try { const tmp = L.geoJSON(geom); return tmp.getBounds().getCenter(); } catch { return null; }
+          })();
 
           // custom red pin icon as inline SVG inside a divIcon
           const pinHtml = `
@@ -193,8 +216,8 @@ export default function GoogleMap() {
               />
 
               {centerPoint && (
-                <Marker position={[centerPoint.lat, centerPoint.lng]} icon={pinIcon}>
-                  <Tooltip direction="right" permanent offset={[12, 0]} className="text-sm font-semibold">
+                <Marker position={[centerPoint.lat, centerPoint.lng]} icon={pinIcon} zIndexOffset={1000 + idx}>
+                  <Tooltip direction="right" permanent offset={labelOffsets[idx] || [12, 0]} className="text-sm font-semibold">
                     {a.name}
                   </Tooltip>
                 </Marker>
@@ -248,4 +271,47 @@ export default function GoogleMap() {
       </div>
     </div>
   );
+}
+
+function computeCentroid(feature) {
+  try {
+    const geom = feature.geometry;
+    if (geom.type === 'Polygon') {
+      const ring = geom.coordinates[0];
+      let sumX = 0, sumY = 0;
+      for (let i = 0; i < ring.length; i++) {
+        sumX += ring[i][1]; // lat
+        sumY += ring[i][0]; // lng
+      }
+      const n = ring.length;
+      return { lat: sumX / n, lng: sumY / n };
+    }
+    if (geom.type === 'MultiPolygon') {
+      const ring = geom.coordinates[0][0];
+      let sumX = 0, sumY = 0;
+      for (let i = 0; i < ring.length; i++) {
+        sumX += ring[i][1];
+        sumY += ring[i][0];
+      }
+      const n = ring.length;
+      return { lat: sumX / n, lng: sumY / n };
+    }
+    return null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function haversineKm(a, b) {
+  const toRad = (d) => (d * Math.PI) / 180;
+  const R = 6371; // km
+  const dLat = toRad(b.lat - a.lat);
+  const dLon = toRad(b.lng - a.lng);
+  const lat1 = toRad(a.lat);
+  const lat2 = toRad(b.lat);
+  const sinDLat = Math.sin(dLat / 2);
+  const sinDLon = Math.sin(dLon / 2);
+  const aa = sinDLat * sinDLat + sinDLon * sinDLon * Math.cos(lat1) * Math.cos(lat2);
+  const c = 2 * Math.atan2(Math.sqrt(aa), Math.sqrt(1 - aa));
+  return R * c;
 }
