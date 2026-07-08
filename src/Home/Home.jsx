@@ -114,10 +114,8 @@ const Home = () => {
           </>
         )}
       </AnimatePresence>
-
-      <GoogleMap/>
       <Hero />
-      <CategorySection/>  
+      <CategorySection />
       <RevealSection id="about-section" direction="left">
         <HomeAbout />
       </RevealSection>
@@ -133,6 +131,9 @@ const Home = () => {
       </RevealSection>
       <RevealSection direction="bottom">
         <HomeFeatures />
+      </RevealSection>
+      <RevealSection direction="right">
+        <GoogleMap />
       </RevealSection>
       {/* <RevealSection direction="bottom">
         <HomeStats />
