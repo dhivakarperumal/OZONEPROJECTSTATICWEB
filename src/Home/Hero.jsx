@@ -56,7 +56,11 @@ const Hero = () => {
         slidesPerView={1}
         loop={true}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
-        pagination={{ clickable: true, dynamicBullets: true }}
+        pagination={{
+          clickable: true,
+          dynamicBullets: true,
+          enabled: window.innerWidth >= 768,
+        }}
         className="w-full h-full"
       >
         {slidesData.map((slide) => (
@@ -98,7 +102,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.4 }}
-                    className="text-base sm:text-lg lg:text-xl mb-10 leading-relaxed text-gray-200"
+                    className="text-xs sm:text-lg lg:text-xl mb-0 md:mb-10 leading-5 md:leading-9 text-gray-200 max-w-xl"
                   >
                     {slide.desc}
                   </motion.p>
