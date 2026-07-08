@@ -236,31 +236,33 @@ const ReelCard = ({ reel, onExpand }) => {
 
       {/* ── Right action buttons ── */}
       <div
-        className="absolute right-4 bottom-24 flex flex-col items-center gap-5 z-10"
+        className="absolute right-4 bottom-4 flex flex-col items-center gap-4 z-10"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={() => setLiked((v) => !v)}
           className="flex flex-col items-center gap-1"
+          aria-label="Like"
         >
           <div
-            className={`w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300 ${liked
+            className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 ${liked
               ? "bg-red-500 scale-110"
-              : "bg-white/20 border border-white/30 hover:bg-white/30"
+              : "bg-white/15 border border-white/20 hover:bg-white/30"
               }`}
           >
-            <FaHeart className="text-white text-sm" />
+            <FaHeart className="text-white text-lg" />
           </div>
-          <span className="text-white text-[10px] font-bold">{reel.likes}</span>
+          <span className="text-white text-[11px] font-semibold">{reel.likes}</span>
         </button>
 
-        <button className="flex flex-col items-center gap-1">
-          <div className="w-10 h-10 rounded-full bg-white/20 border border-white/30 flex items-center justify-center backdrop-blur-sm hover:bg-white/30 transition-all">
-            <FaComment className="text-white text-sm" />
+        <button
+          className="flex flex-col items-center gap-1"
+          aria-label="Comments"
+        >
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/15 border border-white/20 flex items-center justify-center shadow-xl hover:bg-white/30 transition-all">
+            <FaComment className="text-white text-lg" />
           </div>
-          <span className="text-white text-[10px] font-bold">
-            {reel.comments}
-          </span>
+          <span className="text-white text-[11px] font-semibold">{reel.comments}</span>
         </button>
 
         <a
@@ -268,11 +270,12 @@ const ReelCard = ({ reel, onExpand }) => {
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-1"
+          aria-label="View on Instagram"
         >
-          <div className="w-10 h-10 rounded-full bg-white/20 border border-white/30 flex items-center justify-center backdrop-blur-sm hover:bg-white/30 transition-all">
-            <FaShare className="text-white text-sm" />
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/15 border border-white/20 flex items-center justify-center shadow-xl hover:bg-white/30 transition-all">
+            <FaShare className="text-white text-lg" />
           </div>
-          <span className="text-white text-[10px] font-bold">Share</span>
+          <span className="text-white text-[11px] font-semibold">View</span>
         </a>
       </div>
 
@@ -434,18 +437,18 @@ const ReelModal = ({ reel, onClose }) => {
         )}
 
         {/* Right actions */}
-        <div className="absolute right-4 bottom-28 flex flex-col items-center gap-5 z-10">
+        <div className="absolute right-4 bottom-6 flex flex-col items-center gap-4 z-10">
           <div className="flex flex-col items-center gap-1">
-            <div className="w-11 h-11 rounded-full bg-white/20 border border-white/30 flex items-center justify-center">
-              <FaHeart className="text-white" />
+            <div className="w-12 h-12 rounded-full bg-white/15 border border-white/20 flex items-center justify-center shadow-xl">
+              <FaHeart className="text-white text-lg" />
             </div>
-            <span className="text-white text-xs font-bold">{reel.likes}</span>
+            <span className="text-white text-[11px] font-semibold">{reel.likes}</span>
           </div>
           <div className="flex flex-col items-center gap-1">
-            <div className="w-11 h-11 rounded-full bg-white/20 border border-white/30 flex items-center justify-center">
-              <FaComment className="text-white" />
+            <div className="w-12 h-12 rounded-full bg-white/15 border border-white/20 flex items-center justify-center shadow-xl">
+              <FaComment className="text-white text-lg" />
             </div>
-            <span className="text-white text-xs font-bold">{reel.comments}</span>
+            <span className="text-white text-[11px] font-semibold">{reel.comments}</span>
           </div>
           <a
             href={reel.instagramUrl || reel.videoUrl}
@@ -453,10 +456,10 @@ const ReelModal = ({ reel, onClose }) => {
             rel="noopener noreferrer"
             className="flex flex-col items-center gap-1"
           >
-            <div className="w-11 h-11 rounded-full bg-white/20 border border-white/30 flex items-center justify-center">
-              <FaShare className="text-white" />
+            <div className="w-12 h-12 rounded-full bg-white/15 border border-white/20 flex items-center justify-center shadow-xl">
+              <FaShare className="text-white text-lg" />
             </div>
-            <span className="text-white text-xs font-bold">Share</span>
+            <span className="text-white text-[11px] font-semibold">View</span>
           </a>
         </div>
 
