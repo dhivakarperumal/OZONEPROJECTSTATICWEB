@@ -151,7 +151,7 @@ export default function GoogleMap() {
   const [labelOffsets, setLabelOffsets] = useState([]);
 
   return (
-    <div className="w-full h-[520px] rounded-2xl overflow-hidden border border-gray-200 shadow-md relative">
+    <div className="w-full h-[380px] sm:h-[520px] md:h-[580px] rounded-2xl overflow-hidden border border-gray-200 shadow-md relative">
       <MapContainer
         center={center}
         zoom={8}
@@ -235,7 +235,7 @@ export default function GoogleMap() {
       </MapContainer>
 
       {/* Bottom-right overlay controls (zoom-to-fit and locate) */}
-      <div className="absolute bottom-4 right-4 flex flex-col items-end gap-3 z-30">
+      <div className="absolute bottom-3 right-3 flex flex-col items-end gap-2 z-30 sm:gap-3">
         <button
           title="Zoom to service areas"
           onClick={() => {
@@ -248,9 +248,9 @@ export default function GoogleMap() {
               map && map.fitBounds(group.getBounds().pad(0.1));
             } catch (e) {}
           }}
-          className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-800 hover:scale-105 transition"
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-800 hover:scale-105 transition"
         >
-          <Maximize2 size={18} />
+          <Maximize2 size={16} />
         </button>
 
         <button
@@ -259,9 +259,9 @@ export default function GoogleMap() {
             if (!map) return;
             map.locate({ setView: true, maxZoom: 12 });
           }}
-          className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-800 hover:scale-105 transition"
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-800 hover:scale-105 transition"
         >
-          <MapPin size={18} />
+          <MapPin size={16} />
         </button>
 
         <button
@@ -270,9 +270,9 @@ export default function GoogleMap() {
             // simple refresh: re-fetch boundaries by toggling state
             setAreas((s) => [...s]);
           }}
-          className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-800 hover:scale-105 transition"
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-800 hover:scale-105 transition"
         >
-          <RefreshCw size={18} />
+          <RefreshCw size={16} />
         </button>
       </div>
     </div>
