@@ -8,7 +8,7 @@
     "comments": "238",
     "tag": "#GlassRailing",
     "duration": "0:32",
-    "instagramUrl": "https://www.instagram.com/reel/DUc7JIdkpid/?igsh=MWZrdTF5NnEwbm1sYQ=="
+    "instagramUrl": "https://www.instagram.com/reel/DaagffoSSr3/?igsh=MWY3NTk4amEzbDJrOQ=="
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "comments": "174",
     "tag": "#SlidingWindow",
     "duration": "0:27",
-    "instagramUrl": "https://www.instagram.com/reel/DSchoU7ktbg/?igsh=MW9kc3RkZ2VpZWVncQ=="
+    "instagramUrl": "https://www.instagram.com/reel/DaeTx4syyiB/?igsh=end5eDZxMmZxempx"
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "comments": "302",
     "tag": "#BalconyScreen",
     "duration": "0:45",
-    "instagramUrl": "https://www.instagram.com/reel/DSNH4RDEuT5/?igsh=c3JjN2l6cjAxcDZn"
+    "instagramUrl": "https://www.instagram.com/reel/DaIlx2nSopa/?igsh=dDYwZ2xpaTg5ZDk4"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "comments": "156",
     "tag": "#FoldingDoor",
     "duration": "0:38",
-    "instagramUrl": "https://www.instagram.com/reel/DRzx7Lwko0j/?igsh=MXNxaGJ5bDEweng3"
+    "instagramUrl": "https://www.instagram.com/reel/DZy2YQwy1fE/?igsh=MmU4ODB0ZW95N3Fj"
   },
   {
     "id": 5,
@@ -63,6 +63,39 @@
     "comments": "143",
     "tag": "#OzoneHardware",
     "duration": "0:41",
-    "instagramUrl": "https://www.instagram.com/reel/DZSeh4bSoZQ/?igsh=MTk3cXJ1c2l0M2Vsbw=="
+    "instagramUrl": "https://www.instagram.com/reel/DVsWBSCkoyt/?igsh=ZW92Mml5OTJ4d25k"
+  },
+  {
+    "id": 7,
+    "thumbnail": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=700&fit=crop",
+    "videoUrl": "https://www.w3schools.com/html/movie.mp4",
+    "caption": "Modern Glass Interiors ✨",
+    "likes": "13.5K",
+    "comments": "268",
+    "tag": "#InteriorGlass",
+    "duration": "0:34",
+    "instagramUrl": "https://www.instagram.com/reel/DUc7JIdkpid/?igsh=MWZrdTF5NnEwbm1sYQ=="
+  },
+  {
+    "id": 8,
+    "thumbnail": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&h=700&fit=crop",
+    "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "caption": "Luxury Glass Doors 🚪",
+    "likes": "10.9K",
+    "comments": "187",
+    "tag": "#GlassDoor",
+    "duration": "0:31",
+    "instagramUrl": "https://www.instagram.com/reel/DRzx7Lwko0j/?igsh=MXNxaGJ5bDEweng3"
+  },
+  {
+    "id": 9,
+    "thumbnail": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=700&fit=crop",
+    "videoUrl": "https://www.w3schools.com/html/movie.mp4",
+    "caption": "Balcony Glass Design 🌇",
+    "likes": "14.2K",
+    "comments": "291",
+    "tag": "#BalconyGlass",
+    "duration": "0:36",
+    "instagramUrl": "https://www.instagram.com/reel/DSNH4RDEuT5/?igsh=c3JjN2l6cjAxcDZn"
   }
 ]
