@@ -37,7 +37,7 @@ const loadInstagramEmbedScript = () => {
   s.onload = () => {
     try {
       window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process();
-    } catch (e) {}
+    } catch (e) { }
   };
   document.body.appendChild(s);
 };
@@ -90,7 +90,7 @@ const ReelCard = ({ reel, onExpand }) => {
           if (v) {
             if (visible) {
               v.muted = true;
-              v.play().catch(() => {});
+              v.play().catch(() => { });
               setPlaying(true);
             } else {
               v.pause();
@@ -140,21 +140,21 @@ const ReelCard = ({ reel, onExpand }) => {
 
   if (embedUrl) {
     return (
-      <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-black">
+      <div className="relative w-full h-full overflow-hidden rounded-3xl bg-black">
         <iframe
           src={embedUrl}
-          title={reel.caption || "Instagram Reel"}
-          className="absolute border-0"
+          title={reel.caption}
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
           allowFullScreen
           loading="lazy"
-          style={{ 
-            background: "black",
+          className="absolute border-0"
+          style={{
             top: "-75px",
-            left: "0",
-            width: "100%",
+            left: "-12px",
+            width: "calc(100% + 24px)",
             height: "calc(100% + 380px)",
-            pointerEvents: "auto"
+            transform: "scale(1.05)",
+            transformOrigin: "top center",
           }}
         />
       </div>
@@ -171,18 +171,19 @@ const ReelCard = ({ reel, onExpand }) => {
       }}
     >
       <div ref={containerRef} className="w-full h-full">
-          <video
-            ref={videoRef}
-            src={reel.videoUrl}
-            poster={reel.thumbnail}
-            loop
-            muted={muted}
-            playsInline
-            preload="metadata"
-            className="w-full h-full object-cover"
-            onEnded={() => setPlaying(false)}
-          />
-        </div>
+        <video
+          ref={videoRef}
+          className="w-full h-full object-cover"
+          src={reel.videoUrl}
+          poster={reel.thumbnail}
+          loop
+          muted={muted}
+          playsInline
+          preload="metadata"
+          className="w-full h-full object-cover"
+          onEnded={() => setPlaying(false)}
+        />
+      </div>
 
       {/* Dark overlay — lighter when playing */}
       <div
