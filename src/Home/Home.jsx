@@ -14,6 +14,7 @@ import CompanyLogos from './CompanyLogos'
 import InstagramReels from './InstagramReels'
 import CategorySection from "./CategorySection";
 import ServiceSwiper from "./ServiceSwiper";
+import ServicesInstallation from "../Pages/ServicesInstallation";
 
 const RevealSection = ({ children, direction = "up", delay = 0, className = "", id }) => {
   const directionStyles = {
@@ -124,6 +125,9 @@ const Home = () => {
       </RevealSection>
       <RevealSection direction="right">
         <ServiceSwiper />
+      </RevealSection>
+      <RevealSection direction="left">
+        <ServicesInstallation />
       </RevealSection>
       <RevealSection direction="bottom">
         <HomeFeatures />
