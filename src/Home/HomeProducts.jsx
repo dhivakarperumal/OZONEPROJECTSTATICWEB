@@ -360,34 +360,6 @@ const HomeProducts = () => {
 
                   )}
 
-                {/* Gallery */}
-{/* 
-                {selectedProduct.gallery && (
-
-                  <div className="mt-8">
-
-                    <h5 className="text-sm font-semibold text-gray-700 mb-3">
-                      Project Gallery
-                    </h5>
-
-                    <div className="grid grid-cols-5 gap-3">
-                      {selectedProduct.gallery
-                        .slice(0, 5)
-                        .map((img, index) => (
-                          <div
-                            key={index}
-                            className="aspect-square rounded-xl overflow-hidden border bg-white shadow-sm"
-                          >
-                            <img
-                              src={img}
-                              alt=""
-                              className="w-full h-full object-cover hover:scale-110 transition duration-500"
-                            />
-                          </div>
-                        ))}
-                    </div>
-                  </div>
-                )} */}
               </div>
 
               {/* ===========================
@@ -577,63 +549,6 @@ const HomeProducts = () => {
                   </div>
 
                 </div>
-
-                {/* Available Colors */}
-                {/* <div className="mb-10">
-
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    Available Colors
-                  </h3>
-
-                  <div className="flex flex-wrap gap-3">
-
-                    {selectedProduct.availableColors.map((color, i) => (
-
-                      <span
-                        key={i}
-                        className="px-4 py-2 rounded-full bg-[#e6f4ed] text-[#0c5940] font-semibold text-sm"
-                      >
-                        {color}
-                      </span>
-
-                    ))}
-
-                  </div>
-
-                </div> */}
-                {/* Product Gallery */}
-                {/* {selectedProduct.gallery && selectedProduct.gallery.length > 0 && (
-
-                  <div className="mb-10">
-
-                    <h3 className="text-xl font-bold text-gray-900 mb-5">
-                      Product Gallery
-                    </h3>
-
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-
-                      {selectedProduct.gallery.map((img, index) => (
-
-                        <div
-                          key={index}
-                          className="group overflow-hidden rounded-2xl border bg-white shadow-sm hover:shadow-lg transition"
-                        >
-
-                          <img
-                            src={img}
-                            alt={`Gallery ${index + 1}`}
-                            className="w-full h-28 object-cover group-hover:scale-110 transition duration-500"
-                          />
-
-                        </div>
-
-                      ))}
-
-                    </div>
-
-                  </div>
-
-                )} */}
 
                 {/* SEO Keywords */}
 
