@@ -57,12 +57,10 @@ const sortReels = (items) => {
 const ReelCard = ({ reel, onExpand }) => {
   const videoRef = useRef(null);
   const containerRef = useRef(null);
-  const iframeRef = useRef(null);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
   const [liked, setLiked] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [iframeSrc, setIframeSrc] = useState(null);
   const embedUrl = getInstagramEmbedUrl(reel.instagramUrl || reel.videoUrl);
 
   // Sync progress bar
@@ -78,14 +76,9 @@ const ReelCard = ({ reel, onExpand }) => {
     return () => video.removeEventListener("timeupdate", onTimeUpdate);
   }, []);
 
+  // Auto-play native videos when the reel card becomes visible. Skip for Instagram embeds
   useEffect(() => {
-    if (!embedUrl) return;
-    // initialise iframe src without autoplay; IntersectionObserver will toggle autoplay when visible
-    setIframeSrc(embedUrl);
-  }, [embedUrl]);
-
-  // Auto-play when reel card becomes visible: play native videos or set iframe to autoplay-capable URL
-  useEffect(() => {
+    if (embedUrl) return;
     const node = containerRef.current;
     if (!node) return;
 
@@ -93,30 +86,15 @@ const ReelCard = ({ reel, onExpand }) => {
       (entries) => {
         entries.forEach((entry) => {
           const visible = entry.intersectionRatio > 0.55;
-          if (visible) {
-            if (embedUrl) {
-              // try to enable autoplay for the Instagram embed iframe (muted to satisfy autoplay rules)
-              const src = iframeSrc || embedUrl;
-              const sep = src.includes("?") ? "&" : "?";
-              setIframeSrc(src + sep + "autoplay=1&mute=1");
+          const v = videoRef.current;
+          if (v) {
+            if (visible) {
+              v.muted = true;
+              v.play().catch(() => {});
+              setPlaying(true);
             } else {
-              const v = videoRef.current;
-              if (v) {
-                v.muted = true;
-                v.play().catch(() => {});
-                setPlaying(true);
-              }
-            }
-          } else {
-            if (embedUrl) {
-              // stop autoplay by reverting iframe src (some browsers may continue to play, but this helps)
-              setIframeSrc(embedUrl);
-            } else {
-              const v = videoRef.current;
-              if (v) {
-                v.pause();
-                setPlaying(false);
-              }
+              v.pause();
+              setPlaying(false);
             }
           }
         });
@@ -126,21 +104,25 @@ const ReelCard = ({ reel, onExpand }) => {
 
     obs.observe(node);
     return () => obs.disconnect();
-  }, [embedUrl, iframeSrc]);
+  }, [embedUrl]);
+
+  // If this reel is an Instagram embed, load the embed script so it becomes interactive
+  useEffect(() => {
+    if (!embedUrl) return;
+    loadInstagramEmbedScript();
+    // give the script a moment then process embeds
+    const t = setTimeout(() => {
+      try {
+        window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process();
+      } catch (e) {}
+    }, 500);
+    return () => clearTimeout(t);
+  }, [embedUrl]);
 
   const togglePlay = () => {
     if (embedUrl) {
-      // Play the Instagram embed inline by toggling autoplay on the iframe src
-      const src = iframeSrc || embedUrl;
-      const sep = src.includes("?") ? "&" : "?";
-      if (!playing) {
-        setIframeSrc(src + sep + "autoplay=1&mute=1");
-        setPlaying(true);
-      } else {
-        // stop autoplay by reverting iframe src
-        setIframeSrc(embedUrl);
-        setPlaying(false);
-      }
+      // open modal for Instagram embeds so they play in-page (modal) instead of navigating away
+      onExpand(reel);
       return;
     }
 
@@ -165,22 +147,24 @@ const ReelCard = ({ reel, onExpand }) => {
   return (
     <div
       className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl cursor-pointer group select-none bg-black"
-      onClick={togglePlay}
+      onClick={(e) => {
+        // prevent any internal anchor from navigating away (instagram blockquote contains an <a>)
+        const anchor = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (anchor) e.preventDefault();
+        togglePlay();
+      }}
     >
       {embedUrl ? (
-        // Render embed as an iframe so we can try to enable autoplay when visible
-        <div ref={containerRef} className="w-full h-full">
-          <iframe
-            ref={iframeRef}
-            src={iframeSrc}
-            title={reel.caption || "Instagram Reel"}
-            className="w-full h-full object-cover border-0"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
-            allowFullScreen
-            loading="lazy"
-            style={{ background: "black" }}
-          />
-        </div>
+        <blockquote
+          className="instagram-media"
+          data-instgrm-permalink={reel.instagramUrl || reel.videoUrl}
+          data-instgrm-version="14"
+          style={{ margin: 0 }}
+        >
+          <a href={reel.instagramUrl || reel.videoUrl} target="_blank" rel="noopener noreferrer">
+            View on Instagram
+          </a>
+        </blockquote>
       ) : (
         <div ref={containerRef} className="w-full h-full">
           <video
