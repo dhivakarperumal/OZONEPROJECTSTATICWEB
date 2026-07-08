@@ -65,7 +65,7 @@ function FitBounds({ geoJsons }) {
 
         const group = L.featureGroup(layers);
 
-        map.fitBounds(group.getBounds().pad(0.02));
+        map.fitBounds(group.getBounds().pad(0.1));
 
         // Zoom one level more after fitting
         setTimeout(() => {
