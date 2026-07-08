@@ -48,7 +48,7 @@ const Hero = () => {
   const [catalogueOpen, setCatalogueOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-gray-900 h-[600px] lg:h-[700px]">
+    <section className="relative overflow-hidden bg-gray-900 h-[90vh] md:h-[600px] lg:h-[700px]">
       <Swiper
         modules={[Autoplay, Pagination, EffectFade]}
         effect="fade"
@@ -98,7 +98,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.4 }}
-                    className="hidden md:block text-base sm:text-lg lg:text-xl mb-10 leading-relaxed text-gray-200"
+                    className="text-base sm:text-lg lg:text-xl mb-10 leading-relaxed text-gray-200"
                   >
                     {slide.desc}
                   </motion.p>
