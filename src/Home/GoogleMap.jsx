@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { MapContainer, TileLayer, GeoJSON, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, Marker, Popup, Tooltip, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { MapPin, RefreshCw, Maximize2 } from 'lucide-react';
@@ -12,6 +12,22 @@ const SERVICE_AREAS = [
   'Dharmapuri District',
   'Tiruvannamalai District',
 ];
+
+const serviceIcon = new L.Icon({
+  iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+  iconSize: [34, 34],
+  iconAnchor: [17, 34],
+  popupAnchor: [0, -30],
+});
+
+function getCenter(feature) {
+  try {
+    const layer = L.geoJSON(feature.geometry);
+    return layer.getBounds().getCenter();
+  } catch {
+    return null;
+  }
+}
 
 // Small helper to fetch GeoJSON from Nominatim (OpenStreetMap)
 async function fetchGeoJSONForPlace(name) {
@@ -128,26 +144,62 @@ export default function GoogleMap() {
 
           const geom = a.feature.geometry;
 
+          // compute a center point for the marker using the polygon bounds
+          let centerPoint = null;
+          try {
+            const tmp = L.geoJSON(geom);
+            centerPoint = tmp.getBounds().getCenter();
+          } catch (e) {
+            centerPoint = null;
+          }
+
+          // custom red pin icon as inline SVG inside a divIcon
+          const pinHtml = `
+            <div style="display:flex;flex-direction:column;align-items:center;">
+              <svg width=28 height=42 viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C7.03 0 3.333 3.697 3.333 8.667C3.333 15.333 12 36 12 36C12 36 20.667 15.333 20.667 8.667C20.667 3.697 16.97 0 12 0Z" fill="#D23F3F" stroke="#9b2b2b" stroke-width="0"/>
+                <circle cx="12" cy="9" r="3.5" fill="white"/>
+              </svg>
+            </div>
+          `;
+
+          const pinIcon = L.divIcon({
+            className: 'custom-pin-wrapper',
+            html: pinHtml,
+            iconSize: [28, 42],
+            iconAnchor: [14, 42],
+            popupAnchor: [0, -42],
+          });
+
           return (
-            <GeoJSON
-              key={`g-${idx}`}
-              data={geom}
-              style={polygonStyle}
-              eventHandlers={{
-                mouseover: (e) => {
-                  const layer = e.target;
-                  layer.setStyle(highlightStyle);
-                },
-                mouseout: (e) => {
-                  const layer = e.target;
-                  layer.setStyle(polygonStyle);
-                },
-                click: (e) => {
-                  const layer = e.target;
-                  layer.bindPopup(`<strong>${a.name}</strong>`).openPopup();
-                },
-              }}
-            />
+            <React.Fragment key={`g-${idx}`}>
+              <GeoJSON
+                data={geom}
+                style={polygonStyle}
+                eventHandlers={{
+                  mouseover: (e) => {
+                    const layer = e.target;
+                    layer.setStyle(highlightStyle);
+                  },
+                  mouseout: (e) => {
+                    const layer = e.target;
+                    layer.setStyle(polygonStyle);
+                  },
+                  click: (e) => {
+                    const layer = e.target;
+                    layer.bindPopup(`<strong>${a.name}</strong>`).openPopup();
+                  },
+                }}
+              />
+
+              {centerPoint && (
+                <Marker position={[centerPoint.lat, centerPoint.lng]} icon={pinIcon}>
+                  <Tooltip direction="right" permanent offset={[12, 0]} className="text-sm font-semibold">
+                    {a.name}
+                  </Tooltip>
+                </Marker>
+              )}
+            </React.Fragment>
           );
         })}
 
