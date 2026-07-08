@@ -293,19 +293,19 @@ const HomeProducts = () => {
 
                   {/* Badge */}
 
-                  <div className="flex flex-wrap items-center gap-3 mb-6">
+                    <div className="flex flex-wrap items-center gap-3 mb-6">
 
                     <span
-                      className={`${selectedProduct.badgeColor} px-4 py-1.5 rounded-full text-white text-xs font-bold uppercase tracking-wider`}
+                      className={`${selectedProduct.badgeColor} px-3 py-1 rounded-full text-white text-[10px] md:px-4 md:py-1.5 md:text-xs font-bold uppercase tracking-wider`}
                     >
                       {selectedProduct.badge}
                     </span>
 
-                    <span className="px-4 py-1.5 rounded-full bg-[#e6f4ed] text-[#0c5940] text-xs font-bold uppercase tracking-wider">
+                    <span className="px-3 py-1 rounded-full bg-[#e6f4ed] text-[#0c5940] text-[10px] md:px-4 md:py-1.5 md:text-xs font-bold uppercase tracking-wider">
                       {selectedProduct.category}
                     </span>
 
-                    <span className="ml-auto px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold">
+                    <span className="ml-auto px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[10px] md:px-4 md:py-1.5 md:text-xs font-bold">
                       {selectedProduct.warranty}
                     </span>
 
@@ -315,9 +315,9 @@ const HomeProducts = () => {
 
                   <div className="flex-1 flex items-center justify-center">
 
-                    <div className="relative w-full h-full flex items-center justify-center">
+                      <div className="relative w-full h-full flex items-center justify-center">
 
-                      <div className="absolute w-[380px] h-[380px] rounded-full bg-[#0c5940]/5 blur-3xl"></div>
+                      <div className="absolute w-[240px] h-[240px] md:w-[380px] md:h-[380px] rounded-full bg-[#0c5940]/5 blur-3xl"></div>
 
                       <img
                         src={
@@ -326,7 +326,7 @@ const HomeProducts = () => {
                             : selectedProduct.image
                         }
                         alt={selectedProduct.name}
-                        className="relative max-h-[430px] object-contain transition duration-500 hover:scale-105"
+                        className="relative max-h-[260px] md:max-h-[430px] object-contain transition duration-500 hover:scale-105"
                       />
                     </div>
                   </div>
@@ -338,12 +338,12 @@ const HomeProducts = () => {
                         <h5 className="text-sm font-semibold text-gray-700 mb-3">
                           Product Images
                         </h5>
-                        <div className="flex gap-3 overflow-x-auto pb-2">
+                          <div className="flex gap-3 overflow-x-auto pb-2">
                           {selectedProduct.image.map((img, index) => (
                             <button
                               key={index}
                               onClick={() => setSelectedImage(index)}
-                              className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-all duration-300 shadow-md
+                              className={`w-14 h-14 md:w-20 md:h-20 rounded-xl overflow-hidden border-2 transition-all duration-300 shadow-md
 
     ${selectedImage === index
                                   ? "border-[#0c5940] scale-105"
@@ -372,15 +372,15 @@ const HomeProducts = () => {
 
                   <div className="mb-8">
 
-                    <h2 className="text-4xl font-black text-[var(--primary)] leading-tight">
+                    <h2 className="text-2xl md:text-4xl font-black text-[var(--primary)] leading-tight">
                       {selectedProduct.name}
                     </h2>
 
-                    <p className="mt-3 text-lg text-[#0c5940] font-semibold">
+                    <p className="mt-3 text-sm md:text-lg text-[#0c5940] font-semibold">
                       {selectedProduct.shortDescription}
                     </p>
 
-                    <p className="mt-5 text-gray-600 leading-8">
+                    <p className="mt-5 text-gray-600 text-sm md:text-base leading-6 md:leading-8">
                       {selectedProduct.description}
                     </p>
 
@@ -390,12 +390,12 @@ const HomeProducts = () => {
 
                   <div className="grid grid-cols-2 gap-4 mb-8">
 
-                    <div className="rounded-2xl border border-gray-200 bg-gray-50 p-4">
+                    <div className="rounded-2xl border border-gray-200 bg-gray-50 p-3 md:p-4">
                       <p className="text-xs uppercase tracking-wider text-gray-500">
                         Product Size
                       </p>
 
-                      <p className="font-bold text-gray-800 mt-2">
+                      <p className="font-bold text-gray-800 mt-2 text-sm md:text-base">
                         {selectedProduct.sizes}
                       </p>
                     </div>
@@ -405,7 +405,7 @@ const HomeProducts = () => {
                         Warranty
                       </p>
 
-                      <p className="font-bold text-[#0c5940] mt-2">
+                      <p className="font-bold text-[#0c5940] mt-2 text-sm md:text-base">
                         {selectedProduct.warranty}
                       </p>
                     </div>
@@ -416,7 +416,7 @@ const HomeProducts = () => {
 
                   <div className="mb-10">
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-5">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-5">
                       Key Features
                     </h3>
 
@@ -426,15 +426,15 @@ const HomeProducts = () => {
 
                         <div
                           key={index}
-                          className="flex items-center gap-3 rounded-xl bg-[#f6fbf8] border border-[#d8efe5] px-4 py-3"
+                          className="flex items-center gap-3 rounded-xl bg-[#f6fbf8] border border-[#d8efe5] px-3 py-2 md:px-4 md:py-3"
                         >
 
                           <CheckCircle2
-                            size={18}
+                            size={16}
                             className="text-[#0c5940] shrink-0"
                           />
 
-                          <span className="text-gray-700 text-sm font-medium">
+                          <span className="text-gray-700 text-xs md:text-sm font-medium">
                             {feature}
                           </span>
 
@@ -450,7 +450,7 @@ const HomeProducts = () => {
 
                   <div className="mb-10">
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-5">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-5">
                       Specifications
                     </h3>
 
@@ -469,7 +469,7 @@ const HomeProducts = () => {
 
                           </p>
 
-                          <p className="mt-2 font-semibold text-gray-800">
+                          <p className="mt-2 font-semibold text-gray-800 text-sm md:text-base">
                             {value}
                           </p>
 
@@ -487,9 +487,9 @@ const HomeProducts = () => {
 
                     <div>
 
-                      <h3 className="text-xl font-bold text-gray-900 mb-4">
-                        Applications
-                      </h3>
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4">
+                          Applications
+                        </h3>
 
                       <div className="space-y-3">
 
@@ -501,11 +501,11 @@ const HomeProducts = () => {
                           >
 
                             <CheckCircle2
-                              size={17}
+                              size={16}
                               className="text-blue-600"
                             />
 
-                            <span className="text-gray-700">
+                            <span className="text-gray-700 text-sm md:text-base">
                               {item}
                             </span>
 
@@ -519,7 +519,7 @@ const HomeProducts = () => {
 
                     <div>
 
-                      <h3 className="text-xl font-bold text-gray-900 mb-4">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4">
                         Advantages
                       </h3>
 
@@ -533,11 +533,11 @@ const HomeProducts = () => {
                           >
 
                             <CheckCircle2
-                              size={17}
+                              size={16}
                               className="text-green-600"
                             />
 
-                            <span className="text-gray-700">
+                            <span className="text-gray-700 text-sm md:text-base">
                               {item}
                             </span>
 
@@ -557,7 +557,7 @@ const HomeProducts = () => {
 
                     <div className="mb-10">
 
-                      <h3 className="text-xl font-bold text-gray-900 mb-4">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4">
                         Product Tags
                       </h3>
 
@@ -567,7 +567,7 @@ const HomeProducts = () => {
 
                           <span
                             key={index}
-                            className="px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium"
+                            className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-100 text-gray-700 text-xs md:text-sm font-medium"
                           >
                             #{keyword}
                           </span>
@@ -584,11 +584,11 @@ const HomeProducts = () => {
 
                   <div className="rounded-3xl bg-gradient-to-r from-[#0c5940] via-[#10694b] to-[#13328D] p-8 text-white">
 
-                    <h3 className="text-2xl font-bold mb-2">
+                    <h3 className="text-lg md:text-2xl font-bold mb-2">
                       Interested in this product?
                     </h3>
 
-                    <p className="text-white/80 mb-6">
+                    <p className="text-white/80 text-sm md:text-base mb-6">
                       Get premium quality products with expert installation and professional
                       support. Contact us today for a free consultation.
                     </p>
@@ -598,7 +598,7 @@ const HomeProducts = () => {
                       <Link
                         to="/products"
                         onClick={() => setSelectedProduct(null)}
-                        className="inline-flex items-center gap-2 bg-white text-[#0c5940] px-6 py-3 rounded-xl font-bold hover:scale-105 transition"
+                        className="inline-flex items-center gap-2 bg-white text-[#0c5940] px-4 py-2 md:px-6 md:py-3 rounded-xl font-bold hover:scale-105 transition"
                       >
                         View All Products
                         <ArrowRight size={18} />
@@ -607,7 +607,7 @@ const HomeProducts = () => {
                       <Link
                         to="/contact"
                         onClick={() => setSelectedProduct(null)}
-                        className="inline-flex items-center gap-2 border border-white/40 px-6 py-3 rounded-xl font-bold hover:bg-white/10 transition"
+                        className="inline-flex items-center gap-2 border border-white/40 px-4 py-2 md:px-6 md:py-3 rounded-xl font-bold hover:bg-white/10 transition"
                       >
                         Contact Us
                         <ArrowRight size={18} />
