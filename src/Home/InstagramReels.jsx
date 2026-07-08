@@ -23,7 +23,7 @@ const getInstagramEmbedUrl = (url) => {
   if (!match) return null;
 
   const type = url.includes("/reel/") ? "reel" : url.includes("/p/") ? "p" : "tv";
-  return `https://www.instagram.com/${type}/${match[1]}/embed/captioned/`;
+  return `https://www.instagram.com/${type}/${match[1]}/embed/`;
 };
 
 const loadInstagramEmbedScript = () => {
@@ -138,29 +138,32 @@ const ReelCard = ({ reel, onExpand }) => {
     setMuted(!muted);
   };
 
+  if (embedUrl) {
+    return (
+      <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-black">
+        <iframe
+          src={embedUrl}
+          title={reel.caption || "Instagram Reel"}
+          className="w-full h-full border-0"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
+          allowFullScreen
+          loading="lazy"
+          style={{ background: "black" }}
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl cursor-pointer group select-none bg-black"
       onClick={(e) => {
-        // prevent any internal anchor from navigating away (instagram blockquote contains an <a>)
         const anchor = e.target && e.target.closest ? e.target.closest('a') : null;
         if (anchor) e.preventDefault();
         togglePlay();
       }}
     >
-      {embedUrl ? (
-        <blockquote
-          className="instagram-media"
-          data-instgrm-permalink={reel.instagramUrl || reel.videoUrl}
-          data-instgrm-version="14"
-          style={{ margin: 0 }}
-        >
-          <a href={reel.instagramUrl || reel.videoUrl} target="_blank" rel="noopener noreferrer">
-            View on Instagram
-          </a>
-        </blockquote>
-      ) : (
-        <div ref={containerRef} className="w-full h-full">
+      <div ref={containerRef} className="w-full h-full">
           <video
             ref={videoRef}
             src={reel.videoUrl}
@@ -173,7 +176,6 @@ const ReelCard = ({ reel, onExpand }) => {
             onEnded={() => setPlaying(false)}
           />
         </div>
-      )}
 
       {/* Dark overlay — lighter when playing */}
       <div
