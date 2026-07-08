@@ -12,14 +12,6 @@ const features = [
   },
   {
     id: 2,
-    title: "GREENGUARD GOLD",
-    icon: Leaf,
-    description: "No harmful odour and emission for lifetime.",
-    color: "from-emerald-500 to-green-600",
-    shadow: "shadow-green-500/30"
-  },
-  {
-    id: 3,
     title: "LEAD FREE",
     icon: CheckCircle2,
     description: "No lead is used in any of the Phifer screens.",
@@ -27,15 +19,7 @@ const features = [
     shadow: "shadow-[#0c5940]/30"
   },
   {
-    id: 4,
-    title: "FLAME RETARDANT",
-    icon: Flame,
-    description: "Will not spread fire as per national building codes.",
-    color: "from-orange-500 to-red-500",
-    shadow: "shadow-orange-500/30"
-  },
-  {
-    id: 5,
+    id: 3,
     title: "ENERGY SAVING",
     icon: Sun,
     description: "Saves wind energy & allows excellent airflow.",
@@ -43,7 +27,7 @@ const features = [
     shadow: "shadow-amber-500/30"
   },
   {
-    id: 6,
+    id: 4,
     title: "LIGHT SAVING",
     icon: Lightbulb,
     description: "Excellent outward light, screens are almost invisible.",
@@ -139,7 +123,7 @@ const HomeFeatures = () => {
         </div>
 
         {/* 3x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <FeatureCard key={feature.id} feature={feature} index={index} />
           ))}
