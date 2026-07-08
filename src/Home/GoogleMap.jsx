@@ -172,7 +172,7 @@ export default function GoogleMap() {
           const geom = a.feature.geometry;
 
           // compute a center point for the marker using a centroid helper (better than bounds)
-          let centerPoint = computeCentroid(a.feature) || ((): any => {
+          let centerPoint = computeCentroid(a.feature) || (function() {
             try { const tmp = L.geoJSON(geom); return tmp.getBounds().getCenter(); } catch { return null; }
           })();
 
