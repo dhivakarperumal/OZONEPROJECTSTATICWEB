@@ -106,22 +106,16 @@ const ReelCard = ({ reel, onExpand }) => {
     return () => obs.disconnect();
   }, [embedUrl]);
 
-  // If this reel is an Instagram embed, load the embed script so it becomes interactive
-  useEffect(() => {
-    if (!embedUrl) return;
-    loadInstagramEmbedScript();
-    // give the script a moment then process embeds
-    const t = setTimeout(() => {
-      try {
-        window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process();
-      } catch (e) {}
-    }, 500);
-    return () => clearTimeout(t);
-  }, [embedUrl]);
+  // Note: do not auto-run Instagram's embed script here — it mutates the DOM
+  // and can conflict with React's reconciliation. We render a static blockquote
+  // and switch to an iframe only on explicit user gesture (click), avoiding
+  // external DOM mutations that produce removeChild errors.
 
   const togglePlay = () => {
     if (embedUrl) {
-      // open modal for Instagram embeds so they play in-page (modal) instead of navigating away
+      // Open fullscreen modal for Instagram embeds — modal will render an iframe
+      // and attempt autoplay (muted). This avoids inline cross-origin autoplay
+      // issues and external DOM mutations.
       onExpand(reel);
       return;
     }
@@ -324,16 +318,9 @@ const ReelModal = ({ reel, onClose }) => {
   }, []);
 
   // Load Instagram embed script when modal contains an Instagram reel
-  useEffect(() => {
-    if (!embedUrl) return;
-    loadInstagramEmbedScript();
-    const t = setTimeout(() => {
-      try {
-        window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process();
-      } catch (e) {}
-    }, 400);
-    return () => clearTimeout(t);
-  }, [embedUrl]);
+  // Avoid calling Instagram embed script inside the modal as well. We prefer
+  // to render an iframe only when the user initiates play to prevent external
+  // DOM mutations from interfering with React's lifecycle.
 
   const togglePlay = () => {
     const video = videoRef.current;
@@ -370,16 +357,22 @@ const ReelModal = ({ reel, onClose }) => {
       >
         {/* Media */}
         {embedUrl ? (
-          <blockquote
-            className="instagram-media"
-            data-instgrm-permalink={reel.instagramUrl || reel.videoUrl}
-            data-instgrm-version="14"
-            style={{ margin: 0 }}
-          >
-            <a href={reel.instagramUrl || reel.videoUrl} target="_blank" rel="noopener noreferrer">
-              View on Instagram
-            </a>
-          </blockquote>
+          // Render Instagram post as an iframe inside the modal and attempt autoplay
+          <div className="w-full h-full">
+            <iframe
+              src={(() => {
+                const src = embedUrl;
+                const sep = src.includes("?") ? "&" : "?";
+                return src + sep + "autoplay=1&mute=1";
+              })()}
+              title={reel.caption || "Instagram Reel"}
+              className="w-full h-full object-cover border-0"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
+              allowFullScreen
+              loading="lazy"
+              style={{ background: "black" }}
+            />
+          </div>
         ) : (
           <video
             ref={videoRef}
