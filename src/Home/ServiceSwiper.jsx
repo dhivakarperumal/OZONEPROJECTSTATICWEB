@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import * as LucideIcons from "lucide-react";
 import PageContainer from "../CommenComponents/PageContainer";
 
@@ -9,13 +9,18 @@ import "swiper/css";
 
 import { services } from "../Home/HomeServices";
 
-const FadeIn = ({ children, delay = 0, className = "" }) => {
+const FadeIn = ({ children, delay = 0, className = "", disableAnimation = false }) => {
     const ref = useRef(null);
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
         const el = ref.current;
         if (!el) return;
+
+        if (disableAnimation) {
+            setVisible(true);
+            return;
+        }
 
         const observer = new IntersectionObserver(
             ([entry]) => entry.isIntersecting && setVisible(true),
@@ -71,14 +76,20 @@ const ServiceSwiper = () => {
                     </div>
 
                     <Swiper
-                        modules={[Autoplay, Pagination]}
+                        modules={[Autoplay]}
                         autoplay={{
                             delay: 3500,
                             disableOnInteraction: false,
                         }}
-                        pagination={{ clickable: true }}
+                        // remove default pagination dots
                         loop
                         spaceBetween={30}
+                        // improve slide rendering and updates
+                        preloadImages={true}
+                        lazy={false}
+                        observer={true}
+                        observeParents={true}
+                        watchSlidesProgress={true}
                         breakpoints={{
                             0: {
                                 slidesPerView: 1,
@@ -104,7 +115,7 @@ const ServiceSwiper = () => {
 
                             return (
                                 <SwiperSlide key={service.id}>
-                                    <FadeIn delay={index * 80}>
+                                    <FadeIn delay={index * 80} disableAnimation={true}>
                                         <div className="relative bg-white rounded-3xl p-8 border border-gray-100/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(12,89,64,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col group overflow-hidden h-[540px]">
 
                                             {/* Top Accent Line */}
