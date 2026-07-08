@@ -48,26 +48,32 @@ async function fetchGeoJSONForPlace(name) {
 
 function FitBounds({ geoJsons }) {
   const map = useMap();
+
   useEffect(() => {
     const layers = geoJsons
       .map((g) => {
         if (!g) return null;
         try {
           return L.geoJSON(g.geometry);
-        } catch (e) {
+        } catch {
           return null;
         }
       })
       .filter(Boolean);
 
-    if (layers.length === 0) return;
+    if (!layers.length) return;
+
     const group = L.featureGroup(layers);
-    map.fitBounds(group.getBounds().pad(0.1));
-    // cleanup
-    return () => {
-      group.clearLayers();
-    };
+
+    map.fitBounds(group.getBounds().pad(0.02));
+
+    // Zoom one level more after fitting
+    setTimeout(() => {
+      map.setZoom(map.getZoom() + 1);
+    }, 300);
+
   }, [geoJsons, map]);
+
   return null;
 }
 
