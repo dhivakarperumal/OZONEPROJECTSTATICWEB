@@ -130,7 +130,17 @@ const ReelCard = ({ reel, onExpand }) => {
 
   const togglePlay = () => {
     if (embedUrl) {
-      onExpand(reel);
+      // Play the Instagram embed inline by toggling autoplay on the iframe src
+      const src = iframeSrc || embedUrl;
+      const sep = src.includes("?") ? "&" : "?";
+      if (!playing) {
+        setIframeSrc(src + sep + "autoplay=1&mute=1");
+        setPlaying(true);
+      } else {
+        // stop autoplay by reverting iframe src
+        setIframeSrc(embedUrl);
+        setPlaying(false);
+      }
       return;
     }
 
