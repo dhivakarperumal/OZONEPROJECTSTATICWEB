@@ -15,6 +15,7 @@ import InstagramReels from './InstagramReels'
 import CategorySection from "./CategorySection";
 import ServiceSwiper from "./ServiceSwiper";
 import ServicesInstallation from "../Pages/ServicesInstallation";
+import GoogleMap from "./GoogleMap";
 
 const RevealSection = ({ children, direction = "up", delay = 0, className = "", id }) => {
   const directionStyles = {
@@ -114,6 +115,7 @@ const Home = () => {
         )}
       </AnimatePresence>
 
+      <GoogleMap/>
       <Hero />
       <CategorySection/>  
       <RevealSection id="about-section" direction="left">

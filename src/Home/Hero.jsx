@@ -12,34 +12,34 @@ import 'swiper/css/effect-fade';
 const slidesData = [
   {
     id: 1,
-    tag: "Premium Fitment Systems",
-    title: "Transform Your Space with",
-    highlight: "Ozone",
-    desc: "Discover our world-class architectural hardware and tailor-made solutions designed for unmatched durability, premium aesthetics, and perfect fitment.",
+    tag: "Premium Mosquito Protection",
+    title: "Enjoy Fresh Air with",
+    highlight: "Mosquito-Free Living",
+    desc: "We provide premium quality mosquito net solutions for windows, doors, balconies, and open spaces that keep insects out while allowing fresh air and natural light inside.",
     bgImage: "/Hero/1.png"
   },
   {
     id: 2,
-    tag: "Innovative Engineering",
-    title: "Unmatched Durability &",
-    highlight: "Strength",
-    desc: "Engineered to perfection. Our products undergo rigorous testing to ensure they stand the test of time while elevating your architectural spaces.",
+    tag: "Window Blinds Collection",
+    title: "Elegant Window",
+    highlight: "Blinds",
+    desc: "Enhance your interiors with stylish roller blinds, zebra blinds, Venetian blinds, vertical blinds, and customized window coverings that perfectly blend beauty with functionality.",
     bgImage: "/Hero/2.png"
   },
   {
     id: 3,
-    tag: "Tailored For You",
-    title: "Aesthetically Crafted",
-    highlight: "Solutions",
-    desc: "From balcony screens to custom fitments, we provide bespoke hardware solutions that seamlessly blend with your modern design vision.",
+    tag: "UPVC Doors & Windows",
+    title: "Strong, Stylish &",
+    highlight: "Energy Efficient",
+    desc: "We supply and install premium UPVC doors and windows designed for durability, thermal insulation, weather resistance, and modern architectural elegance.",
     bgImage: "/Hero/3.png"
   },
   {
     id: 4,
-    tag: "Global Standard",
-    title: "State of the Art",
-    highlight: "Hardware",
-    desc: "Experience flawless integration and premium finishes with our architecturally superior hardware collections designed for every space.",
+    tag: "Sales • Installation • Service",
+    title: "Complete Home",
+    highlight: "Solutions",
+    desc: "From consultation and customized manufacturing to professional installation and after-sales service, we offer complete solutions for mosquito nets, window blinds, and UPVC systems.",
     bgImage: "/Hero/4.png"
   }
 ];
