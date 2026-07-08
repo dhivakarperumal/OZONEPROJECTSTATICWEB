@@ -56,10 +56,13 @@ const sortReels = (items) => {
 // ─── Individual Reel Card ───────────────────────────────────────────────────
 const ReelCard = ({ reel, onExpand }) => {
   const videoRef = useRef(null);
+  const containerRef = useRef(null);
+  const iframeRef = useRef(null);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
   const [liked, setLiked] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [iframeSrc, setIframeSrc] = useState(null);
   const embedUrl = getInstagramEmbedUrl(reel.instagramUrl || reel.videoUrl);
 
   // Sync progress bar
@@ -75,18 +78,55 @@ const ReelCard = ({ reel, onExpand }) => {
     return () => video.removeEventListener("timeupdate", onTimeUpdate);
   }, []);
 
-  // If this reel is an Instagram embed, load the embed script so it becomes interactive
   useEffect(() => {
     if (!embedUrl) return;
-    loadInstagramEmbedScript();
-    // give the script a moment then process embeds
-    const t = setTimeout(() => {
-      try {
-        window.instgrm && window.instgrm.Embeds && window.instgrm.Embeds.process();
-      } catch (e) {}
-    }, 500);
-    return () => clearTimeout(t);
+    // initialise iframe src without autoplay; IntersectionObserver will toggle autoplay when visible
+    setIframeSrc(embedUrl);
   }, [embedUrl]);
+
+  // Auto-play when reel card becomes visible: play native videos or set iframe to autoplay-capable URL
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const visible = entry.intersectionRatio > 0.55;
+          if (visible) {
+            if (embedUrl) {
+              // try to enable autoplay for the Instagram embed iframe (muted to satisfy autoplay rules)
+              const src = iframeSrc || embedUrl;
+              const sep = src.includes("?") ? "&" : "?";
+              setIframeSrc(src + sep + "autoplay=1&mute=1");
+            } else {
+              const v = videoRef.current;
+              if (v) {
+                v.muted = true;
+                v.play().catch(() => {});
+                setPlaying(true);
+              }
+            }
+          } else {
+            if (embedUrl) {
+              // stop autoplay by reverting iframe src (some browsers may continue to play, but this helps)
+              setIframeSrc(embedUrl);
+            } else {
+              const v = videoRef.current;
+              if (v) {
+                v.pause();
+                setPlaying(false);
+              }
+            }
+          }
+        });
+      },
+      { threshold: [0, 0.25, 0.55, 1] }
+    );
+
+    obs.observe(node);
+    return () => obs.disconnect();
+  }, [embedUrl, iframeSrc]);
 
   const togglePlay = () => {
     if (embedUrl) {
@@ -118,28 +158,33 @@ const ReelCard = ({ reel, onExpand }) => {
       onClick={togglePlay}
     >
       {embedUrl ? (
-        <blockquote
-          className="instagram-media"
-          data-instgrm-permalink={reel.instagramUrl || reel.videoUrl}
-          data-instgrm-version="14"
-          style={{ margin: 0 }}
-        >
-          <a href={reel.instagramUrl || reel.videoUrl} target="_blank" rel="noopener noreferrer">
-            View on Instagram
-          </a>
-        </blockquote>
+        // Render embed as an iframe so we can try to enable autoplay when visible
+        <div ref={containerRef} className="w-full h-full">
+          <iframe
+            ref={iframeRef}
+            src={iframeSrc}
+            title={reel.caption || "Instagram Reel"}
+            className="w-full h-full object-cover border-0"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
+            allowFullScreen
+            loading="lazy"
+            style={{ background: "black" }}
+          />
+        </div>
       ) : (
-        <video
-          ref={videoRef}
-          src={reel.videoUrl}
-          poster={reel.thumbnail}
-          loop
-          muted={muted}
-          playsInline
-          preload="metadata"
-          className="w-full h-full object-cover"
-          onEnded={() => setPlaying(false)}
-        />
+        <div ref={containerRef} className="w-full h-full">
+          <video
+            ref={videoRef}
+            src={reel.videoUrl}
+            poster={reel.thumbnail}
+            loop
+            muted={muted}
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover"
+            onEnded={() => setPlaying(false)}
+          />
+        </div>
       )}
 
       {/* Dark overlay — lighter when playing */}
