@@ -71,13 +71,13 @@ const Hero = () => {
 
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
 
-              <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-16">
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full flex items-end md:items-center pb-8 md:pb-0">
                 <div className="max-w-3xl">
                   <motion.div
                     initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6"
+                    className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6"
                   >
                     <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
                     <span className="text-sm font-bold tracking-wide text-white uppercase">{slide.tag}</span>
@@ -87,7 +87,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.25 }}
-                    className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 tracking-tight leading-[1.1] text-white"
+                    className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-2 md:mb-6 tracking-tight leading-[1.2] text-white"
                   >
                     {slide.title}  <span className="text-cyan-300 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
                       {slide.highlight}
@@ -98,7 +98,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.4 }}
-                    className="text-base sm:text-lg lg:text-xl mb-10 leading-relaxed text-gray-200"
+                    className="hidden md:block text-base sm:text-lg lg:text-xl mb-10 leading-relaxed text-gray-200"
                   >
                     {slide.desc}
                   </motion.p>
@@ -107,7 +107,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.55 }}
-                    className="flex flex-col sm:flex-row items-center justify-start gap-4"
+                    className="hidden md:flex flex-col sm:flex-row items-center justify-start gap-4"
                   >
                     <Link to="/products" className="w-full sm:w-auto px-8 py-4 bg-[#0c5940] hover:bg-[#094230] text-white rounded-full font-semibold transition flex items-center justify-center gap-2 shadow-lg shadow-[#0c5940]/40">
                       Explore Products <ArrowRight size={20} />
@@ -131,7 +131,7 @@ const Hero = () => {
 
       <a
         href="#about-section"
-        className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 flex flex-col items-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-white/90"
+        className="hidden md:flex absolute bottom-8 left-1/2 z-20 -translate-x-1/2 flex-col items-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-white/90"
       >
         <span>Scroll Down</span>
         <motion.span
