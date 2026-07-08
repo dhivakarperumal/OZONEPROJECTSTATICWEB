@@ -511,22 +511,28 @@ const InstagramReels = () => {
         {/* Swiper */}
         <style>{`
   .reels-swiper .swiper-slide {
-    min-height: 360px;
-    height: min(90vw, 520px);
-  }
+  min-height: 460px;
+  height: min(92vw, 620px);
+}
 
-  @media (min-width: 640px) {
-    .reels-swiper .swiper-slide {
-      min-height: 360px;
-      height: min(75vw, 500px);
-    }
+@media (min-width: 640px) {
+  .reels-swiper .swiper-slide {
+    min-height: 520px;
+    height: min(85vw, 650px);
   }
+}
 
-  @media (min-width: 1024px) {
-    .reels-swiper .swiper-slide {
-      height: 520px;
-    }
+@media (min-width: 1024px) {
+  .reels-swiper .swiper-slide {
+    height: 500px;
   }
+}
+
+@media (min-width: 1280px) {
+  .reels-swiper .swiper-slide {
+    height: 550px;
+  }
+}
 `}</style>
 
         <Swiper
