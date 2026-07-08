@@ -114,6 +114,11 @@ const HomeProducts = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const [selectedImage, setSelectedImage] = useState(0);
+
+  useEffect(() => {
+    setSelectedImage(0);
+  }, [selectedProduct]);
 
   const filtered =
     activeCategory === "All"
@@ -263,6 +268,7 @@ const HomeProducts = () => {
       </div>
 
       {/* Product Modal */}
+
       {selectedProduct && (
         <div className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 md:p-6">
 
@@ -315,35 +321,34 @@ const HomeProducts = () => {
                     <img
                       src={
                         Array.isArray(selectedProduct.image)
-                          ? selectedProduct.image[0]
+                          ? selectedProduct.image[selectedImage]
                           : selectedProduct.image
                       }
                       alt={selectedProduct.name}
                       className="relative max-h-[430px] object-contain transition duration-500 hover:scale-105"
                     />
-
                   </div>
-
                 </div>
 
                 {/* Thumbnails */}
-
                 {Array.isArray(selectedProduct.image) &&
                   selectedProduct.image.length > 1 && (
-
                     <div className="mt-6">
-
                       <h5 className="text-sm font-semibold text-gray-700 mb-3">
                         Product Images
                       </h5>
-
                       <div className="flex gap-3 overflow-x-auto pb-2">
-
                         {selectedProduct.image.map((img, index) => (
-
                           <button
                             key={index}
-                            className="w-20 h-20 rounded-xl border-2 border-transparent hover:border-[#0c5940] overflow-hidden bg-white shadow-md transition"
+                            onClick={() => setSelectedImage(index)}
+                            className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-all duration-300 shadow-md
+
+    ${selectedImage === index
+                                ? "border-[#0c5940] scale-105"
+                                : "border-gray-200 hover:border-[#0c5940]"
+                              }
+  `}
                           >
                             <img
                               src={img}
@@ -351,15 +356,10 @@ const HomeProducts = () => {
                               className="w-full h-full object-cover"
                             />
                           </button>
-
                         ))}
-
                       </div>
-
                     </div>
-
                   )}
-
               </div>
 
               {/* ===========================
