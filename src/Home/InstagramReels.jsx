@@ -14,7 +14,7 @@ import {
   FaVolumeUp,
   FaExpand,
 } from "react-icons/fa";
-import { ChevronLeft, ChevronRight, ArrowRight, X } from "lucide-react";
+import { X } from "lucide-react";
 import reels from "../data/reels.json";
 
 const getInstagramEmbedUrl = (url) => {
@@ -144,11 +144,18 @@ const ReelCard = ({ reel, onExpand }) => {
         <iframe
           src={embedUrl}
           title={reel.caption || "Instagram Reel"}
-          className="w-full h-full border-0"
+          className="absolute border-0"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
           allowFullScreen
           loading="lazy"
-          style={{ background: "black" }}
+          style={{ 
+            background: "black",
+            top: "-75px",
+            left: "0",
+            width: "100%",
+            height: "calc(100% + 380px)",
+            pointerEvents: "auto"
+          }}
         />
       </div>
     );
@@ -477,8 +484,6 @@ const ReelModal = ({ reel, onClose }) => {
 
 // ─── Main Section ───────────────────────────────────────────────────────────
 const InstagramReels = () => {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
   const [expandedReel, setExpandedReel] = useState(null);
   const prioritizedReels = sortReels(reels);
 
@@ -498,55 +503,7 @@ const InstagramReels = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12">
-          <div>
-            {/* <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 shadow-lg mb-5">
-              <FaInstagram className="text-white text-base" />
-              <span className="text-white text-xs font-black tracking-widest uppercase">
-                Instagram Reels
-              </span>
-            </div> */}
-            <h2 className="text-4xl sm:text-5xl font-black leading-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
-                Follow Our{" "}
-              </span>
-
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
-                Journey
-              </span>
-            </h2>
-            <p className="text-white/60 text-base mt-3 max-w-md">
-              Watch our latest installations, products and behind-the-scenes moments.
-              Click any reel to play instantly.
-            </p>
-          </div>
-
-          <div className="flex items-center gap-3 flex-wrap">
-            <button
-              ref={prevRef}
-              className="w-11 h-11 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-[var(--primary)] transition-all duration-300 hover:scale-110"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              ref={nextRef}
-              className="w-11 h-11 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-[var(--primary)] transition-all duration-300 hover:scale-110"
-            >
-              <ChevronRight size={20} />
-            </button>
-            <a
-              href="https://www.instagram.com/ozone_enterprises_?utm_source=qr&igsh=MTNydnc0MWd1YnJiZA=="
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-pink-600 hover:to-yellow-600 text-white font-bold text-sm rounded-full shadow-xl hover:shadow-pink-500/40 transition-all duration-300 hover:scale-105"
-            >
-              <FaInstagram />
-              Follow Us
-              <ArrowRight size={15} />
-            </a>
-          </div>
-        </div>
+        {/* Removed Header */}
 
         {/* Swiper */}
         <style>{`
@@ -569,7 +526,7 @@ const InstagramReels = () => {
 
         <Swiper
           className="reels-swiper"
-          modules={[Navigation, Autoplay]}
+          modules={[Autoplay]}
           spaceBetween={20}
           slidesPerView={1.2}
           centeredSlides={true}
@@ -578,21 +535,6 @@ const InstagramReels = () => {
             delay: 4000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
-          }}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onSwiper={(swiper) => {
-            setTimeout(() => {
-              if (swiper.params?.navigation) {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-                swiper.navigation.destroy();
-                swiper.navigation.init();
-                swiper.navigation.update();
-              }
-            }, 0);
           }}
           breakpoints={{
             480: { slidesPerView: 1.8, spaceBetween: 16 },
@@ -608,23 +550,7 @@ const InstagramReels = () => {
           ))}
         </Swiper>
 
-        {/* Bottom CTA strip */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 bg-white border border-white/20 rounded-2xl px-8 py-5">
-          <FaInstagram className="text-pink-500 text-2xl hidden sm:block" />
-          <p className="text-gray-900 text-sm font-semibold text-center">
-            We post new reels every week. Follow us for the latest projects &amp;
-            product launches!
-          </p>
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-white text-[var(--primary)] font-bold text-sm rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg"
-          >
-            <FaInstagram className="text-pink-500" />
-            @ozone.official
-          </a>
-        </div>
+        {/* Removed Bottom CTA strip */}
       </div>
 
       {/* Fullscreen modal */}
