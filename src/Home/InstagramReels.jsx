@@ -147,14 +147,13 @@ const ReelCard = ({ reel, onExpand }) => {
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
           allowFullScreen
           loading="lazy"
-          className="absolute border-0"
+          className="absolute inset-0 w-full h-full border-0"
           style={{
-            top: "-75px",
-            left: "-12px",
-            width: "calc(100% + 24px)",
-            height: "calc(100% + 380px)",
-            transform: "scale(1.05)",
-            transformOrigin: "top center",
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            transform: 'none',
           }}
         />
       </div>
@@ -509,18 +508,20 @@ const InstagramReels = () => {
         {/* Swiper */}
         <style>{`
   .reels-swiper .swiper-slide {
-    height: 400px;
+    min-height: 360px;
+    height: min(90vw, 520px);
   }
 
   @media (min-width: 640px) {
     .reels-swiper .swiper-slide {
-      height: 300px;
+      min-height: 360px;
+      height: min(75vw, 500px);
     }
   }
 
   @media (min-width: 1024px) {
     .reels-swiper .swiper-slide {
-      height: 430px;
+      height: 520px;
     }
   }
 `}</style>
