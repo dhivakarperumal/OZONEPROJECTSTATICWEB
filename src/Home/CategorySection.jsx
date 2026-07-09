@@ -4,8 +4,8 @@ import productsData from "../data/products.json";
 
 const categories = [
     {
-        name: "Mosquito Nets",
-        image: "/Images/cat1mosquitonets.avif",
+        name: "Mosquito Windows",
+        image: "/Images/cat1mosquitowindow.jpg",
         filter: "Mosquito Nets",
     },
     {
