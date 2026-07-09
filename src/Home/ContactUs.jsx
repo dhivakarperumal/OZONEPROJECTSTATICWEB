@@ -136,9 +136,9 @@ const ContactUs = () => {
       icon: MapPin,
       title: "Our Address",
       lines: [
-        "No. 12, Green Park Avenue,",
-        "Anna Nagar, Chennai – 600040,",
-        "Tamil Nadu, India.",
+        "2/3, SF No.379/8A3, Asiriyar Nagar,",
+        "Pachal Mitta, Olipuram, Tirupathur,",
+        "Tamil Nadu - 635 601",
       ],
     },
     {

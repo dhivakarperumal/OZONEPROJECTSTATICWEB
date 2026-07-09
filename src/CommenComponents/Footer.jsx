@@ -186,7 +186,9 @@ const Footer = () => {
             <ul className="space-y-3 text-[13px] text-gray-400">
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 shrink-0" />
-                <span>Ozone Enterprises<br />Tuscaloosa, Alabama,<br />USA</span>
+                2/3, SF No.379/8A3, Asiriyar Nagar, 
+Pachal Mitta, Olipuram, Tirupathur, 
+Tamil Nadu - 635 601
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="shrink-0" />
