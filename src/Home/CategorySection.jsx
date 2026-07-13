@@ -4,24 +4,24 @@ import productsData from "../data/products.json";
 
 const categories = [
     {
-        name: "Mosquito Windows",
+        name: "UPVC Systems",
+        image: "/Images/cat4upvc.jpg",
+        filter: "UPVC Systems",
+    },
+    {
+        name: "Mosquito Net Windows",
         image: "/Images/cat1mosquitowindow.jpg",
         filter: "Mosquito Nets",
     },
     {
-        name: "Mosquito Doors",
+        name: "Mosquito Net Doors",
         image: "/Images/cat2mosquitodoors.webp",
         filter: "Mosquito Doors",
     },
     {
-        name: "Window Blinds",
+        name: "Blinds",
         image: "/Images/cat3windowblind.webp",
         filter: "Window Blinds",
-    },
-    {
-        name: "UPVC Systems",
-        image: "/Images/cat4upvc.jpg",
-        filter: "UPVC Systems",
     },
 ];
 
