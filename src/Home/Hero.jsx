@@ -12,31 +12,31 @@ import 'swiper/css/effect-fade';
 const slidesData = [
   {
     id: 1,
-    tag: "Premium Mosquito Protection",
-    title: "Enjoy Fresh Air with",
-    highlight: "Mosquito-Free Living",
+    tag: "Sales & Services",
+    title: "Window Nets and ",
+    highlight: "Doors",
     desc: "We provide premium quality mosquito net solutions for windows, doors, balconies, and open spaces that keep insects out while allowing fresh air and natural light inside.",
     bgImage: "/Hero/1.png"
   },
   {
     id: 2,
-    tag: "Window Blinds Collection",
-    title: "Elegant Window",
+    tag: "Sales & Services",
+    title: "Window",
     highlight: "Blinds",
     desc: "Enhance your interiors with stylish roller blinds, zebra blinds, Venetian blinds, vertical blinds, and customized window coverings that perfectly blend beauty with functionality.",
     bgImage: "/Hero/2.png"
   },
   {
     id: 3,
-    tag: "UPVC Doors & Windows",
-    title: "Strong, Stylish &",
-    highlight: "Energy Efficient",
+    tag: "Sales & Services",
+    title: "UPVC",
+    highlight: "Systems",
     desc: "We supply and install premium UPVC doors and windows designed for durability, thermal insulation, weather resistance, and modern architectural elegance.",
     bgImage: "/Hero/3.png"
   },
   {
     id: 4,
-    tag: "Sales • Installation • Service",
+    tag: "Sales & Services",
     title: "Complete Home",
     highlight: "Solutions",
     desc: "From consultation and customized manufacturing to professional installation and after-sales service, we offer complete solutions for mosquito nets, window blinds, and UPVC systems.",
@@ -98,14 +98,14 @@ const Hero = () => {
                     </span>
                   </motion.h1>
 
-                  <motion.p
+                  {/* <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.4 }}
                     className="text-xs sm:text-lg lg:text-xl mb-0 md:mb-10 leading-5 md:leading-9 text-gray-200 max-w-xl"
                   >
                     {slide.desc}
-                  </motion.p>
+                  </motion.p> */}
 
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
