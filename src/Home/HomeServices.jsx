@@ -10,179 +10,71 @@ import "swiper/css/navigation";
 export const services = [
   {
     id: 1,
-    title: "Mosquito Screen Installation",
-    icon: "ShieldCheck",
-    description: "Professional installation for all types of mosquito screen systems.",
+    title: "UPVC Systems",
+    icon: "LayoutPanelLeft",
+    description:
+      "Premium uPVC doors and windows offering durability, energy efficiency, and modern aesthetics.",
     items: [
-      "Window Screens",
-      "Door Screens",
-      "Sliding Screens",
-      "Pleated Screens",
-      "Roll-Up Screens",
-      "Fixed Frame Screens"
-    ]
+      "uPVC Windows",
+      "uPVC Doors",
+      "Sliding Systems",
+      "Casement Systems",
+      "Ventilators",
+      "Custom Designs",
+    ],
   },
   {
     id: 2,
-    title: "Window Solutions",
-    icon: "LayoutPanelLeft",
-    description: "Custom mosquito screen solutions for every window type.",
+    title: "Mosquito Net Windows",
+    icon: "ShieldCheck",
+    description:
+      "High-quality mosquito net window systems that provide fresh air while keeping insects outside.",
     items: [
-      "Sliding Windows",
-      "Casement Windows",
-      "uPVC Windows",
-      "Aluminium Windows",
-      "Wooden Windows",
-      "Custom Window Frames"
-    ]
+      "Sliding Nets",
+      "Pleated Nets",
+      "Roll-Up Nets",
+      "Openable Nets",
+      "Invisible Nets",
+      "Fixed Nets",
+    ],
   },
   {
     id: 3,
-    title: "Door Solutions",
+    title: "Mosquito Net Doors",
     icon: "DoorOpen",
-    description: "Premium mosquito screen doors with elegant designs.",
+    description:
+      "Elegant mosquito net doors designed for balconies, entrances, and patios with smooth operation.",
     items: [
-      "Hinged Doors",
       "Sliding Doors",
+      "Pleated Doors",
       "Magnetic Doors",
+      "Openable Doors",
       "French Doors",
-      "Balcony Doors",
-      "Folding Doors"
-    ]
+      "Customized Doors",
+    ],
   },
   {
     id: 4,
-    title: "Balcony Screens",
-    icon: "Building2",
-    description: "Heavy-duty balcony screening systems with privacy and protection.",
+    title: "Window Blinds",
+    icon: "Blinds",
+    description:
+      "Stylish blinds that provide privacy, light control, and a premium finish for every interior.",
     items: [
-      "Manual Screens",
-      "Motorized Screens",
-      "Zip Screens",
-      "Sun Control Screens",
-      "Privacy Screens",
-      "Rain Protection"
-    ]
+      "Roller Blinds",
+      "Zebra Blinds",
+      "Roman Blinds",
+      "Vertical Blinds",
+      "Wooden Blinds",
+      "Motorized Blinds",
+    ],
   },
-  {
-    id: 5,
-    title: "Retractable Systems",
-    icon: "MoveHorizontal",
-    description: "Smooth retractable mosquito screen solutions.",
-    items: [
-      "Roll-Up Screens",
-      "Invisible Screens",
-      "Vertical Systems",
-      "Horizontal Systems",
-      "Heavy Duty Screens",
-      "Motorized Systems"
-    ]
-  },
-  {
-    id: 6,
-    title: "Premium Mesh Products",
-    icon: "Grid2X2",
-    description: "High-quality mesh materials for every application.",
-    items: [
-      "Fiberglass Mesh",
-      "Stainless Steel Mesh",
-      "Aluminium Mesh",
-      "Pet Resistant Mesh",
-      "Solar Mesh",
-      "Anti-Pollen Mesh"
-    ]
-  },
-  {
-    id: 7,
-    title: "Commercial Solutions",
-    icon: "BriefcaseBusiness",
-    description: "Complete mosquito protection for commercial buildings.",
-    items: [
-      "Office Buildings",
-      "Hotels",
-      "Hospitals",
-      "Restaurants",
-      "Shopping Malls",
-      "Factories"
-    ]
-  },
-  {
-    id: 8,
-    title: "Residential Solutions",
-    icon: "House",
-    description: "Custom mosquito screen solutions for modern homes.",
-    items: [
-      "Apartments",
-      "Independent Houses",
-      "Luxury Villas",
-      "Farm Houses",
-      "Duplex Homes",
-      "Residential Complexes"
-    ]
-  },
-  {
-    id: 9,
-    title: "Custom Fabrication",
-    icon: "Hammer",
-    description: "Tailor-made screen systems designed to fit your space.",
-    items: [
-      "Custom Frames",
-      "Special Sizes",
-      "Premium Finishes",
-      "Site Measurement",
-      "Frame Manufacturing",
-      "Customized Designs"
-    ]
-  },
-  {
-    id: 10,
-    title: "Repair & Maintenance",
-    icon: "Wrench",
-    description: "Reliable maintenance and repair services.",
-    items: [
-      "Mesh Replacement",
-      "Frame Repair",
-      "Roller Repair",
-      "Track Cleaning",
-      "Lock Replacement",
-      "Annual Maintenance"
-    ]
-  },
-  {
-    id: 11,
-    title: "Consultation",
-    icon: "MessageCircleMore",
-    description: "Expert consultation to choose the perfect screen solution.",
-    items: [
-      "Free Site Visit",
-      "Product Suggestion",
-      "Design Consultation",
-      "Measurements",
-      "Budget Planning",
-      "Technical Support"
-    ]
-  },
-  {
-    id: 12,
-    title: "After Sales Support",
-    icon: "Headphones",
-    description: "Dedicated customer service after installation.",
-    items: [
-      "Product Warranty",
-      "Installation Warranty",
-      "AMC Support",
-      "Spare Parts",
-      "Customer Assistance",
-      "Quick Service"
-    ]
-  }
 ];
 
 const HomeServices = () => {
   return (
     <section className="py-24 bg-gray-50 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-gray-100 mb-4">
             <span className="w-2 h-2 rounded-full bg-[#0c5940] animate-pulse"></span>
@@ -197,7 +89,7 @@ const HomeServices = () => {
         </div>
 
         <div className="relative pb-12">
-            <Swiper
+          <Swiper
             modules={[Pagination, Autoplay]}
             spaceBetween={24}
             slidesPerView={1}
@@ -222,14 +114,14 @@ const HomeServices = () => {
           >
             {services.map((service) => {
               const IconComponent = LucideIcons[service.icon] || LucideIcons.Shield;
-              
+
               return (
                 <SwiperSlide key={service.id} className="h-auto">
                   <div className="relative bg-white rounded-3xl p-8 h-full border border-gray-100/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_45px_-12px_rgba(12,89,64,0.16)] hover:-translate-y-2 transition-all duration-500 flex flex-col group overflow-hidden z-10">
-                    
+
                     {/* Top Accent Line */}
                     <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0c5940] to-[#38B6FF] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
+
                     {/* Background glow on hover */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-[#0c5940]/5 rounded-bl-full -z-10 group-hover:bg-[#0c5940]/10 transition-colors duration-500"></div>
                     <div className="absolute inset-0 rounded-[1.5rem] ring-1 ring-transparent transition-all duration-500 group-hover:ring-[#0c5940]/10"></div>
@@ -243,12 +135,12 @@ const HomeServices = () => {
                         {service.title}
                       </h3>
                     </div>
-                    
+
                     {/* Description */}
                     <p className="text-gray-500 text-[13px] leading-relaxed mb-6 flex-grow">
                       {service.description}
                     </p>
-                    
+
                     {/* Feature Pills instead of a vertical list */}
                     <div className="flex flex-wrap gap-2 mt-auto border-t border-gray-50 pt-5">
                       {service.items.slice(0, 3).map((item, idx) => (
@@ -270,7 +162,7 @@ const HomeServices = () => {
           </Swiper>
         </div>
       </div>
-      
+
       {/* Custom styles for Swiper pagination to match theme */}
       <style>{`
         .services-swiper {
