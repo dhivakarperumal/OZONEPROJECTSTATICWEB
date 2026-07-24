@@ -145,7 +145,7 @@ const Home = () => {
         <HomeGallery />
       </RevealSection>
       <RevealSection direction="bottom">
-        <InstagramReels />
+        {/* <InstagramReels /> */}
       </RevealSection>
       <RevealSection direction="bottom">
         <HomeFAQ />

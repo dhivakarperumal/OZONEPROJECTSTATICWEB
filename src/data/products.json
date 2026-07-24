@@ -79,7 +79,7 @@
   {
     "id": 2,
     "slug": "classic-openable-window",
-    "name": "Classic Openable Mosquito Window",
+    "name": "Window Openable Mosquito Net",
     "category": "Mosquito Nets",
     "shortDescription": "Premium openable mosquito window with stainless steel mesh.",
     "description": "Classic Openable Mosquito Window is manufactured using high-quality aluminium profiles with premium stainless steel mesh. It offers excellent ventilation while protecting your home from mosquitoes, insects and dust.",
@@ -157,7 +157,7 @@
   {
     "id": 3,
     "slug": "classic-fixed-window",
-    "name": "Classic Fixed Mosquito Window",
+    "name": "Window Fixed Mosquito Net",
     "category": "Mosquito Nets",
     "shortDescription": "Fixed mosquito window system with premium stainless steel mesh.",
     "description": "Classic Fixed Window provides permanent mosquito protection with minimal maintenance. The fixed aluminium frame and stainless steel mesh ensure durability, excellent airflow and a clean modern appearance.",
@@ -235,7 +235,7 @@
   {
     "id": 4,
     "slug": "ace-openable-window",
-    "name": "ACE Openable Mosquito Window",
+    "name": "ACE Window Openable Mosquito Net",
     "category": "Mosquito Nets",
     "shortDescription": "Premium ACE series openable mosquito window with elegant aluminium frame and stainless steel mesh.",
     "description": "ACE Openable Mosquito Window is designed for premium residential and commercial applications. Built with high-grade aluminium profiles and corrosion-resistant stainless steel mesh, it offers superior insect protection, maximum airflow and smooth operation with concealed premium hinges.",
@@ -317,7 +317,7 @@
   {
     "id": 5,
     "slug": "rollup-mosquito-screen",
-    "name": "Roll-Up Mosquito Screen",
+    "name": "Roll-Up & Shutter Mosquito Net",
     "category": "Mosquito Nets",
     "shortDescription": "Retractable roll-up mosquito screen with premium fiberglass mesh.",
     "description": "Roll-Up Mosquito Screen is an advanced retractable insect protection system suitable for windows. The spring-loaded roller mechanism allows the mesh to retract smoothly into its housing when not in use, providing a clean appearance while ensuring maximum ventilation and protection.",
@@ -396,88 +396,11 @@
     ],
     "image": ["/Images/Roll-Up Mosquito Screen1.jpg","/Images/Roll-Up Mosquito Screen2.jpg"]
   },
-  { 
-    "id": 6,
-    "slug": "shutter-mosquito-screen",
-    "name": "Shutter Mosquito Screen",
-    "category": "Mosquito Nets",
-    "shortDescription": "Retractable shutter-style mosquito screen with smooth rolling mechanism.",
-    "description": "Shutter Mosquito Screen is designed for modern homes and apartments. The screen rolls neatly into an aluminium cassette and provides complete protection against mosquitoes while maintaining excellent airflow and visibility.",
-    "features": [
-      "Retractable Shutter System",
-      "Premium Fiberglass Mesh",
-      "Smooth Rolling Mechanism",
-      "Space Saving",
-      "Silent Operation",
-      "Weather Resistant",
-      "Elegant Finish",
-      "Long Life"
-    ],
-    "specification": {
-      "ProductType": "Shutter Screen",
-      "MeshMaterial": "Fiberglass",
-      "FrameMaterial": "Powder Coated Aluminium",
-      "Operation": "Vertical Roll",
-      "UVResistance": "Yes",
-      "WeatherResistance": "Excellent",
-      "SuitableFor": "Windows",
-      "AirFlow": "Excellent",
-      "Maintenance": "Low",
-      "Warranty": "5 Years"
-    },
-    "applications": [
-      "Homes",
-      "Apartments",
-      "Hotels",
-      "Hospitals",
-      "Commercial Buildings"
-    ],
-    "advantages": [
-      "Compact Design",
-      "Easy Operation",
-      "Premium Finish",
-      "Long Lasting",
-      "Custom Sizes"
-    ],
-    "availableColors": [
-      "White",
-      "Black",
-      "Grey",
-      "Brown"
-    ],
-    "sizes": "Custom Size Available",
-    "warranty": "5 Years",
-    "coverImage": "/Products/mosquito/shutter-screen/cover.jpg",
-    "gallery": [
-      "/Products/mosquito/shutter-screen/1.jpg",
-      "/Products/mosquito/shutter-screen/2.jpg",
-      "/Products/mosquito/shutter-screen/3.jpg",
-      "/Products/mosquito/shutter-screen/4.jpg",
-      "/Products/mosquito/shutter-screen/5.jpg"
-    ],
-    "badge": "Trending",
-    "badgeColor": "bg-orange-600",
-    "seo": {
-      "title": "Shutter Mosquito Screen",
-      "description": "Premium retractable shutter mosquito screen with aluminium frame.",
-      "keywords": [
-        "Shutter Screen",
-        "Retractable Mesh",
-        "Mosquito Screen",
-        "Window Screen"
-      ]
-    },
-    "relatedProducts": [
-      5,
-      7,
-      8
-    ],
-    "image": ["/Images/Shutter Mosquito Screen.jpg","/Images/Shutter Mosquito Screen2.jpg"]
-  },
+  
   {
     "id": 7,
     "slug": "classic-openable-door",
-    "name": "Classic Openable Mosquito Door",
+    "name": "Openable Mosquito Net Door",
     "category": "Mosquito Doors",
     "shortDescription": "Premium aluminium mosquito door with SS mesh or Pet Mesh.",
     "description": "Classic Openable Mosquito Door is manufactured using heavy-duty aluminium profiles and premium stainless steel mesh or pet-resistant mesh. It is ideal for balconies, entrance doors and utility doors requiring maximum ventilation and insect protection.",
@@ -556,7 +479,7 @@
   {
     "id": 8,
     "slug": "ace-openable-door",
-    "name": "ACE Openable Mosquito Door",
+    "name": "ACE Openable Mosquito Net Door",
     "category": "Mosquito Doors",
     "shortDescription": "Luxury ACE series mosquito door with premium aluminium profile and stainless steel mesh.",
     "description": "ACE Openable Mosquito Door is designed for luxury residences and commercial spaces. It combines elegant aesthetics with durable aluminium construction, premium stainless steel mesh and smooth hardware for long-lasting performance.",
@@ -635,7 +558,7 @@
   {
     "id": 9,
     "slug": "pleated-mesh-single",
-    "name": "Pleated Mosquito Mesh (Single)",
+    "name": "Pleated Mosquito Net (Single)",
     "category": "Mosquito Nets",
     "shortDescription": "Elegant single-panel pleated mosquito mesh for doors and balconies.",
     "description": "The Single Pleated Mosquito Mesh system is designed with premium polyester pleated fabric that slides smoothly on a low-profile track. It is ideal for balconies, French doors and large windows where space-saving and modern aesthetics are required.",
@@ -714,7 +637,7 @@
   {
     "id": 10,
     "slug": "pleated-mesh-double",
-    "name": "Pleated Mosquito Mesh (Double)",
+    "name": "Pleated Mosquito Net (Double)",
     "category": "Mosquito Nets",
     "shortDescription": "Double-panel pleated mosquito mesh for extra-wide openings.",
     "description": "The Double Pleated Mosquito Mesh system is specially designed for wide balconies, patio doors and commercial entrances. Two pleated panels slide from both sides and meet perfectly in the center, providing excellent insect protection with a premium appearance.",
@@ -793,7 +716,7 @@
   {
     "id": 11,
     "slug": "barrier-free-pleated-mesh",
-    "name": "Barrier Free Pleated Mosquito Mesh",
+    "name": "Barrier Free Pleated Mosquito Net",
     "category": "Mosquito Nets",
     "shortDescription": "Barrier-free pleated mosquito mesh with ultra-low floor track.",
     "description": "Barrier Free Pleated Mosquito Mesh eliminates raised bottom tracks, making it perfect for elderly users, children and wheelchair access. It combines elegant aesthetics with effortless movement and premium insect protection.",
@@ -872,7 +795,7 @@
   {
     "id": 12,
     "slug": "honeycomb-pleated-mesh",
-    "name": "Honeycomb Pleated Mosquito Mesh",
+    "name": "Pleated Type Honeycomb",
     "category": "Mosquito Nets",
     "shortDescription": "Premium honeycomb pleated mosquito mesh with elegant appearance and smooth sliding operation.",
     "description": "Honeycomb Pleated Mosquito Mesh combines premium polyester mesh with an innovative honeycomb folding design that provides excellent durability, smooth movement and modern aesthetics. Ideal for large windows, balconies and patio doors.",
@@ -951,7 +874,7 @@
   {
     "id": 13,
     "slug": "honeycomb-barrier-free-mesh",
-    "name": "Honeycomb Barrier Free Mosquito Mesh",
+    "name": "Honeycomb Barrier Free Mosquito Net",
     "category": "Mosquito Nets",
     "shortDescription": "Barrier-free honeycomb mosquito mesh with ultra-low track and premium aluminium frame.",
     "description": "Honeycomb Barrier Free Mosquito Mesh offers a completely obstacle-free passage with an ultra-low threshold. Designed for luxury homes, hospitals and commercial spaces, it combines safety, accessibility and elegant aesthetics.",
@@ -1030,7 +953,7 @@
   {
     "id": 14,
     "slug": "honeycomb-two-in-one-mesh",
-    "name": "Honeycomb Two-in-One Mosquito Mesh",
+    "name": "Honeycomb Two-in-One Mosquito Net",
     "category": "Mosquito Nets",
     "shortDescription": "Two-in-one honeycomb system combining blackout blind and mosquito mesh in one product.",
     "description": "Honeycomb Two-in-One System integrates a mosquito mesh and blackout honeycomb blind into a Double frame. It provides insect protection during the day and complete privacy with light control whenever required.",
@@ -1111,7 +1034,7 @@
   {
     "id": 15,
     "slug": "sliding-mosquito-screen",
-    "name": "Sliding Mosquito Screen",
+    "name": "Sliding Mosquito Net",
     "category": "Mosquito Nets",
     "shortDescription": "Heavy-duty sliding mosquito screen with premium stainless steel mesh for windows and balconies.",
     "description": "Sliding Mosquito Screen is designed for modern sliding windows and balcony openings. Built with premium aluminium profiles and stainless steel mesh, it offers smooth sliding performance, maximum ventilation and long-lasting insect protection.",
@@ -1906,7 +1829,7 @@
   {
     "id": 25,
     "slug": "upvc-sliding-window-with-mesh",
-    "name": "UPVC Sliding Window with Mosquito Mesh",
+    "name": "UPVC Sliding Window with Mosquito Net",
     "category": "UPVC Systems",
     "shortDescription": "UPVC sliding window integrated with a mosquito mesh track.",
     "description": "Premium UPVC sliding window featuring an integrated mosquito mesh system. Enjoy fresh air without insects while maintaining excellent insulation and smooth sliding operation.",
