@@ -37,7 +37,7 @@ export default function Services() {
     return (
       <div
         ref={ref}
-        className={`transition-all duration-700 ${className}`}
+        className={`h-full transition-all duration-700 ${className}`}
         style={{
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(30px)",
@@ -112,13 +112,13 @@ export default function Services() {
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 items-stretch">
             {services.map((service, index) => {
               const IconComponent = LucideIcons[service.icon] || LucideIcons.Shield;
 
               return (
                 <FadeIn key={service.id} delay={index * 80}>
-                  <div key={service.id} className="relative bg-white rounded-3xl p-8 border border-gray-100/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(12,89,64,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col group overflow-hidden">
+                  <div key={service.id} className="relative h-full min-h-[510px] bg-white rounded-3xl p-8 border border-gray-100/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(12,89,64,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col group overflow-hidden">
                     {/* Top Accent Line */}
                     <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0c5940] to-[#38B6FF] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -141,7 +141,7 @@ export default function Services() {
                     </p>
 
                     {/* Items List */}
-                    <div className="mt-auto pt-5 border-t border-gray-50 flex flex-col gap-3">
+                    <div className="flex-1 pt-5 border-t border-gray-50 flex flex-col gap-3">
                       {service.items.map((item, idx) => (
                         <div key={idx} className="flex items-start gap-2">
                           <LucideIcons.CheckCircle2 size={16} className="text-[#38B6FF] mt-0.5 shrink-0" />
@@ -150,13 +150,13 @@ export default function Services() {
                       ))}
                     </div>
 
-                  {/* Learn More Link */}
+                  {/* Get Quote Link */}
                   <div className="mt-6 pt-4 border-t border-gray-50">
                     <Link
                       to="/contact"
                       className="inline-flex items-center gap-2 text-sm font-bold text-[#0c5940] hover:text-[#38B6FF] transition-colors group/link"
                     >
-                      Learn More <LucideIcons.ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
+                      Get Quote <LucideIcons.ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                   </div>
