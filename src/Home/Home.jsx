@@ -138,9 +138,9 @@ const Home = () => {
       {/* <RevealSection direction="bottom">
         <HomeStats />
       </RevealSection> */}
-      <RevealSection direction="left">
+      {/* <RevealSection direction="left">
         <HomeServices />
-      </RevealSection>
+      </RevealSection> */}
       <RevealSection direction="bottom">
         <HomeGallery />
       </RevealSection>
