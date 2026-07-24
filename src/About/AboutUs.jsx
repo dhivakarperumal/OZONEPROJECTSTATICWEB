@@ -349,7 +349,7 @@ export default function AboutUs() {
           </FadeIn>
         </section>
 
-        <section className="mt-20 overflow-hidden rounded-[2rem] bg-linear-to-r from-primary via-primary-light to-secondary p-8 shadow-2xl sm:p-10 lg:p-12">
+        {/* <section className="mt-20 overflow-hidden rounded-[2rem] bg-linear-to-r from-primary via-primary-light to-secondary p-8 shadow-2xl sm:p-10 lg:p-12">
           <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
             <FadeIn delay={100} className="w-full">
               <div>
@@ -386,7 +386,7 @@ export default function AboutUs() {
               </div>
             </FadeIn>
           </div>
-        </section>
+        </section> */}
 
         <section className="mt-20">
           <FadeIn delay={100} className="w-full">
