@@ -28,7 +28,7 @@ const slidesData = [
   },
   {
     id: 3,
-    tag: "Sales & Services",
+    tag: "Sales & Services", 
     title: "UPVC",
     highlight: "Systems",
     desc: "We supply and install premium UPVC doors and windows designed for durability, thermal insulation, weather resistance, and modern architectural elegance.",
@@ -37,11 +37,11 @@ const slidesData = [
   {
     id: 4,
     tag: "Sales & Services",
-    title: "Complete Home",
-    highlight: "Solutions",
-    desc: "From consultation and customized manufacturing to professional installation and after-sales service, we offer complete solutions for mosquito nets, window blinds, and UPVC systems.",
-    bgImage: "/Hero/4.png"
-  }
+    title: "Window",
+    highlight: "Blinds",
+    desc: "Enhance your interiors with stylish roller blinds, zebra blinds, Venetian blinds, vertical blinds, and customized window coverings that perfectly blend beauty with functionality.",
+    bgImage: "/Hero/2.png"
+  },
 ];
 
 const Hero = () => {
@@ -54,7 +54,7 @@ const Hero = () => {
         effect="fade"
         spaceBetween={0}
         slidesPerView={1}
-        loop={true}
+        loop={true} 
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{
           clickable: true,
