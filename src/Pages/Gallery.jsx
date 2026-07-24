@@ -365,9 +365,9 @@ export default function Gallery() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { name: "Windows", desc: "Premium sliding, casement, and decorative window systems designed for maximum light and ventilation." },
-                { name: "Railings", desc: "Modern glass and stainless steel railings that provide safety without compromising aesthetics." },
+                { name: "Roller", desc: "Modern glass and stainless steel railings that provide safety without compromising aesthetics." },
                 { name: "Doors", desc: "Elegant sliding, folding, and French doors perfect for seamless indoor-outdoor transitions." },
-                { name: "Shutters", desc: "Functional and decorative shutters offering privacy, light control, and style enhancement." },
+                { name: "Roll-Up & Shutter ", desc: "Functional and decorative shutters offering privacy, light control, and style enhancement." },
                 { name: "Balcony", desc: "Complete balcony enclosure and safety mesh solutions for secure outdoor living spaces." },
                 { name: "Screens", desc: "High-quality mosquito mesh and security screens protecting your home from insects and intruders." }
               ].map((cat, i) => (

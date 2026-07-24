@@ -15,10 +15,9 @@ export const services = [
     description:
       "Premium uPVC doors and windows offering durability, energy efficiency, and modern aesthetics.",
     items: [
-      "uPVC Windows",
-      "uPVC Doors",
       "Sliding Systems",
-      "Casement Systems",
+      "UPVC Openable Windows",
+      "UPVC Fixed Windows",  
       "Ventilators",
       "Custom Designs",
     ],
@@ -30,12 +29,13 @@ export const services = [
     description:
       "High-quality mosquito net window systems that provide fresh air while keeping insects outside.",
     items: [
+      "Velcro Nets",
       "Sliding Nets",
-      "Pleated Nets",
-      "Roll-Up Nets",
       "Openable Nets",
-      "Invisible Nets",
       "Fixed Nets",
+      "Roll-Up Nets",
+      "Honycomb Nets",
+     
     ],
   },
   {
@@ -45,12 +45,13 @@ export const services = [
     description:
       "Elegant mosquito net doors designed for balconies, entrances, and patios with smooth operation.",
     items: [
-      "Sliding Doors",
-      "Pleated Doors",
-      "Magnetic Doors",
       "Openable Doors",
-      "French Doors",
-      "Customized Doors",
+      "Pleated Single Doors",
+      "Pleated Double Doors",
+      "ACE Doors",
+      "Honycomb Doors",
+      "Wicket Window Door"
+      
     ],
   },
   {
@@ -62,10 +63,8 @@ export const services = [
     items: [
       "Roller Blinds",
       "Zebra Blinds",
-      "Roman Blinds",
       "Vertical Blinds",
-      "Wooden Blinds",
-      "Motorized Blinds",
+      "PVC Blinds",
     ],
   },
 ];

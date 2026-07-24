@@ -135,17 +135,11 @@ const Home = () => {
       <RevealSection direction="right">
         <GoogleMap />
       </RevealSection>
-      {/* <RevealSection direction="bottom">
-        <HomeStats />
-      </RevealSection> */}
-      {/* <RevealSection direction="left">
-        <HomeServices />
-      </RevealSection> */}
+    
       <RevealSection direction="bottom">
         <HomeGallery />
       </RevealSection>
       <RevealSection direction="bottom">
-        {/* <InstagramReels /> */}
       </RevealSection>
       <RevealSection direction="bottom">
         <HomeFAQ />
@@ -153,7 +147,6 @@ const Home = () => {
       <RevealSection direction="fadeScale">
         <HomeReviews />
       </RevealSection>
-      {/* <CompanyLogos /> */}
     </motion.div>
   )
 }

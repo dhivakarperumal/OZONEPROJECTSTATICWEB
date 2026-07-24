@@ -74,7 +74,7 @@
       3,
       5
     ],
-    "image": ["/Images/Velcro type.jpg","/Images/Velcro type1.jpg"]
+    "image": ["/Images/velcromosquitonet.png","/Images/velcromosquitonet.png"]
   },
   {
     "id": 2,
@@ -312,7 +312,7 @@
       3,
       5
     ],
-    "image": ["/Images/ACE Openable Mosquito Window1.jpg","/Images/ACE Openable Mosquito Window_1.jpg"]
+    "image": ["/Images/ACE Openable Mosquito Window1.png","/Images/ACE Openable Mosquito Window1.png"]
   },
   {
     "id": 5,
@@ -394,7 +394,7 @@
       2,
       4
     ],
-    "image": ["/Images/Roll-Up Mosquito Screen1.jpg","/Images/Roll-Up Mosquito Screen2.jpg"]
+    "image": ["/Images/Roll-Up Mosquito Screen1.png","/Images/Roll-Up Mosquito Screen1.png"]
   },
   
   {
@@ -474,7 +474,7 @@
       4,
       8
     ],
-    "image": ["/Images/Classic Openable Mosquito Door.jpg","/Images/Classic Openable Mosquito Door1.jpg"]
+    "image": ["/Images/Classic Openable Mosquito Door.png","/Images/Classic Openable Mosquito Door.png"]
   },
   {
     "id": 8,
@@ -553,7 +553,7 @@
       7,
       9
     ],
-     "image": ["/Images/ACE Openable Mosquito Door.jpg","/Images/ACE Openable Mosquito Door1.jpg"]
+     "image": ["/Images/ACE Openable Mosquito Door.png","/Images/ACE Openable Mosquito Door.png"]
   },
   {
     "id": 9,
@@ -632,7 +632,7 @@
       11,
       14
     ],
-     "image": ["/Images/Pleated Mosquito Mesh (Single)1.jpg","/Images/Pleated Mosquito Mesh (Single).jpg"]
+     "image": ["/Images/Pleated Mosquito Mesh (Single).png","/Images/Pleated Mosquito Mesh (Single).png"]
   },
   {
     "id": 10,
@@ -711,7 +711,7 @@
       11,
       14
     ],
-    "image": ["/Images/Pleated Mosquito Mesh (Double).jpg","/Images/Pleated Mosquito Mesh (Double)1.jpg"]
+    "image": ["/Images/Pleated Mosquito Mesh (Double).png","/Images/Pleated Mosquito Mesh (Double)1.png"]
   },
   {
     "id": 11,
@@ -790,7 +790,7 @@
       10,
       12
     ],
-    "image": ["/Images/Barrier Free Pleated Mosquito Mesh1.jpg","/Images/Barrier Free Pleated Mosquito Mesh.jpg"]
+    "image": ["/Images/Pleated Mosquito Mesh (Double).png","/Images/Pleated Mosquito Mesh (Double).png"]
   },
   {
     "id": 12,
@@ -869,7 +869,7 @@
       11,
       13
     ],
-    "image": ["/Images/Honeycomb Pleated Mosquito Mesh.png","/Images/Honeycomb Barrier Free Mosquito Mesh1.jpg"]
+    "image": ["/Images/Honeycomb Pleated Mosquito Mesh.png","/Images/Honeycomb Barrier Free Mosquito Mesh.png"]
   },
   {
     "id": 13,
@@ -948,7 +948,7 @@
       12,
       14
     ],
-    "image": ["/Images/Honeycomb Barrier Free Mosquito Mesh.jpg","/Images/Honeycomb Barrier Free Mosquito Mesh1.jpg"]
+    "image": ["/Images/Honeycomb Barrier Free Mosquito Mesh1.png","/Images/Honeycomb Barrier Free Mosquito Mesh1.png"]
   },
   {
     "id": 14,
@@ -1029,7 +1029,7 @@
       13,
       15
     ],
-    "image": ["/Images/Honeycomb Two-in-One Mosquito Mesh.jpg","/Images/Honeycomb Two-in-One Free Mosquito Mesh1.jpg"]
+    "image": ["/Images/Honeycomb Two-in-One Mosquito Mesh.jpeg","/Images/Honeycomb Two-in-One Mosquito Mesh.jpeg"]
   },
   {
     "id": 15,
@@ -1108,7 +1108,7 @@
       8,
       12
     ],
-    "image": ["/Images/Sliding Mosquito Screen2.jpg", "/Images/Sliding Mosquito Screen3.jpg"]
+    "image": ["/Images/Sliding Mosquito Screen2.png", "/Images/Sliding Mosquito Screen2.png"]
   },
   {
     "id": 16,
@@ -1345,7 +1345,7 @@
       17,
       19
     ],
-    "image": ["/Images/Pvc Blinds.jpg", "/Images/Pvc Blinds1.jpg"]
+    "image": ["/Images/Bamboo Blinds2.jpg", "/Images/Bamboo Blinds1.jpg"]
   },
   {
     "id": 19,
@@ -1426,85 +1426,7 @@
     ],
     "image": ["/Images/Vertical Blinds2.jpg", "/Images/Vertical Blinds1.jpg"]
   },
-  {
-    "id": 20,
-    "slug": "bamboo-blinds",
-    "name": "Bamboo Blinds",
-    "category": "Window Blinds",
-    "shortDescription": "Eco-friendly bamboo blinds offering natural beauty and excellent sun protection.",
-    "description": "Bamboo Blinds are handcrafted from high-quality natural bamboo, creating a warm and elegant atmosphere. They are perfect for homes, resorts, restaurants and eco-friendly interiors.",
-    "features": [
-      "Natural Bamboo",
-      "Eco Friendly",
-      "Elegant Appearance",
-      "Light Filtering",
-      "Durable Construction",
-      "Hand Crafted",
-      "Premium Finish",
-      "Low Maintenance"
-    ],
-    "specification": {
-      "ProductType": "Bamboo Blind",
-      "Material": "Natural Bamboo",
-      "Operation": "Roll Up",
-      "Finish": "Natural Polish",
-      "UVProtection": "Moderate",
-      "LightControl": "Natural Filtering",
-      "SuitableFor": "Indoor",
-      "EcoFriendly": "Yes",
-      "Handmade": "Yes",
-      "Warranty": "2 Years"
-    },
-    "applications": [
-      "Living Room",
-      "Restaurant",
-      "Resort",
-      "Balcony",
-      "Eco Homes"
-    ],
-    "advantages": [
-      "Natural Look",
-      "Eco Friendly",
-      "Premium Appearance",
-      "Long Lasting",
-      "Affordable Luxury"
-    ],
-    "availableColors": [
-      "Natural Bamboo",
-      "Dark Walnut",
-      "Teak",
-      "Coffee"
-    ],
-    "sizes": "Custom Size",
-    "warranty": "2 Years",
-    "coverImage": "/Products/blinds/bamboo/cover.jpg",
-    "gallery": [
-      "/Products/blinds/bamboo/1.jpg",
-      "/Products/blinds/bamboo/2.jpg",
-      "/Products/blinds/bamboo/3.jpg",
-      "/Products/blinds/bamboo/4.jpg",
-      "/Products/blinds/bamboo/5.jpg"
-    ],
-    "badge": "Eco Friendly",
-    "badgeColor": "bg-green-700",
-    "seo": {
-      "title": "Natural Bamboo Blinds",
-      "description": "Premium eco-friendly bamboo blinds for homes and resorts.",
-      "keywords": [
-        "Bamboo Blinds",
-        "Natural Blinds",
-        "Eco Friendly Blinds",
-        "Wooden Blinds"
-      ]
-    },
-    "relatedProducts": [
-      16,
-      17,
-      19,
-      21
-    ],
-    "image": ["/Images/Bamboo Blinds2.jpg", "/Images/Bamboo Blinds1.jpg"]
-  },
+ 
   {
     "id": 21,
     "slug": "premium-window-curtains",
@@ -1665,7 +1587,7 @@
       25,
       26
     ],
-    "image": ["/Images/UPVC Sliding Window.jpg", "/Images/UPVC Sliding Window11.png"]
+    "image": ["/Images/UPVC Sliding Window.png", "/Images/UPVC Sliding Window.png"]
   },
   {
     "id": 23,
