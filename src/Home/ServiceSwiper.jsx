@@ -135,38 +135,42 @@ const ServiceSwiper = () => {
                                                 </h3>
                                             </div>
 
-                                            {/* Description */}
-                                            <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                                                {service.description}
-                                            </p>
+                                            <div className="flex-1 flex flex-col">
 
-                                            {/* Items */}
-                                            <div className="mt-auto pt-5 border-t border-gray-50 flex flex-col gap-3">
-                                                {service.items.map((item, idx) => (
-                                                    <div key={idx} className="flex items-start gap-2">
-                                                        <LucideIcons.CheckCircle2
+                                                {/* Description */}
+                                                <p className="text-gray-500 text-sm leading-relaxed">
+                                                    {service.description}
+                                                </p>
+
+                                                {/* Items */}
+                                                <div className="pt-5 border-t border-gray-50 flex flex-col gap-3">
+                                                    {service.items.map((item, idx) => (
+                                                        <div key={idx} className="flex items-start gap-2">
+                                                            <LucideIcons.CheckCircle2
+                                                                size={16}
+                                                                className="text-[#38B6FF] mt-0.5 shrink-0"
+                                                            />
+                                                            <span className="text-sm font-semibold text-gray-700">
+                                                                {item}
+                                                            </span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+
+                                                {/* Get Quote */}
+                                                <div className="mt-auto border-t border-gray-50">
+                                                    <Link
+                                                        to="/contact"
+                                                        className="inline-flex items-center gap-2 text-sm font-bold text-[#0c5940] hover:text-[#38B6FF] transition-colors group/link"
+                                                    >
+                                                        Get Quote
+                                                        <LucideIcons.ArrowRight
                                                             size={16}
-                                                            className="text-[#38B6FF] mt-0.5 shrink-0"
+                                                            className="group-hover/link:translate-x-1 transition-transform"
                                                         />
-                                                        <span className="text-sm font-semibold text-gray-700">
-                                                            {item}
-                                                        </span>
-                                                    </div>
-                                                ))}
-                                            </div>
+                                                    </Link>
+                                                </div>
 
-                                            {/* Learn More */}
-                                            <div className="mt-6 pt-4 border-t border-gray-50">
-                                                <Link
-                                                    to="/contact"
-                                                    className="inline-flex items-center gap-2 text-sm font-bold text-[#0c5940] hover:text-[#38B6FF] transition-colors group/link"
-                                                >
-                                                    Get Quote   
-                                                    <LucideIcons.ArrowRight
-                                                        size={16}
-                                                        className="group-hover/link:translate-x-1 transition-transform"
-                                                    />
-                                                </Link>
                                             </div>
 
                                         </div>
