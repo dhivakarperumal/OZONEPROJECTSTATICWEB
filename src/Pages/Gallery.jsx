@@ -392,7 +392,7 @@ export default function Gallery() {
                 { icon: Award, title: "Premium Quality", desc: "Certified materials and expert craftsmanship" },
                 { icon: Zap, title: "Fast Installation", desc: "Quick turnaround without compromising quality" },
                 { icon: Users, title: "Expert Team", desc: "Experienced professionals with 15+ years expertise" },
-                { icon: CheckCircle, title: "Warranty Backed", desc: "Comprehensive warranty on all products" }
+                { icon: CheckCircle, title: "Service Warranty", desc: "Comprehensive warranty on all products" }
               ].map((feat, i) => {
                 const Icon = feat.icon;
                 return (
